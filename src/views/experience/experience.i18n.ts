@@ -4,13 +4,13 @@ export const translations = {
   navigationLabel: {
     de: "Erleben",
     en: "Experience",
-    es: "Descubrir",
+    es: "Experiencia",
   },
   seo: {
     title: {
       de: "Erleben | Finca Los Casta\u00f1os",
       en: "Experience | Finca Los Casta\u00f1os",
-      es: "Descubrir | Finca Los Casta\u00f1os",
+      es: "Experiencia | Finca Los Casta\u00f1os",
     },
     description: {
       de: "Kaffeetour, Plantage und Kaffeewissen auf der Finca Los Casta\u00f1os im Valle de Agaete \u2013 erleben Sie den einzigen Kaffeeanbau Europas",

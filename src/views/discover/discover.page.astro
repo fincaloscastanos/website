@@ -1,0 +1,85 @@
+---
+import type { DiscoverTranslations } from "./discover.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+
+import img01 from "@/assets/discover/01.jpg";
+import img02 from "@/assets/discover/02.jpg";
+import img03 from "@/assets/discover/03.jpg";
+import img04 from "@/assets/discover/04.jpg";
+import img05 from "@/assets/discover/05.jpg";
+import img06 from "@/assets/discover/06.jpg";
+import img07 from "@/assets/discover/07.jpg";
+import img08 from "@/assets/discover/08.png";
+import img09 from "@/assets/discover/09.jpg";
+import img10 from "@/assets/discover/10.jpg";
+import img11 from "@/assets/discover/11.jpg";
+import img12 from "@/assets/discover/12.jpg";
+import img13 from "@/assets/discover/13.jpg";
+import img14 from "@/assets/discover/14.jpg";
+import img15 from "@/assets/discover/15.jpg";
+import img16 from "@/assets/discover/16.jpg";
+import img17 from "@/assets/discover/17.jpg";
+import img18 from "@/assets/discover/18.jpg";
+import img19 from "@/assets/discover/19.jpg";
+import img20 from "@/assets/discover/20.jpg";
+import img21 from "@/assets/discover/21.jpg";
+import img22 from "@/assets/discover/22.jpg";
+import img23 from "@/assets/discover/23.jpg";
+import img24 from "@/assets/discover/24.jpg";
+import img25 from "@/assets/discover/25.jpg";
+import img26 from "@/assets/discover/26.jpg";
+import img27 from "@/assets/discover/27.jpg";
+import img28 from "@/assets/discover/28.jpg";
+import img29 from "@/assets/discover/29.jpg";
+import img30 from "@/assets/discover/30.jpg";
+
+interface Props {
+  lang: Language;
+  t: DiscoverTranslations;
+}
+
+const { lang, t } = Astro.props;
+
+const galleryImages = [
+  img01, img02, img03, img04, img05, img06,
+  img07, img08, img09, img10, img11, img12,
+  img13, img14, img15, img16, img17, img18,
+  img19, img20, img21, img22, img23, img24,
+  img25, img26, img27, img28, img29, img30,
+];
+---
+
+<!-- Hero -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
+    </div>
+  </Container>
+</section>
+
+<!-- Gallery -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="text-center mb-12">
+      <p class="text-xs uppercase tracking-widest text-primary font-medium mb-3">{t.gallery.title}</p>
+      <p class="text-text-muted leading-relaxed max-w-2xl mx-auto">{t.gallery.subtitle}</p>
+    </div>
+
+    <div class="columns-2 md:columns-3 lg:columns-4 gap-3 md:gap-4">
+      {galleryImages.map((img, i) => (
+        <div class="overflow-hidden rounded-lg group mb-3 md:mb-4 break-inside-avoid">
+          <Image
+            src={img}
+            alt={`Finca Los Castaños ${i + 1}`}
+            class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
