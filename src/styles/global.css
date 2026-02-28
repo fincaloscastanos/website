@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ── */
+  --color-primary: #7E9A47;
+  --color-primary-light: #92b254;
+  --color-primary-dark: #6a833b;
+
+  --color-secondary: #f0b96a;
+  --color-secondary-light: #fff0d9;
+  --color-secondary-dark: #d9a255;
+
+  --color-background: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-surface-warm: #fff0d9;
+
+  --color-text: #444444;
+  --color-text-muted: #666666;
+  --color-text-heading: #222222;
+
+  --color-border: #e1e1e1;
+
+  /* ── Fonts ── */
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+}
+
+/* ── Base styles ── */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--color-text-heading);
+    line-height: 1.2;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-primary-dark);
+  }
+}

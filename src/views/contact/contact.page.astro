@@ -1,0 +1,13 @@
+---
+import type { ContactTranslations } from "./contact.i18n";
+import type { Language } from "@/lib/i18n";
+
+interface Props {
+  lang: Language;
+  t: ContactTranslations;
+}
+
+const { lang, t } = Astro.props;
+---
+
+Kontakt
