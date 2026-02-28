@@ -1,0 +1,394 @@
+---
+import type { RelaxTranslations } from "./relax.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+import { Icon } from "astro-icon/components";
+
+import hero1 from "@/assets/relax/hero-1.jpg";
+import hero2 from "@/assets/relax/hero-2.jpg";
+import introImg from "@/assets/relax/intro.jpg";
+import natureImg from "@/assets/relax/nature.jpg";
+
+import casaLiving from "@/assets/relax/casa/01-living.jpg";
+import casaBedroom from "@/assets/relax/casa/02-bedroom.jpg";
+import casaKitchen from "@/assets/relax/casa/03-kitchen.jpg";
+import casaBathroom from "@/assets/relax/casa/04-bathroom.jpg";
+import casaTerrace from "@/assets/relax/casa/05-terrace.jpg";
+import casaExterior from "@/assets/relax/casa/06-exterior.jpg";
+import casaDetail from "@/assets/relax/casa/07-detail.jpg";
+import casaView from "@/assets/relax/casa/08-view.jpg";
+import casaOutdoor from "@/assets/relax/casa/09-outdoor.jpg";
+
+import cabanaBedroom from "@/assets/relax/cabana/01-bedroom.jpg";
+import cabanaLiving from "@/assets/relax/cabana/02-living.jpg";
+import cabanaKitchen from "@/assets/relax/cabana/03-kitchen.jpg";
+import cabanaBathroom from "@/assets/relax/cabana/04-bathroom.jpg";
+import cabanaTerrace from "@/assets/relax/cabana/05-terrace.jpg";
+import cabanaExterior from "@/assets/relax/cabana/06-exterior.jpg";
+import cabanaView from "@/assets/relax/cabana/07-view.jpg";
+import cabanaLandscape from "@/assets/relax/cabana/08-landscape.jpg";
+import cabanaGarden from "@/assets/relax/cabana/09-garden.jpg";
+import cabanaDetail from "@/assets/relax/cabana/10-detail.jpg";
+import cabanaOutdoor from "@/assets/relax/cabana/11-outdoor.jpg";
+import cabanaEntrance from "@/assets/relax/cabana/12-entrance.jpg";
+
+interface Props {
+  lang: Language;
+  t: RelaxTranslations;
+}
+
+const { lang, t } = Astro.props;
+
+const casaBookingUrl = "https://www.booking.com/hotel/es/casa-los-castanos.de.html";
+const cabanaBookingUrl = "https://www.booking.com/hotel/es/cabana-en-finca.de.html";
+
+const casaGallery = [casaLiving, casaBedroom, casaKitchen, casaBathroom, casaTerrace, casaExterior, casaDetail, casaView, casaOutdoor];
+const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaTerrace, cabanaExterior, cabanaView, cabanaLandscape, cabanaGarden, cabanaDetail, cabanaOutdoor, cabanaEntrance];
+---
+
+<!-- Hero -->
+<section class="relative">
+  <div class="grid md:grid-cols-2">
+    <div class="overflow-hidden aspect-[4/3] md:aspect-auto">
+      <Image
+        src={hero1}
+        alt="Finca Los Castaños Apartment"
+        class="w-full h-full object-cover"
+        widths={[600, 900, 1280]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    </div>
+    <div class="overflow-hidden aspect-[4/3] md:aspect-auto hidden md:block">
+      <Image
+        src={hero2}
+        alt="Finca Los Castaños Unterkunft"
+        class="w-full h-full object-cover"
+        widths={[600, 900, 1280]}
+        sizes="50vw"
+      />
+    </div>
+  </div>
+  <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <div class="text-center text-white px-4">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4 text-white drop-shadow-lg">{t.hero.title}</h1>
+      <p class="text-lg md:text-xl font-medium drop-shadow-md">{t.hero.subtitle}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Highlights -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Modern Apartments -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+          <Icon name="lucide:home" class="w-6 h-6 text-primary" />
+        </div>
+        <h3 class="text-lg md:text-xl mb-2">{t.features.apartments.title}</h3>
+        <p class="text-text-muted text-sm leading-relaxed">{t.features.apartments.description}</p>
+      </div>
+
+      <!-- All Inclusive -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+          <Icon name="lucide:check-circle" class="w-6 h-6 text-primary" />
+        </div>
+        <h3 class="text-lg md:text-xl mb-2">{t.features.inclusive.title}</h3>
+        <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.features.inclusive.subtitle}</p>
+        <p class="text-text-muted text-sm leading-relaxed">{t.features.inclusive.description}</p>
+      </div>
+
+      <!-- Equipment -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+          <Icon name="lucide:settings" class="w-6 h-6 text-primary" />
+        </div>
+        <h3 class="text-lg md:text-xl mb-2">{t.features.equipment.title}</h3>
+        <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.features.equipment.subtitle}</p>
+        <p class="text-text-muted text-sm leading-relaxed">{t.features.equipment.description}</p>
+      </div>
+
+      <!-- Nature -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
+          <Icon name="lucide:trees" class="w-6 h-6 text-primary" />
+        </div>
+        <h3 class="text-lg md:text-xl mb-2">{t.features.nature.title}</h3>
+        <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.features.nature.subtitle}</p>
+        <p class="text-text-muted text-sm leading-relaxed">{t.features.nature.description}</p>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Intro with Image -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <Image
+            src={introImg}
+            alt="Apartment Interior"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg mt-8">
+          <Image
+            src={natureImg}
+            alt="Finca Natur"
+            class="w-full h-full object-cover"
+            widths={[200, 300]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.intro.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.intro.subtitle}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.description}</p>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Casa los Castaños -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <!-- Header -->
+    <div class="mb-10">
+      <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.casa.label}</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.casa.title}</h2>
+      <p class="text-lg md:text-xl text-primary font-medium">{t.casa.subtitle}</p>
+    </div>
+
+    <!-- Gallery -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-10">
+      {casaGallery.map((img, i) => (
+        <div class:list={["overflow-hidden rounded-lg group aspect-[3/2]", i === 0 && "md:col-span-2 md:row-span-2 md:aspect-auto"]}>
+          <Image
+            src={img}
+            alt={`Casa los Castaños ${i + 1}`}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            widths={[400, 700, 1000]}
+            sizes={i === 0 ? "(max-width: 768px) 50vw, 66vw" : "(max-width: 768px) 50vw, 33vw"}
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- Amenities -->
+      <div class="bg-surface rounded-lg border border-border/50 p-6 md:p-8 mb-8">
+        <div class="grid gap-4">
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:bed-double" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.bedroom}</span>
+              <p class="text-text-muted text-sm">{t.casa.bedroom}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:sofa" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.living}</span>
+              <p class="text-text-muted text-sm">{t.casa.living}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:cooking-pot" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.kitchen}</span>
+              <p class="text-text-muted text-sm">{t.casa.kitchen}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:shower-head" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.bathroom}</span>
+              <p class="text-text-muted text-sm">{t.casa.bathroom}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:fence" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.terrace}</span>
+              <p class="text-text-muted text-sm">{t.casa.terrace}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:wifi" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.included}</span>
+              <p class="text-text-muted text-sm">{t.casa.extras}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlight Cards -->
+      <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <div class="bg-surface rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.casa.highlight1.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.casa.highlight1.description}</p>
+        </div>
+        <div class="bg-surface rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.casa.highlight2.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.casa.highlight2.description}</p>
+        </div>
+        <div class="bg-surface rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.casa.highlight3.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.casa.highlight3.description}</p>
+        </div>
+        <div class="bg-surface rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.casa.highlight4.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.casa.highlight4.description}</p>
+        </div>
+      </div>
+
+      <!-- Price & CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.casa.price}</p>
+        <a
+          href={casaBookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+        >
+          {t.casa.cta}
+          <Icon name="lucide:external-link" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Divider -->
+<section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"></div>
+  <Container class="relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">{t.intro.title}</h2>
+      <p class="text-lg md:text-xl text-secondary font-medium mb-8">{t.intro.subtitle}</p>
+      <p class="text-white/80 leading-relaxed">{t.intro.description}</p>
+    </div>
+  </Container>
+</section>
+
+<!-- Cabaña en Finca -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <!-- Header -->
+    <div class="mb-10">
+      <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cabana.label}</p>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.cabana.title}</h2>
+      <p class="text-lg md:text-xl text-primary font-medium">{t.cabana.subtitle}</p>
+    </div>
+
+    <!-- Gallery -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-10">
+      {cabanaGallery.map((img, i) => (
+        <div class:list={["overflow-hidden rounded-lg group aspect-[3/2]", i === 0 && "md:col-span-2 md:row-span-2 md:aspect-auto"]}>
+          <Image
+            src={img}
+            alt={`Cabaña en Finca ${i + 1}`}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            widths={[400, 700, 1000]}
+            sizes={i === 0 ? "(max-width: 768px) 50vw, 66vw" : "(max-width: 768px) 50vw, 33vw"}
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- Amenities -->
+      <div class="bg-background rounded-lg border border-border/50 p-6 md:p-8 mb-8">
+        <div class="grid gap-4">
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:bed-double" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.bedroom}</span>
+              <p class="text-text-muted text-sm">{t.cabana.bedroom}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:sofa" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.living}</span>
+              <p class="text-text-muted text-sm">{t.cabana.living}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:cooking-pot" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.kitchen}</span>
+              <p class="text-text-muted text-sm">{t.cabana.kitchen}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:shower-head" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.bathroom}</span>
+              <p class="text-text-muted text-sm">{t.cabana.bathroom}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:fence" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.terrace}</span>
+              <p class="text-text-muted text-sm">{t.cabana.terrace}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="lucide:wifi" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+            <div>
+              <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.amenityLabels.included}</span>
+              <p class="text-text-muted text-sm">{t.cabana.extras}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlight Cards -->
+      <div class="grid sm:grid-cols-2 gap-4 mb-8">
+        <div class="bg-background rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.cabana.highlight1.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.cabana.highlight1.description}</p>
+        </div>
+        <div class="bg-background rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.cabana.highlight2.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.cabana.highlight2.description}</p>
+        </div>
+        <div class="bg-background rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.cabana.highlight3.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.cabana.highlight3.description}</p>
+        </div>
+        <div class="bg-background rounded-lg border border-border/50 p-5">
+          <h4 class="font-serif text-lg text-text-heading mb-1">{t.cabana.highlight4.title}</h4>
+          <p class="text-text-muted text-sm leading-relaxed">{t.cabana.highlight4.description}</p>
+        </div>
+      </div>
+
+      <!-- Price & CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.cabana.price}</p>
+        <a
+          href={cabanaBookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+        >
+          {t.cabana.cta}
+          <Icon name="lucide:external-link" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
