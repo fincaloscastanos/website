@@ -18,7 +18,9 @@ export async function getNavbarItems(
       href,
       isActive:
         currentPath === href ||
-        (href !== "/" && href !== `/${lang}` && currentPath.startsWith(href)),
+        (href !== "/" &&
+          href !== `/${lang}` &&
+          (currentPath.startsWith(href + "/") || currentPath === href)),
     };
   };
 
