@@ -1,6 +1,32 @@
 ---
 import type { HomeTranslations } from "./home.i18n";
 import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+import PrivacyMap from "@/components/ui/PrivacyMap.astro";
+import { Icon } from "astro-icon/components";
+import { siteData } from "@/data/site";
+
+import cardEvents from "@/assets/home/card-events.jpeg";
+import cardTours from "@/assets/home/card-tours.jpg";
+import cardAccommodation from "@/assets/home/card-accommodation.jpeg";
+import aboutImg from "@/assets/home/about.jpg";
+import productsImg from "@/assets/home/products.jpg";
+import tourImg from "@/assets/home/tour.jpg";
+import sustainabilityImg from "@/assets/home/sustainability.png";
+
+import gallery01 from "@/assets/home/gallery/01.jpg";
+import gallery02 from "@/assets/home/gallery/02.jpg";
+import gallery03 from "@/assets/home/gallery/03.jpg";
+import gallery04 from "@/assets/home/gallery/04.jpg";
+import gallery05 from "@/assets/home/gallery/05.jpg";
+import gallery06 from "@/assets/home/gallery/06.jpg";
+import gallery07 from "@/assets/home/gallery/07.jpg";
+import gallery08 from "@/assets/home/gallery/08.jpg";
+import gallery09 from "@/assets/home/gallery/09.jpg";
+import gallery10 from "@/assets/home/gallery/10.jpg";
+import gallery11 from "@/assets/home/gallery/11.jpg";
+import gallery12 from "@/assets/home/gallery/12.jpg";
 
 interface Props {
   lang: Language;
@@ -8,6 +34,370 @@ interface Props {
 }
 
 const { lang, t } = Astro.props;
+
+const galleryImages = [
+  gallery01, gallery02, gallery03, gallery04,
+  gallery05, gallery06, gallery07, gallery08,
+  gallery09, gallery10, gallery11, gallery12,
+];
 ---
 
-Home
+<!-- Hero Video -->
+<section class="w-full bg-primary-dark">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    class="w-full h-auto block"
+  >
+    <source src="/hero.mp4" type="video/mp4" />
+  </video>
+</section>
+
+<!-- Feature Cards -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card: Events -->
+      <div class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col">
+        <div class="overflow-hidden">
+          <Image
+            src={cardEvents}
+            alt={t.cards.events.title}
+            class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.events.subtitle}</p>
+          <h3 class="text-xl md:text-2xl mb-3">{t.cards.events.title}</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-6 flex-1">{t.cards.events.description}</p>
+          <a
+            href={lang === "es" ? "/veranstaltungen" : `/${lang}/veranstaltungen`}
+            class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+          >
+            {t.cards.events.cta}
+            <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Card: Tours -->
+      <div class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col">
+        <div class="overflow-hidden">
+          <Image
+            src={cardTours}
+            alt={t.cards.tours.title}
+            class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.tours.subtitle}</p>
+          <h3 class="text-xl md:text-2xl mb-3">{t.cards.tours.title}</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-6 flex-1">{t.cards.tours.description}</p>
+          <a
+            href={lang === "es" ? "/erleben" : `/${lang}/erleben`}
+            class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+          >
+            {t.cards.tours.cta}
+            <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Card: Accommodation -->
+      <div class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col">
+        <div class="overflow-hidden">
+          <Image
+            src={cardAccommodation}
+            alt={t.cards.accommodation.title}
+            class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.accommodation.subtitle}</p>
+          <h3 class="text-xl md:text-2xl mb-3">{t.cards.accommodation.title}</h3>
+          <p class="text-text-muted text-sm leading-relaxed mb-4 flex-1">{t.cards.accommodation.description}</p>
+          <div class="flex flex-col gap-1 mb-6 text-sm">
+            <span class="text-secondary font-medium">{t.cards.accommodation.cabana}</span>
+            <span class="text-secondary font-medium">{t.cards.accommodation.casa}</span>
+          </div>
+          <a
+            href={lang === "es" ? "/entspannen" : `/${lang}/entspannen`}
+            class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+          >
+            {t.cards.accommodation.cta}
+            <Icon name="lucide:arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- About Section -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <!-- Quote -->
+    <blockquote class="text-center mb-16">
+      <p class="text-2xl md:text-4xl lg:text-5xl font-serif text-text-heading italic leading-tight">
+        &laquo;{t.about.quote}&raquo;
+      </p>
+    </blockquote>
+
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={aboutImg}
+          alt="Finca Los Castaños Plantage"
+          class="w-full h-auto object-cover"
+          widths={[500, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.about.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.about.subtitle}</p>
+        <p class="text-text-muted leading-relaxed mb-8">{t.about.description}</p>
+        <a
+          href={lang === "es" ? "/erleben" : `/${lang}/erleben`}
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+        >
+          {t.about.cta}
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Products Section -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.products.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.products.subtitle}</p>
+        <p class="text-text-muted leading-relaxed mb-8">{t.products.description}</p>
+
+        <!-- Stats -->
+        <div class="flex gap-8 mb-8">
+          <div class="text-center">
+            <span class="block text-4xl md:text-5xl font-serif font-bold text-secondary">2</span>
+            <span class="text-sm text-text-muted">{t.products.stat1Label}</span>
+          </div>
+          <div class="text-center">
+            <span class="block text-4xl md:text-5xl font-serif font-bold text-secondary">4</span>
+            <span class="text-sm text-text-muted">{t.products.stat2Label}</span>
+          </div>
+        </div>
+
+        <a
+          href={lang === "es" ? "/erleben" : `/${lang}/erleben`}
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+        >
+          {t.products.cta}
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={productsImg}
+          alt={t.products.title}
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Tour Booking Section -->
+<section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/patterns/pattern-06.svg')] bg-repeat opacity-10"></div>
+  <Container class="relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={tourImg}
+          alt={t.tour.title}
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+
+      <!-- Content -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">{t.tour.title}</h2>
+        <p class="text-lg md:text-xl text-secondary font-medium mb-6">{t.tour.subtitle}</p>
+        <p class="text-white/80 leading-relaxed mb-8">{t.tour.description}</p>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/20">
+          <h3 class="text-lg font-serif text-secondary mb-3">{t.tour.hoursTitle}</h3>
+          <p class="text-white/90 text-sm">{t.tour.weekdays}</p>
+          <p class="text-white/90 text-sm">{t.tour.weekends}</p>
+        </div>
+
+        <a
+          href={lang === "es" ? "/kaffeetour" : `/${lang}/kaffeetour`}
+          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
+        >
+          {t.tour.cta}
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Sustainability Section -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.sustainability.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.sustainability.subtitle}</p>
+        <p class="text-text-muted leading-relaxed">{t.sustainability.description}</p>
+      </div>
+
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={sustainabilityImg}
+          alt={t.sustainability.title}
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Gallery Section -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12">{t.gallery.title}</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+      {galleryImages.map((img, i) => (
+        <div class="overflow-hidden rounded-lg group aspect-[5/4]">
+          <Image
+            src={img}
+            alt={`Finca Los Castaños ${i + 1}`}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          />
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- Contact Section -->
+<section id="kontakt" class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.contact.title}</h2>
+      <p class="text-lg md:text-xl text-primary font-medium">{t.contact.subtitle}</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <!-- Top row: Address + Email -->
+      <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/50">
+        <a href={siteData.contact.googleMaps} target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-6 md:pr-10 hover:bg-background/50 transition-colors">
+          <Icon name="lucide:map-pin" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+          <div>
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.addressLabel}</span>
+            <span class="text-sm text-text-muted group-hover:text-text transition-colors leading-relaxed">{siteData.contact.address}</span>
+          </div>
+        </a>
+        <a href={`mailto:${siteData.contact.email}`} class="group flex items-start gap-4 p-6 md:pl-10 hover:bg-background/50 transition-colors">
+          <Icon name="lucide:mail" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+          <div>
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.emailLabel}</span>
+            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.email}</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="border-t border-border/50"></div>
+
+      <!-- Bottom row: Phone numbers -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
+        <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors">
+          <Icon name="lucide:phone" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+          <div>
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.toursLabel}</span>
+            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.phone}</span>
+          </div>
+        </a>
+        <a href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`} class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors">
+          <Icon name="lucide:phone" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+          <div>
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.salesLabel}</span>
+            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.phoneSales}</span>
+          </div>
+        </a>
+        <a href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`} class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors">
+          <Icon name="lucide:phone" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+          <div>
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.eventsLabel}</span>
+            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.phoneEvents}</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="border-t border-border/50"></div>
+
+      <!-- Social & WhatsApp -->
+      <div class="flex flex-wrap items-center justify-center gap-6 pt-8">
+        <a
+          href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-2.5 px-6 rounded-full hover:bg-primary-dark transition-colors text-sm"
+        >
+          <Icon name="lucide:message-circle" class="w-4 h-4" />
+          WhatsApp
+        </a>
+        <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors">
+          <Icon name="lucide:instagram" class="w-5 h-5" />
+          Instagram
+        </a>
+        <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors">
+          <Icon name="lucide:facebook" class="w-5 h-5" />
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="rounded-lg overflow-hidden shadow-lg h-80 md:h-[28rem] lg:h-[32rem]">
+      <PrivacyMap
+        url={siteData.contact.googleMapsEmbed}
+        loadMap={t.contact.map.loadMap}
+        accept={t.contact.map.accept}
+        showMap={t.contact.map.showMap}
+      />
+    </div>
+  </Container>
+</section>
