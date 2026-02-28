@@ -18,30 +18,48 @@ pnpm dev
 
 Open [localhost:4321](http://localhost:4321).
 
-## Build & Deploy
+## Build
 
 ```bash
 pnpm build       # Build static site to dist/
-pnpm deploy      # Build Docker image & push to registry
 ```
 
-Deployment is automated via GitHub Actions on push to `main`.
+## Deployment
+
+### Automatic (CI/CD)
+
+Every push to `main` triggers a GitHub Actions workflow that:
+
+1. Installs dependencies (`pnpm install --frozen-lockfile`)
+2. Builds the site (`pnpm build`)
+3. Builds a Docker image (Nginx + static files)
+4. Pushes the image to `ghcr.io/tobiasbenkner/fincaloscastanos.com:latest`
+
+No secrets to configure — authentication uses the built-in `GITHUB_TOKEN`.
+
+### Running the Docker image
+
+```bash
+docker pull ghcr.io/tobiasbenkner/fincaloscastanos.com:latest
+docker run -p 80:80 ghcr.io/tobiasbenkner/fincaloscastanos.com:latest
+```
 
 ## Languages
 
 The site supports three languages:
 
-| Language | Prefix | Example |
-|----------|--------|---------|
-| Spanish (default) | — | `/contacto` |
-| English | `/en` | `/en/contact` |
-| German | `/de` | `/de/kontakt` |
+| Language          | Prefix | Example       |
+| ----------------- | ------ | ------------- |
+| Spanish (default) | —      | `/contacto`   |
+| English           | `/en`  | `/en/contact` |
+| German            | `/de`  | `/de/kontakt` |
 
 ## Adding a New Page
 
 Create three files in `src/views/{name}/`:
 
 **`{name}.route.ts`** — Route definition:
+
 ```ts
 export const route = {
   key: "name",
@@ -50,6 +68,7 @@ export const route = {
 ```
 
 **`{name}.i18n.ts`** — Translations:
+
 ```ts
 export const translations = {
   seo: {
@@ -60,6 +79,7 @@ export const translations = {
 ```
 
 **`{name}.page.astro`** — Page component:
+
 ```astro
 ---
 import Layout from "@/layouts/Layout.astro";
