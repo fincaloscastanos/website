@@ -1,0 +1,216 @@
+---
+import type { ExperienceTranslations } from "./experience.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+import { Icon } from "astro-icon/components";
+
+import plantationTour from "@/assets/experience/plantation-tour.jpg";
+import coffeeProduction from "@/assets/experience/coffee-production.png";
+import plantationView from "@/assets/experience/plantation-view.jpg";
+import fincaLandscape from "@/assets/experience/finca-landscape.jpg";
+import fincaPlants from "@/assets/experience/finca-plants.jpg";
+import tourMap from "@/assets/experience/tour-map.webp";
+
+interface Props {
+  lang: Language;
+  t: ExperienceTranslations;
+}
+
+const { lang, t } = Astro.props;
+---
+
+<!-- Hero -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
+      <p class="text-lg md:text-xl text-primary font-medium">{t.hero.subtitle}</p>
+    </div>
+  </Container>
+</section>
+
+<!-- Intro: Kaffeetour -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div class="space-y-5">
+        <p class="text-text-muted leading-relaxed">{t.intro.p1}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p2}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p3}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p4}</p>
+      </div>
+
+      <!-- Images -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <Image
+            src={plantationTour}
+            alt="Plantage"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg mt-8">
+          <Image
+            src={coffeeProduction}
+            alt="Kaffeeherstellung"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Kaffeeträume -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl order-2 md:order-1">
+        <Image
+          src={plantationView}
+          alt="Plantage im Valle de Agaete"
+          class="w-full h-auto object-cover"
+          widths={[500, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+
+      <!-- Text -->
+      <div class="order-1 md:order-2">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.dreams.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.dreams.subtitle}</p>
+        <div class="space-y-5">
+          <p class="text-text-muted leading-relaxed">{t.dreams.p1}</p>
+          <p class="text-text-muted leading-relaxed">{t.dreams.p2}</p>
+          <p class="text-text-muted leading-relaxed">{t.dreams.p3}</p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Klima -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.climate.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.climate.subtitle}</p>
+        <div class="space-y-5">
+          <p class="text-text-muted leading-relaxed">{t.climate.p1}</p>
+          <p class="text-text-muted leading-relaxed">{t.climate.p2}</p>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={fincaLandscape}
+          alt="Gran Canaria Landschaft"
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Exklusiver Kaffeeanbau -->
+<section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"></div>
+  <Container class="relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">{t.exclusive.title}</h2>
+      <p class="text-lg md:text-xl text-secondary font-medium mb-8">{t.exclusive.subtitle}</p>
+      <p class="text-white/80 leading-relaxed mb-5">{t.exclusive.p1}</p>
+      <p class="text-white/80 leading-relaxed">{t.exclusive.p2}</p>
+    </div>
+  </Container>
+</section>
+
+<!-- Besondere Einblicke -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.insights.title}</h2>
+      <p class="text-lg md:text-xl text-primary font-medium">{t.insights.subtitle}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={fincaPlants}
+          alt="Kaffeepflanzen"
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+
+      <!-- Text -->
+      <div class="space-y-5">
+        <p class="text-text-muted leading-relaxed">{t.insights.p1}</p>
+        <p class="text-text-muted leading-relaxed">{t.insights.p2}</p>
+        <p class="text-text-muted leading-relaxed">{t.insights.p3}</p>
+        <p class="text-text-muted leading-relaxed">{t.insights.p4}</p>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Geführte Tour / Karte -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.tour.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.tour.subtitle}</p>
+        <p class="text-text-muted leading-relaxed mb-8">{t.tour.description}</p>
+        <a
+          href="/Finca-Los-Castanos-Aleman_K.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+        >
+          <Icon name="lucide:download" class="w-4 h-4" />
+          {t.tour.cta}
+        </a>
+      </div>
+
+      <!-- Tour Map -->
+      <div class="overflow-hidden rounded-lg shadow-xl">
+        <Image
+          src={tourMap}
+          alt="Karte der Führung"
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Röstung & Geschmack -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.roasting.title}</h2>
+      <p class="text-lg md:text-xl text-primary font-medium mb-8">{t.roasting.subtitle}</p>
+      <p class="text-text-muted leading-relaxed mb-5">{t.roasting.p1}</p>
+      <p class="text-text-muted leading-relaxed mb-10">{t.roasting.p2}</p>
+      <p class="text-2xl md:text-3xl font-serif text-text-heading italic">{t.roasting.cta}</p>
+    </div>
+  </Container>
+</section>

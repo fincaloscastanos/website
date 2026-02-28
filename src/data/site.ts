@@ -1,4 +1,5 @@
 export const siteData = {
+  analytics_id: "6215d234-268d-4d2e-8231-6fd7cd70201e",
   meta: {
     name: "Finca los Castaños",
     twitterHandle: "",
