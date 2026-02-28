@@ -1,6 +1,6 @@
 import { defaultLang, type Language, resolveTranslations } from "./i18n";
 import { createRegistry } from "./i18n/registry";
-import { PageModules, RouteModules, TranslationModules } from "./i18n/types";
+import type { PageModules, RouteModules, TranslationModules } from "./i18n/types";
 
 const routeModules: RouteModules<Language> = import.meta.glob(
   "../views/**/*.route.ts",
