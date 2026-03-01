@@ -30,6 +30,11 @@ export const translations = {
       en: "Guided tour of our plantation",
       es: "Visita guiada por nuestra plantación",
     },
+    cta: {
+      de: "Tour buchen",
+      en: "Book tour",
+      es: "Reservar tour",
+    },
   },
 
   intro: {
