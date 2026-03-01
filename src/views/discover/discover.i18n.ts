@@ -32,18 +32,6 @@ export const translations = {
     },
   },
 
-  gallery: {
-    title: {
-      de: "Bildergalerie",
-      en: "Picture gallery",
-      es: "Galería de fotos",
-    },
-    subtitle: {
-      de: "Entdecken Sie die Welt des Kaffees auf der Finca Los Castaños! Unsere Bildergalerie gibt bunte Einblicke in unsere Plantage, unser Team und mehr.",
-      en: "Discover the world of coffee at Finca Los Castaños! Our picture gallery provides colourful insights into our plantation, our team and more.",
-      es: "¡Descubran el mundo del café en la Finca Los Castaños! Nuestra galería de fotos les da un vistazo bien bonito a la plantación, al equipo y a mucho más.",
-    },
-  },
 };
 
 export type DiscoverTranslations = FlattenTranslation<typeof translations>;
