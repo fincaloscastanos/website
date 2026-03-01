@@ -6,6 +6,7 @@ Website for [Finca Los Castaños](https://finca.pulpo.cloud) — a rural farm in
 
 - [Astro](https://astro.build) 5 — Static site generator
 - [Tailwind CSS](https://tailwindcss.com) v4
+- [astro-icon](https://github.com/natemoo-re/astro-icon) — twemoji (flags), lucide (UI icons)
 - TypeScript (strict)
 - Docker + Nginx
 

@@ -4,6 +4,8 @@
 
 - **Astro 5** (static site generator) with TypeScript strict mode
 - **Tailwind CSS v4** via `@tailwindcss/vite` plugin
+- **astro-icon** with `twemoji` (flags) and `lucide` (UI icons)
+- **marked** for Markdown rendering
 - **pnpm** as package manager
 - **Docker** (nginx:alpine) for deployment → `ghcr.io`
 
@@ -18,12 +20,16 @@ src/
 │       ├── {name}.route.ts      # Route slugs per language
 │       └── {name}.i18n.ts       # Translations
 ├── components/      # Reusable Astro components
-│   └── ui/          # UI primitives (Container, PrivacyMap, …)
+│   ├── ui/          # UI primitives (Container, PrivacyGate, PrivacyMap, SubNav, …)
+│   ├── Header.astro, Footer.astro, LanguageSwitcher.astro
+│   └── SeoHead.astro
 ├── layouts/         # Layout.astro (fonts, SEO, analytics)
 ├── lib/             # Core logic
 │   ├── i18n/        # i18n system (registry, resolver, types)
+│   ├── i18n.ts      # Re-export barrel
 │   ├── registry.ts  # Main registry instance
-│   └── navbar.ts    # Navigation config
+│   ├── navbar.ts    # Navigation config
+│   └── types.ts     # Shared types
 ├── data/            # Static data (site.ts)
 ├── styles/          # global.css (Tailwind theme)
 └── assets/          # Images (logo, OG images)
@@ -52,8 +58,9 @@ Tailwind v4 with custom theme in `src/styles/global.css`:
 pnpm dev        # Dev server
 pnpm build      # Production build → dist/
 pnpm preview    # Preview production build
-pnpm deploy     # Build & push Docker image
 ```
+
+Deployment runs via GitHub Actions on push to `main` (build → Docker image → `ghcr.io`).
 
 ## Conventions
 
