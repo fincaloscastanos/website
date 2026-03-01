@@ -27,21 +27,13 @@ const flagIcons: Record<Language, string> = {
         <a
           href={href}
           hreflang={l}
-          class:list={[
-            "group relative flex flex-col items-center transition-all duration-300",
-            isActive
-              ? ""
-              : "opacity-50 hover:opacity-100",
-          ]}
+          class="group relative flex flex-col items-center transition-all duration-300"
           aria-label={`Switch to ${l}`}
         >
           <Icon
             name={flagIcons[l]}
             class:list={[
-              "h-[18px] w-[27px] md:h-[22px] md:w-[33px] block rounded-[3px] transition-all duration-300",
-              isActive
-                ? "grayscale-0"
-                : "grayscale group-hover:grayscale-0",
+              "h-[20px] w-[30px] md:h-[24px] md:w-[36px] block rounded-[3px] transition-all duration-300 header-flag",
             ]}
           />
           <span

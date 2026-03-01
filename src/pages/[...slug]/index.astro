@@ -48,6 +48,6 @@ let title = t.seo?.title || siteData.meta.name;
 let description = t.seo?.description || "";
 ---
 
-<Layout title={title} description={description} lang={lang} routeKey={routeKey}>
+<Layout title={title} description={description} lang={lang} routeKey={routeKey} fullBleed={routeKey === "home"}>
   <Component lang={lang} t={t} />
 </Layout>

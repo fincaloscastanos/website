@@ -19,8 +19,9 @@ interface Props {
   routeKey: string;
   ogImage?: string;
   noindex?: boolean;
+  fullBleed?: boolean;
 }
-const { title, description, lang, routeKey, ogImage, noindex } = Astro.props;
+const { title, description, lang, routeKey, ogImage, noindex, fullBleed } = Astro.props;
 ---
 
 <!doctype html>
@@ -45,10 +46,10 @@ const { title, description, lang, routeKey, ogImage, noindex } = Astro.props;
     )}
   </head>
   <body
-    class="min-h-screen flex flex-col bg-background text-text pt-16 md:pt-20"
+    class="min-h-screen flex flex-col bg-background text-text"
   >
-    <Header lang={lang} routeKey={routeKey} />
-    <main class="flex-1">
+    <Header lang={lang} routeKey={routeKey} fullBleed={fullBleed} />
+    <main class:list={["flex-1", !fullBleed && "pt-16 md:pt-20"]}>
       <slot />
     </main>
     <Footer lang={lang} />
