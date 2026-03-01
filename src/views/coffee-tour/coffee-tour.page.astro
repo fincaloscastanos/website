@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
 import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
+import { getTranslatedPath } from "@/lib/registry";
 
 import heroImg from "@/assets/coffee-tour/hero.jpg";
 import guideImg from "@/assets/coffee-tour/guide.jpg";
@@ -19,6 +20,7 @@ interface Props {
 const { lang, t } = Astro.props;
 
 const { coffeeTour } = siteData;
+const bookTourHref = getTranslatedPath("book-tour", lang);
 const formatPrice = (price: number) =>
   price % 1 === 0
     ? `${price},00 EUR`
@@ -171,7 +173,7 @@ const formatPrice = (price: number) =>
         </div>
 
         <a
-          href="#"
+          href={bookTourHref}
           class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
         >
           {t.pricing.cta}
