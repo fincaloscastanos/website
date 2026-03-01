@@ -1,0 +1,134 @@
+---
+import type { PrivacyTranslations } from "./privacy.i18n";
+import type { Language } from "@/lib/i18n";
+import Container from "@/components/ui/Container.astro";
+
+interface Props {
+  lang: Language;
+  t: PrivacyTranslations;
+}
+
+const { lang, t } = Astro.props;
+---
+
+<!-- Hero -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.title}</h1>
+    </div>
+  </Container>
+</section>
+
+<!-- Content -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="max-w-3xl mx-auto prose prose-lg prose-olive">
+
+      <!-- 1. Overview -->
+      <h2>{t.overview.heading}</h2>
+
+      <h3>{t.overview.generalTitle}</h3>
+      <p>{t.overview.generalText}</p>
+
+      <h3>{t.overview.collectionTitle}</h3>
+
+      <h4>{t.overview.responsibleQuestion}</h4>
+      <p>{t.overview.responsibleAnswer}</p>
+
+      <h4>{t.overview.howQuestion}</h4>
+      <p>{t.overview.howAnswer}</p>
+
+      <h4>{t.overview.purposeQuestion}</h4>
+      <p>{t.overview.purposeAnswer}</p>
+
+      <h4>{t.overview.rightsQuestion}</h4>
+      <p>{t.overview.rightsAnswer}</p>
+      <p>{t.overview.rightsContact}</p>
+
+      <!-- 2. Hosting -->
+      <h2>{t.hosting.heading}</h2>
+      <p>{t.hosting.intro}</p>
+
+      <h3>{t.hosting.ionosTitle}</h3>
+      <p>{t.hosting.ionosText}</p>
+      <p>{t.hosting.ionosLegal}</p>
+
+      <h4>{t.hosting.processingTitle}</h4>
+      <p>{t.hosting.processingText}</p>
+
+      <!-- 3. General -->
+      <h2>{t.general.heading}</h2>
+
+      <h3>{t.general.privacyTitle}</h3>
+      <p>{t.general.privacyText}</p>
+
+      <h3>{t.general.responsibleTitle}</h3>
+      <p>{t.general.responsibleText}</p>
+      <p>
+        Wadei Invest S.L<br />
+        Avenida de los Pescadores 44<br />
+        35120 Mogan, Las Palmas (España)
+      </p>
+      <p>
+        {lang === "de" ? "Telefon" : lang === "en" ? "Phone" : "Teléfono"}: +34 600 08 07 31<br />
+        {lang === "de" ? "E-Mail" : lang === "en" ? "Email" : "Correo electrónico"}: info@fincaloscastanos.com
+      </p>
+      <p>{t.general.responsibleEntity}</p>
+
+      <h3>{t.general.storageTitle}</h3>
+      <p>{t.general.storageText}</p>
+
+      <h3>{t.general.legalTitle}</h3>
+      <p>{t.general.legalText}</p>
+
+      <h3>{t.general.recipientsTitle}</h3>
+      <p>{t.general.recipientsText}</p>
+
+      <h3>{t.general.revocationTitle}</h3>
+      <p>{t.general.revocationText}</p>
+
+      <h3>{t.general.objectionTitle}</h3>
+      <p>{t.general.objectionText}</p>
+
+      <h3>{t.general.complaintTitle}</h3>
+      <p>{t.general.complaintText}</p>
+
+      <h3>{t.general.portabilityTitle}</h3>
+      <p>{t.general.portabilityText}</p>
+
+      <h3>{t.general.sslTitle}</h3>
+      <p>{t.general.sslText}</p>
+
+      <!-- 4. Data Collection -->
+      <h2>{t.dataCollection.heading}</h2>
+
+      <h3>{t.dataCollection.cookiesTitle}</h3>
+      <p>{t.dataCollection.cookiesText}</p>
+
+      <h3>{t.dataCollection.contactFormTitle}</h3>
+      <p>{t.dataCollection.contactFormText}</p>
+
+      <h3>{t.dataCollection.emailTitle}</h3>
+      <p>{t.dataCollection.emailText}</p>
+
+      <!-- 5. Social Media -->
+      <h2>{t.socialMedia.heading}</h2>
+
+      <h3>{t.socialMedia.facebookTitle}</h3>
+      <p>{t.socialMedia.facebookText}</p>
+
+      <h3>{t.socialMedia.instagramTitle}</h3>
+      <p>{t.socialMedia.instagramText}</p>
+
+      <!-- 6. Plugins -->
+      <h2>{t.plugins.heading}</h2>
+
+      <h3>{t.plugins.googleMapsTitle}</h3>
+      <p>{t.plugins.googleMapsText}</p>
+
+      <!-- Source -->
+      <p class="text-sm text-text-muted mt-12">{t.source}</p>
+    </div>
+  </Container>
+</section>

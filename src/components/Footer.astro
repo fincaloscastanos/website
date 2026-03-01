@@ -2,12 +2,18 @@
 import Container from "./ui/Container.astro";
 import type { Language } from "@/lib/i18n";
 import { siteData } from "@/data/site";
+import { getTranslatedPath } from "@/lib/registry";
 
 interface Props {
   lang: Language;
 }
 
+const { lang } = Astro.props;
 const currentYear = new Date().getFullYear();
+
+const imprintLabel = { de: "Impressum", en: "Legal Notice", es: "Aviso legal" };
+const termsLabel = { de: "AGB", en: "Terms & Conditions", es: "Condiciones generales" };
+const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección de datos" };
 ---
 
 <footer class="border-t border-border/50 bg-surface mt-auto">
@@ -20,6 +26,28 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear}
         {siteData.meta.name}. All rights reserved.
       </p>
+
+      <!-- Links -->
+      <nav class="flex gap-6">
+        <a
+          href={getTranslatedPath("imprint", lang)}
+          class="text-sm text-text-muted hover:text-primary transition-colors"
+        >
+          {imprintLabel[lang]}
+        </a>
+        <a
+          href={getTranslatedPath("terms", lang)}
+          class="text-sm text-text-muted hover:text-primary transition-colors"
+        >
+          {termsLabel[lang]}
+        </a>
+        <a
+          href={getTranslatedPath("privacy", lang)}
+          class="text-sm text-text-muted hover:text-primary transition-colors"
+        >
+          {privacyLabel[lang]}
+        </a>
+      </nav>
     </div>
   </Container>
 </footer>

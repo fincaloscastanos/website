@@ -1,0 +1,91 @@
+---
+import type { ImprintTranslations } from "./imprint.i18n";
+import type { Language } from "@/lib/i18n";
+import Container from "@/components/ui/Container.astro";
+
+interface Props {
+  lang: Language;
+  t: ImprintTranslations;
+}
+
+const { lang, t } = Astro.props;
+---
+
+<!-- Hero -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.title}</h1>
+      <p class="text-lg md:text-xl text-text-muted">{t.subtitle}</p>
+    </div>
+  </Container>
+</section>
+
+<!-- Content -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="max-w-3xl mx-auto prose prose-lg prose-olive">
+
+      <!-- I. General Information -->
+      <h2>{t.general.heading}</h2>
+      <p>{t.general.intro}</p>
+      <p>{t.general.ownerIntro}</p>
+      <p>
+        <strong>AGAMOG INVERSIONES SLU</strong><br />
+        CIF: B21690888<br />
+        Camino de Los Romeros, s/n<br />
+        35489 Agaete – Las Palmas de Gran Canaria ({lang === "de" ? "Spanien" : lang === "en" ? "Spain" : "España"})
+      </p>
+      <p>
+        {lang === "de" ? "Telefonnummer" : lang === "en" ? "Phone" : "Teléfono"}: +34 600 08 07 31<br />
+        {lang === "de" ? "E-Mail-Kontakt" : lang === "en" ? "Email" : "Correo electrónico"}: info@fincaloscastanos.com
+      </p>
+
+      <!-- II. Terms -->
+      <h2>{t.terms.heading}</h2>
+
+      <h3>{t.terms.purposeTitle}</h3>
+      <p>{t.terms.purposeText}</p>
+      <p>{t.terms.rightsText}</p>
+      <p>{t.terms.accessText}</p>
+      <p>{t.terms.registrationText}</p>
+
+      <h3>{t.terms.userTitle}</h3>
+      <p>{t.terms.userText}</p>
+      <p>{t.terms.userSiteText}</p>
+      <ul>
+        <li>{t.terms.userObligation1}</li>
+        <li>{t.terms.userObligation2}</li>
+      </ul>
+      <p>{t.terms.moderationText}</p>
+      <p>{t.terms.noRelationText}</p>
+      <p>{t.terms.legalAgeText}</p>
+
+      <!-- III. Access -->
+      <h2>{t.access.heading}</h2>
+      <p>{t.access.text1}</p>
+      <p>{t.access.text2}</p>
+
+      <!-- IV. Links -->
+      <h2>{t.links.heading}</h2>
+      <p>{t.links.text1}</p>
+      <p>{t.links.text2}</p>
+      <ul>
+        <li>{t.links.rule1}</li>
+        <li>{t.links.rule2}</li>
+      </ul>
+
+      <!-- V. IP -->
+      <h2>{t.ip.heading}</h2>
+      <p>{t.ip.text}</p>
+
+      <!-- VI. Legal -->
+      <h2>{t.legal.heading}</h2>
+      <p>{t.legal.text1}</p>
+      <p>{t.legal.text2}</p>
+
+      <!-- Source -->
+      <p class="text-sm text-text-muted mt-12">{t.source}</p>
+    </div>
+  </Container>
+</section>
