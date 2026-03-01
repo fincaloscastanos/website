@@ -132,10 +132,6 @@ Inhaltlich sind beide Seiten gleichwertig -- alle Informationen der alten Seite 
 
 ## 11. Verfügbarkeit & Stabilität
 
-Während dieses Vergleichs (01.03.2026) war die alte WordPress-Seite (fincaloscastanos.com) zeitweise mit einem **500 Internal Server Error** komplett offline -- die neue Astro-Seite (finca.pulpo.cloud) war durchgehend erreichbar.
-
-Das unterstreicht einen fundamentalen Unterschied der Architekturen:
-
 | | **finca.pulpo.cloud** | **fincaloscastanos.com** |
 |---|---|---|
 | **Architektur** | Statische HTML-Dateien via nginx | Dynamisch generiert via PHP/MySQL |
@@ -143,3 +139,29 @@ Das unterstreicht einen fundamentalen Unterschied der Architekturen:
 | **Typische Fehlerquellen** | Praktisch keine | Plugin-Konflikte, PHP-Updates, Datenbank-Probleme, Memory-Limits |
 
 Eine statische Seite kann im Grunde nicht crashen -- es werden nur fertige Dateien ausgeliefert. Bei WordPress reicht ein fehlerhaftes Plugin-Update oder ein Datenbankproblem, um die gesamte Seite lahmzulegen.
+
+---
+
+## Zusammenfassung (einfach erklärt)
+
+Die alte Webseite (fincaloscastanos.com) läuft mit **WordPress** -- das ist ein Baukastensystem, bei dem viele Einzelteile (Plugins, Datenbank, PHP) zusammenspielen müssen, damit die Seite funktioniert. Das ist wie ein Motor mit vielen beweglichen Teilen: Jedes Teil kann kaputtgehen, und dann steht alles still.
+
+Die neue Webseite (finca.pulpo.cloud) funktioniert anders: Sie wird einmal fertig gebaut und dann als **fertige Seiten** an die Besucher ausgeliefert -- wie ein gedruckter Katalog, der einfach immer da ist. Es gibt keine Datenbank und keine beweglichen Teile, die ausfallen können.
+
+### Was bringt das konkret?
+
+**Geschwindigkeit:** Die neue Seite lädt in unter einer halben Sekunde. Die alte braucht über 4 Sekunden. Besucher warten nicht gerne -- und Google bevorzugt schnelle Seiten in den Suchergebnissen.
+
+**Sicherheit:** Die alte Seite braucht regelmäßige Updates (WordPress, Plugins, PHP), weil Sicherheitslücken entdeckt werden. Verpasst man ein Update, kann die Seite gehackt werden. Die neue Seite hat dieses Problem nicht, weil es kein System gibt, in das man einbrechen könnte.
+
+**Datenschutz:** Die alte Seite zeigt einen Cookie-Banner, weil sie Google Analytics nutzt und Daten an Dritte sendet. Die neue Seite braucht keinen Cookie-Banner, weil sie ein datenschutzfreundliches Analyse-Tool nutzt, das keine Cookies setzt.
+
+**Wartung:** Die alte Seite muss ständig gepflegt werden -- Plugin-Updates, WordPress-Updates, Datenbank-Wartung. Wenn man das vernachlässigt, kann die Seite abstürzen oder unsicher werden. Die neue Seite braucht praktisch keine Wartung.
+
+**Auffindbarkeit (SEO):** Beide Seiten sind für Suchmaschinen optimiert. Die neue Seite hat sogar etwas mehr Informationen für Google hinterlegt (z.B. Öffnungszeiten, Adresse, Koordinaten als strukturierte Daten), was die Chancen verbessert, in den Suchergebnissen besser dargestellt zu werden.
+
+**Inhalt:** Alle Informationen der alten Seite sind auch auf der neuen vorhanden -- Touren, Unterkünfte, Events, Galerie, Kontakt. Die neue Seite hat zusätzlich ein Video auf der Startseite statt eines statischen Bildes.
+
+### Fazit in einem Satz
+
+Die neue Seite ist schneller, sicherer, stabiler und datenschutzfreundlicher -- bei gleichem Inhalt und ohne laufende Wartungskosten.
