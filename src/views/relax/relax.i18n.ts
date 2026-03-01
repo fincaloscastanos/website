@@ -30,6 +30,11 @@ export const translations = {
       en: "Your vacation in the middle of our finca",
       es: "Sus vacaciones en el corazón de nuestra finca",
     },
+    bookNow: {
+      de: "Jetzt buchen",
+      en: "Book now",
+      es: "Reservar ahora",
+    },
   },
 
   features: {

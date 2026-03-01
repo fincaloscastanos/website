@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Container from "./Container.astro";
+
+interface SubNavLink {
+  href: string;
+  label: string;
+  image: ImageMetadata;
+}
+
+interface SubNavCta {
+  href: string;
+  label: string;
+  external?: boolean;
+}
+
+interface Props {
+  links?: SubNavLink[];
+  cta?: SubNavCta;
+}
+
+const { links = [], cta } = Astro.props;
+---
+
+<section class="bg-background border-y border-primary/10">
+  <Container>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 py-4">
+      <div class="flex items-center justify-center gap-4 md:gap-8">
+        {links.map((link, i) => (
+          <>
+            {i > 0 && <div class="w-px h-6 bg-primary/15" />}
+            <a href={link.href} class="group flex items-center gap-3 px-4 py-2 rounded-full hover:bg-surface transition-colors duration-300">
+              <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 ring-2 ring-primary/20 group-hover:ring-primary transition-all duration-300">
+                <Image
+                  src={link.image}
+                  alt={link.label}
+                  class="w-full h-full object-cover"
+                  widths={[80]}
+                  sizes="40px"
+                />
+              </div>
+              <span class="text-sm font-medium text-text-heading group-hover:text-primary transition-colors duration-300">{link.label}</span>
+              <Icon name="lucide:arrow-right" class="w-3.5 h-3.5 text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-300" />
+            </a>
+          </>
+        ))}
+      </div>
+
+      {cta && (
+        <a
+          href={cta.href}
+          target={cta.external ? "_blank" : undefined}
+          rel={cta.external ? "noopener noreferrer" : undefined}
+          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold text-sm py-2.5 px-6 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-sm"
+        >
+          {cta.label}
+          <Icon name={cta.external ? "lucide:external-link" : "lucide:arrow-right"} class="w-3.5 h-3.5" />
+        </a>
+      )}
+    </div>
+  </Container>
+</section>

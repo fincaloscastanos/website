@@ -3,6 +3,7 @@ import type { RelaxTranslations } from "./relax.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
 
 import hero1 from "@/assets/relax/hero-1.jpg";
@@ -43,6 +44,11 @@ const { lang, t } = Astro.props;
 const casaBookingUrl = "https://www.booking.com/hotel/es/casa-los-castanos.de.html";
 const cabanaBookingUrl = "https://www.booking.com/hotel/es/cabana-en-finca.de.html";
 
+const subNavLinks = [
+  { href: "#casa", label: t.casa.title, image: casaLiving },
+  { href: "#cabana", label: t.cabana.title, image: cabanaBedroom },
+];
+
 const casaGallery = [casaLiving, casaBedroom, casaKitchen, casaBathroom, casaTerrace, casaExterior, casaDetail, casaView, casaOutdoor];
 const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaTerrace, cabanaExterior, cabanaView, cabanaLandscape, cabanaGarden, cabanaDetail, cabanaOutdoor, cabanaEntrance];
 ---
@@ -76,6 +82,11 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
     </div>
   </div>
 </section>
+
+<SubNav
+  links={subNavLinks}
+  cta={{ href: casaBookingUrl, label: t.hero.bookNow, external: true }}
+/>
 
 <!-- Feature Highlights -->
 <section class="py-16 md:py-24 bg-background">
@@ -160,7 +171,7 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
 </section>
 
 <!-- Casa los Castaños -->
-<section class="py-16 md:py-24 bg-background">
+<section id="casa" class="py-16 md:py-24 bg-background scroll-mt-4">
   <Container>
     <!-- Header -->
     <div class="mb-10">
@@ -283,7 +294,7 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
 </section>
 
 <!-- Cabaña en Finca -->
-<section class="py-16 md:py-24 bg-surface">
+<section id="cabana" class="py-16 md:py-24 bg-surface scroll-mt-4">
   <Container>
     <!-- Header -->
     <div class="mb-10">
