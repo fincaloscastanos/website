@@ -11,6 +11,7 @@ import { getTranslatedPath } from "@/lib/registry";
 import guideImg from "@/assets/coffee-tour/guide.jpg";
 import tastingImg from "@/assets/coffee-tour/tasting.jpg";
 import plantationImg from "@/assets/coffee-tour/plantation.jpg";
+import heroDetailImg from "@/assets/coffee-tour/hero.jpg";
 
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
@@ -31,7 +32,7 @@ const formatPrice = (price: number) =>
     : `${price.toFixed(2).replace(".", ",")} EUR`;
 ---
 
-<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
+<PageHero title={t.hero.title} subtitle={t.hero.subtitle} ctaLabel={t.hero.cta} ctaHref={bookTourHref} />
 
 <!-- Intro -->
 <section class="py-16 md:py-24 bg-background relative overflow-hidden">
@@ -48,23 +49,23 @@ const formatPrice = (price: number) =>
       </div>
 
       <!-- Images -->
-      <div class="grid grid-cols-2 gap-4" data-animate data-animate-delay="2">
-        <div class="overflow-hidden rounded-lg shadow-lg">
+      <div class="relative max-w-sm md:max-w-md mx-auto" data-animate data-animate-delay="2">
+        <div class="overflow-hidden rounded-lg shadow-xl">
           <Image
             src={guideImg}
             alt="Plantage"
-            class="w-full h-full object-cover"
-            widths={[300, 500]}
-            sizes="(max-width: 768px) 50vw, 25vw"
+            class="w-full h-auto object-cover"
+            widths={[300, 500, 800]}
+            sizes="(max-width: 768px) 80vw, 28vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-lg mt-8">
+        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-4 border-white">
           <Image
             src={tastingImg}
             alt="Kaffeeverkostung"
-            class="w-full h-full object-cover"
-            widths={[300, 500]}
-            sizes="(max-width: 768px) 50vw, 25vw"
+            class="w-full h-auto object-cover"
+            widths={[200, 300]}
+            sizes="(max-width: 768px) 50vw, 18vw"
           />
         </div>
       </div>
@@ -81,14 +82,25 @@ const formatPrice = (price: number) =>
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
-      <div class="overflow-hidden rounded-lg shadow-xl order-2 md:order-1" data-animate>
-        <Image
-          src={plantationImg}
-          alt="Kaffeeplantage"
-          class="w-full h-auto object-cover"
-          widths={[500, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+      <div class="relative order-2 md:order-1" data-animate>
+        <div class="overflow-hidden rounded-lg shadow-xl">
+          <Image
+            src={plantationImg}
+            alt="Kaffeeplantage"
+            class="w-full h-auto object-cover"
+            widths={[500, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border-4 border-white">
+          <Image
+            src={heroDetailImg}
+            alt="Kaffeetour Detail"
+            class="w-full h-auto object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 66vw, 33vw"
+          />
+        </div>
       </div>
 
       <!-- Content -->
@@ -102,15 +114,16 @@ const formatPrice = (price: number) =>
           {t.pricing.subtitle}
         </p>
 
-        <div class="space-y-4 mb-8">
+        <!-- Preise -->
+        <div class="space-y-3 mb-10">
           <div
             class="flex items-center justify-between bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
           >
             <div class="flex items-center gap-3">
-              <Icon name="lucide:user" class="w-5 h-5 text-secondary" />
+              <Icon name="lucide:user" class="w-5 h-5 text-white" />
               <span class="text-white/90">{t.pricing.adults}</span>
             </div>
-            <span class="text-xl font-serif font-bold text-secondary"
+            <span class="text-xl font-serif font-bold text-white"
               >{formatPrice(coffeeTour.adults)}</span
             >
           </div>
@@ -118,10 +131,10 @@ const formatPrice = (price: number) =>
             class="flex items-center justify-between bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
           >
             <div class="flex items-center gap-3">
-              <Icon name="lucide:baby" class="w-5 h-5 text-secondary" />
+              <Icon name="lucide:baby" class="w-5 h-5 text-white" />
               <span class="text-white/90">{t.pricing.children}</span>
             </div>
-            <span class="text-xl font-serif font-bold text-secondary"
+            <span class="text-xl font-serif font-bold text-white"
               >{formatPrice(coffeeTour.children)}</span
             >
           </div>
@@ -129,7 +142,7 @@ const formatPrice = (price: number) =>
             class="flex items-center justify-between bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
           >
             <div class="flex items-center gap-3">
-              <Icon name="lucide:heart" class="w-5 h-5 text-secondary" />
+              <Icon name="lucide:heart" class="w-5 h-5 text-white" />
               <span class="text-white/90"
                 >{
                   t.pricing.infants.replace(
@@ -139,22 +152,36 @@ const formatPrice = (price: number) =>
                 }</span
               >
             </div>
-            <span class="text-xl font-serif font-bold text-secondary"
+            <span class="text-xl font-serif font-bold text-white"
               >{t.pricing.infantsFree}</span
             >
           </div>
         </div>
 
-        <div class="flex items-center gap-3 text-white/80 mb-8">
-          <Icon name="lucide:clock" class="w-5 h-5 text-secondary shrink-0" />
-          <p class="text-sm leading-relaxed">
-            {
-              t.pricing.duration.replace(
-                "{minutes}",
-                String(coffeeTour.durationMinutes),
-              )
-            }
-          </p>
+        <!-- Infos -->
+        <div class="space-y-3 mb-10">
+          <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+            <Icon name="lucide:ticket-percent" class="w-5 h-5 text-white shrink-0" />
+            <p class="text-sm text-white leading-relaxed font-medium">
+              {
+                t.pricing.onlineDiscount.replace(
+                  "{price}",
+                  formatPrice(coffeeTour.adultsOnline),
+                )
+              }
+            </p>
+          </div>
+          <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+            <Icon name="lucide:clock" class="w-5 h-5 text-white shrink-0" />
+            <p class="text-sm text-white/90 leading-relaxed">
+              {
+                t.pricing.duration.replace(
+                  "{minutes}",
+                  String(coffeeTour.durationMinutes),
+                )
+              }
+            </p>
+          </div>
         </div>
 
         <a

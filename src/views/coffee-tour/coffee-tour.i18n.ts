@@ -96,6 +96,11 @@ export const translations = {
       en: "Book your tour",
       es: "Reservar tour",
     },
+    onlineDiscount: {
+      de: "Online im Voraus buchen und nur {price} zahlen!",
+      en: "Book online in advance and pay only {price}!",
+      es: "¡Reserva online con antelación y paga solo {price}!",
+    },
     duration: {
       de: "Die Dauer der Führung beläuft sich auf etwa {minutes} Minuten inkl. Kaffeeverkostung.",
       en: "The tour lasts around {minutes} minutes and includes a coffee tasting.",
