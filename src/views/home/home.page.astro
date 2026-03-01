@@ -14,8 +14,11 @@ import cardAccommodation from "@/assets/relax/cabana/04-bathroom.jpg";
 import aboutImg from "@/assets/home/about.jpg";
 import heroIllustration from "@/assets/home/hero-illustration.webp";
 import productsImg from "@/assets/home/products.jpg";
+import productsDetailImg from "@/assets/home/coffee-plant.png";
 import tourImg from "@/assets/home/tour.jpg";
-import sustainabilityImg from "@/assets/home/sustainability.png";
+import aboutDetailImg from "@/assets/home/events-banner.png";
+import sustainabilityPanorama from "@/assets/home/card-events.jpeg";
+import sustainabilityDetail from "@/assets/home/card-accommodation.jpeg";
 
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
@@ -221,15 +224,26 @@ const galleryImages = [
   <img src={pattern02.src} alt="" class="absolute bottom-4 md:-bottom-6 right-0 md:right-auto md:-left-6 w-24 md:w-36 opacity-[0.10] -rotate-12 pointer-events-none select-none" />
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Image -->
-      <div class="overflow-hidden rounded-lg shadow-xl" data-animate>
-        <Image
-          src={aboutImg}
-          alt="Finca Los Castaños Plantage"
-          class="w-full h-auto object-cover"
-          widths={[500, 800, 1200]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+      <!-- Images -->
+      <div class="relative" data-animate>
+        <div class="overflow-hidden rounded-lg shadow-xl">
+          <Image
+            src={aboutImg}
+            alt="Finca Los Castaños Plantage"
+            class="w-full h-auto object-cover"
+            widths={[500, 800, 1200]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-4 border-white">
+          <Image
+            src={aboutDetailImg}
+            alt="Finca Los Castaños Team"
+            class="w-full h-auto object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 66vw, 33vw"
+          />
+        </div>
       </div>
 
       <!-- Text -->
@@ -308,15 +322,26 @@ const galleryImages = [
         </a>
       </div>
 
-      <!-- Image -->
-      <div class="overflow-hidden rounded-lg shadow-xl" data-animate data-animate-delay="2">
-        <Image
-          src={productsImg}
-          alt={t.products.title}
-          class="w-full h-auto object-cover"
-          widths={[500, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+      <!-- Images -->
+      <div class="relative" data-animate data-animate-delay="2">
+        <div class="overflow-hidden rounded-lg shadow-xl">
+          <Image
+            src={productsImg}
+            alt={t.products.title}
+            class="w-full h-auto object-cover"
+            widths={[500, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border-4 border-white">
+          <Image
+            src={productsDetailImg}
+            alt={t.products.title}
+            class="w-full h-auto object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 66vw, 33vw"
+          />
+        </div>
       </div>
     </div>
   </Container>
@@ -396,15 +421,26 @@ const galleryImages = [
         </p>
       </div>
 
-      <!-- Image -->
-      <div class="overflow-hidden rounded-lg shadow-xl" data-animate data-animate-delay="2">
-        <Image
-          src={sustainabilityImg}
-          alt={t.sustainability.title}
-          class="w-full h-auto object-cover"
-          widths={[500, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
+      <!-- Images -->
+      <div class="relative" data-animate data-animate-delay="2">
+        <div class="overflow-hidden rounded-lg shadow-xl">
+          <Image
+            src={sustainabilityPanorama}
+            alt={t.sustainability.title}
+            class="w-full h-auto object-cover"
+            widths={[500, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border-4 border-white">
+          <Image
+            src={sustainabilityDetail}
+            alt={t.sustainability.title}
+            class="w-full h-auto object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 66vw, 33vw"
+          />
+        </div>
       </div>
     </div>
   </Container>
