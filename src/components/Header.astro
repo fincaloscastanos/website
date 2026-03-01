@@ -4,7 +4,8 @@ import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
 import { getNavbarItems } from "@/lib/navbar";
 import { getTranslatedPath } from "@/lib/registry";
 import type { Language } from "@/lib/i18n";
-import { siteData } from "../data/site";
+import { Image } from "astro:assets";
+import logoText from "@/assets/logo-text-gray.png";
 
 interface Props {
   lang: Language;
@@ -20,13 +21,18 @@ const homeHref = getTranslatedPath("home", lang);
   class="fixed top-0 left-0 z-50 w-full border-b border-border/50 bg-background/90 backdrop-blur-md"
 >
   <Container>
-    <div class="flex h-16 md:h-20 items-center justify-between">
+    <div class="flex h-18 md:h-22 items-center justify-between">
       <!-- Logo -->
       <a
         href={homeHref}
-        class="relative z-50 flex items-center gap-2 md:gap-3 text-lg md:text-xl font-bold font-serif text-primary"
+        class="relative z-50"
       >
-        {siteData.meta.name}
+        <Image
+          src={logoText}
+          alt="Finca Los Castaños"
+          class="h-9 md:h-11 w-auto"
+          quality="max"
+        />
       </a>
 
       <!-- Desktop Nav -->
