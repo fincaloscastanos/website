@@ -39,6 +39,10 @@ export const siteData = {
     children: 7.5,
     infantsMaxAge: 4,
     durationMinutes: 45,
+    bokun: {
+      channelId: "f68d8593-6b6b-4912-b00b-295a4477552b",
+      experienceId: "1150509",
+    },
   },
   social: {
     instagram: "https://www.instagram.com/fincaloscastanos2025",

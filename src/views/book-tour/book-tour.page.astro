@@ -2,6 +2,7 @@
 import type { BookTourTranslations } from "./book-tour.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
+import { siteData } from "@/data/site";
 
 interface Props {
   lang: Language;
@@ -9,6 +10,8 @@ interface Props {
 }
 
 const { lang, t } = Astro.props;
+const { channelId, experienceId } = siteData.coffeeTour.bokun;
+const widgetUrl = `https://widgets.bokun.io/online-sales/${channelId}/experience/${experienceId}?partialView=1`;
 ---
 
 <!-- Hero -->
@@ -16,7 +19,9 @@ const { lang, t } = Astro.props;
   <Container>
     <div class="text-center max-w-3xl mx-auto">
       <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
-      <p class="text-lg md:text-xl text-primary font-medium">{t.hero.subtitle}</p>
+      <p class="text-lg md:text-xl text-primary font-medium">
+        {t.hero.subtitle}
+      </p>
     </div>
   </Container>
 </section>
@@ -25,18 +30,16 @@ const { lang, t } = Astro.props;
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="max-w-4xl mx-auto">
-      <div class="bg-surface rounded-lg border border-border/50 p-4 min-h-[600px] flex items-center justify-center">
-        <!--
-          TODO: Bokun-Widget-Code hier einfügen
-          1. In Bokun: Booking Channel für deine Website anlegen
-          2. Widget erstellen (Product Page Widget)
-          3. Den generierten Code hier einfügen, z.B.:
-
-          <script src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js"></script>
-          <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/DEIN-CHANNEL-UUID/experience/DEIN-PRODUKT-ID"></div>
-        -->
-        <p class="text-text-muted text-sm">{t.widget.placeholder}</p>
+      <div
+        class="bg-surface rounded-lg border border-border/50 p-4 min-h-[600px]"
+      >
+        <div class="bokunWidget" data-src={widgetUrl}></div>
       </div>
     </div>
   </Container>
 </section>
+
+<script
+  is:inline
+  src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js"
+></script>
