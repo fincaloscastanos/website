@@ -21,6 +21,8 @@ import gallery06 from "@/assets/events/gallery-06.jpg";
 import gallery07 from "@/assets/events/gallery-07.jpg";
 import gallery08 from "@/assets/events/gallery-08.jpg";
 
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+
 interface Props {
   lang: Language;
   t: EventsTranslations;
@@ -185,7 +187,7 @@ const galleryImages = [
 <!-- CTA -->
 <section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
   <div
-    class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"
+    class="absolute inset-0 bg-repeat opacity-10" style={`background-image: url(${pattern04.src})`}
   >
   </div>
   <Container class="relative z-10">

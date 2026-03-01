@@ -17,6 +17,8 @@ import tourMap from "@/assets/experience/tour-map.webp";
 import coffeeTourImg from "@/assets/coffee-tour/tasting.jpg";
 import eventsImg from "@/assets/events/celebration.jpg";
 
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+
 interface Props {
   lang: Language;
   t: ExperienceTranslations;
@@ -165,7 +167,7 @@ const subNavLinks = [
 <!-- Exklusiver Kaffeeanbau -->
 <section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
   <div
-    class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"
+    class="absolute inset-0 bg-repeat opacity-10" style={`background-image: url(${pattern04.src})`}
   >
   </div>
   <Container class="relative z-10">

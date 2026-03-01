@@ -12,6 +12,8 @@ import guideImg from "@/assets/coffee-tour/guide.jpg";
 import tastingImg from "@/assets/coffee-tour/tasting.jpg";
 import plantationImg from "@/assets/coffee-tour/plantation.jpg";
 
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+
 interface Props {
   lang: Language;
   t: CoffeeTourTranslations;
@@ -99,7 +101,7 @@ const formatPrice = (price: number) =>
 <!-- Pricing -->
 <section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
   <div
-    class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"
+    class="absolute inset-0 bg-repeat opacity-10" style={`background-image: url(${pattern04.src})`}
   >
   </div>
   <Container class="relative z-10">

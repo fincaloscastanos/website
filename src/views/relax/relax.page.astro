@@ -9,6 +9,8 @@ import { getTranslatedPath } from "@/lib/registry";
 import { siteData } from "@/data/site";
 import PrivacyGate from "@/components/ui/PrivacyGate.astro";
 
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+
 import hero1 from "@/assets/relax/hero-1.jpg";
 import hero2 from "@/assets/relax/hero-2.jpg";
 import introImg from "@/assets/relax/intro.jpg";
@@ -460,7 +462,7 @@ const cabanaGallery = [
 <!-- Divider -->
 <section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
   <div
-    class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"
+    class="absolute inset-0 bg-repeat opacity-10" style={`background-image: url(${pattern04.src})`}
   >
   </div>
   <Container class="relative z-10">
