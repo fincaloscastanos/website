@@ -129,3 +129,17 @@ Die neue Seite (finca.pulpo.cloud) ist ein **massives Upgrade** in allen technis
 - **Minimale Abhängigkeiten** und volle Kontrolle über den Code
 
 Inhaltlich sind beide Seiten gleichwertig -- alle Informationen der alten Seite sind in der neuen vorhanden.
+
+## 11. Verfügbarkeit & Stabilität
+
+Während dieses Vergleichs (01.03.2026) war die alte WordPress-Seite (fincaloscastanos.com) zeitweise mit einem **500 Internal Server Error** komplett offline -- die neue Astro-Seite (finca.pulpo.cloud) war durchgehend erreichbar.
+
+Das unterstreicht einen fundamentalen Unterschied der Architekturen:
+
+| | **finca.pulpo.cloud** | **fincaloscastanos.com** |
+|---|---|---|
+| **Architektur** | Statische HTML-Dateien via nginx | Dynamisch generiert via PHP/MySQL |
+| **Ausfallrisiko** | Minimal (nur nginx muss laufen) | Hoch (PHP, MySQL, Plugins, Theme -- jede Komponente kann ausfallen) |
+| **Typische Fehlerquellen** | Praktisch keine | Plugin-Konflikte, PHP-Updates, Datenbank-Probleme, Memory-Limits |
+
+Eine statische Seite kann im Grunde nicht crashen -- es werden nur fertige Dateien ausgeliefert. Bei WordPress reicht ein fehlerhaftes Plugin-Update oder ein Datenbankproblem, um die gesamte Seite lahmzulegen.
