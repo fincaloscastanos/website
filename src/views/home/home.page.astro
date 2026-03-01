@@ -43,9 +43,18 @@ const relaxHref = getTranslatedPath("relax", lang);
 const coffeeTourHref = getTranslatedPath("coffee-tour", lang);
 
 const galleryImages = [
-  gallery01, gallery02, gallery03, gallery04,
-  gallery05, gallery06, gallery07, gallery08,
-  gallery09, gallery10, gallery11, gallery12,
+  gallery01,
+  gallery02,
+  gallery03,
+  gallery04,
+  gallery05,
+  gallery06,
+  gallery07,
+  gallery08,
+  gallery09,
+  gallery10,
+  gallery11,
+  gallery12,
 ];
 ---
 
@@ -67,7 +76,10 @@ const galleryImages = [
   <Container>
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Card: Events -->
-      <a href={eventsHref} class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-3 md:order-1">
+      <a
+        href={eventsHref}
+        class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-3 md:order-1"
+      >
         <div class="overflow-hidden">
           <Image
             src={cardEvents}
@@ -78,10 +90,18 @@ const galleryImages = [
           />
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.events.subtitle}</p>
+          <p
+            class="text-xs uppercase tracking-widest text-primary font-medium mb-2"
+          >
+            {t.cards.events.subtitle}
+          </p>
           <h3 class="text-xl md:text-2xl mb-3">{t.cards.events.title}</h3>
-          <p class="text-text-muted text-sm leading-relaxed mb-6 flex-1">{t.cards.events.description}</p>
-          <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
+          <p class="text-text-muted text-base leading-relaxed mb-6 flex-1">
+            {t.cards.events.description}
+          </p>
+          <span
+            class="inline-flex items-center gap-2 text-base font-medium text-primary group-hover:gap-3 transition-all duration-300"
+          >
             {t.cards.events.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
           </span>
@@ -89,7 +109,10 @@ const galleryImages = [
       </a>
 
       <!-- Card: Tours -->
-      <a href={experienceHref} class="group bg-secondary-light rounded-lg shadow-lg overflow-hidden border border-secondary/30 flex flex-col hover:shadow-xl transition-shadow duration-300 order-1 md:order-2">
+      <a
+        href={experienceHref}
+        class="group bg-secondary-light rounded-lg shadow-lg overflow-hidden border border-secondary/30 flex flex-col hover:shadow-xl transition-shadow duration-300 order-1 md:order-2 md:-translate-y-10"
+      >
         <div class="overflow-hidden">
           <Image
             src={cardTours}
@@ -100,10 +123,18 @@ const galleryImages = [
           />
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <p class="text-xs uppercase tracking-widest text-secondary-dark font-medium mb-2">{t.cards.tours.subtitle}</p>
+          <p
+            class="text-xs uppercase tracking-widest text-secondary-dark font-medium mb-2"
+          >
+            {t.cards.tours.subtitle}
+          </p>
           <h3 class="text-xl md:text-2xl mb-3">{t.cards.tours.title}</h3>
-          <p class="text-text-muted text-sm leading-relaxed mb-6 flex-1">{t.cards.tours.description}</p>
-          <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
+          <p class="text-text-muted text-base leading-relaxed mb-6 flex-1">
+            {t.cards.tours.description}
+          </p>
+          <span
+            class="inline-flex items-center gap-2 text-base font-medium text-primary group-hover:gap-3 transition-all duration-300"
+          >
             {t.cards.tours.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
           </span>
@@ -111,7 +142,10 @@ const galleryImages = [
       </a>
 
       <!-- Card: Accommodation -->
-      <a href={relaxHref} class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-2 md:order-3">
+      <a
+        href={relaxHref}
+        class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-2 md:order-3"
+      >
         <div class="overflow-hidden">
           <Image
             src={cardAccommodation}
@@ -122,14 +156,38 @@ const galleryImages = [
           />
         </div>
         <div class="p-6 flex flex-col flex-1">
-          <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.accommodation.subtitle}</p>
-          <h3 class="text-xl md:text-2xl mb-3">{t.cards.accommodation.title}</h3>
-          <p class="text-text-muted text-sm leading-relaxed mb-4 flex-1">{t.cards.accommodation.description}</p>
-          <div class="flex flex-col gap-1 mb-6 text-sm">
-            <span class="text-secondary font-medium">{t.cards.accommodation.cabana.replace("{price}", String(siteData.accommodation.cabana.pricePerNight))}</span>
-            <span class="text-secondary font-medium">{t.cards.accommodation.casa.replace("{price}", String(siteData.accommodation.casa.pricePerNight))}</span>
+          <p
+            class="text-xs uppercase tracking-widest text-primary font-medium mb-2"
+          >
+            {t.cards.accommodation.subtitle}
+          </p>
+          <h3 class="text-xl md:text-2xl mb-3">
+            {t.cards.accommodation.title}
+          </h3>
+          <p class="text-text-muted text-base leading-relaxed mb-4 flex-1">
+            {t.cards.accommodation.description}
+          </p>
+          <div class="flex flex-col gap-1 mb-6 text-base">
+            <span class="text-secondary font-medium"
+              >{
+                t.cards.accommodation.cabana.replace(
+                  "{price}",
+                  String(siteData.accommodation.cabana.pricePerNight),
+                )
+              }</span
+            >
+            <span class="text-secondary font-medium"
+              >{
+                t.cards.accommodation.casa.replace(
+                  "{price}",
+                  String(siteData.accommodation.casa.pricePerNight),
+                )
+              }</span
+            >
           </div>
-          <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
+          <span
+            class="inline-flex items-center gap-2 text-base font-medium text-primary group-hover:gap-3 transition-all duration-300"
+          >
             {t.cards.accommodation.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
           </span>
@@ -149,7 +207,9 @@ const galleryImages = [
 
     <!-- Quote -->
     <blockquote class="text-center mt-12">
-      <p class="text-2xl md:text-4xl lg:text-5xl font-serif text-text-heading italic leading-tight">
+      <p
+        class="text-2xl md:text-4xl lg:text-5xl font-serif text-text-heading italic leading-tight"
+      >
         &laquo;{t.about.quote}&raquo;
       </p>
     </blockquote>
@@ -174,8 +234,12 @@ const galleryImages = [
       <!-- Text -->
       <div>
         <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.about.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.about.subtitle}</p>
-        <p class="text-text-muted leading-relaxed mb-8">{t.about.description}</p>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">
+          {t.about.subtitle}
+        </p>
+        <p class="text-text-muted leading-relaxed mb-8">
+          {t.about.description}
+        </p>
         <a
           href={experienceHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
@@ -194,19 +258,35 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.products.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.products.subtitle}</p>
-        <p class="text-text-muted leading-relaxed mb-8">{t.products.description}</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">
+          {t.products.title}
+        </h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">
+          {t.products.subtitle}
+        </p>
+        <p class="text-text-muted leading-relaxed mb-8">
+          {t.products.description}
+        </p>
 
         <!-- Stats -->
         <div class="flex gap-8 mb-8">
           <div class="text-center">
-            <span class="block text-4xl md:text-5xl font-serif font-bold text-secondary">2</span>
-            <span class="text-sm text-text-muted">{t.products.stat1Label}</span>
+            <span
+              class="block text-4xl md:text-5xl font-serif font-bold text-secondary"
+              >2</span
+            >
+            <span class="text-base text-text-muted"
+              >{t.products.stat1Label}</span
+            >
           </div>
           <div class="text-center">
-            <span class="block text-4xl md:text-5xl font-serif font-bold text-secondary">4</span>
-            <span class="text-sm text-text-muted">{t.products.stat2Label}</span>
+            <span
+              class="block text-4xl md:text-5xl font-serif font-bold text-secondary"
+              >4</span
+            >
+            <span class="text-base text-text-muted"
+              >{t.products.stat2Label}</span
+            >
           </div>
         </div>
 
@@ -235,7 +315,10 @@ const galleryImages = [
 
 <!-- Tour Booking Section -->
 <section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
-  <div class="absolute inset-0 bg-[url('/patterns/pattern-06.svg')] bg-repeat opacity-10"></div>
+  <div
+    class="absolute inset-0 bg-[url('/patterns/pattern-06.svg')] bg-repeat opacity-10"
+  >
+  </div>
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
@@ -251,14 +334,22 @@ const galleryImages = [
 
       <!-- Content -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">{t.tour.title}</h2>
-        <p class="text-lg md:text-xl text-secondary font-medium mb-6">{t.tour.subtitle}</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">
+          {t.tour.title}
+        </h2>
+        <p class="text-lg md:text-xl text-secondary font-medium mb-6">
+          {t.tour.subtitle}
+        </p>
         <p class="text-white/80 leading-relaxed mb-8">{t.tour.description}</p>
 
-        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/20">
-          <h3 class="text-lg font-serif text-secondary mb-3">{t.tour.hoursTitle}</h3>
-          <p class="text-white/90 text-sm">{t.tour.weekdays}</p>
-          <p class="text-white/90 text-sm">{t.tour.weekends}</p>
+        <div
+          class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/20"
+        >
+          <h3 class="text-lg font-serif text-secondary mb-3">
+            {t.tour.hoursTitle}
+          </h3>
+          <p class="text-white/90 text-base">{t.tour.weekdays}</p>
+          <p class="text-white/90 text-base">{t.tour.weekends}</p>
         </div>
 
         <a
@@ -279,9 +370,15 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.sustainability.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.sustainability.subtitle}</p>
-        <p class="text-text-muted leading-relaxed">{t.sustainability.description}</p>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">
+          {t.sustainability.title}
+        </h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">
+          {t.sustainability.subtitle}
+        </p>
+        <p class="text-text-muted leading-relaxed">
+          {t.sustainability.description}
+        </p>
       </div>
 
       <!-- Image -->
@@ -301,19 +398,23 @@ const galleryImages = [
 <!-- Gallery Section -->
 <section class="py-16 md:py-24 bg-background">
   <Container>
-    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12">{t.gallery.title}</h2>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12">
+      {t.gallery.title}
+    </h2>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-      {galleryImages.map((img, i) => (
-        <div class="overflow-hidden rounded-lg group aspect-[5/4]">
-          <Image
-            src={img}
-            alt={`Finca Los Castaños ${i + 1}`}
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            widths={[300, 500]}
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          />
-        </div>
-      ))}
+      {
+        galleryImages.map((img, i) => (
+          <div class="overflow-hidden rounded-lg group aspect-[5/4]">
+            <Image
+              src={img}
+              alt={`Finca Los Castaños ${i + 1}`}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              widths={[300, 500]}
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            />
+          </div>
+        ))
+      }
     </div>
   </Container>
 </section>
@@ -323,25 +424,55 @@ const galleryImages = [
   <Container>
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.contact.title}</h2>
-      <p class="text-lg md:text-xl text-primary font-medium">{t.contact.subtitle}</p>
+      <p class="text-lg md:text-xl text-primary font-medium">
+        {t.contact.subtitle}
+      </p>
     </div>
 
     <!-- Contact Info -->
     <div class="max-w-4xl mx-auto mb-12">
       <!-- Top row: Address + Email -->
-      <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/50">
-        <a href={siteData.contact.googleMaps} target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 p-6 md:pr-10 hover:bg-background/50 transition-colors">
-          <Icon name="lucide:map-pin" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+      <div
+        class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/50"
+      >
+        <a
+          href={siteData.contact.googleMaps}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-start gap-4 p-6 md:pr-10 hover:bg-background/50 transition-colors"
+        >
+          <Icon
+            name="lucide:map-pin"
+            class="w-5 h-5 text-primary mt-0.5 shrink-0"
+          />
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.addressLabel}</span>
-            <span class="text-sm text-text-muted group-hover:text-text transition-colors leading-relaxed">{siteData.contact.address}</span>
+            <span
+              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
+              >{t.contact.info.addressLabel}</span
+            >
+            <span
+              class="text-base text-text-muted group-hover:text-text transition-colors leading-relaxed"
+              >{siteData.contact.address}</span
+            >
           </div>
         </a>
-        <a href={`mailto:${siteData.contact.email}`} class="group flex items-start gap-4 p-6 md:pl-10 hover:bg-background/50 transition-colors">
-          <Icon name="lucide:mail" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+        <a
+          href={`mailto:${siteData.contact.email}`}
+          class="group flex items-start gap-4 p-6 md:pl-10 hover:bg-background/50 transition-colors"
+        >
+          <Icon
+            name="lucide:mail"
+            class="w-5 h-5 text-primary mt-0.5 shrink-0"
+          />
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.emailLabel}</span>
-            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.email}</span>
+            <span
+              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
+              >{t.contact.info.emailLabel}</span
+            >
+            <span
+              class="text-base text-text-muted group-hover:text-text transition-colors"
+              >{siteData.contact.email}</span
+            >
           </div>
         </a>
       </div>
@@ -349,26 +480,64 @@ const galleryImages = [
       <div class="border-t border-border/50"></div>
 
       <!-- Bottom row: Phone numbers -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50">
-        <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors">
-          <Icon name="lucide:phone" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+      <div
+        class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50"
+      >
+        <a
+          href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`}
+          class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors"
+        >
+          <Icon
+            name="lucide:phone"
+            class="w-5 h-5 text-primary mt-0.5 shrink-0"
+          />
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.toursLabel}</span>
-            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.phone}</span>
+            <span
+              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
+              >{t.contact.info.toursLabel}</span
+            >
+            <span
+              class="text-base text-text-muted group-hover:text-text transition-colors"
+              >{siteData.contact.phone}</span
+            >
           </div>
         </a>
-        <a href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`} class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors">
-          <Icon name="lucide:phone" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+        <a
+          href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`}
+          class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors"
+        >
+          <Icon
+            name="lucide:phone"
+            class="w-5 h-5 text-primary mt-0.5 shrink-0"
+          />
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.salesLabel}</span>
-            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.phoneSales}</span>
+            <span
+              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
+              >{t.contact.info.salesLabel}</span
+            >
+            <span
+              class="text-base text-text-muted group-hover:text-text transition-colors"
+              >{siteData.contact.phoneSales}</span
+            >
           </div>
         </a>
-        <a href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`} class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors">
-          <Icon name="lucide:phone" class="w-5 h-5 text-primary mt-0.5 shrink-0" />
+        <a
+          href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`}
+          class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors"
+        >
+          <Icon
+            name="lucide:phone"
+            class="w-5 h-5 text-primary mt-0.5 shrink-0"
+          />
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.eventsLabel}</span>
-            <span class="text-sm text-text-muted group-hover:text-text transition-colors">{siteData.contact.phoneEvents}</span>
+            <span
+              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
+              >{t.contact.info.eventsLabel}</span
+            >
+            <span
+              class="text-base text-text-muted group-hover:text-text transition-colors"
+              >{siteData.contact.phoneEvents}</span
+            >
           </div>
         </a>
       </div>
@@ -381,16 +550,26 @@ const galleryImages = [
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-2.5 px-6 rounded-full hover:bg-primary-dark transition-colors text-sm"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-2.5 px-6 rounded-full hover:bg-primary-dark transition-colors text-base"
         >
           <Icon name="lucide:message-circle" class="w-4 h-4" />
           WhatsApp
         </a>
-        <a href={siteData.social.instagram} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors">
+        <a
+          href={siteData.social.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-base text-text-muted hover:text-primary transition-colors"
+        >
           <Icon name="lucide:instagram" class="w-5 h-5" />
           Instagram
         </a>
-        <a href={siteData.social.facebook} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors">
+        <a
+          href={siteData.social.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-base text-text-muted hover:text-primary transition-colors"
+        >
           <Icon name="lucide:facebook" class="w-5 h-5" />
           Facebook
         </a>
@@ -398,7 +577,9 @@ const galleryImages = [
     </div>
 
     <!-- Map -->
-    <div class="rounded-lg overflow-hidden shadow-lg h-80 md:h-[28rem] lg:h-[32rem]">
+    <div
+      class="rounded-lg overflow-hidden shadow-lg h-80 md:h-[28rem] lg:h-[32rem]"
+    >
       <PrivacyMap
         url={siteData.contact.googleMapsEmbed}
         loadMap={t.contact.map.loadMap}
