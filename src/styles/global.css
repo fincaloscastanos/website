@@ -26,8 +26,8 @@ html {
   --color-border: #e1e1e1;
 
   /* ── Fonts ── */
-  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", "Georgia", "Times New Roman", serif;
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Oooh Baby", cursive;
 }
 
 /* ── Base styles ── */
@@ -53,7 +53,7 @@ html {
   h5,
   h6 {
     font-family: var(--font-serif);
-    font-weight: 600;
+    font-weight: 400;
     color: var(--color-text-heading);
     line-height: 1.2;
   }

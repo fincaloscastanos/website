@@ -50,7 +50,7 @@ Adding a new page:
 Tailwind v4 with custom theme in `src/styles/global.css`:
 - **Primary:** `#7E9A47` (olive green) → `bg-primary`, `text-primary`
 - **Secondary:** `#f0b96a` (gold) → `bg-secondary`, `text-secondary`
-- **Fonts:** Jost (sans, body), Cormorant Garamond (serif, headings) → `font-sans`, `font-serif`
+- **Fonts:** Raleway (sans, body), Oooh Baby (cursive, headings) → `font-sans`, `font-serif`
 
 ## Commands
 

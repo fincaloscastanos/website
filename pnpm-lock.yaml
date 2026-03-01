@@ -8,10 +8,10 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/cormorant-garamond':
-        specifier: ^5.2.11
-        version: 5.2.11
-      '@fontsource/jost':
+      '@fontsource/oooh-baby':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/raleway':
         specifier: ^5.2.8
         version: 5.2.8
       '@iconify-json/lucide':
@@ -404,11 +404,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/cormorant-garamond@5.2.11':
-    resolution: {integrity: sha512-5JjpN023lhA5soijgVT0BdRGzmlijm402ppjccMd6h+vRE0mX2lJnE+41UPfnlidrkV9/rCo1mf58WZlHnB0CA==}
+  '@fontsource/oooh-baby@5.2.7':
+    resolution: {integrity: sha512-kHZbHkyZfeK8QnfH7Ti21gJC5qPfo33pQINkZSme/QSi3hs2HOqEOt9bP3aWwwtS14ohBZqw7jr3ukO3E7QHoA==}
 
-  '@fontsource/jost@5.2.8':
-    resolution: {integrity: sha512-PEK7oGJL8r+YZm6BriWhmCql9DhVYTMt0iEQbZHo8mqfIPIZo67Tm68xEIaRA0yB3wsHA7Tm66yMQDIxq3Bjqw==}
+  '@fontsource/raleway@5.2.8':
+    resolution: {integrity: sha512-OATNM+J4XniKQRlI1e67v3euOnCUiXwpqgMofomKc5JNYOq0JPE6E5uTXMnFaZejKN1Z7s05JrHpmYB7/tg1Fw==}
 
   '@iconify-json/lucide@1.2.95':
     resolution: {integrity: sha512-SxDM/NEJtcGGAiLAnaZ7rcmVxkJI8esswTZLCm5BfNcoPf/yawIImb4nNfsu4dtFzP/Cl6KRg+vZq521zOUOnQ==}
@@ -2346,9 +2346,9 @@ snapshots:
   '@esbuild/win32-x64@0.27.3':
     optional: true
 
-  '@fontsource/cormorant-garamond@5.2.11': {}
+  '@fontsource/oooh-baby@5.2.7': {}
 
-  '@fontsource/jost@5.2.8': {}
+  '@fontsource/raleway@5.2.8': {}
 
   '@iconify-json/lucide@1.2.95':
     dependencies:
