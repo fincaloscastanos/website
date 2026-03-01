@@ -17,7 +17,10 @@ import productsImg from "@/assets/home/products.jpg";
 import tourImg from "@/assets/home/tour.jpg";
 import sustainabilityImg from "@/assets/home/sustainability.png";
 
+import pattern02 from "@/assets/patterns/pattern-02.svg";
+import pattern04 from "@/assets/patterns/pattern-04.svg";
 import pattern06 from "@/assets/patterns/pattern-06.svg";
+import pattern07 from "@/assets/patterns/pattern-07.svg";
 
 import gallery01 from "@/assets/home/gallery/01.jpg";
 import gallery02 from "@/assets/home/gallery/02.jpg";
@@ -207,8 +210,10 @@ const galleryImages = [
 </section>
 
 <!-- About Section -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
+<section class="py-16 md:py-24 bg-surface relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute -top-4 -right-8 w-40 md:w-56 opacity-[0.12] rotate-12 pointer-events-none select-none" />
+  <img src={pattern02.src} alt="" class="absolute -bottom-6 -left-6 w-24 md:w-36 opacity-[0.10] -rotate-12 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
       <div class="overflow-hidden rounded-lg shadow-xl">
@@ -247,8 +252,10 @@ const galleryImages = [
 </section>
 
 <!-- Products Section -->
-<section class="py-16 md:py-24 bg-background">
-  <Container>
+<section class="py-16 md:py-24 bg-background relative overflow-hidden">
+  <img src={pattern07.src} alt="" class="absolute top-8 -left-6 w-28 md:w-40 opacity-[0.10] rotate-6 pointer-events-none select-none" />
+  <img src={pattern06.src} alt="" class="absolute -bottom-16 -right-10 w-36 md:w-52 opacity-[0.09] -rotate-6 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
@@ -363,8 +370,10 @@ const galleryImages = [
 </section>
 
 <!-- Sustainability Section -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
+<section class="py-16 md:py-24 bg-surface relative overflow-hidden">
+  <img src={pattern02.src} alt="" class="absolute top-10 -right-4 w-20 md:w-32 opacity-[0.12] rotate-45 pointer-events-none select-none" />
+  <img src={pattern04.src} alt="" class="absolute -bottom-8 -left-8 w-36 md:w-48 opacity-[0.10] rotate-[-20deg] pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
@@ -420,8 +429,10 @@ const galleryImages = [
 </section>
 
 <!-- Contact Section -->
-<section id="kontakt" class="py-16 md:py-24 bg-surface">
-  <Container>
+<section id="kontakt" class="py-16 md:py-24 bg-surface relative overflow-hidden">
+  <img src={pattern07.src} alt="" class="absolute -top-4 -left-6 w-28 md:w-36 opacity-[0.10] rotate-[-15deg] pointer-events-none select-none" />
+  <img src={pattern04.src} alt="" class="absolute bottom-12 -right-10 w-40 md:w-56 opacity-[0.09] rotate-[25deg] pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="text-center mb-12">
       <h2
         class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"

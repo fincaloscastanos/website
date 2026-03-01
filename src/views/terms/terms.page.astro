@@ -3,6 +3,9 @@ import type { TermsTranslations } from "./terms.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
 
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+import pattern06 from "@/assets/patterns/pattern-06.svg";
+
 interface Props {
   lang: Language;
   t: TermsTranslations;
@@ -28,8 +31,10 @@ const { lang, t } = Astro.props;
 </section>
 
 <!-- Content -->
-<section class="py-16 md:py-24 bg-background">
-  <Container>
+<section class="py-16 md:py-24 bg-background relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute top-8 -right-8 w-36 md:w-48 opacity-[0.09] rotate-[25deg] pointer-events-none select-none" />
+  <img src={pattern06.src} alt="" class="absolute -bottom-16 -left-10 w-36 md:w-52 opacity-[0.09] -rotate-6 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="max-w-3xl mx-auto prose prose-lg prose-olive">
       <!-- 1. Scope -->
       <h2>{t.scope.heading}</h2>

@@ -9,7 +9,10 @@ import { getTranslatedPath } from "@/lib/registry";
 import { siteData } from "@/data/site";
 import PrivacyGate from "@/components/ui/PrivacyGate.astro";
 
+import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
+import pattern06 from "@/assets/patterns/pattern-06.svg";
+import pattern07 from "@/assets/patterns/pattern-07.svg";
 
 import hero1 from "@/assets/relax/hero-1.jpg";
 import hero2 from "@/assets/relax/hero-2.jpg";
@@ -122,8 +125,10 @@ const cabanaGallery = [
 />
 
 <!-- Feature Highlights -->
-<section class="py-16 md:py-24 bg-background">
-  <Container>
+<section class="py-16 md:py-24 bg-background relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute -top-4 -right-8 w-40 md:w-56 opacity-[0.09] rotate-12 pointer-events-none select-none" />
+  <img src={pattern02.src} alt="" class="absolute -bottom-6 -left-6 w-24 md:w-36 opacity-[0.10] -rotate-12 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Modern Apartments -->
       <div class="text-center">
@@ -196,8 +201,9 @@ const cabanaGallery = [
 </section>
 
 <!-- Intro with Image -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
+<section class="py-16 md:py-24 bg-surface relative overflow-hidden">
+  <img src={pattern07.src} alt="" class="absolute top-8 -left-6 w-28 md:w-40 opacity-[0.10] rotate-6 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
       <div class="grid grid-cols-2 gap-4">
@@ -238,8 +244,9 @@ const cabanaGallery = [
 </section>
 
 <!-- Casa los Castaños -->
-<section id="casa" class="py-16 md:py-24 bg-background scroll-mt-4">
-  <Container>
+<section id="casa" class="py-16 md:py-24 bg-background scroll-mt-4 relative overflow-hidden">
+  <img src={pattern06.src} alt="" class="absolute -bottom-16 -right-10 w-36 md:w-52 opacity-[0.09] -rotate-6 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <!-- Header -->
     <div class="mb-10">
       <p
@@ -481,8 +488,10 @@ const cabanaGallery = [
 </section>
 
 <!-- Cabaña en Finca -->
-<section id="cabana" class="py-16 md:py-24 bg-surface scroll-mt-4">
-  <Container>
+<section id="cabana" class="py-16 md:py-24 bg-surface scroll-mt-4 relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute top-10 -right-4 w-36 md:w-48 opacity-[0.09] rotate-[25deg] pointer-events-none select-none" />
+  <img src={pattern02.src} alt="" class="absolute -bottom-6 -left-6 w-20 md:w-32 opacity-[0.10] rotate-45 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <!-- Header -->
     <div class="mb-10">
       <p

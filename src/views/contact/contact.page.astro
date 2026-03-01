@@ -6,6 +6,9 @@ import PrivacyMap from "@/components/ui/PrivacyMap.astro";
 import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
 
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+import pattern07 from "@/assets/patterns/pattern-07.svg";
+
 interface Props {
   lang: Language;
   t: ContactTranslations;
@@ -31,8 +34,10 @@ const { lang, t } = Astro.props;
 </section>
 
 <!-- Contact Details -->
-<section class="py-16 md:py-24 bg-background">
-  <Container>
+<section class="py-16 md:py-24 bg-background relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute -top-4 -right-8 w-40 md:w-56 opacity-[0.09] rotate-12 pointer-events-none select-none" />
+  <img src={pattern07.src} alt="" class="absolute -bottom-4 -left-6 w-28 md:w-36 opacity-[0.10] rotate-[-15deg] pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
       <!-- Column 1: Address & Email -->
       <div class="space-y-8">

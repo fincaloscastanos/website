@@ -5,6 +5,9 @@ import Container from "@/components/ui/Container.astro";
 import PrivacyGate from "@/components/ui/PrivacyGate.astro";
 import { siteData } from "@/data/site";
 
+import pattern02 from "@/assets/patterns/pattern-02.svg";
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+
 interface Props {
   lang: Language;
   t: BookTourTranslations;
@@ -16,8 +19,10 @@ const widgetUrl = `https://widgets.bokun.io/online-sales/${channelId}/experience
 ---
 
 <!-- Hero -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
+<section class="py-16 md:py-24 bg-surface relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute top-8 -left-8 w-36 md:w-48 opacity-[0.09] rotate-[-15deg] pointer-events-none select-none" />
+  <img src={pattern02.src} alt="" class="absolute -bottom-6 -right-6 w-20 md:w-32 opacity-[0.10] rotate-45 pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="text-center max-w-3xl mx-auto">
       <h1
         class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
