@@ -138,9 +138,9 @@ export const translations = {
       es: "Apartamento para hasta 4 personas",
     },
     price: {
-      de: "ab 180 Euro pro Nacht",
-      en: "from 180 euros per night",
-      es: "desde 180 euros la noche",
+      de: "ab {price} Euro pro Nacht",
+      en: "from {price} euros per night",
+      es: "desde {price} euros la noche",
     },
     bedroom: {
       de: "Schlafzimmer mit Doppelbett (180 x 200 cm), Klimaanlage",
@@ -244,9 +244,9 @@ export const translations = {
       es: "Apartamento para hasta 2 personas",
     },
     price: {
-      de: "ab 160 Euro pro Nacht",
-      en: "from 160 euros per night",
-      es: "desde 160 euros la noche",
+      de: "ab {price} Euro pro Nacht",
+      en: "from {price} euros per night",
+      es: "desde {price} euros la noche",
     },
     bedroom: {
       de: "Schlafzimmer mit Doppelbett (150 x 200 cm), Klimaanlage",

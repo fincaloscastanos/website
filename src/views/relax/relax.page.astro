@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container.astro";
 import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslatedPath } from "@/lib/registry";
+import { siteData } from "@/data/site";
 
 import hero1 from "@/assets/relax/hero-1.jpg";
 import hero2 from "@/assets/relax/hero-2.jpg";
@@ -266,7 +267,7 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
 
       <!-- Price & CTA -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.casa.price}</p>
+        <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.casa.price.replace("{price}", String(siteData.accommodation.casa.pricePerNight))}</p>
         <a
           href={bookingHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
@@ -387,7 +388,7 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
 
       <!-- Price & CTA -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.cabana.price}</p>
+        <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.cabana.price.replace("{price}", String(siteData.accommodation.cabana.pricePerNight))}</p>
         <a
           href={bookingHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"

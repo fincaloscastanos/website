@@ -81,14 +81,14 @@ export const translations = {
         es: "Disfruten de unas vacaciones tranquilas en nuestros alojamientos: la Cabaña en Finca para 2 personas y la Casa los Castaños para hasta 4 personas.",
       },
       cabana: {
-        de: "Cabaña en Finca ab 160 EUR/Nacht",
-        en: "Cabaña en Finca from €160/night",
-        es: "Cabaña en Finca desde 160 EUR/noche",
+        de: "Cabaña en Finca ab {price} EUR/Nacht",
+        en: "Cabaña en Finca from {price} EUR/night",
+        es: "Cabaña en Finca desde {price} EUR/noche",
       },
       casa: {
-        de: "Casa los Castaños ab 180 EUR/Nacht",
-        en: "Casa los Castaños from €180/night",
-        es: "Casa los Castaños desde 180 EUR/noche",
+        de: "Casa los Castaños ab {price} EUR/Nacht",
+        en: "Casa los Castaños from {price} EUR/night",
+        es: "Casa los Castaños desde {price} EUR/noche",
       },
       cta: {
         de: "Mehr Informationen",

@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container.astro";
 import PrivacyMap from "@/components/ui/PrivacyMap.astro";
 import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
+import { getTranslatedPath } from "@/lib/registry";
 
 import cardEvents from "@/assets/home/card-events.jpeg";
 import cardTours from "@/assets/home/card-tours.jpg";
@@ -35,6 +36,11 @@ interface Props {
 
 const { lang, t } = Astro.props;
 
+const eventsHref = getTranslatedPath("events", lang);
+const experienceHref = getTranslatedPath("experience", lang);
+const relaxHref = getTranslatedPath("relax", lang);
+const coffeeTourHref = getTranslatedPath("coffee-tour", lang);
+
 const galleryImages = [
   gallery01, gallery02, gallery03, gallery04,
   gallery05, gallery06, gallery07, gallery08,
@@ -61,7 +67,7 @@ const galleryImages = [
   <Container>
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Card: Events -->
-      <div class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col">
+      <a href={eventsHref} class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300">
         <div class="overflow-hidden">
           <Image
             src={cardEvents}
@@ -75,18 +81,15 @@ const galleryImages = [
           <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.events.subtitle}</p>
           <h3 class="text-xl md:text-2xl mb-3">{t.cards.events.title}</h3>
           <p class="text-text-muted text-sm leading-relaxed mb-6 flex-1">{t.cards.events.description}</p>
-          <a
-            href={lang === "es" ? "/veranstaltungen" : `/${lang}/veranstaltungen`}
-            class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
-          >
+          <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
             {t.cards.events.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
-          </a>
+          </span>
         </div>
-      </div>
+      </a>
 
       <!-- Card: Tours -->
-      <div class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col">
+      <a href={experienceHref} class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300">
         <div class="overflow-hidden">
           <Image
             src={cardTours}
@@ -100,18 +103,15 @@ const galleryImages = [
           <p class="text-xs uppercase tracking-widest text-primary font-medium mb-2">{t.cards.tours.subtitle}</p>
           <h3 class="text-xl md:text-2xl mb-3">{t.cards.tours.title}</h3>
           <p class="text-text-muted text-sm leading-relaxed mb-6 flex-1">{t.cards.tours.description}</p>
-          <a
-            href={lang === "es" ? "/erleben" : `/${lang}/erleben`}
-            class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
-          >
+          <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
             {t.cards.tours.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
-          </a>
+          </span>
         </div>
-      </div>
+      </a>
 
       <!-- Card: Accommodation -->
-      <div class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col">
+      <a href={relaxHref} class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300">
         <div class="overflow-hidden">
           <Image
             src={cardAccommodation}
@@ -126,18 +126,15 @@ const galleryImages = [
           <h3 class="text-xl md:text-2xl mb-3">{t.cards.accommodation.title}</h3>
           <p class="text-text-muted text-sm leading-relaxed mb-4 flex-1">{t.cards.accommodation.description}</p>
           <div class="flex flex-col gap-1 mb-6 text-sm">
-            <span class="text-secondary font-medium">{t.cards.accommodation.cabana}</span>
-            <span class="text-secondary font-medium">{t.cards.accommodation.casa}</span>
+            <span class="text-secondary font-medium">{t.cards.accommodation.cabana.replace("{price}", String(siteData.accommodation.cabana.pricePerNight))}</span>
+            <span class="text-secondary font-medium">{t.cards.accommodation.casa.replace("{price}", String(siteData.accommodation.casa.pricePerNight))}</span>
           </div>
-          <a
-            href={lang === "es" ? "/entspannen" : `/${lang}/entspannen`}
-            class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-dark transition-colors"
-          >
+          <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all duration-300">
             {t.cards.accommodation.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
-          </a>
+          </span>
         </div>
-      </div>
+      </a>
     </div>
   </Container>
 </section>
@@ -170,7 +167,7 @@ const galleryImages = [
         <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.about.subtitle}</p>
         <p class="text-text-muted leading-relaxed mb-8">{t.about.description}</p>
         <a
-          href={lang === "es" ? "/erleben" : `/${lang}/erleben`}
+          href={experienceHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.about.cta}
@@ -204,7 +201,7 @@ const galleryImages = [
         </div>
 
         <a
-          href={lang === "es" ? "/erleben" : `/${lang}/erleben`}
+          href={experienceHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.products.cta}
@@ -255,7 +252,7 @@ const galleryImages = [
         </div>
 
         <a
-          href={lang === "es" ? "/kaffeetour" : `/${lang}/kaffeetour`}
+          href={coffeeTourHref}
           class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
         >
           {t.tour.cta}
