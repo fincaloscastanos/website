@@ -40,7 +40,7 @@ const { lang, t } = Astro.props;
   <Container class="relative z-10">
     <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
       <!-- Column 1: Address & Email -->
-      <div class="space-y-8">
+      <div class="space-y-8" data-animate data-animate-delay="1">
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
@@ -95,7 +95,7 @@ const { lang, t } = Astro.props;
       </div>
 
       <!-- Column 2: Phone Numbers & Hours -->
-      <div class="space-y-8">
+      <div class="space-y-8" data-animate data-animate-delay="2">
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
@@ -143,7 +143,7 @@ const { lang, t } = Astro.props;
       </div>
 
       <!-- Column 3: Hours & Social -->
-      <div class="space-y-8">
+      <div class="space-y-8" data-animate data-animate-delay="3">
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
@@ -193,7 +193,7 @@ const { lang, t } = Astro.props;
 <!-- Map -->
 <section class="py-16 md:py-24 bg-surface">
   <Container>
-    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12" data-animate="fade">
       {t.map.title}
     </h2>
     <div

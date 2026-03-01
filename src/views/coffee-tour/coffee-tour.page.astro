@@ -70,7 +70,7 @@ const formatPrice = (price: number) =>
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
-      <div class="space-y-5">
+      <div class="space-y-5" data-animate>
         <p class="text-text-muted leading-relaxed">{t.intro.p1}</p>
         <p class="text-text-muted leading-relaxed">{t.intro.p2}</p>
         <p class="text-text-muted leading-relaxed">{t.intro.p3}</p>
@@ -78,7 +78,7 @@ const formatPrice = (price: number) =>
       </div>
 
       <!-- Images -->
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-2 gap-4" data-animate data-animate-delay="2">
         <div class="overflow-hidden rounded-lg shadow-lg">
           <Image
             src={guideImg}
@@ -111,7 +111,7 @@ const formatPrice = (price: number) =>
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
-      <div class="overflow-hidden rounded-lg shadow-xl order-2 md:order-1">
+      <div class="overflow-hidden rounded-lg shadow-xl order-2 md:order-1" data-animate>
         <Image
           src={plantationImg}
           alt="Kaffeeplantage"
@@ -122,7 +122,7 @@ const formatPrice = (price: number) =>
       </div>
 
       <!-- Content -->
-      <div class="order-1 md:order-2">
+      <div class="order-1 md:order-2" data-animate data-animate-delay="2">
         <h2
           class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white"
         >
