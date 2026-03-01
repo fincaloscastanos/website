@@ -181,14 +181,14 @@ export const translations = {
       es: "Horario de visitas",
     },
     weekdays: {
-      de: "Montag bis Freitag: 09:00 – 15:00 Uhr",
-      en: "Monday to Friday: 09:00 – 15:00",
-      es: "Lunes a viernes: 09:00 – 15:00",
+      de: "Montag bis Freitag: {start} – {end} Uhr",
+      en: "Monday to Friday: {start} – {end}",
+      es: "Lunes a viernes: {start} – {end}",
     },
     weekends: {
-      de: "Samstag & Sonntag: 10:00 – 14:00 Uhr",
-      en: "Saturday & Sunday: 10:00 – 14:00",
-      es: "Sábados y domingos: 10:00 – 14:00",
+      de: "Samstag & Sonntag: {start} – {end} Uhr",
+      en: "Saturday & Sunday: {start} – {end}",
+      es: "Sábados y domingos: {start} – {end}",
     },
     cta: {
       de: "Jetzt buchen",

@@ -25,8 +25,16 @@ interface Props {
 const { lang, t } = Astro.props;
 
 const subNavLinks = [
-  { href: getTranslatedPath("coffee-tour", lang), label: t.hero.cards.coffeeTour.title, image: coffeeTourImg },
-  { href: getTranslatedPath("events", lang), label: t.hero.cards.events.title, image: eventsImg },
+  {
+    href: getTranslatedPath("coffee-tour", lang),
+    label: t.hero.cards.coffeeTour.title,
+    image: coffeeTourImg,
+  },
+  {
+    href: getTranslatedPath("events", lang),
+    label: t.hero.cards.events.title,
+    image: eventsImg,
+  },
 ];
 ---
 
@@ -34,8 +42,14 @@ const subNavLinks = [
 <section class="py-16 md:py-24 bg-surface">
   <Container>
     <div class="text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
-      <p class="text-lg md:text-xl text-primary font-medium">{t.hero.subtitle}</p>
+      <h1
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+      >
+        {t.hero.title}
+      </h1>
+      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        {t.hero.subtitle}
+      </p>
     </div>
   </Container>
 </section>
@@ -96,8 +110,14 @@ const subNavLinks = [
 
       <!-- Text -->
       <div class="order-1 md:order-2">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.dreams.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.dreams.subtitle}</p>
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        >
+          {t.dreams.title}
+        </h2>
+        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+          {t.dreams.subtitle}
+        </p>
         <div class="space-y-5">
           <p class="text-text-muted leading-relaxed">{t.dreams.p1}</p>
           <p class="text-text-muted leading-relaxed">{t.dreams.p2}</p>
@@ -114,8 +134,14 @@ const subNavLinks = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.climate.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.climate.subtitle}</p>
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        >
+          {t.climate.title}
+        </h2>
+        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+          {t.climate.subtitle}
+        </p>
         <div class="space-y-5">
           <p class="text-text-muted leading-relaxed">{t.climate.p1}</p>
           <p class="text-text-muted leading-relaxed">{t.climate.p2}</p>
@@ -138,11 +164,20 @@ const subNavLinks = [
 
 <!-- Exklusiver Kaffeeanbau -->
 <section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
-  <div class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"></div>
+  <div
+    class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"
+  >
+  </div>
   <Container class="relative z-10">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">{t.exclusive.title}</h2>
-      <p class="text-lg md:text-xl text-secondary font-medium mb-8">{t.exclusive.subtitle}</p>
+      <h2
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white"
+      >
+        {t.exclusive.title}
+      </h2>
+      <p class="font-serif text-secondary text-2xl md:text-3xl mb-3">
+        {t.exclusive.subtitle}
+      </p>
       <p class="text-white/80 leading-relaxed mb-5">{t.exclusive.p1}</p>
       <p class="text-white/80 leading-relaxed">{t.exclusive.p2}</p>
     </div>
@@ -153,8 +188,14 @@ const subNavLinks = [
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.insights.title}</h2>
-      <p class="text-lg md:text-xl text-primary font-medium">{t.insights.subtitle}</p>
+      <h2
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+      >
+        {t.insights.title}
+      </h2>
+      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        {t.insights.subtitle}
+      </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -186,8 +227,14 @@ const subNavLinks = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.tour.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.tour.subtitle}</p>
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        >
+          {t.tour.title}
+        </h2>
+        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+          {t.tour.subtitle}
+        </p>
         <p class="text-text-muted leading-relaxed mb-8">{t.tour.description}</p>
         <a
           href="/Finca-Los-Castanos-Aleman_K.pdf"
@@ -218,11 +265,19 @@ const subNavLinks = [
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.roasting.title}</h2>
-      <p class="text-lg md:text-xl text-primary font-medium mb-8">{t.roasting.subtitle}</p>
+      <h2
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+      >
+        {t.roasting.title}
+      </h2>
+      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        {t.roasting.subtitle}
+      </p>
       <p class="text-text-muted leading-relaxed mb-5">{t.roasting.p1}</p>
       <p class="text-text-muted leading-relaxed mb-10">{t.roasting.p2}</p>
-      <p class="text-2xl md:text-3xl font-serif text-text-heading italic">{t.roasting.cta}</p>
+      <p class="text-2xl md:text-3xl font-serif text-text-heading italic">
+        {t.roasting.cta}
+      </p>
     </div>
   </Container>
 </section>

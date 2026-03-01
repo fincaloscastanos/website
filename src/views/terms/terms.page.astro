@@ -15,8 +15,14 @@ const { lang, t } = Astro.props;
 <section class="py-16 md:py-24 bg-surface">
   <Container>
     <div class="text-center max-w-2xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.title}</h1>
-      <p class="text-lg md:text-xl text-text-muted">{t.subtitle}</p>
+      <h1
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+      >
+        {t.title}
+      </h1>
+      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        {t.subtitle}
+      </p>
     </div>
   </Container>
 </section>
@@ -25,7 +31,6 @@ const { lang, t } = Astro.props;
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="max-w-3xl mx-auto prose prose-lg prose-olive">
-
       <!-- 1. Scope -->
       <h2>{t.scope.heading}</h2>
       <p>{t.scope.text}</p>

@@ -91,7 +91,7 @@ const galleryImages = [
         </div>
         <div class="p-6 flex flex-col flex-1">
           <h3
-            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider"
+            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
           >
             {t.cards.events.title}
           </h3>
@@ -163,7 +163,7 @@ const galleryImages = [
         </div>
         <div class="p-6 flex flex-col flex-1">
           <h3
-            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider"
+            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
           >
             {t.cards.accommodation.title}
           </h3>
@@ -221,8 +221,12 @@ const galleryImages = [
 
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.about.title}</h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        >
+          {t.about.title}
+        </h2>
+        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
           {t.about.subtitle}
         </p>
         <p class="text-text-muted leading-relaxed mb-8">
@@ -246,10 +250,12 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        >
           {t.products.title}
         </h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">
+        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
           {t.products.subtitle}
         </p>
         <p class="text-text-muted leading-relaxed mb-8">
@@ -322,10 +328,12 @@ const galleryImages = [
 
       <!-- Content -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white"
+        >
           {t.tour.title}
         </h2>
-        <p class="text-lg md:text-xl text-secondary font-medium mb-6">
+        <p class="font-serif text-secondary text-2xl md:text-3xl mb-3">
           {t.tour.subtitle}
         </p>
         <p class="text-white/80 leading-relaxed mb-8">{t.tour.description}</p>
@@ -336,8 +344,8 @@ const galleryImages = [
           <h3 class="text-lg font-serif text-secondary mb-3">
             {t.tour.hoursTitle}
           </h3>
-          <p class="text-white/90 text-base">{t.tour.weekdays}</p>
-          <p class="text-white/90 text-base">{t.tour.weekends}</p>
+          <p class="text-white/90 text-base">{t.tour.weekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>
+          <p class="text-white/90 text-base">{t.tour.weekends.replace("{start}", siteData.hours.weekends.start).replace("{end}", siteData.hours.weekends.end)}</p>
         </div>
 
         <a
@@ -358,10 +366,12 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
       <div>
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        >
           {t.sustainability.title}
         </h2>
-        <p class="text-lg md:text-xl text-primary font-medium mb-6">
+        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
           {t.sustainability.subtitle}
         </p>
         <p class="text-text-muted leading-relaxed">
@@ -411,8 +421,12 @@ const galleryImages = [
 <section id="kontakt" class="py-16 md:py-24 bg-surface">
   <Container>
     <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.contact.title}</h2>
-      <p class="text-lg md:text-xl text-primary font-medium">
+      <h2
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+      >
+        {t.contact.title}
+      </h2>
+      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
         {t.contact.subtitle}
       </p>
     </div>

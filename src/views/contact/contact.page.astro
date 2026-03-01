@@ -18,8 +18,14 @@ const { lang, t } = Astro.props;
 <section class="py-16 md:py-24 bg-surface">
   <Container>
     <div class="text-center max-w-2xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
-      <p class="text-lg md:text-xl text-text-muted">{t.hero.subtitle}</p>
+      <h1
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+      >
+        {t.hero.title}
+      </h1>
+      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        {t.hero.subtitle}
+      </p>
     </div>
   </Container>
 </section>
@@ -28,13 +34,15 @@ const { lang, t } = Astro.props;
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
-
       <!-- Column 1: Address & Email -->
       <div class="space-y-8">
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.info.addressLabel}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.info.addressLabel}</span
+            >
           </div>
           <a
             href={siteData.contact.googleMaps}
@@ -49,7 +57,10 @@ const { lang, t } = Astro.props;
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.info.emailLabel}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.info.emailLabel}</span
+            >
           </div>
           <a
             href={`mailto:${siteData.contact.email}`}
@@ -62,7 +73,10 @@ const { lang, t } = Astro.props;
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:message-circle" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.info.whatsappLabel}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.info.whatsappLabel}</span
+            >
           </div>
           <a
             href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
@@ -80,25 +94,46 @@ const { lang, t } = Astro.props;
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.info.toursLabel}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.info.toursLabel}</span
+            >
           </div>
-          <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="text-text-muted hover:text-primary transition-colors">{siteData.contact.phone}</a>
+          <a
+            href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`}
+            class="text-text-muted hover:text-primary transition-colors"
+            >{siteData.contact.phone}</a
+          >
         </div>
 
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.info.salesLabel}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.info.salesLabel}</span
+            >
           </div>
-          <a href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`} class="text-text-muted hover:text-primary transition-colors">{siteData.contact.phoneSales}</a>
+          <a
+            href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`}
+            class="text-text-muted hover:text-primary transition-colors"
+            >{siteData.contact.phoneSales}</a
+          >
         </div>
 
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.info.eventsLabel}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.info.eventsLabel}</span
+            >
           </div>
-          <a href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`} class="text-text-muted hover:text-primary transition-colors">{siteData.contact.phoneEvents}</a>
+          <a
+            href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`}
+            class="text-text-muted hover:text-primary transition-colors"
+            >{siteData.contact.phoneEvents}</a
+          >
         </div>
       </div>
 
@@ -107,16 +142,22 @@ const { lang, t } = Astro.props;
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.hours.title}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.hours.title}</span
+            >
           </div>
-          <p class="text-text-muted">{t.hours.weekdays}</p>
-          <p class="text-text-muted">{t.hours.weekends}</p>
+          <p class="text-text-muted">{t.hours.weekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>
+          <p class="text-text-muted">{t.hours.weekends.replace("{start}", siteData.hours.weekends.start).replace("{end}", siteData.hours.weekends.end)}</p>
         </div>
 
         <div>
           <div class="flex items-center gap-3 mb-3">
             <Icon name="lucide:share-2" class="w-5 h-5 text-primary" />
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.social.title}</span>
+            <span
+              class="text-xs uppercase tracking-widest text-primary font-medium"
+              >{t.social.title}</span
+            >
           </div>
           <div class="flex gap-4">
             <a
@@ -147,8 +188,12 @@ const { lang, t } = Astro.props;
 <!-- Map -->
 <section class="py-16 md:py-24 bg-surface">
   <Container>
-    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12">{t.map.title}</h2>
-    <div class="rounded-lg overflow-hidden shadow-lg h-80 md:h-[28rem] lg:h-[32rem]">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl text-center mb-12">
+      {t.map.title}
+    </h2>
+    <div
+      class="rounded-lg overflow-hidden shadow-lg h-80 md:h-[28rem] lg:h-[32rem]"
+    >
       <PrivacyMap
         url={siteData.contact.googleMapsEmbed}
         loadMap={t.map.loadMap}

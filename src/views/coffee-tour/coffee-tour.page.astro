@@ -41,11 +41,11 @@ const formatPrice = (price: number) =>
   <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
     <div class="text-center text-white px-4">
       <h1
-        class="text-4xl md:text-5xl lg:text-6xl mb-4 text-white drop-shadow-lg"
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white drop-shadow-lg"
       >
         {t.hero.title}
       </h1>
-      <p class="text-lg md:text-xl font-medium drop-shadow-md">
+      <p class="font-serif text-2xl md:text-3xl mb-3 drop-shadow-md">
         {t.hero.subtitle}
       </p>
       <a
@@ -117,10 +117,12 @@ const formatPrice = (price: number) =>
 
       <!-- Content -->
       <div class="order-1 md:order-2">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">
+        <h2
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white"
+        >
           {t.pricing.title}
         </h2>
-        <p class="text-lg md:text-xl text-secondary font-medium mb-8">
+        <p class="font-serif text-secondary text-2xl md:text-3xl mb-3">
           {t.pricing.subtitle}
         </p>
 
