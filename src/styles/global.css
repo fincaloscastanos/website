@@ -7,13 +7,14 @@ html {
 
 @theme {
   /* ── Colors ── */
-  --color-primary: #7e9a47;
-  --color-primary-light: #92b254;
-  --color-primary-dark: #6a833b;
+  --color-primary: #246235;
+  --color-primary-light: #2d7a42;
+  --color-primary-dark: #1b4a28;
 
-  --color-secondary: #f0b96a;
+  --color-secondary: #EFB96A;
   --color-secondary-light: #fff0d9;
   --color-secondary-dark: #d9a255;
+  --color-secondary-foreground: #ffffff;
 
   --color-background: #ffffff;
   --color-surface: #f8f8f8;
