@@ -2,6 +2,7 @@
 import type { PrivacyTranslations } from "./privacy.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
+import ConsentRevoke from "@/components/ui/ConsentRevoke.astro";
 
 interface Props {
   lang: Language;
@@ -126,6 +127,11 @@ const { lang, t } = Astro.props;
 
       <h3>{t.plugins.googleMapsTitle}</h3>
       <p>{t.plugins.googleMapsText}</p>
+      <ConsentRevoke
+        description={t.consent.googleMapsDescription}
+        label={t.consent.revokeLabel}
+        revokedLabel={t.consent.revokedLabel}
+      />
 
       <!-- Source -->
       <p class="text-sm text-text-muted mt-12">{t.source}</p>

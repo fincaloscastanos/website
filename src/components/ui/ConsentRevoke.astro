@@ -1,0 +1,52 @@
+---
+interface Props {
+  label: string;
+  revokedLabel: string;
+  description: string;
+}
+
+const { label, revokedLabel, description } = Astro.props;
+---
+
+<div class="consent-revoke not-prose rounded-lg border border-border bg-surface p-5 my-6">
+  <p class="text-sm text-text-muted mb-3">{description}</p>
+  <button
+    class="consent-revoke-btn bg-primary text-white text-sm font-medium py-2 px-5 rounded-full hover:bg-primary-dark transition-colors"
+    data-label={label}
+    data-revoked-label={revokedLabel}
+  >
+    {label}
+  </button>
+</div>
+
+<script>
+  const STORAGE_KEY = "maps-consent";
+
+  const init = () => {
+    document.querySelectorAll(".consent-revoke").forEach((wrapper) => {
+      const btn = wrapper.querySelector(".consent-revoke-btn") as HTMLButtonElement | null;
+      if (!btn) return;
+
+      const label = btn.dataset.label!;
+      const revokedLabel = btn.dataset.revokedLabel!;
+
+      const update = () => {
+        const hasConsent = localStorage.getItem(STORAGE_KEY) === "true";
+        btn.disabled = !hasConsent;
+        btn.textContent = hasConsent ? label : revokedLabel;
+        btn.classList.toggle("opacity-50", !hasConsent);
+        btn.classList.toggle("cursor-not-allowed", !hasConsent);
+      };
+
+      btn.addEventListener("click", () => {
+        localStorage.removeItem(STORAGE_KEY);
+        update();
+      });
+
+      update();
+    });
+  };
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>
