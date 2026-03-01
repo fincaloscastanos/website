@@ -1,0 +1,38 @@
+---
+import type { BookingTranslations } from "./booking.i18n";
+import type { Language } from "@/lib/i18n";
+import Container from "@/components/ui/Container.astro";
+
+interface Props {
+  lang: Language;
+  t: BookingTranslations;
+}
+
+const { lang, t } = Astro.props;
+---
+
+<!-- Hero -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
+      <p class="text-lg md:text-xl text-primary font-medium">{t.hero.subtitle}</p>
+    </div>
+  </Container>
+</section>
+
+<!-- Booking Widget -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-surface rounded-lg border border-border/50 p-4 min-h-[600px] flex items-center justify-center">
+        <!--
+          TODO: Smoobu-Embed-Code hier einfügen
+          Smoobu Dashboard > Kernfunktionen > Buchungssystem > In Website integrieren
+          Den HTML (iFrame) Code kopieren und hier einfügen
+        -->
+        <p class="text-text-muted text-sm">{t.booking.placeholder}</p>
+      </div>
+    </div>
+  </Container>
+</section>

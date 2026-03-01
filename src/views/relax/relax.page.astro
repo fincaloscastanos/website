@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
 import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
+import { getTranslatedPath } from "@/lib/registry";
 
 import hero1 from "@/assets/relax/hero-1.jpg";
 import hero2 from "@/assets/relax/hero-2.jpg";
@@ -41,8 +42,7 @@ interface Props {
 
 const { lang, t } = Astro.props;
 
-const casaBookingUrl = "https://www.booking.com/hotel/es/casa-los-castanos.de.html";
-const cabanaBookingUrl = "https://www.booking.com/hotel/es/cabana-en-finca.de.html";
+const bookingHref = getTranslatedPath("booking", lang);
 
 const subNavLinks = [
   { href: "#casa", label: t.casa.title, image: casaLiving },
@@ -85,7 +85,7 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
 
 <SubNav
   links={subNavLinks}
-  cta={{ href: casaBookingUrl, label: t.hero.bookNow, external: true }}
+  cta={{ href: bookingHref, label: t.hero.bookNow }}
 />
 
 <!-- Feature Highlights -->
@@ -268,13 +268,11 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.casa.price}</p>
         <a
-          href={casaBookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={bookingHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.casa.cta}
-          <Icon name="lucide:external-link" class="w-4 h-4" />
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </a>
       </div>
     </div>
@@ -391,13 +389,11 @@ const cabanaGallery = [cabanaBedroom, cabanaLiving, cabanaKitchen, cabanaBathroo
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-2xl md:text-3xl font-serif text-text-heading">{t.cabana.price}</p>
         <a
-          href={cabanaBookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={bookingHref}
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.cabana.cta}
-          <Icon name="lucide:external-link" class="w-4 h-4" />
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </a>
       </div>
     </div>
