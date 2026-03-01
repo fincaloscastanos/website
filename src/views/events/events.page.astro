@@ -1,0 +1,175 @@
+---
+import type { EventsTranslations } from "./events.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+import { Icon } from "astro-icon/components";
+import { getTranslatedPath } from "@/lib/registry";
+
+import heroImg from "@/assets/events/hero.jpg";
+import tentInteriorImg from "@/assets/events/tent-interior.jpg";
+import tentExteriorImg from "@/assets/events/tent-exterior.jpg";
+import celebrationImg from "@/assets/events/celebration.jpg";
+import setupImg from "@/assets/events/setup.jpg";
+
+import gallery01 from "@/assets/events/gallery-01.jpg";
+import gallery02 from "@/assets/events/gallery-02.jpg";
+import gallery03 from "@/assets/events/gallery-03.jpg";
+import gallery04 from "@/assets/events/gallery-04.jpg";
+import gallery05 from "@/assets/events/gallery-05.jpg";
+import gallery06 from "@/assets/events/gallery-06.jpg";
+import gallery07 from "@/assets/events/gallery-07.jpg";
+import gallery08 from "@/assets/events/gallery-08.jpg";
+
+interface Props {
+  lang: Language;
+  t: EventsTranslations;
+}
+
+const { lang, t } = Astro.props;
+
+const contactHref = getTranslatedPath("contact", lang);
+
+const features = [
+  { icon: "lucide:users", label: t.features.capacity },
+  { icon: "lucide:accessibility", label: t.features.accessible },
+  { icon: "lucide:car", label: t.features.parking },
+  { icon: "lucide:thermometer", label: t.features.climate },
+  { icon: "lucide:wifi", label: t.features.wifi },
+  { icon: "lucide:bath", label: t.features.wc },
+];
+
+const galleryImages = [gallery01, gallery02, gallery03, gallery04, gallery05, gallery06, gallery07, gallery08];
+---
+
+<!-- Hero -->
+<section class="relative">
+  <div class="overflow-hidden aspect-[21/9]">
+    <Image
+      src={heroImg}
+      alt="Finca Los Castaños Eventzelt"
+      class="w-full h-full object-cover"
+      widths={[800, 1200, 1920]}
+      sizes="100vw"
+    />
+  </div>
+  <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <div class="text-center text-white px-4">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4 text-white drop-shadow-lg">{t.hero.title}</h1>
+      <p class="text-lg md:text-xl font-medium drop-shadow-md">{t.hero.subtitle}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div class="space-y-5">
+        <p class="text-text-muted leading-relaxed">{t.intro.p1}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p2}</p>
+      </div>
+
+      <!-- Images -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <Image
+            src={tentExteriorImg}
+            alt="Eventzelt"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg mt-8">
+          <Image
+            src={tentInteriorImg}
+            alt="Inneneinrichtung"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Features -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      {features.map(({ icon, label }) => (
+        <div class="flex items-center gap-3 bg-background rounded-lg p-4 shadow-sm">
+          <Icon name={icon} class="w-6 h-6 text-primary shrink-0" />
+          <span class="text-text-heading font-medium text-sm">{label}</span>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- Feiern mit Stil -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl order-2 md:order-1">
+        <Image
+          src={celebrationImg}
+          alt="Veranstaltung"
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+
+      <!-- Text -->
+      <div class="order-1 md:order-2">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-2">{t.style.title}</h2>
+        <p class="text-lg md:text-xl text-primary font-medium mb-6">{t.style.subtitle}</p>
+        <div class="space-y-5">
+          <p class="text-text-muted leading-relaxed">{t.style.p1}</p>
+          <p class="text-text-muted leading-relaxed">{t.style.p2}</p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Gallery -->
+<section class="py-16 md:py-24 bg-surface">
+  <Container>
+    <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+      {galleryImages.map((img, i) => (
+        <div class="overflow-hidden rounded-lg shadow-lg break-inside-avoid">
+          <Image
+            src={img}
+            alt={`Finca Los Castaños Event ${i + 1}`}
+            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<!-- CTA -->
+<section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"></div>
+  <Container class="relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">{t.closing.text}</p>
+      <a
+        href={contactHref}
+        class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
+      >
+        {t.closing.cta}
+        <Icon name="lucide:arrow-right" class="w-4 h-4" />
+      </a>
+    </div>
+  </Container>
+</section>

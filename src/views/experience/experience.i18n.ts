@@ -30,6 +30,37 @@ export const translations = {
       en: "A guided walk through our plantation",
       es: "Visitas guiadas por nuestra plantaci\u00f3n",
     },
+    cards: {
+      coffeeTour: {
+        title: {
+          de: "Kaffeetour",
+          en: "Coffee Tour",
+          es: "Tour de caf\u00e9",
+        },
+        description: {
+          de: "Geführte Tour über unsere Plantage mit Verkostung",
+          en: "Guided tour of our plantation with tasting",
+          es: "Visita guiada por nuestra plantaci\u00f3n con degustaci\u00f3n",
+        },
+      },
+      events: {
+        title: {
+          de: "Veranstaltungen",
+          en: "Events",
+          es: "Eventos",
+        },
+        description: {
+          de: "Feiern inmitten der Kaffeeplantage",
+          en: "Celebrate amid the coffee plantation",
+          es: "Celebren en medio del cafetal",
+        },
+      },
+      cta: {
+        de: "Mehr erfahren",
+        en: "Learn more",
+        es: "Más información",
+      },
+    },
   },
 
   intro: {
