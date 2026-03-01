@@ -1,0 +1,183 @@
+---
+import type { CoffeeTourTranslations } from "./coffee-tour.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+import { Icon } from "astro-icon/components";
+import { siteData } from "@/data/site";
+
+import heroImg from "@/assets/coffee-tour/hero.jpg";
+import guideImg from "@/assets/coffee-tour/guide.jpg";
+import tastingImg from "@/assets/coffee-tour/tasting.jpg";
+import plantationImg from "@/assets/coffee-tour/plantation.jpg";
+
+interface Props {
+  lang: Language;
+  t: CoffeeTourTranslations;
+}
+
+const { lang, t } = Astro.props;
+
+const { coffeeTour } = siteData;
+const formatPrice = (price: number) =>
+  price % 1 === 0
+    ? `${price},00 EUR`
+    : `${price.toFixed(2).replace(".", ",")} EUR`;
+---
+
+<!-- Hero -->
+<section class="relative">
+  <div class="overflow-hidden aspect-[21/9]">
+    <Image
+      src={heroImg}
+      alt="Finca Los Castaños Kaffeetour"
+      class="w-full h-full object-cover"
+      widths={[800, 1200, 1920]}
+      sizes="100vw"
+    />
+  </div>
+  <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+    <div class="text-center text-white px-4">
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl mb-4 text-white drop-shadow-lg"
+      >
+        {t.hero.title}
+      </h1>
+      <p class="text-lg md:text-xl font-medium drop-shadow-md">
+        {t.hero.subtitle}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="py-16 md:py-24 bg-background">
+  <Container>
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Text -->
+      <div class="space-y-5">
+        <p class="text-text-muted leading-relaxed">{t.intro.p1}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p2}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p3}</p>
+        <p class="text-text-muted leading-relaxed">{t.intro.p4}</p>
+      </div>
+
+      <!-- Images -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="overflow-hidden rounded-lg shadow-lg">
+          <Image
+            src={guideImg}
+            alt="Plantage"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-lg mt-8">
+          <Image
+            src={tastingImg}
+            alt="Kaffeeverkostung"
+            class="w-full h-full object-cover"
+            widths={[300, 500]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Pricing -->
+<section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+  <div
+    class="absolute inset-0 bg-[url('/patterns/pattern-04.svg')] bg-repeat opacity-10"
+  >
+  </div>
+  <Container class="relative z-10">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="overflow-hidden rounded-lg shadow-xl order-2 md:order-1">
+        <Image
+          src={plantationImg}
+          alt="Kaffeeplantage"
+          class="w-full h-auto object-cover"
+          widths={[500, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="order-1 md:order-2">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl text-white mb-2">
+          {t.pricing.title}
+        </h2>
+        <p class="text-lg md:text-xl text-secondary font-medium mb-8">
+          {t.pricing.subtitle}
+        </p>
+
+        <div class="space-y-4 mb-8">
+          <div
+            class="flex items-center justify-between bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+          >
+            <div class="flex items-center gap-3">
+              <Icon name="lucide:user" class="w-5 h-5 text-secondary" />
+              <span class="text-white/90">{t.pricing.adults}</span>
+            </div>
+            <span class="text-xl font-serif font-bold text-secondary"
+              >{formatPrice(coffeeTour.adults)}</span
+            >
+          </div>
+          <div
+            class="flex items-center justify-between bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+          >
+            <div class="flex items-center gap-3">
+              <Icon name="lucide:baby" class="w-5 h-5 text-secondary" />
+              <span class="text-white/90">{t.pricing.children}</span>
+            </div>
+            <span class="text-xl font-serif font-bold text-secondary"
+              >{formatPrice(coffeeTour.children)}</span
+            >
+          </div>
+          <div
+            class="flex items-center justify-between bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+          >
+            <div class="flex items-center gap-3">
+              <Icon name="lucide:heart" class="w-5 h-5 text-secondary" />
+              <span class="text-white/90"
+                >{
+                  t.pricing.infants.replace(
+                    "{age}",
+                    String(coffeeTour.infantsMaxAge),
+                  )
+                }</span
+              >
+            </div>
+            <span class="text-xl font-serif font-bold text-secondary"
+              >{t.pricing.infantsFree}</span
+            >
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 text-white/80 mb-8">
+          <Icon name="lucide:clock" class="w-5 h-5 text-secondary shrink-0" />
+          <p class="text-sm leading-relaxed">
+            {
+              t.pricing.duration.replace(
+                "{minutes}",
+                String(coffeeTour.durationMinutes),
+              )
+            }
+          </p>
+        </div>
+
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
+        >
+          {t.pricing.cta}
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
