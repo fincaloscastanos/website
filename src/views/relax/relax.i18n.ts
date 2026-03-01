@@ -371,6 +371,22 @@ export const translations = {
     },
   },
 
+  showAllPhotos: {
+    de: "Alle Fotos anzeigen",
+    en: "Show all photos",
+    es: "Ver todas las fotos",
+  },
+  hidePhotos: {
+    de: "Weniger anzeigen",
+    en: "Show less",
+    es: "Mostrar menos",
+  },
+  checkAvailability: {
+    de: "Verfügbarkeit prüfen",
+    en: "Check availability",
+    es: "Consultar disponibilidad",
+  },
+
   consent: {
     title: {
       de: "Verfügbarkeitskalender laden",
