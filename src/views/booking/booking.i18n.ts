@@ -39,6 +39,24 @@ export const translations = {
       es: "Ver todos los alojamientos",
     },
   },
+
+  consent: {
+    title: {
+      de: "Buchungssystem laden",
+      en: "Load booking system",
+      es: "Cargar sistema de reservas",
+    },
+    description: {
+      de: "Durch Klicken stimmen Sie der Datenübertragung an Smoobu (smoobu.com) zu. Wir speichern diese Einstellung für Ihren Besuch.",
+      en: "By clicking you agree to the data transfer to Smoobu (smoobu.com). We will remember your choice for this visit.",
+      es: "Al hacer clic, acepta la transferencia de datos a Smoobu (smoobu.com). Guardamos esta preferencia para su visita.",
+    },
+    button: {
+      de: "Buchungssystem laden",
+      en: "Load booking system",
+      es: "Cargar sistema de reservas",
+    },
+  },
 };
 
 export type BookingTranslations = FlattenTranslation<typeof translations>;

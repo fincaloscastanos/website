@@ -2,6 +2,7 @@
 import type { BookTourTranslations } from "./book-tour.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
+import PrivacyGate from "@/components/ui/PrivacyGate.astro";
 import { siteData } from "@/data/site";
 
 interface Props {
@@ -30,16 +31,21 @@ const widgetUrl = `https://widgets.bokun.io/online-sales/${channelId}/experience
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="max-w-4xl mx-auto">
-      <div
-        class="bg-surface rounded-lg border border-border/50 p-4 min-h-[600px]"
+      <PrivacyGate
+        consentKey="bokun-consent"
+        scripts={[
+          "https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js",
+        ]}
+        title={t.consent.title}
+        description={t.consent.description}
+        buttonLabel={t.consent.button}
       >
-        <div class="bokunWidget" data-src={widgetUrl}></div>
-      </div>
+        <div
+          class="bg-surface rounded-lg border border-border/50 p-4 min-h-[600px]"
+        >
+          <div class="bokunWidget" data-src={widgetUrl}></div>
+        </div>
+      </PrivacyGate>
     </div>
   </Container>
 </section>
-
-<script
-  is:inline
-  src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js"
-></script>

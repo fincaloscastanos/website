@@ -1,14 +1,18 @@
 ---
 interface Props {
+  consentKey: string;
   label: string;
   revokedLabel: string;
   description: string;
 }
 
-const { label, revokedLabel, description } = Astro.props;
+const { consentKey, label, revokedLabel, description } = Astro.props;
 ---
 
-<div class="consent-revoke not-prose rounded-lg border border-border bg-surface p-5 my-6">
+<div
+  class="consent-revoke not-prose rounded-lg border border-border bg-surface p-5 my-6"
+  data-consent-key={consentKey}
+>
   <p class="text-sm text-text-muted mb-3">{description}</p>
   <button
     class="consent-revoke-btn bg-primary text-white text-sm font-medium py-2 px-5 rounded-full hover:bg-primary-dark transition-colors"
@@ -20,18 +24,21 @@ const { label, revokedLabel, description } = Astro.props;
 </div>
 
 <script>
-  const STORAGE_KEY = "maps-consent";
-
   const init = () => {
     document.querySelectorAll(".consent-revoke").forEach((wrapper) => {
-      const btn = wrapper.querySelector(".consent-revoke-btn") as HTMLButtonElement | null;
+      const btn = wrapper.querySelector(
+        ".consent-revoke-btn",
+      ) as HTMLButtonElement | null;
       if (!btn) return;
+
+      const key = wrapper.getAttribute("data-consent-key");
+      if (!key) return;
 
       const label = btn.dataset.label!;
       const revokedLabel = btn.dataset.revokedLabel!;
 
       const update = () => {
-        const hasConsent = localStorage.getItem(STORAGE_KEY) === "true";
+        const hasConsent = localStorage.getItem(key) === "true";
         btn.disabled = !hasConsent;
         btn.textContent = hasConsent ? label : revokedLabel;
         btn.classList.toggle("opacity-50", !hasConsent);
@@ -39,7 +46,7 @@ const { label, revokedLabel, description } = Astro.props;
       };
 
       btn.addEventListener("click", () => {
-        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(key);
         update();
       });
 

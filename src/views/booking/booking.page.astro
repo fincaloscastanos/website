@@ -2,6 +2,7 @@
 import type { BookingTranslations } from "./booking.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
+import PrivacyGate from "@/components/ui/PrivacyGate.astro";
 import { siteData } from "@/data/site";
 import { getTranslatedPath } from "@/lib/registry";
 
@@ -57,18 +58,28 @@ const smoobuBaseUrl = `https://login.smoobu.com/${lang}/booking-tool/iframe/${ac
       </a>
     </div>
 
-    <div id="apartmentIframeAll"></div>
+    <PrivacyGate
+      consentKey="smoobu-consent"
+      scripts={["https://login.smoobu.com/js/Settings/BookingToolIframe.js"]}
+      title={t.consent.title}
+      description={t.consent.description}
+      buttonLabel={t.consent.button}
+    >
+      <div id="apartmentIframeAll"></div>
+    </PrivacyGate>
   </Container>
 </section>
 
-<script
-  is:inline
-  src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
 <script is:inline>
-  (function () {
+  document.addEventListener("privacy-gate:ready", function handler(e) {
+    var gate = e.target;
+    if (!gate.matches || !gate.matches('[data-consent-key="smoobu-consent"]'))
+      return;
+    // Only run on the booking page (has #booking-header)
     var hdr = document.getElementById("booking-header");
-    var baseUrl = hdr.getAttribute("data-base-url");
+    if (!hdr || !window.BookingToolIframe) return;
 
+    var baseUrl = hdr.getAttribute("data-base-url");
     var params = new URLSearchParams(window.location.search);
     var property = params.get("property");
 
@@ -94,5 +105,5 @@ const smoobuBaseUrl = `https://login.smoobu.com/${lang}/booking-tool/iframe/${ac
       }
       document.getElementById("booking-back").style.display = "";
     }
-  })();
+  });
 </script>

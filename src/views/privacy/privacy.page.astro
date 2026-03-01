@@ -25,7 +25,6 @@ const { lang, t } = Astro.props;
 <section class="py-16 md:py-24 bg-background">
   <Container>
     <div class="max-w-3xl mx-auto prose prose-lg prose-olive">
-
       <!-- 1. Overview -->
       <h2>{t.overview.heading}</h2>
 
@@ -72,8 +71,15 @@ const { lang, t } = Astro.props;
         35120 Mogan, Las Palmas (España)
       </p>
       <p>
-        {lang === "de" ? "Telefon" : lang === "en" ? "Phone" : "Teléfono"}: +34 600 08 07 31<br />
-        {lang === "de" ? "E-Mail" : lang === "en" ? "Email" : "Correo electrónico"}: info@fincaloscastanos.com
+        {lang === "de" ? "Telefon" : lang === "en" ? "Phone" : "Teléfono"}: +34
+        600 08 07 31<br />
+        {
+          lang === "de"
+            ? "E-Mail"
+            : lang === "en"
+              ? "Email"
+              : "Correo electrónico"
+        }: info@fincaloscastanos.com
       </p>
       <p>{t.general.responsibleEntity}</p>
 
@@ -127,10 +133,26 @@ const { lang, t } = Astro.props;
 
       <h3>{t.plugins.googleMapsTitle}</h3>
       <p>{t.plugins.googleMapsText}</p>
+
+      <!-- Consent Management -->
+      <h2>{t.consent.heading}</h2>
       <ConsentRevoke
-        description={t.consent.googleMapsDescription}
-        label={t.consent.revokeLabel}
-        revokedLabel={t.consent.revokedLabel}
+        consentKey="maps-consent"
+        description={t.consent.googleMaps.description}
+        label={t.consent.googleMaps.revokeLabel}
+        revokedLabel={t.consent.googleMaps.revokedLabel}
+      />
+      <ConsentRevoke
+        consentKey="smoobu-consent"
+        description={t.consent.smoobu.description}
+        label={t.consent.smoobu.revokeLabel}
+        revokedLabel={t.consent.smoobu.revokedLabel}
+      />
+      <ConsentRevoke
+        consentKey="bokun-consent"
+        description={t.consent.bokun.description}
+        label={t.consent.bokun.revokeLabel}
+        revokedLabel={t.consent.bokun.revokedLabel}
       />
 
       <!-- Source -->

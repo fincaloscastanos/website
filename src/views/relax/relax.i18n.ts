@@ -370,6 +370,24 @@ export const translations = {
       es: "Ya incluido",
     },
   },
+
+  consent: {
+    title: {
+      de: "Verfügbarkeitskalender laden",
+      en: "Load availability calendar",
+      es: "Cargar calendario de disponibilidad",
+    },
+    description: {
+      de: "Durch Klicken stimmen Sie der Datenübertragung an Smoobu (smoobu.com) zu. Wir speichern diese Einstellung für Ihren Besuch.",
+      en: "By clicking you agree to the data transfer to Smoobu (smoobu.com). We will remember your choice for this visit.",
+      es: "Al hacer clic, acepta la transferencia de datos a Smoobu (smoobu.com). Guardamos esta preferencia para su visita.",
+    },
+    button: {
+      de: "Kalender laden",
+      en: "Load calendar",
+      es: "Cargar calendario",
+    },
+  },
 };
 
 export type RelaxTranslations = FlattenTranslation<typeof translations>;
