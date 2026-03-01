@@ -24,7 +24,7 @@ export const translations = {
       title: {
         de: "Ihre Veranstaltung auf unserer Plantage",
         en: "Host your celebration here",
-        es: "Celebre su evento en nuestra finca",
+        es: "Celebren su evento en nuestra finca",
       },
       subtitle: {
         de: "Veranstaltungszelt für private Events und Feiern",
@@ -46,7 +46,7 @@ export const translations = {
       title: {
         de: "Führung über unsere Plantage",
         en: "Walk through our plantation",
-        es: "Conozca nuestra plantación",
+        es: "Conozcan nuestra plantación",
       },
       subtitle: {
         de: "Geführte Touren über die Finca",

@@ -87,7 +87,7 @@ export const translations = {
     title: {
       de: "Folgen Sie uns",
       en: "Follow us",
-      es: "Síguenos",
+      es: "Sígannos",
     },
   },
 
