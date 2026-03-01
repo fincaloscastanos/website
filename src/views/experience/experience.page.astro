@@ -3,6 +3,7 @@ import type { ExperienceTranslations } from "./experience.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import PageHero from "@/components/ui/PageHero.astro";
 import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslatedPath } from "@/lib/registry";
@@ -43,21 +44,7 @@ const subNavLinks = [
 ];
 ---
 
-<!-- Hero -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
-    <div class="text-center max-w-3xl mx-auto">
-      <h1
-        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
-      >
-        {t.hero.title}
-      </h1>
-      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
-        {t.hero.subtitle}
-      </p>
-    </div>
-  </Container>
-</section>
+<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
 
 <SubNav links={subNavLinks} />
 

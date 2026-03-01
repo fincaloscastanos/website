@@ -3,6 +3,7 @@ import type { RelaxTranslations } from "./relax.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import PageHero from "@/components/ui/PageHero.astro";
 import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslatedPath } from "@/lib/registry";
@@ -14,8 +15,6 @@ import pattern04 from "@/assets/patterns/pattern-04.svg";
 import pattern06 from "@/assets/patterns/pattern-06.svg";
 import pattern07 from "@/assets/patterns/pattern-07.svg";
 
-import hero1 from "@/assets/relax/hero-1.jpg";
-import hero2 from "@/assets/relax/hero-2.jpg";
 import introImg from "@/assets/relax/intro.jpg";
 import natureImg from "@/assets/relax/nature.jpg";
 
@@ -83,41 +82,7 @@ const cabanaGallery = [
 ];
 ---
 
-<!-- Hero -->
-<section class="relative">
-  <div class="grid md:grid-cols-2">
-    <div class="overflow-hidden aspect-[4/3] md:aspect-auto">
-      <Image
-        src={hero1}
-        alt="Finca Los Castaños Apartment"
-        class="w-full h-full object-cover"
-        widths={[600, 900, 1280]}
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-    </div>
-    <div class="overflow-hidden aspect-[4/3] md:aspect-auto hidden md:block">
-      <Image
-        src={hero2}
-        alt="Finca Los Castaños Unterkunft"
-        class="w-full h-full object-cover"
-        widths={[600, 900, 1280]}
-        sizes="50vw"
-      />
-    </div>
-  </div>
-  <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-    <div class="text-center text-white px-4">
-      <h1
-        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white drop-shadow-lg"
-      >
-        {t.hero.title}
-      </h1>
-      <p class="font-serif text-2xl md:text-3xl mb-3 drop-shadow-md">
-        {t.hero.subtitle}
-      </p>
-    </div>
-  </div>
-</section>
+<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
 
 <SubNav
   links={subNavLinks}

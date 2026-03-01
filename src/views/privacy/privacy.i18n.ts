@@ -24,6 +24,11 @@ export const translations = {
     en: "Privacy Policy",
     es: "Protección de datos",
   },
+  subtitle: {
+    de: "Finca Los Castaños",
+    en: "Finca Los Castaños",
+    es: "Finca Los Castaños",
+  },
 
   overview: {
     heading: {

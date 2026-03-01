@@ -3,6 +3,7 @@ import type { DiscoverTranslations } from "./discover.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import PageHero from "@/components/ui/PageHero.astro";
 
 import img01 from "@/assets/discover/01.jpg";
 import img02 from "@/assets/discover/02.jpg";
@@ -51,14 +52,7 @@ const galleryImages = [
 ];
 ---
 
-<!-- Hero -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
-    <div class="text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
-    </div>
-  </Container>
-</section>
+<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
 
 <!-- Gallery -->
 <section class="py-16 md:py-24 bg-background">

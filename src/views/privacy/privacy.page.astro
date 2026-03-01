@@ -2,6 +2,7 @@
 import type { PrivacyTranslations } from "./privacy.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
+import PageHero from "@/components/ui/PageHero.astro";
 import ConsentRevoke from "@/components/ui/ConsentRevoke.astro";
 
 interface Props {
@@ -12,14 +13,7 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<!-- Hero -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
-    <div class="text-center max-w-2xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.title}</h1>
-    </div>
-  </Container>
-</section>
+<PageHero title={t.title} subtitle={t.subtitle} />
 
 <!-- Content -->
 <section class="py-16 md:py-24 bg-background">

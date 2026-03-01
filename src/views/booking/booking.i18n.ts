@@ -20,6 +20,16 @@ export const translations = {
   },
 
   hero: {
+    title: {
+      de: "Unterkunft buchen",
+      en: "Book Accommodation",
+      es: "Reservar alojamiento",
+    },
+    subtitle: {
+      de: "Finca Los Castaños",
+      en: "Finca Los Castaños",
+      es: "Finca Los Castaños",
+    },
     titleAll: {
       de: "Alle Unterkünfte durchsuchen",
       en: "Browse all properties",

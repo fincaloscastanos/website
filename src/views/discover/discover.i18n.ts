@@ -21,6 +21,11 @@ export const translations = {
 
   hero: {
     title: {
+      de: "Bildergalerie",
+      en: "Photo Gallery",
+      es: "Galería de fotos",
+    },
+    subtitle: {
       de: "Entdecken Sie die Finca Los Castaños!",
       en: "Discover the Finca Los Castaños!",
       es: "¡Descubran la Finca Los Castaños!",

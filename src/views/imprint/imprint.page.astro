@@ -2,6 +2,7 @@
 import type { ImprintTranslations } from "./imprint.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
+import PageHero from "@/components/ui/PageHero.astro";
 
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern07 from "@/assets/patterns/pattern-07.svg";
@@ -14,21 +15,7 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<!-- Hero -->
-<section class="py-16 md:py-24 bg-surface">
-  <Container>
-    <div class="text-center max-w-2xl mx-auto">
-      <h1
-        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
-      >
-        {t.title}
-      </h1>
-      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
-        {t.subtitle}
-      </p>
-    </div>
-  </Container>
-</section>
+<PageHero title={t.title} subtitle={t.subtitle} />
 
 <!-- Content -->
 <section class="py-16 md:py-24 bg-background relative overflow-hidden">
