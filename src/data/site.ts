@@ -19,11 +19,20 @@ export const siteData = {
     casa: {
       name: "Casa los Castaños",
       pricePerNight: 180,
+      smoobuId: 13443271,
+      calendarWidgetId: 3161916,
+      calendarVerification:
+        "3d76ab815f9a5e5d0c02737710fd8082fe50f13b002ac3129ae9027d7ff8d3c2",
     },
     cabana: {
       name: "Cabaña en Finca",
       pricePerNight: 160,
+      smoobuId: 13442685,
+      calendarWidgetId: 3174012,
+      calendarVerification:
+        "21374fd358d1c062e15e3ac651e0ce0b2855dbab4c4b8bb746ba6330fa14499c",
     },
+    bookingChannelId: 1634876,
   },
   coffeeTour: {
     adults: 15,

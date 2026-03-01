@@ -20,23 +20,23 @@ export const translations = {
   },
 
   hero: {
-    title: {
-      de: "Unterkunft buchen",
-      en: "Book your stay",
-      es: "Reservar alojamiento",
+    titleAll: {
+      de: "Alle Unterkünfte durchsuchen",
+      en: "Browse all properties",
+      es: "Buscar todos los alojamientos",
     },
-    subtitle: {
-      de: "Direkt buchen – einfach und unkompliziert",
-      en: "Book directly – simple and straightforward",
-      es: "Reserven directo – fácil y sin líos",
+    titleProperty: {
+      de: "{name} buchen",
+      en: "Book {name}",
+      es: "Reservar {name}",
     },
   },
 
   booking: {
-    placeholder: {
-      de: "Das Buchungssystem wird geladen\u2026",
-      en: "The booking system is loading\u2026",
-      es: "El sistema de reservas se está cargando\u2026",
+    allProperties: {
+      de: "Alle Unterkünfte anzeigen",
+      en: "Show all properties",
+      es: "Ver todos los alojamientos",
     },
   },
 };

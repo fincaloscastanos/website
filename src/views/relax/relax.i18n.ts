@@ -35,6 +35,11 @@ export const translations = {
       en: "Book now",
       es: "Reservar ahora",
     },
+    availability: {
+      de: "Verfügbarkeit",
+      en: "Availability",
+      es: "Disponibilidad",
+    },
   },
 
   features: {
