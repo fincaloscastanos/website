@@ -21,6 +21,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@iconify-json/simple-icons": "^1.2.71",
     "@tailwindcss/typography": "^0.5.19",
     "sharp": "^0.34.5"
   }

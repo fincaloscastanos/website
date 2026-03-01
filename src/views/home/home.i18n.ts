@@ -260,6 +260,21 @@ export const translations = {
         en: "Events",
         es: "Eventos",
       },
+      hoursLabel: {
+        de: "Öffnungszeiten",
+        en: "Opening hours",
+        es: "Horario",
+      },
+      hoursWeekdays: {
+        de: "Mo – Fr: {start} – {end} Uhr",
+        en: "Mon – Fri: {start} – {end}",
+        es: "Lun – Vie: {start} – {end}",
+      },
+      hoursWeekends: {
+        de: "Sa & So: {start} – {end} Uhr",
+        en: "Sat & Sun: {start} – {end}",
+        es: "Sáb & Dom: {start} – {end}",
+      },
     },
     map: {
       loadMap: {

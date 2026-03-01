@@ -486,163 +486,123 @@ const galleryImages = [
       </p>
     </div>
 
-    <!-- Contact Info -->
-    <div class="max-w-4xl mx-auto mb-12">
-      <!-- Top row: Address + Email -->
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Map -->
       <div
-        class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/50"
+        class="rounded-lg overflow-hidden shadow-lg h-80 md:h-full md:min-h-[28rem]"
+        data-animate
       >
+        <PrivacyMap
+          url={siteData.contact.googleMapsEmbed}
+          loadMap={t.contact.map.loadMap}
+          accept={t.contact.map.accept}
+          showMap={t.contact.map.showMap}
+        />
+      </div>
+
+      <!-- Contact Info -->
+      <div class="flex flex-col gap-4" data-animate data-animate-delay="2">
+        <!-- Address -->
         <a
           href={siteData.contact.googleMaps}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-start gap-4 p-6 md:pr-10 hover:bg-background/50 transition-colors"
+          class="group flex items-start gap-4 p-5 bg-background rounded-lg border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
-          <Icon
-            name="lucide:map-pin"
-            class="w-5 h-5 text-primary mt-0.5 shrink-0"
-          />
+          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
+          </div>
           <div>
-            <span
-              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
-              >{t.contact.info.addressLabel}</span
-            >
-            <span
-              class="text-base text-text-muted group-hover:text-text transition-colors leading-relaxed"
-              >{siteData.contact.address}</span
-            >
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.addressLabel}</span>
+            <span class="text-base text-text-muted group-hover:text-text transition-colors leading-relaxed">{siteData.contact.address}</span>
           </div>
         </a>
+
+        <!-- Email -->
         <a
           href={`mailto:${siteData.contact.email}`}
-          class="group flex items-start gap-4 p-6 md:pl-10 hover:bg-background/50 transition-colors"
+          class="group flex items-start gap-4 p-5 bg-background rounded-lg border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
-          <Icon
-            name="lucide:mail"
-            class="w-5 h-5 text-primary mt-0.5 shrink-0"
-          />
+          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
+          </div>
           <div>
-            <span
-              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
-              >{t.contact.info.emailLabel}</span
-            >
-            <span
-              class="text-base text-text-muted group-hover:text-text transition-colors"
-              >{siteData.contact.email}</span
-            >
+            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.emailLabel}</span>
+            <span class="text-base text-text-muted group-hover:text-text transition-colors">{siteData.contact.email}</span>
           </div>
         </a>
-      </div>
 
-      <div class="border-t border-border/50"></div>
-
-      <!-- Bottom row: Phone numbers -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border/50"
-      >
-        <a
-          href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`}
-          class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors"
-        >
-          <Icon
-            name="lucide:phone"
-            class="w-5 h-5 text-primary mt-0.5 shrink-0"
-          />
-          <div>
-            <span
-              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
-              >{t.contact.info.toursLabel}</span
-            >
-            <span
-              class="text-base text-text-muted group-hover:text-text transition-colors"
-              >{siteData.contact.phone}</span
-            >
+        <!-- Phone -->
+        <div class="p-5 bg-background rounded-lg border border-border/50">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
+            </div>
+            <span class="text-xs uppercase tracking-widest text-primary font-medium">Telefon</span>
           </div>
-        </a>
-        <a
-          href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`}
-          class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors"
-        >
-          <Icon
-            name="lucide:phone"
-            class="w-5 h-5 text-primary mt-0.5 shrink-0"
-          />
-          <div>
-            <span
-              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
-              >{t.contact.info.salesLabel}</span
-            >
-            <span
-              class="text-base text-text-muted group-hover:text-text transition-colors"
-              >{siteData.contact.phoneSales}</span
-            >
+          <div class="space-y-2 pl-14">
+            <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
+              <span class="text-sm text-text-muted/70">{t.contact.info.toursLabel}</span>
+              <span>{siteData.contact.phone}</span>
+            </a>
+            <a href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
+              <span class="text-sm text-text-muted/70">{t.contact.info.salesLabel}</span>
+              <span>{siteData.contact.phoneSales}</span>
+            </a>
+            <a href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
+              <span class="text-sm text-text-muted/70">{t.contact.info.eventsLabel}</span>
+              <span>{siteData.contact.phoneEvents}</span>
+            </a>
           </div>
-        </a>
-        <a
-          href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`}
-          class="group flex items-start gap-4 p-6 hover:bg-background/50 transition-colors"
-        >
-          <Icon
-            name="lucide:phone"
-            class="w-5 h-5 text-primary mt-0.5 shrink-0"
-          />
-          <div>
-            <span
-              class="block text-xs uppercase tracking-widest text-primary font-medium mb-1"
-              >{t.contact.info.eventsLabel}</span
-            >
-            <span
-              class="text-base text-text-muted group-hover:text-text transition-colors"
-              >{siteData.contact.phoneEvents}</span
-            >
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="p-5 bg-background rounded-lg border border-border/50">
+          <div class="flex items-center gap-4 mb-3">
+            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
+            </div>
+            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.contact.info.hoursLabel}</span>
           </div>
-        </a>
-      </div>
+          <div class="space-y-2 pl-14">
+            <p class="text-base text-text-muted">{t.contact.info.hoursWeekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>
+            <p class="text-base text-text-muted">{t.contact.info.hoursWeekends.replace("{start}", siteData.hours.weekends.start).replace("{end}", siteData.hours.weekends.end)}</p>
+          </div>
+        </div>
 
-      <div class="border-t border-border/50"></div>
-
-      <!-- Social & WhatsApp -->
-      <div class="flex flex-wrap items-center justify-center gap-6 pt-8">
+        <!-- WhatsApp CTA -->
         <a
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-2.5 px-6 rounded-full hover:bg-primary-dark transition-colors text-base"
+          class="flex items-center justify-center gap-2 bg-primary text-white font-medium py-3.5 px-8 rounded-lg hover:bg-primary-dark transition-colors text-base shadow-lg"
         >
-          <Icon name="lucide:message-circle" class="w-4 h-4" />
+          <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
           WhatsApp
         </a>
-        <a
-          href={siteData.social.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-base text-text-muted hover:text-primary transition-colors"
-        >
-          <Icon name="lucide:instagram" class="w-5 h-5" />
-          Instagram
-        </a>
-        <a
-          href={siteData.social.facebook}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-base text-text-muted hover:text-primary transition-colors"
-        >
-          <Icon name="lucide:facebook" class="w-5 h-5" />
-          Facebook
-        </a>
-      </div>
-    </div>
 
-    <!-- Map -->
-    <div
-      class="rounded-lg overflow-hidden shadow-lg h-80 md:h-[28rem] lg:h-[32rem]"
-    >
-      <PrivacyMap
-        url={siteData.contact.googleMapsEmbed}
-        loadMap={t.contact.map.loadMap}
-        accept={t.contact.map.accept}
-        showMap={t.contact.map.showMap}
-      />
+        <!-- Social -->
+        <div class="flex items-center justify-center gap-6 pt-2">
+          <a
+            href={siteData.social.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors"
+          >
+            <Icon name="simple-icons:instagram" class="w-5 h-5" />
+            Instagram
+          </a>
+          <a
+            href={siteData.social.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary transition-colors"
+          >
+            <Icon name="simple-icons:facebook" class="w-5 h-5" />
+            Facebook
+          </a>
+        </div>
+      </div>
     </div>
   </Container>
 </section>

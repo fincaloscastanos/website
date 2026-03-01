@@ -3,6 +3,7 @@ import Container from "./ui/Container.astro";
 import type { Language } from "@/lib/i18n";
 import { siteData } from "@/data/site";
 import { getTranslatedPath } from "@/lib/registry";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   lang: Language;
@@ -26,6 +27,37 @@ const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección
         &copy; {currentYear}
         {siteData.meta.name}. All rights reserved.
       </p>
+
+      <!-- Social -->
+      <div class="flex items-center gap-4">
+        <a
+          href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted hover:text-primary transition-colors"
+          aria-label="WhatsApp"
+        >
+          <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
+        </a>
+        <a
+          href={siteData.social.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted hover:text-primary transition-colors"
+          aria-label="Instagram"
+        >
+          <Icon name="simple-icons:instagram" class="w-5 h-5" />
+        </a>
+        <a
+          href={siteData.social.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted hover:text-primary transition-colors"
+          aria-label="Facebook"
+        >
+          <Icon name="simple-icons:facebook" class="w-5 h-5" />
+        </a>
+      </div>
 
       <!-- Links -->
       <nav class="flex gap-6">
