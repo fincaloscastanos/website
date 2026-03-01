@@ -11,28 +11,23 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<!-- Hero -->
-<section class="py-16 md:py-24 bg-surface">
+<!-- Booking Widget -->
+<section class="pt-10 md:pt-14 pb-16 md:pb-24 bg-background">
   <Container>
-    <div class="text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl mb-4">{t.hero.title}</h1>
-      <p class="text-lg md:text-xl text-primary font-medium">{t.hero.subtitle}</p>
-    </div>
+    <h1 class="text-2xl md:text-3xl font-serif text-text-heading mb-8 md:mb-10">
+      {t.hero.title}
+    </h1>
+    <div id="apartmentIframeAll"></div>
   </Container>
 </section>
 
-<!-- Booking Widget -->
-<section class="py-16 md:py-24 bg-background">
-  <Container>
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-surface rounded-lg border border-border/50 p-4 min-h-[600px] flex items-center justify-center">
-        <!--
-          TODO: Smoobu-Embed-Code hier einfügen
-          Smoobu Dashboard > Kernfunktionen > Buchungssystem > In Website integrieren
-          Den HTML (iFrame) Code kopieren und hier einfügen
-        -->
-        <p class="text-text-muted text-sm">{t.booking.placeholder}</p>
-      </div>
-    </div>
-  </Container>
-</section>
+<script
+  is:inline
+  src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+<script is:inline>
+  BookingToolIframe.initialize({
+    url: "https://login.smoobu.com/en/booking-tool/iframe/1634876",
+    baseUrl: "https://login.smoobu.com",
+    target: "#apartmentIframeAll",
+  });
+</script>
