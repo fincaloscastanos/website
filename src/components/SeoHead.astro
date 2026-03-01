@@ -99,13 +99,94 @@ const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 }
 
 <!-- Twitter -->
-{ 
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+{
   siteData.meta.twitterHandle && (
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
     <meta name="twitter:site" content={siteData.meta.twitterHandle} />
   )
 }
+
+<!-- Schema.org JSON-LD -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: siteData.meta.name,
+        url: siteUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: new URL("/favicon.png", siteUrl).toString(),
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: siteData.contact.phone,
+          contactType: "customer service",
+          availableLanguage: ["Spanish", "English", "German"],
+        },
+        sameAs: [siteData.social.instagram, siteData.social.facebook],
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${siteUrl}/#localbusiness`,
+        name: siteData.meta.name,
+        url: siteUrl,
+        image: image,
+        telephone: siteData.contact.phone,
+        email: siteData.contact.email,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Camino de Los Romeros S/N",
+          addressLocality: "Agaete",
+          postalCode: "35489",
+          addressRegion: "Las Palmas",
+          addressCountry: "ES",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 28.081,
+          longitude: -15.7,
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: siteData.hours.weekdays.start,
+            closes: siteData.hours.weekdays.end,
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday", "Sunday"],
+            opens: siteData.hours.weekends.start,
+            closes: siteData.hours.weekends.end,
+          },
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: siteData.meta.name,
+        publisher: { "@id": `${siteUrl}/#organization` },
+        inLanguage: ["es", "en", "de"],
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalURL}#webpage`,
+        url: canonicalURL,
+        name: title,
+        description: description,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#localbusiness` },
+        inLanguage: lang,
+      },
+    ],
+  })}
+/>
