@@ -45,6 +45,18 @@ docker pull ghcr.io/tobiasbenkner/fincaloscastanos.com:latest
 docker run -p 80:80 ghcr.io/tobiasbenkner/fincaloscastanos.com:latest
 ```
 
+## Design
+
+The visual identity follows the CI/CD document (`design.md`). Key design tokens are defined in `src/styles/global.css`:
+
+- **Salbeigrün** `#8BA888` — buttons, highlights, links (`primary`)
+- **Dunkelgrün** `#2D6A4F` — dark accent sections, cursive subtitles (`accent`)
+- **Warmgold** `#D4A84B` — CTA buttons, warm accents (`secondary`)
+- **Hellbeige** `#F5E6CA` — warm section backgrounds (`secondary-light`, `surface-warm`)
+- **Hellgrau** `#F0EFED` — neutral section backgrounds (`surface`)
+
+**Fonts:** Raleway (Light/Regular/Bold) for headings and body, Oooh Baby for cursive subtitles and emotional accents.
+
 ## Languages
 
 The site supports three languages:
