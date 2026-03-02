@@ -59,9 +59,9 @@ export const translations = {
         es: "Nuestra experta en café les enseña la plantación y les cuenta todo sobre el cultivo y el buen café. ¡Vengan a verlo con sus propios ojos!",
       },
       cta: {
-        de: "Mehr Informationen",
-        en: "Find out more",
-        es: "Más información",
+        de: "Wunschtermin finden",
+        en: "Find your date",
+        es: "Encontrar fecha",
       },
     },
     accommodation: {
@@ -91,9 +91,9 @@ export const translations = {
         es: "Casa los Castaños desde {price} EUR/noche",
       },
       cta: {
-        de: "Mehr Informationen",
-        en: "Find out more",
-        es: "Más información",
+        de: "Verfügbarkeit prüfen",
+        en: "Check availability",
+        es: "Consultar disponibilidad",
       },
     },
   },
