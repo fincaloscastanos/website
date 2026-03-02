@@ -67,7 +67,7 @@ const galleryImages = [
 ---
 
 <!-- Hero Video -->
-<section class="w-full bg-primary-dark">
+<section class="w-full bg-accent">
   <video
     autoplay
     muted
@@ -101,11 +101,11 @@ const galleryImages = [
         </div>
         <div class="p-6 flex flex-col flex-1">
           <h3
-            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light"
           >
             {t.cards.events.title}
           </h3>
-          <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+          <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
             {t.cards.events.subtitle}
           </p>
           <p class="text-text-muted text-base leading-relaxed mb-6 flex-1">
@@ -138,11 +138,11 @@ const galleryImages = [
         </div>
         <div class="p-6 flex flex-col flex-1 text-secondary-foreground">
           <h3
-            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-secondary-foreground"
+            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light text-secondary-foreground"
           >
             {t.cards.tours.title}
           </h3>
-          <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+          <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
             {t.cards.tours.subtitle}
           </p>
           <p
@@ -177,11 +177,11 @@ const galleryImages = [
         </div>
         <div class="p-6 flex flex-col flex-1">
           <h3
-            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+            class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light"
           >
             {t.cards.accommodation.title}
           </h3>
-          <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+          <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
             {t.cards.accommodation.subtitle}
           </p>
           <p class="text-text-muted text-base leading-relaxed mb-4 flex-1">
@@ -210,7 +210,7 @@ const galleryImages = [
     <!-- Quote -->
     <blockquote class="text-center mt-12" data-animate="fade">
       <p
-        class="text-2xl md:text-4xl lg:text-5xl font-serif text-text-heading italic leading-tight"
+        class="text-2xl md:text-4xl lg:text-5xl font-sans uppercase tracking-[0.15em] text-brown-dark leading-tight font-light"
       >
         &laquo;{t.about.quote}&raquo;
       </p>
@@ -249,11 +249,11 @@ const galleryImages = [
       <!-- Text -->
       <div data-animate data-animate-delay="2">
         <h2
-          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light"
         >
           {t.about.title}
         </h2>
-        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
           {t.about.subtitle}
         </p>
         <p class="text-text-muted leading-relaxed mb-8">
@@ -280,11 +280,11 @@ const galleryImages = [
       <!-- Text -->
       <div data-animate>
         <h2
-          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light"
         >
           {t.products.title}
         </h2>
-        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
           {t.products.subtitle}
         </p>
         <p class="text-text-muted leading-relaxed mb-8">
@@ -348,7 +348,7 @@ const galleryImages = [
 </section>
 
 <!-- Tour Booking Section -->
-<section class="py-16 md:py-24 bg-primary text-white relative overflow-hidden">
+<section class="py-16 md:py-24 bg-accent text-white relative overflow-hidden">
   <div
     class="absolute inset-0 bg-repeat opacity-10" style={`background-image: url(${pattern06.src})`}
   >
@@ -369,7 +369,7 @@ const galleryImages = [
       <!-- Content -->
       <div data-animate data-animate-delay="2">
         <h2
-          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold text-white"
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light text-white"
         >
           {t.tour.title}
         </h2>
@@ -409,11 +409,11 @@ const galleryImages = [
       <!-- Text -->
       <div data-animate>
         <h2
-          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light"
         >
           {t.sustainability.title}
         </h2>
-        <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+        <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
           {t.sustainability.subtitle}
         </p>
         <p class="text-text-muted leading-relaxed">
@@ -477,11 +477,11 @@ const galleryImages = [
   <Container class="relative z-10">
     <div class="text-center mb-12" data-animate>
       <h2
-        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-bold"
+        class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light"
       >
         {t.contact.title}
       </h2>
-      <p class="font-serif text-primary text-2xl md:text-3xl mb-3">
+      <p class="font-serif text-accent text-2xl md:text-3xl mb-3">
         {t.contact.subtitle}
       </p>
     </div>
@@ -513,7 +513,7 @@ const galleryImages = [
             <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
           </div>
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.addressLabel}</span>
+            <span class="block text-xs uppercase tracking-widest text-accent font-medium mb-1">{t.contact.info.addressLabel}</span>
             <span class="text-base text-text-muted group-hover:text-text transition-colors leading-relaxed">{siteData.contact.address}</span>
           </div>
         </a>
@@ -527,7 +527,7 @@ const galleryImages = [
             <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
           </div>
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.contact.info.emailLabel}</span>
+            <span class="block text-xs uppercase tracking-widest text-accent font-medium mb-1">{t.contact.info.emailLabel}</span>
             <span class="text-base text-text-muted group-hover:text-text transition-colors">{siteData.contact.email}</span>
           </div>
         </a>
@@ -538,7 +538,7 @@ const galleryImages = [
             <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
             </div>
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">Telefon</span>
+            <span class="text-xs uppercase tracking-widest text-accent font-medium">Telefon</span>
           </div>
           <div class="space-y-2 pl-14">
             <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
@@ -562,7 +562,7 @@ const galleryImages = [
             <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
             </div>
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.contact.info.hoursLabel}</span>
+            <span class="text-xs uppercase tracking-widest text-accent font-medium">{t.contact.info.hoursLabel}</span>
           </div>
           <div class="space-y-2 pl-14">
             <p class="text-base text-text-muted">{t.contact.info.hoursWeekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>

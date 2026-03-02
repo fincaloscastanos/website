@@ -7,22 +7,28 @@ html {
 
 @theme {
   /* ── Colors ── */
-  --color-primary: #246235;
-  --color-primary-light: #2d7a42;
-  --color-primary-dark: #1b4a28;
+  --color-primary: #8BA888;
+  --color-primary-light: #a3bca0;
+  --color-primary-dark: #7a9977;
 
-  --color-secondary: #EFB96A;
-  --color-secondary-light: #fff0d9;
-  --color-secondary-dark: #d9a255;
-  --color-secondary-foreground: #ffffff;
+  --color-accent: #2D6A4F;
+  --color-accent-dark: #245a42;
+
+  --color-secondary: #D4A84B;
+  --color-secondary-light: #F5E6CA;
+  --color-secondary-dark: #c09538;
+  --color-secondary-foreground: #2C2C2C;
+
+  --color-brown: #7B3F1A;
+  --color-brown-dark: #3D1E0E;
 
   --color-background: #ffffff;
-  --color-surface: #f8f8f8;
-  --color-surface-warm: #fff0d9;
+  --color-surface: #F0EFED;
+  --color-surface-warm: #F5E6CA;
 
   --color-text: #444444;
   --color-text-muted: #666666;
-  --color-text-heading: #222222;
+  --color-text-heading: #2C2C2C;
 
   --color-border: #e1e1e1;
 
@@ -53,19 +59,19 @@ html {
   h4,
   h5,
   h6 {
-    font-family: var(--font-serif);
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-weight: 300;
     color: var(--color-text-heading);
     line-height: 1.2;
   }
 
   a {
-    color: var(--color-primary);
+    color: var(--color-accent);
     text-decoration: none;
   }
 
   a:hover {
-    color: var(--color-primary-dark);
+    color: var(--color-accent-dark);
   }
 }
 

@@ -52,7 +52,7 @@ const { lang, t } = Astro.props;
             <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
           </div>
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.info.addressLabel}</span>
+            <span class="block text-xs uppercase tracking-widest text-accent font-medium mb-1">{t.info.addressLabel}</span>
             <span class="text-base text-text-muted group-hover:text-text transition-colors leading-relaxed">{siteData.contact.address}</span>
           </div>
         </a>
@@ -66,7 +66,7 @@ const { lang, t } = Astro.props;
             <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
           </div>
           <div>
-            <span class="block text-xs uppercase tracking-widest text-primary font-medium mb-1">{t.info.emailLabel}</span>
+            <span class="block text-xs uppercase tracking-widest text-accent font-medium mb-1">{t.info.emailLabel}</span>
             <span class="text-base text-text-muted group-hover:text-text transition-colors">{siteData.contact.email}</span>
           </div>
         </a>
@@ -77,7 +77,7 @@ const { lang, t } = Astro.props;
             <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
             </div>
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">Telefon</span>
+            <span class="text-xs uppercase tracking-widest text-accent font-medium">Telefon</span>
           </div>
           <div class="space-y-2 pl-14">
             <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
@@ -101,7 +101,7 @@ const { lang, t } = Astro.props;
             <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
             </div>
-            <span class="text-xs uppercase tracking-widest text-primary font-medium">{t.hours.title}</span>
+            <span class="text-xs uppercase tracking-widest text-accent font-medium">{t.hours.title}</span>
           </div>
           <div class="space-y-2 pl-14">
             <p class="text-base text-text-muted">{t.hours.weekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>
