@@ -40,23 +40,6 @@ export const translations = {
     },
   },
 
-  consent: {
-    title: {
-      de: "Buchungssystem laden",
-      en: "Load booking system",
-      es: "Cargar sistema de reservas",
-    },
-    description: {
-      de: "Durch Klicken stimmen Sie der Datenübertragung an Bokun/Viator (bokun.io) zu. Wir speichern diese Einstellung für Ihren Besuch.",
-      en: "By clicking you agree to the data transfer to Bokun/Viator (bokun.io). We will remember your choice for this visit.",
-      es: "Al hacer clic, acepta la transferencia de datos a Bokun/Viator (bokun.io). Guardamos esta preferencia para su visita.",
-    },
-    button: {
-      de: "Buchungssystem laden",
-      en: "Load booking system",
-      es: "Cargar sistema de reservas",
-    },
-  },
 };
 
 export type BookTourTranslations = FlattenTranslation<typeof translations>;

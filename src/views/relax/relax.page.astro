@@ -8,7 +8,6 @@ import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslatedPath } from "@/lib/registry";
 import { siteData } from "@/data/site";
-import PrivacyGate from "@/components/ui/PrivacyGate.astro";
 
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
@@ -121,7 +120,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
             sizes="(max-width: 768px) 80vw, 28vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-4 border-white">
+        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-2 border-white">
           <Image
             src={natureImg}
             alt="Finca Natur"
@@ -285,13 +284,6 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
         </a>
       </div>
       <div id="calendar-casa" class="calendar-panel h-0 overflow-hidden mt-4">
-        <PrivacyGate
-          consentKey="smoobu-consent"
-          scripts={["https://login.smoobu.com/js/Apartment/CalendarWidget.js"]}
-          title={t.consent.title}
-          description={t.consent.description}
-          buttonLabel={t.consent.button}
-        >
           <div class="bg-surface rounded-lg border border-border/50 p-4">
             <div
               id={`smoobuCasa${siteData.accommodation.casa.calendarWidgetId}`}
@@ -308,7 +300,6 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
               </div>
             </div>
           </div>
-        </PrivacyGate>
       </div>
     </div>
   </Container>
@@ -473,13 +464,6 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
         </a>
       </div>
       <div id="calendar-cabana" class="calendar-panel h-0 overflow-hidden mt-4">
-        <PrivacyGate
-          consentKey="smoobu-consent"
-          scripts={["https://login.smoobu.com/js/Apartment/CalendarWidget.js"]}
-          title={t.consent.title}
-          description={t.consent.description}
-          buttonLabel={t.consent.button}
-        >
           <div class="bg-background rounded-lg border border-border/50 p-4">
             <div
               id={`smoobuCabana${siteData.accommodation.cabana.calendarWidgetId}`}
@@ -496,7 +480,6 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
               </div>
             </div>
           </div>
-        </PrivacyGate>
       </div>
     </div>
   </Container>
@@ -528,3 +511,4 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
     });
   });
 </script>
+<script is:inline src="https://login.smoobu.com/js/Apartment/CalendarWidget.js"></script>
