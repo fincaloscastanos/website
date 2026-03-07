@@ -1,6 +1,8 @@
 # Änderungswünsche
 - hero video weiter unten und oben cta
 - bilder
+- google first results
+- pdf englisch fehlt
 
 
 - das dunkle grün etwas schwächer
@@ -9,7 +11,4 @@
 - subnav bigger menu
 - weiße rahmen schmaler
 - private gate remove
-
-----
-- google first results
-
+- pdf deutsch, spanisch

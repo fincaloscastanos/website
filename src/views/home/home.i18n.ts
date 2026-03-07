@@ -6,6 +6,18 @@ export const translations = {
     en: "Home",
     es: "Inicio",
   },
+  hero: {
+    title: {
+      de: "Willkommen auf der Finca Los Castaños",
+      en: "Welcome to Finca Los Castaños",
+      es: "Bienvenidos a la Finca Los Castaños",
+    },
+    subtitle: {
+      de: "Valle de Agaete · Gran Canaria",
+      en: "Valle de Agaete · Gran Canaria",
+      es: "Valle de Agaete · Gran Canaria",
+    },
+  },
   seo: {
     title: {
       de: "Willkommen | Finca Los Castaños",
