@@ -7,7 +7,6 @@ export const siteData = {
   contact: {
     email: "info@fincaloscastanos.com",
     phone: "+34 648 22 99 95",
-    phoneSales: "+34 600 08 07 31",
     phoneEvents: "+34 682 64 45 41",
     whatsapp: "+34 648 22 99 95",
     address: "Camino de Los Romeros S/N, 35489 Agaete, Las Palmas, Spanien",

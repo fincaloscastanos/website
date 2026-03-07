@@ -54,7 +54,7 @@ Tailwind v4 with custom theme in `src/styles/global.css`. Full CI/CD specs in `d
 | Token | HEX | Name | Usage |
 |-------|-----|------|-------|
 | `primary` | `#8BA888` | Salbeigrün | Buttons, highlights, icon tints |
-| `accent` | `#2D6A4F` | Dunkelgrün | Cursive subtitles, dark sections (`bg-accent`), links |
+| `accent` | `#8BA888` | Salbeigrün | Cursive subtitles, accent sections (`bg-accent`), links |
 | `secondary` | `#D4A84B` | Warmgold | CTA buttons on dark bg, warm accents |
 | `secondary-light` | `#F5E6CA` | Hellbeige | Warm background sections |
 | `brown` | `#7B3F1A` | Mittelbraun | Coffee illustrations |

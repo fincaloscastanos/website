@@ -250,11 +250,6 @@ export const translations = {
         en: "Tours",
         es: "Visitas",
       },
-      salesLabel: {
-        de: "Verkauf",
-        en: "Shop",
-        es: "Ventas",
-      },
       eventsLabel: {
         de: "Events",
         en: "Events",

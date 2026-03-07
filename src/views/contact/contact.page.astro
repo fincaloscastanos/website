@@ -84,10 +84,6 @@ const { lang, t } = Astro.props;
               <span class="text-sm text-text-muted/70">{t.info.toursLabel}</span>
               <span>{siteData.contact.phone}</span>
             </a>
-            <a href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
-              <span class="text-sm text-text-muted/70">{t.info.salesLabel}</span>
-              <span>{siteData.contact.phoneSales}</span>
-            </a>
             <a href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
               <span class="text-sm text-text-muted/70">{t.info.eventsLabel}</span>
               <span>{siteData.contact.phoneEvents}</span>

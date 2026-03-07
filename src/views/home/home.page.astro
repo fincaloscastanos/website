@@ -68,7 +68,6 @@ const galleryImages = [
 
 <!-- Hero Video -->
 <section class="w-full bg-accent">
-  test
   <video
     autoplay
     muted
@@ -349,7 +348,7 @@ const galleryImages = [
 </section>
 
 <!-- Tour Booking Section -->
-<section class="py-16 md:py-24 bg-accent text-white relative overflow-hidden">
+<section class="py-16 md:py-24 bg-accent relative overflow-hidden">
   <div
     class="absolute inset-0 bg-repeat opacity-10" style={`background-image: url(${pattern06.src})`}
   >
@@ -370,28 +369,28 @@ const galleryImages = [
       <!-- Content -->
       <div data-animate data-animate-delay="2">
         <h2
-          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light text-white"
+          class="text-xl md:text-2xl mb-2 font-sans uppercase tracking-wider font-light text-text-heading"
         >
           {t.tour.title}
         </h2>
-        <p class="font-serif text-secondary text-2xl md:text-3xl mb-3">
+        <p class="font-serif text-white text-2xl md:text-3xl mb-3">
           {t.tour.subtitle}
         </p>
-        <p class="text-white/80 leading-relaxed mb-8">{t.tour.description}</p>
+        <p class="text-text leading-relaxed mb-8">{t.tour.description}</p>
 
         <div
-          class="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/20"
+          class="bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/60"
         >
-          <h3 class="text-lg font-serif text-secondary mb-3">
+          <h3 class="text-lg font-serif text-text-heading mb-3">
             {t.tour.hoursTitle}
           </h3>
-          <p class="text-white/90 text-base">{t.tour.weekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>
-          <p class="text-white/90 text-base">{t.tour.weekends.replace("{start}", siteData.hours.weekends.start).replace("{end}", siteData.hours.weekends.end)}</p>
+          <p class="text-text text-base">{t.tour.weekdays.replace("{start}", siteData.hours.weekdays.start).replace("{end}", siteData.hours.weekdays.end)}</p>
+          <p class="text-text text-base">{t.tour.weekends.replace("{start}", siteData.hours.weekends.start).replace("{end}", siteData.hours.weekends.end)}</p>
         </div>
 
         <a
           href={coffeeTourHref}
-          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-white text-text-heading font-bold py-3 px-8 rounded-full hover:bg-white/80 transition-colors duration-300 shadow-lg"
         >
           {t.tour.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -545,10 +544,6 @@ const galleryImages = [
             <a href={`tel:${siteData.contact.phone.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
               <span class="text-sm text-text-muted/70">{t.contact.info.toursLabel}</span>
               <span>{siteData.contact.phone}</span>
-            </a>
-            <a href={`tel:${siteData.contact.phoneSales.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
-              <span class="text-sm text-text-muted/70">{t.contact.info.salesLabel}</span>
-              <span>{siteData.contact.phoneSales}</span>
             </a>
             <a href={`tel:${siteData.contact.phoneEvents.replaceAll(" ", "")}`} class="flex justify-between items-center text-base text-text-muted hover:text-text transition-colors">
               <span class="text-sm text-text-muted/70">{t.contact.info.eventsLabel}</span>
