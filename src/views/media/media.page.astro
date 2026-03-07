@@ -14,6 +14,11 @@ import previewGino from "./images/previews/youtube-gino.jpg";
 import previewSanJorge from "./images/previews/youtube-sanjorge.jpg";
 import previewRadio from "./images/previews/radio-espejo.jpg";
 import imgKaffee from "./images/kaffee2.png";
+
+import pattern02 from "@/assets/patterns/pattern-02.svg";
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+import pattern06 from "@/assets/patterns/pattern-06.svg";
+import pattern07 from "@/assets/patterns/pattern-07.svg";
 import imgGeheimnis2 from "./images/das_geheimnis_von_Agaete-845x684.png";
 
 interface Props {
@@ -165,19 +170,121 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
 
 <PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
 
-<!-- Media Cards -->
-<section class="pt-8 md:pt-12 pb-16 md:pb-24 bg-background">
-  <Container>
+<!-- Intro + TV & Press -->
+<section class="pt-8 md:pt-12 pb-16 md:pb-24 bg-background relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute top-4 md:-top-4 right-0 md:-right-8 w-40 md:w-56 opacity-[0.12] rotate-12 pointer-events-none select-none" />
+
+  <img src={pattern07.src} alt="" class="absolute top-1/2 right-0 md:-right-4 w-20 md:w-32 opacity-[0.09] rotate-45 pointer-events-none select-none" />
+  <img src={pattern06.src} alt="" class="absolute bottom-1/4 right-0 md:right-auto md:-left-8 w-36 md:w-48 opacity-[0.08] rotate-[-20deg] pointer-events-none select-none" />
+  <Container class="relative z-10">
     <div class="max-w-3xl mx-auto text-center mb-12" data-animate>
       <p class="text-text-muted leading-relaxed">
         {t.intro.text}
       </p>
     </div>
-    {groups.map((group, groupIndex) => {
+    {groups.slice(0, 1).map((group) => {
       const featuredCard = group.cards.find((c) => c.featured);
       const regularCards = group.cards.filter((c) => !c.featured);
       return (
-        <div class={groupIndex > 0 ? "mt-16 pt-16 border-t border-border" : ""}>
+        <div>
+          {/* Group Header */}
+          <div class="flex items-center gap-4 mb-8" data-animate>
+            <div class="w-10 h-10 bg-primary/10 flex items-center justify-center shrink-0">
+              <Icon name={group.icon} class="w-5 h-5 text-primary" />
+            </div>
+            <h2 class="text-lg md:text-xl font-sans uppercase tracking-wider font-light">
+              {group.label[lang]}
+            </h2>
+            <div class="flex-1 h-px bg-border" />
+          </div>
+
+          {/* Featured Card */}
+          {featuredCard && (
+            <a
+              href={featuredCard.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group grid md:grid-cols-2 bg-background border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300 mb-6"
+              data-animate
+            >
+              <div class="relative overflow-hidden aspect-video md:aspect-auto md:min-h-[20rem]">
+                <Image
+                  src={featuredCard.image}
+                  alt={featuredCard.title[lang]}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  widths={[500, 800, 1200]}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+                  <Icon name={featuredCard.icon} class="w-3.5 h-3.5" style={featuredCard.color ? `color: ${featuredCard.color}` : undefined} />
+                  {typeof featuredCard.badge === "string" ? featuredCard.badge : featuredCard.badge[lang]}
+                </span>
+              </div>
+              <div class="p-8 md:p-10 flex flex-col justify-center">
+                <h3 class="text-lg md:text-xl font-medium text-text-heading group-hover:text-accent transition-colors duration-300 mb-3">
+                  {featuredCard.title[lang]}
+                </h3>
+                <p class="text-text-muted leading-relaxed mb-6">
+                  {featuredCard.description[lang]}
+                </p>
+                <span class="inline-flex items-center gap-2 text-sm font-medium text-accent">
+                  <Icon name="lucide:external-link" class="w-4 h-4" />
+                  {lang === "de" ? "Beitrag ansehen" : lang === "en" ? "Watch report" : "Ver reportaje"}
+                </span>
+              </div>
+            </a>
+          )}
+
+          {/* Regular Cards */}
+          <div class={`grid gap-6 ${regularCards.length <= 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-4"}`}>
+            {regularCards.map((card) => (
+              <a
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group bg-background border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                data-animate
+              >
+                <div class="relative overflow-hidden aspect-video">
+                  <Image
+                    src={card.image}
+                    alt={card.title[lang]}
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    widths={[300, 500]}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+                    <Icon name={card.icon} class="w-3.5 h-3.5" style={card.color ? `color: ${card.color}` : undefined} />
+                    {typeof card.badge === "string" ? card.badge : card.badge[lang]}
+                  </span>
+                </div>
+                <div class="p-5 flex flex-col flex-1">
+                  <h3 class="text-base font-medium text-text-heading group-hover:text-accent transition-colors duration-300 mb-2">
+                    {card.title[lang]}
+                  </h3>
+                  <p class="text-sm text-text-muted leading-relaxed flex-1">
+                    {card.description[lang]}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </Container>
+</section>
+
+<!-- Social Media -->
+<section class="pb-16 md:pb-24 bg-background">
+  <Container>
+    {groups.slice(1).map((group) => {
+      const featuredCard = group.cards.find((c) => c.featured);
+      const regularCards = group.cards.filter((c) => !c.featured);
+      return (
+        <div>
           {/* Group Header */}
           <div class="flex items-center gap-4 mb-8" data-animate>
             <div class="w-10 h-10 bg-primary/10 flex items-center justify-center shrink-0">
