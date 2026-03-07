@@ -184,6 +184,19 @@ const galleryImages = [
   </Container>
 </section>
 
+<!-- Video -->
+<section class="w-full">
+  <video
+    autoplay
+    muted
+    playsinline
+    preload="auto"
+    class="w-full h-[40vh] md:h-[50vh] object-cover block"
+  >
+    <source src="/hero.mp4" type="video/mp4" />
+  </video>
+</section>
+
 <!-- About Section -->
 <section class="py-16 md:py-24 bg-surface relative overflow-hidden">
   <img src={pattern04.src} alt="" class="absolute top-4 md:-top-4 right-0 md:-right-8 w-40 md:w-56 opacity-[0.12] rotate-12 pointer-events-none select-none" />
@@ -192,7 +205,7 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Images -->
       <div class="relative" data-animate>
-        <div class="overflow-hidden shadow-xl">
+        <div class="overflow-hidden shadow-xl border border-border">
           <Image
             src={aboutImg}
             alt="Finca Los Castaños Plantage"
@@ -290,7 +303,7 @@ const galleryImages = [
 
       <!-- Images -->
       <div class="relative" data-animate data-animate-delay="2">
-        <div class="overflow-hidden shadow-xl">
+        <div class="overflow-hidden shadow-xl border border-border">
           <Image
             src={productsImg}
             alt={t.products.title}
@@ -389,7 +402,7 @@ const galleryImages = [
 
       <!-- Images -->
       <div class="relative" data-animate data-animate-delay="2">
-        <div class="overflow-hidden shadow-xl">
+        <div class="overflow-hidden shadow-xl border border-border">
           <Image
             src={sustainabilityPanorama}
             alt={t.sustainability.title}
