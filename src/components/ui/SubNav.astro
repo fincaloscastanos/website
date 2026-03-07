@@ -30,8 +30,8 @@ const { links = [], cta } = Astro.props;
         {links.map((link, i) => (
           <>
             {i > 0 && <div class="hidden md:block w-px h-6 bg-primary/15" />}
-            <a href={link.href} class="group flex flex-col md:flex-row items-center gap-2 md:gap-3 px-5 py-3 md:py-2.5 rounded-2xl md:rounded-full bg-surface md:bg-transparent border border-border/50 md:border-transparent hover:bg-surface hover:border-primary/20 transition-all duration-300">
-              <div class="w-20 h-20 md:w-14 md:h-14 rounded-full overflow-hidden shrink-0 ring-2 ring-primary/20 group-hover:ring-primary transition-all duration-300">
+            <a href={link.href} class="group flex flex-col md:flex-row items-center gap-2 md:gap-3 px-5 py-3 md:py-2.5 rounded-none bg-surface md:bg-transparent border border-border/50 md:border-transparent hover:bg-surface hover:border-primary/20 transition-all duration-300">
+              <div class="w-20 h-20 md:w-14 md:h-14 rounded-none overflow-hidden shrink-0 ring-2 ring-primary/20 group-hover:ring-primary transition-all duration-300">
                 <Image
                   src={link.image}
                   alt={link.label}
@@ -52,7 +52,7 @@ const { links = [], cta } = Astro.props;
           href={cta.href}
           target={cta.external ? "_blank" : undefined}
           rel={cta.external ? "noopener noreferrer" : undefined}
-          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold text-sm py-2.5 px-6 rounded-full hover:bg-secondary-dark transition-colors duration-300 shadow-sm"
+          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold text-sm py-2.5 px-6 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-sm"
         >
           {cta.label}
           <Icon name={cta.external ? "lucide:external-link" : "lucide:arrow-right"} class="w-3.5 h-3.5" />

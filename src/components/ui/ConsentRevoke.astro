@@ -10,12 +10,12 @@ const { consentKey, label, revokedLabel, description } = Astro.props;
 ---
 
 <div
-  class="consent-revoke not-prose rounded-lg border border-border bg-surface p-5 my-6"
+  class="consent-revoke not-prose rounded-none border border-border bg-surface p-5 my-6"
   data-consent-key={consentKey}
 >
   <p class="text-sm text-text-muted mb-3">{description}</p>
   <button
-    class="consent-revoke-btn bg-primary text-white text-sm font-medium py-2 px-5 rounded-full hover:bg-primary-dark transition-colors"
+    class="consent-revoke-btn bg-primary text-white text-sm font-medium py-2 px-5 rounded-none hover:bg-primary-dark transition-colors"
     data-label={label}
     data-revoked-label={revokedLabel}
   >

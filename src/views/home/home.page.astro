@@ -88,7 +88,7 @@ const galleryImages = [
         href={eventsHref}
         data-animate
         data-animate-delay="2"
-        class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-3 md:order-1"
+        class="group bg-background rounded-none shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-3 md:order-1"
       >
         <div class="overflow-hidden">
           <Image
@@ -125,7 +125,7 @@ const galleryImages = [
         href={experienceHref}
         data-animate
         data-animate-delay="1"
-        class="group bg-secondary rounded-lg shadow-lg overflow-hidden border border-secondary/30 flex flex-col hover:shadow-xl transition-shadow duration-300 order-1 md:order-2 md:-translate-y-10"
+        class="group bg-secondary rounded-none shadow-lg overflow-hidden border border-secondary/30 flex flex-col hover:shadow-xl transition-shadow duration-300 order-1 md:order-2 md:-translate-y-10"
       >
         <div class="overflow-hidden">
           <Image
@@ -164,7 +164,7 @@ const galleryImages = [
         href={relaxHref}
         data-animate
         data-animate-delay="3"
-        class="group bg-background rounded-lg shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-2 md:order-3"
+        class="group bg-background rounded-none shadow-lg overflow-hidden border border-border/50 flex flex-col hover:shadow-xl transition-shadow duration-300 order-2 md:order-3"
       >
         <div class="overflow-hidden">
           <Image
@@ -261,7 +261,7 @@ const galleryImages = [
         </p>
         <a
           href={experienceHref}
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.about.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -315,7 +315,7 @@ const galleryImages = [
 
         <a
           href={experienceHref}
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.products.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -379,7 +379,7 @@ const galleryImages = [
         <p class="text-text leading-relaxed mb-8">{t.tour.description}</p>
 
         <div
-          class="bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-8 border border-border/60"
+          class="bg-white/50 backdrop-blur-sm rounded-none p-6 mb-8 border border-border/60"
         >
           <h3 class="text-lg font-serif text-text-heading mb-3">
             {t.tour.hoursTitle}
@@ -390,7 +390,7 @@ const galleryImages = [
 
         <a
           href={coffeeTourHref}
-          class="inline-flex items-center gap-2 bg-white text-text-heading font-bold py-3 px-8 rounded-full hover:bg-white/80 transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-white text-text-heading font-bold py-3 px-8 rounded-none hover:bg-white/80 transition-colors duration-300 shadow-lg"
         >
           {t.tour.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -507,9 +507,9 @@ const galleryImages = [
           href={siteData.contact.googleMaps}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-start gap-4 p-5 bg-background rounded-lg border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
+          class="group flex items-start gap-4 p-5 bg-background rounded-none border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+          <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
             <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
           </div>
           <div>
@@ -521,9 +521,9 @@ const galleryImages = [
         <!-- Email -->
         <a
           href={`mailto:${siteData.contact.email}`}
-          class="group flex items-start gap-4 p-5 bg-background rounded-lg border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
+          class="group flex items-start gap-4 p-5 bg-background rounded-none border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+          <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
             <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
           </div>
           <div>
@@ -533,9 +533,9 @@ const galleryImages = [
         </a>
 
         <!-- Phone -->
-        <div class="p-5 bg-background rounded-lg border border-border/50">
+        <div class="p-5 bg-background rounded-none border border-border/50">
           <div class="flex items-center gap-4 mb-3">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
             </div>
             <span class="text-xs uppercase tracking-widest text-accent font-medium">Telefon</span>
@@ -553,9 +553,9 @@ const galleryImages = [
         </div>
 
         <!-- Opening Hours -->
-        <div class="p-5 bg-background rounded-lg border border-border/50">
+        <div class="p-5 bg-background rounded-none border border-border/50">
           <div class="flex items-center gap-4 mb-3">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
             </div>
             <span class="text-xs uppercase tracking-widest text-accent font-medium">{t.contact.info.hoursLabel}</span>
@@ -571,7 +571,7 @@ const galleryImages = [
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 bg-primary text-white font-medium py-3.5 px-8 rounded-lg hover:bg-primary-dark transition-colors text-base shadow-lg"
+          class="flex items-center justify-center gap-2 bg-primary text-white font-medium py-3.5 px-8 rounded-none hover:bg-primary-dark transition-colors text-base shadow-lg"
         >
           <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
           WhatsApp

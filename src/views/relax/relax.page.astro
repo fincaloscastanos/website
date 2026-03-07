@@ -269,7 +269,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
       <div class="flex flex-wrap items-center gap-3">
         <button
           type="button"
-          class="calendar-trigger inline-flex items-center gap-2 text-primary font-medium border border-primary/30 rounded-full py-2.5 px-6 hover:bg-primary/5 transition-colors duration-300 cursor-pointer"
+          class="calendar-trigger inline-flex items-center gap-2 text-primary font-medium border border-primary/30 rounded-none py-2.5 px-6 hover:bg-primary/5 transition-colors duration-300 cursor-pointer"
           data-target="calendar-casa"
         >
           <Icon name="lucide:calendar" class="w-4 h-4" />
@@ -277,14 +277,14 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
         </button>
         <a
           href={`${bookingHref}?property=casa`}
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.casa.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </a>
       </div>
       <div id="calendar-casa" class="calendar-panel h-0 overflow-hidden mt-4">
-          <div class="bg-surface rounded-lg border border-border/50 p-4">
+          <div class="bg-surface rounded-none border border-border/50 p-4">
             <div
               id={`smoobuCasa${siteData.accommodation.casa.calendarWidgetId}`}
               class="calendarWidget"
@@ -449,7 +449,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
       <div class="flex flex-wrap items-center gap-3">
         <button
           type="button"
-          class="calendar-trigger inline-flex items-center gap-2 text-primary font-medium border border-primary/30 rounded-full py-2.5 px-6 hover:bg-primary/5 transition-colors duration-300 cursor-pointer"
+          class="calendar-trigger inline-flex items-center gap-2 text-primary font-medium border border-primary/30 rounded-none py-2.5 px-6 hover:bg-primary/5 transition-colors duration-300 cursor-pointer"
           data-target="calendar-cabana"
         >
           <Icon name="lucide:calendar" class="w-4 h-4" />
@@ -457,14 +457,14 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
         </button>
         <a
           href={`${bookingHref}?property=cabana`}
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
         >
           {t.cabana.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </a>
       </div>
       <div id="calendar-cabana" class="calendar-panel h-0 overflow-hidden mt-4">
-          <div class="bg-background rounded-lg border border-border/50 p-4">
+          <div class="bg-background rounded-none border border-border/50 p-4">
             <div
               id={`smoobuCabana${siteData.accommodation.cabana.calendarWidgetId}`}
               class="calendarWidget"

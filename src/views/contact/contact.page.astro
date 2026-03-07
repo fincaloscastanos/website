@@ -46,9 +46,9 @@ const { lang, t } = Astro.props;
           href={siteData.contact.googleMaps}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-start gap-4 p-5 bg-surface rounded-lg border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
+          class="group flex items-start gap-4 p-5 bg-surface rounded-none border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+          <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
             <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
           </div>
           <div>
@@ -60,9 +60,9 @@ const { lang, t } = Astro.props;
         <!-- Email -->
         <a
           href={`mailto:${siteData.contact.email}`}
-          class="group flex items-start gap-4 p-5 bg-surface rounded-lg border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
+          class="group flex items-start gap-4 p-5 bg-surface rounded-none border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+          <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
             <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
           </div>
           <div>
@@ -72,9 +72,9 @@ const { lang, t } = Astro.props;
         </a>
 
         <!-- Phone -->
-        <div class="p-5 bg-surface rounded-lg border border-border/50">
+        <div class="p-5 bg-surface rounded-none border border-border/50">
           <div class="flex items-center gap-4 mb-3">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
             </div>
             <span class="text-xs uppercase tracking-widest text-accent font-medium">Telefon</span>
@@ -92,9 +92,9 @@ const { lang, t } = Astro.props;
         </div>
 
         <!-- Opening Hours -->
-        <div class="p-5 bg-surface rounded-lg border border-border/50">
+        <div class="p-5 bg-surface rounded-none border border-border/50">
           <div class="flex items-center gap-4 mb-3">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+            <div class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0">
               <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
             </div>
             <span class="text-xs uppercase tracking-widest text-accent font-medium">{t.hours.title}</span>
@@ -110,7 +110,7 @@ const { lang, t } = Astro.props;
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 bg-primary text-white font-medium py-3.5 px-8 rounded-lg hover:bg-primary-dark transition-colors text-base shadow-lg"
+          class="flex items-center justify-center gap-2 bg-primary text-white font-medium py-3.5 px-8 rounded-none hover:bg-primary-dark transition-colors text-base shadow-lg"
         >
           <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
           WhatsApp

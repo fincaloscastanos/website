@@ -99,7 +99,7 @@ const galleryImages = [
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
       {
         features.map(({ icon, label }, i) => (
-          <div class="flex items-center gap-3 bg-background rounded-lg p-4 shadow-sm" data-animate data-animate-delay={`${i + 1}`}>
+          <div class="flex items-center gap-3 bg-background rounded-none p-4 shadow-sm" data-animate data-animate-delay={`${i + 1}`}>
             <Icon name={icon} class="w-6 h-6 text-primary shrink-0" />
             <span class="text-text-heading font-medium text-sm">{label}</span>
           </div>
@@ -191,7 +191,7 @@ const galleryImages = [
       </p>
       <a
         href={contactHref}
-        class="inline-flex items-center gap-2 bg-white text-text-heading font-bold py-3 px-8 rounded-full hover:bg-white/80 transition-colors duration-300 shadow-lg"
+        class="inline-flex items-center gap-2 bg-white text-text-heading font-bold py-3 px-8 rounded-none hover:bg-white/80 transition-colors duration-300 shadow-lg"
       >
         {t.closing.cta}
         <Icon name="lucide:arrow-right" class="w-4 h-4" />
