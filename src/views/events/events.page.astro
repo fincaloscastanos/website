@@ -70,7 +70,7 @@ const galleryImages = [
 
       <!-- Images -->
       <div class="relative max-w-sm md:max-w-md mx-auto" data-animate data-animate-delay="2">
-        <div class="overflow-hidden rounded-lg shadow-xl">
+        <div class="overflow-hidden shadow-xl">
           <Image
             src={tentExteriorImg}
             alt="Eventzelt"
@@ -79,7 +79,7 @@ const galleryImages = [
             sizes="(max-width: 768px) 80vw, 28vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-2 border-white">
+        <div class="overflow-hidden shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border border-border">
           <Image
             src={tentInteriorImg}
             alt="Inneneinrichtung"
@@ -117,7 +117,7 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
       <div class="relative order-2 md:order-1" data-animate>
-        <div class="overflow-hidden rounded-lg shadow-xl">
+        <div class="overflow-hidden shadow-xl">
           <Image
             src={celebrationImg}
             alt="Veranstaltung"
@@ -126,7 +126,7 @@ const galleryImages = [
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border-2 border-white">
+        <div class="overflow-hidden shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border border-border">
           <Image
             src={setupImg}
             alt="Event Vorbereitung"
@@ -163,7 +163,7 @@ const galleryImages = [
     <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
       {
         galleryImages.map((img, i) => (
-          <div class="overflow-hidden rounded-lg shadow-lg break-inside-avoid" data-animate="fade">
+          <div class="overflow-hidden shadow-lg break-inside-avoid" data-animate="fade">
             <Image
               src={img}
               alt={`Finca Los Castaños Event ${i + 1}`}

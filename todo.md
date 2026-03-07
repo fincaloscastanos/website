@@ -1,10 +1,15 @@
 # Änderungswünsche
-- private gate remove
-- weiße rahmen schmaler
-- subnav bigger menu
-- grau schmaler
 - hero video weiter unten und oben cta
-- google first results
+- bilder
+
+
 - das dunkle grün etwas schwächer
 - english als default
+- grau schmaler
+- subnav bigger menu
+- weiße rahmen schmaler
+- private gate remove
+
+----
+- google first results
 

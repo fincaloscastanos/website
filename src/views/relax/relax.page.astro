@@ -111,7 +111,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
       <div class="relative max-w-sm md:max-w-md mx-auto" data-animate>
-        <div class="overflow-hidden rounded-lg shadow-xl">
+        <div class="overflow-hidden shadow-xl">
           <Image
             src={introImg}
             alt="Apartment Interior"
@@ -120,7 +120,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
             sizes="(max-width: 768px) 80vw, 28vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-2 border-white">
+        <div class="overflow-hidden shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border border-border">
           <Image
             src={natureImg}
             alt="Finca Natur"
@@ -174,7 +174,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
         casaPreview.map((img, i) => (
           <div
             class:list={[
-              "overflow-hidden rounded-lg group aspect-[3/2]",
+              "overflow-hidden group aspect-[3/2]",
               i === 0 && "md:col-span-2 md:row-span-2 md:aspect-auto",
               i === 3 && "md:hidden",
             ]}
@@ -204,7 +204,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-3">
         {
           casaRemaining.map((img, i) => (
-            <div class="overflow-hidden rounded-lg group aspect-[3/2]">
+            <div class="overflow-hidden group aspect-[3/2]">
               <Image
                 src={img}
                 alt={`Casa los Castaños ${i + 5}`}
@@ -354,7 +354,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
         cabanaPreview.map((img, i) => (
           <div
             class:list={[
-              "overflow-hidden rounded-lg group aspect-[3/2]",
+              "overflow-hidden group aspect-[3/2]",
               i === 0 && "md:col-span-2 md:row-span-2 md:aspect-auto",
               i === 3 && "md:hidden",
             ]}
@@ -384,7 +384,7 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-3">
         {
           cabanaRemaining.map((img, i) => (
-            <div class="overflow-hidden rounded-lg group aspect-[3/2]">
+            <div class="overflow-hidden group aspect-[3/2]">
               <Image
                 src={img}
                 alt={`Cabaña en Finca ${i + 5}`}

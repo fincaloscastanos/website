@@ -226,7 +226,7 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Images -->
       <div class="relative" data-animate>
-        <div class="overflow-hidden rounded-lg shadow-xl">
+        <div class="overflow-hidden shadow-xl">
           <Image
             src={aboutImg}
             alt="Finca Los Castaños Plantage"
@@ -235,7 +235,7 @@ const galleryImages = [
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border-2 border-white">
+        <div class="overflow-hidden shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border border-border">
           <Image
             src={aboutDetailImg}
             alt="Finca Los Castaños Team"
@@ -324,7 +324,7 @@ const galleryImages = [
 
       <!-- Images -->
       <div class="relative" data-animate data-animate-delay="2">
-        <div class="overflow-hidden rounded-lg shadow-xl">
+        <div class="overflow-hidden shadow-xl">
           <Image
             src={productsImg}
             alt={t.products.title}
@@ -333,7 +333,7 @@ const galleryImages = [
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border-2 border-white">
+        <div class="overflow-hidden shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border border-border">
           <Image
             src={productsDetailImg}
             alt={t.products.title}
@@ -356,7 +356,7 @@ const galleryImages = [
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Image -->
-      <div class="overflow-hidden rounded-lg shadow-xl" data-animate>
+      <div class="overflow-hidden shadow-xl" data-animate>
         <Image
           src={tourImg}
           alt={t.tour.title}
@@ -379,7 +379,7 @@ const galleryImages = [
         <p class="text-text leading-relaxed mb-8">{t.tour.description}</p>
 
         <div
-          class="bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-8 border border-white/60"
+          class="bg-white/50 backdrop-blur-sm rounded-lg p-6 mb-8 border border-border/60"
         >
           <h3 class="text-lg font-serif text-text-heading mb-3">
             {t.tour.hoursTitle}
@@ -423,7 +423,7 @@ const galleryImages = [
 
       <!-- Images -->
       <div class="relative" data-animate data-animate-delay="2">
-        <div class="overflow-hidden rounded-lg shadow-xl">
+        <div class="overflow-hidden shadow-xl">
           <Image
             src={sustainabilityPanorama}
             alt={t.sustainability.title}
@@ -432,7 +432,7 @@ const galleryImages = [
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-        <div class="overflow-hidden rounded-lg shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border-2 border-white">
+        <div class="overflow-hidden shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border border-border">
           <Image
             src={sustainabilityDetail}
             alt={t.sustainability.title}
@@ -455,7 +455,7 @@ const galleryImages = [
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
       {
         galleryImages.map((img, i) => (
-          <div class="overflow-hidden rounded-lg group aspect-[5/4]" data-animate="fade" data-animate-delay={`${i + 1}`}>
+          <div class="overflow-hidden group aspect-[5/4]" data-animate="fade" data-animate-delay={`${i + 1}`}>
             <Image
               src={img}
               alt={`Finca Los Castaños ${i + 1}`}
@@ -489,7 +489,7 @@ const galleryImages = [
     <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
       <!-- Map -->
       <div
-        class="rounded-lg overflow-hidden shadow-lg h-80 md:h-full md:min-h-[28rem]"
+        class="overflow-hidden shadow-lg h-80 md:h-full md:min-h-[28rem]"
         data-animate
       >
         <PrivacyMap

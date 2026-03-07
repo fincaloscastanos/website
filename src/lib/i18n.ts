@@ -2,8 +2,8 @@ import { getOpenGraphLocale } from "./i18n/locales";
 import { createResolver } from "./i18n/resolve";
 import { type FlattenTranslation as BaseFlattenTranslation } from "./i18n/types";
 
-export const languages = ["es", "en", "de"] as const;
-export const defaultLang = "es" as const;
+export const languages = ["en", "es", "de"] as const;
+export const defaultLang = "en" as const;
 export type Language = (typeof languages)[number];
 
 export const openGraphLocales: Record<Language, string> = {
