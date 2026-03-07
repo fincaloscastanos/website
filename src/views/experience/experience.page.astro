@@ -33,6 +33,12 @@ interface Props {
 
 const { lang, t } = Astro.props;
 
+const pdfByLang: Record<Language, string> = {
+  de: "/Finca-Los-Castanos-German.pdf",
+  en: "/Finca-Los-Castanos-English.pdf",
+  es: "/Finca-Los-Castanos-Spanish.pdf",
+};
+
 const subNavLinks = [
   {
     href: getTranslatedPath("coffee-tour", lang),
@@ -270,7 +276,7 @@ const subNavLinks = [
         </p>
         <p class="text-text-muted leading-relaxed mb-8">{t.tour.description}</p>
         <a
-          href="/Finca-Los-Castanos-Aleman_K.pdf"
+          href={pdfByLang[lang]}
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
