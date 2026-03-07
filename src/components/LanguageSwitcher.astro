@@ -11,9 +11,9 @@ interface Props {
 const { lang, routeKey } = Astro.props;
 
 const flagIcons: Record<Language, string> = {
-  es: "twemoji:flag-spain",
-  de: "twemoji:flag-germany",
-  en: "twemoji:flag-united-kingdom",
+  es: "flag:es-4x3",
+  de: "flag:de-4x3",
+  en: "flag:gb-4x3",
 };
 ---
 
@@ -33,12 +33,12 @@ const flagIcons: Record<Language, string> = {
           <Icon
             name={flagIcons[l]}
             class:list={[
-              "h-[20px] w-[30px] md:h-[24px] md:w-[36px] block rounded-none transition-all duration-300 header-flag",
+              "h-[20px] w-[30px] md:h-[24px] md:w-[36px] block transition-all duration-300 header-flag",
             ]}
           />
           <span
             class:list={[
-              "mt-1 h-[2px] w-4 md:w-5 rounded-full transition-all duration-300",
+              "mt-1 h-[2px] w-[30px] md:w-[36px] transition-all duration-300",
               isActive
                 ? "bg-secondary"
                 : "bg-transparent group-hover:bg-secondary/40",

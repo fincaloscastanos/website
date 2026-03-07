@@ -14,12 +14,12 @@ importers:
       '@fontsource/raleway':
         specifier: ^5.2.8
         version: 5.2.8
+      '@iconify-json/flag':
+        specifier: ^1.2.11
+        version: 1.2.11
       '@iconify-json/lucide':
         specifier: ^1.2.86
         version: 1.2.95
-      '@iconify-json/twemoji':
-        specifier: ^1.2.5
-        version: 1.2.5
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.2.1(vite@6.4.1(@types/node@25.3.2)(jiti@2.6.1)(lightningcss@1.31.1))
@@ -413,14 +413,14 @@ packages:
   '@fontsource/raleway@5.2.8':
     resolution: {integrity: sha512-OATNM+J4XniKQRlI1e67v3euOnCUiXwpqgMofomKc5JNYOq0JPE6E5uTXMnFaZejKN1Z7s05JrHpmYB7/tg1Fw==}
 
+  '@iconify-json/flag@1.2.11':
+    resolution: {integrity: sha512-yqaID0FXzdXSXBBVi+/huqxrBWc0tySVvOsAmO/Vu/5UW+A3MNAOzXMIUfzA1SEiaZaxUHE9dDo6/wno3zggyw==}
+
   '@iconify-json/lucide@1.2.95':
     resolution: {integrity: sha512-SxDM/NEJtcGGAiLAnaZ7rcmVxkJI8esswTZLCm5BfNcoPf/yawIImb4nNfsu4dtFzP/Cl6KRg+vZq521zOUOnQ==}
 
   '@iconify-json/simple-icons@1.2.71':
     resolution: {integrity: sha512-rNoDFbq1fAYiEexBvrw613/xiUOPEu5MKVV/X8lI64AgdTzLQUUemr9f9fplxUMPoxCBP2rWzlhOEeTHk/Sf0Q==}
-
-  '@iconify-json/twemoji@1.2.5':
-    resolution: {integrity: sha512-uKpuIEV0v6K5BW3Mjdyl+XKFVAbbcPxAgifKvEMtZoUZB5+YiY5zaMm2uNNCxyXzAWU9yNLlj41WU6/mvgALsw==}
 
   '@iconify/tools@4.2.0':
     resolution: {integrity: sha512-WRxPva/ipxYkqZd1+CkEAQmd86dQmrwH0vwK89gmp2Kh2WyyVw57XbPng0NehP3x4V1LzLsXUneP1uMfTMZmUA==}
@@ -2356,15 +2356,15 @@ snapshots:
 
   '@fontsource/raleway@5.2.8': {}
 
+  '@iconify-json/flag@1.2.11':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/lucide@1.2.95':
     dependencies:
       '@iconify/types': 2.0.0
 
   '@iconify-json/simple-icons@1.2.71':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/twemoji@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 
