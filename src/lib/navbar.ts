@@ -24,5 +24,5 @@ export async function getNavbarItems(
     };
   };
 
-  return ["home", "experience", "relax", "discover", "contact"].map(createItem);
+  return ["home", "experience", "relax", "discover", "media", "contact"].map(createItem);
 }

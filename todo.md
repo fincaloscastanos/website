@@ -1,5 +1,4 @@
 # Änderungswünsche
-- hero video weiter unten und oben cta
 - bilder
 - google first results
 - pdf englisch fehlt
@@ -12,3 +11,5 @@
 - weiße rahmen schmaler
 - private gate remove
 - pdf deutsch, spanisch
+- hero video weiter unten und oben cta
+- neue seite veröffentlichungen

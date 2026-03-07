@@ -1,0 +1,225 @@
+---
+import type { MediaTranslations } from "./media.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+import PageHero from "@/components/ui/PageHero.astro";
+import { Icon } from "astro-icon/components";
+
+import previewMia from "./images/previews/instagram-mia.jpg";
+import previewTvCanaria1 from "./images/previews/tv-canaria-1.jpg";
+import previewTvCanaria2 from "./images/previews/tv-canaria-2.jpg";
+import previewBrodie from "./images/previews/youtube-brodie.jpg";
+import previewGino from "./images/previews/youtube-gino.jpg";
+import previewSanJorge from "./images/previews/youtube-sanjorge.jpg";
+import previewRadio from "./images/previews/radio-espejo.jpg";
+import imgKaffee from "./images/kaffee2.png";
+import imgGeheimnis2 from "./images/das_geheimnis_von_Agaete-845x684.png";
+
+interface Props {
+  lang: Language;
+  t: MediaTranslations;
+}
+
+const { lang, t } = Astro.props;
+
+// Featured card (first item rendered large)
+const featured = {
+  image: previewTvCanaria1,
+  icon: "lucide:tv" as const,
+  badge: "TV",
+  title: { de: "Ponte al día – Televisión Canaria", en: "Ponte al día – Televisión Canaria", es: "Ponte al día – Televisión Canaria" },
+  description: {
+    de: "Televisión Canaria besucht die Finca und zeigt den Alltag auf Europas Kaffeeplantage.",
+    en: "Televisión Canaria visits the Finca and shows daily life on Europe's coffee plantation.",
+    es: "Televisión Canaria visita la Finca y muestra la vida cotidiana en la plantación de café de Europa.",
+  },
+  href: "https://www.instagram.com/p/DKclzSzIFfR/",
+};
+
+const cards = [
+  {
+    image: previewTvCanaria2,
+    icon: "lucide:tv" as const,
+    badge: "TV",
+    title: { de: "Ponte al día – Teil 2", en: "Ponte al día – Part 2", es: "Ponte al día – Parte 2" },
+    description: {
+      de: "Der zweite Teil des TV-Beitrags über Kaffeeanbau und Nachhaltigkeit im Valle de Agaete.",
+      en: "The second part of the TV report on coffee cultivation and sustainability in the Valle de Agaete.",
+      es: "La segunda parte del reportaje televisivo sobre el cultivo de café y la sostenibilidad en el Valle de Agaete.",
+    },
+    href: "https://www.instagram.com/p/DKcmfMuIiPA/",
+  },
+  {
+    image: imgKaffee,
+    icon: "lucide:newspaper" as const,
+    badge: "Presse",
+    title: { de: "Wochenblatt – Seite 32", en: "Wochenblatt – Page 32", es: "Wochenblatt – Página 32" },
+    description: {
+      de: "Das Wochenblatt berichtet über die Kaffeeplantage im Valle de Agaete und ihre einzigartige Geschichte.",
+      en: "The Wochenblatt reports on the coffee plantation in the Valle de Agaete and its unique story.",
+      es: "El Wochenblatt informa sobre la plantación de café en el Valle de Agaete y su historia única.",
+    },
+    href: "https://www.wochenblatt.es/ausgabe/466/N45F/",
+  },
+  {
+    image: imgGeheimnis2,
+    icon: "lucide:newspaper" as const,
+    badge: "Presse",
+    title: { de: "Wochenblatt – Seite 33", en: "Wochenblatt – Page 33", es: "Wochenblatt – Página 33" },
+    description: {
+      de: "Fortsetzung des Artikels – von der Ernte bis zur Tasse: Kaffeeproduktion auf Gran Canaria.",
+      en: "Continuation of the article – from harvest to cup: coffee production on Gran Canaria.",
+      es: "Continuación del artículo – de la cosecha a la taza: producción de café en Gran Canaria.",
+    },
+    href: "https://www.wochenblatt.es/ausgabe/466/UVKU/",
+  },
+  {
+    image: previewBrodie,
+    icon: "simple-icons:youtube" as const,
+    color: "#FF0000",
+    badge: "YouTube",
+    title: { de: "@Brodie Vissers", en: "@Brodie Vissers", es: "@Brodie Vissers" },
+    description: {
+      de: "Ein Videoessay über Kaffeekultur und das besondere Erlebnis auf der Finca Los Castaños.",
+      en: "A video essay on coffee culture and the special experience at Finca Los Castaños.",
+      es: "Un videoensayo sobre la cultura del café y la experiencia especial en la Finca Los Castaños.",
+    },
+    href: "https://www.youtube.com/watch?v=NC4tnlYw6NM",
+  },
+  {
+    image: previewGino,
+    icon: "simple-icons:youtube" as const,
+    color: "#FF0000",
+    badge: "YouTube",
+    title: { de: "@Gino Maccanti", en: "@Gino Maccanti", es: "@Gino Maccanti" },
+    description: {
+      de: "Gino Maccanti entdeckt die Geheimnisse des kanarischen Kaffees im Herzen von Gran Canaria.",
+      en: "Gino Maccanti discovers the secrets of Canarian coffee in the heart of Gran Canaria.",
+      es: "Gino Maccanti descubre los secretos del café canario en el corazón de Gran Canaria.",
+    },
+    href: "https://www.youtube.com/watch?v=QewollNMJrQ",
+  },
+  {
+    image: previewSanJorge,
+    icon: "simple-icons:youtube" as const,
+    color: "#FF0000",
+    badge: "YouTube",
+    title: { de: "@San Jorge Café Del Bueno", en: "@San Jorge Café Del Bueno", es: "@San Jorge Café Del Bueno" },
+    description: {
+      de: "San Jorge Café begleitet den Weg der Kaffeebohne von der Plantage bis zur perfekten Tasse.",
+      en: "San Jorge Café follows the coffee bean's journey from plantation to the perfect cup.",
+      es: "San Jorge Café sigue el camino del grano de café desde la plantación hasta la taza perfecta.",
+    },
+    href: "https://www.youtube.com/watch?v=JLbkIs-6f8Q",
+  },
+  {
+    image: previewMia,
+    icon: "simple-icons:instagram" as const,
+    color: "#E4405F",
+    badge: "Instagram",
+    title: { de: "@mia.inacio", en: "@mia.inacio", es: "@mia.inacio" },
+    description: {
+      de: "Ein persönlicher Einblick in die Finca Los Castaños – erzählt durch die Linse einer Reisenden.",
+      en: "A personal glimpse of Finca Los Castaños – told through the lens of a traveller.",
+      es: "Una mirada personal a la Finca Los Castaños – contada a través de la lente de una viajera.",
+    },
+    href: "https://www.instagram.com/p/DT-my9yDI0l/",
+  },
+  {
+    image: previewRadio,
+    icon: "lucide:radio" as const,
+    badge: "Radio",
+    title: { de: "El Espejo Canario", en: "El Espejo Canario", es: "El Espejo Canario" },
+    description: {
+      de: "Canarias – der einzige Ort in Europa, an dem Kaffee angebaut wird. Ein Radiobeitrag.",
+      en: "The Canary Islands – Europe's only place where coffee is grown. A radio feature.",
+      es: "Canarias – el único lugar de Europa donde se produce café. Un reportaje de radio.",
+    },
+    href: "https://www.elespejocanario.es/secciones/canarias-unico-lugar-europeo-donde-se-produce-cafe/",
+  },
+];
+---
+
+<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
+
+<!-- Media Cards -->
+<section class="pt-8 md:pt-12 pb-16 md:pb-24 bg-background">
+  <Container>
+    <div class="max-w-3xl mx-auto text-center mb-12" data-animate>
+      <p class="text-text-muted leading-relaxed">
+        {t.intro.text}
+      </p>
+    </div>
+    <!-- Featured Card -->
+    <a
+      href={featured.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group grid md:grid-cols-2 bg-background border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300 mb-6"
+      data-animate
+    >
+      <div class="relative overflow-hidden aspect-video md:aspect-auto md:min-h-[20rem]">
+        <Image
+          src={featured.image}
+          alt={featured.title[lang]}
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          widths={[500, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+          <Icon name={featured.icon} class="w-3.5 h-3.5" />
+          {featured.badge}
+        </span>
+      </div>
+      <div class="p-8 md:p-10 flex flex-col justify-center">
+        <h3 class="text-lg md:text-xl font-medium text-text-heading group-hover:text-accent transition-colors duration-300 mb-3">
+          {featured.title[lang]}
+        </h3>
+        <p class="text-text-muted leading-relaxed mb-6">
+          {featured.description[lang]}
+        </p>
+        <span class="inline-flex items-center gap-2 text-sm font-medium text-accent">
+          <Icon name="lucide:external-link" class="w-4 h-4" />
+          {lang === "de" ? "Beitrag ansehen" : lang === "en" ? "Watch report" : "Ver reportaje"}
+        </span>
+      </div>
+    </a>
+
+    <!-- Remaining Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      {cards.map((card) => (
+        <a
+          href={card.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-background border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+        >
+          <div class="relative overflow-hidden aspect-video">
+            <Image
+              src={card.image}
+              alt={card.title[lang]}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              widths={[300, 500]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+              <Icon name={card.icon} class="w-3.5 h-3.5" style={card.color ? `color: ${card.color}` : undefined} />
+              {card.badge}
+            </span>
+          </div>
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-sm font-medium text-text-heading group-hover:text-accent transition-colors duration-300 mb-1">
+              {card.title[lang]}
+            </h3>
+            <p class="text-xs text-text-muted leading-relaxed flex-1">
+              {card.description[lang]}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>
