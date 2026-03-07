@@ -9,6 +9,7 @@ import {
   openGraphLocales,
 } from "@/lib/i18n";
 import { getTranslatedPath } from "@/lib/registry";
+import { getNavbarItems } from "@/lib/navbar";
 import { siteData } from "@/data/site";
 
 interface Props {
@@ -61,6 +62,8 @@ const alternates = languages.map((l) => ({
 }));
 
 const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
+
+const navItems = await getNavbarItems(lang, Astro.url.pathname);
 ---
 
 <!-- Primary Meta Tags -->
@@ -186,6 +189,16 @@ const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#localbusiness` },
         inLanguage: lang,
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${siteUrl}/#navigation`,
+        itemListElement: navItems.map((item, i) => ({
+          "@type": "SiteNavigationElement",
+          position: i + 1,
+          name: item.label,
+          url: new URL(item.href, siteUrl).toString(),
+        })),
       },
     ],
   })}

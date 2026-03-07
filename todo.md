@@ -1,15 +1,16 @@
 # Änderungswünsche
-- bilder
-- google first results
-- pdf englisch fehlt
 
+- google sitelinks
+- google search console account und indizierung prüfen
 
-- das dunkle grün etwas schwächer
-- english als default
-- grau schmaler
-- subnav bigger menu
-- weiße rahmen schmaler
-- private gate remove
-- pdf deutsch, spanisch
-- hero video weiter unten und oben cta
-- neue seite veröffentlichungen
+- Bilder tauschen
+- Finca Lageplan.pdf englisch fehlt
+✅ das dunkle grün etwas schwächer
+✅ english als default
+✅ grau schmaler
+✅ subnav bigger menu
+✅ weiße rahmen schmaler
+✅ private gate remove
+✅ Finca Lageplan.pdf deutsch, spanisch
+✅ hero video weiter unten und oben cta
+✅ neue seite veröffentlichungen
