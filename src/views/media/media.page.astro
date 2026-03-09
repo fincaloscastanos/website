@@ -13,8 +13,6 @@ import previewBrodie from "./images/previews/youtube-brodie.jpg";
 import previewGino from "./images/previews/youtube-gino.jpg";
 import previewSanJorge from "./images/previews/youtube-sanjorge.jpg";
 import previewRadio from "./images/previews/radio-espejo.jpg";
-import imgKaffee from "./images/kaffee2.png";
-
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
 import pattern06 from "@/assets/patterns/pattern-06.svg";
@@ -70,28 +68,16 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
         href: "https://www.instagram.com/p/DKcmfMuIiPA/",
       },
       {
-        image: imgKaffee,
-        icon: "lucide:newspaper" as const,
-        badge: { de: "Presse", en: "Press", es: "Prensa" },
-        title: { de: "Wochenblatt – Seite 32", en: "Wochenblatt – Page 32", es: "Wochenblatt – Página 32" },
-        description: {
-          de: "Das Wochenblatt berichtet über die Kaffeeplantage im Valle de Agaete und ihre einzigartige Geschichte.",
-          en: "The Wochenblatt reports on the coffee plantation in the Valle de Agaete and its unique story.",
-          es: "El Wochenblatt informa sobre la plantación de café en el Valle de Agaete y su historia única.",
-        },
-        href: "https://www.wochenblatt.es/ausgabe/466/N45F/",
-      },
-      {
         image: imgGeheimnis2,
         icon: "lucide:newspaper" as const,
         badge: { de: "Presse", en: "Press", es: "Prensa" },
-        title: { de: "Wochenblatt – Seite 33", en: "Wochenblatt – Page 33", es: "Wochenblatt – Página 33" },
+        title: { de: "Wochenblatt – Das Geheimnis von Agaete", en: "Wochenblatt – The Secret of Agaete", es: "Wochenblatt – El secreto de Agaete" },
         description: {
-          de: "Fortsetzung des Artikels – von der Ernte bis zur Tasse: Kaffeeproduktion auf Gran Canaria.",
-          en: "Continuation of the article – from harvest to cup: coffee production on Gran Canaria.",
-          es: "Continuación del artículo – de la cosecha a la taza: producción de café en Gran Canaria.",
+          de: "Das Wochenblatt berichtet über die Kaffeeplantage im Valle de Agaete – von der Ernte bis zur Tasse.",
+          en: "The Wochenblatt reports on the coffee plantation in the Valle de Agaete – from harvest to cup.",
+          es: "El Wochenblatt informa sobre la plantación de café en el Valle de Agaete – de la cosecha a la taza.",
         },
-        href: "https://www.wochenblatt.es/ausgabe/466/UVKU/",
+        href: "/wochenblatt.pdf",
       },
       {
         image: previewRadio,
