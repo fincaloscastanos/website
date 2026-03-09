@@ -173,13 +173,13 @@ const galleryImages = [
 </section>
 
 <!-- Illustration & Quote -->
-<section class="pb-16 md:pb-24 bg-background">
+<section class="pt-8 md:pt-16 pb-16 md:pb-24 bg-background">
   <Container>
     <div class="flex justify-center" data-animate="fade">
       <Image
         src={heroIllustration}
         alt="Finca Los Castaños Illustration"
-        class="w-full max-w-2xl h-auto"
+        class="w-full max-w-md h-auto"
         widths={[400, 600, 800]}
         sizes="(max-width: 768px) 100vw, 600px"
       />
@@ -188,7 +188,7 @@ const galleryImages = [
     <!-- Quote -->
     <blockquote class="text-center mt-12" data-animate="fade">
       <p
-        class="text-2xl md:text-4xl lg:text-5xl font-sans uppercase tracking-[0.15em] text-brown-dark leading-tight font-light"
+        class="text-base md:text-lg lg:text-xl font-sans uppercase tracking-[0.15em] text-brown-dark leading-tight font-light"
       >
         &laquo;{t.about.quote}&raquo;
       </p>
