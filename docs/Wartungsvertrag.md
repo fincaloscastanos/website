@@ -96,11 +96,11 @@ Leistungen, die über den in § 3 definierten Umfang hinausgehen, werden nach vo
 ## § 6 Vertragslaufzeit und Kündigung
 
 - **Vertragsbeginn:** 01.03.2026
-- **Mindestlaufzeit:** 3 Jahre (bis zum 28.02.2029)
+- **Mindestlaufzeit:** 12 Monate (bis zum 28.02.2027)
 
-Der Vertrag beginnt am 01.03.2026 und hat eine feste Mindestlaufzeit von 3 (drei) Jahren. Während der Mindestlaufzeit ist eine ordentliche Kündigung ausgeschlossen.
+Der Vertrag beginnt am 01.03.2026 und hat eine feste Mindestlaufzeit von 12 (zwölf) Monaten. Während der Mindestlaufzeit ist eine ordentliche Kündigung ausgeschlossen.
 
-Nach Ablauf der Mindestlaufzeit am 28.02.2029 verlängert sich der Vertrag auf unbestimmte Zeit und kann von jeder Vertragspartei mit einer Frist von einem Monat zum Ende eines Kalendermonats schriftlich gekündigt werden.
+Nach Ablauf der Mindestlaufzeit am 28.02.2027 verlängert sich der Vertrag auf unbestimmte Zeit und kann von jeder Vertragspartei mit einer Frist von einem Monat zum Ende eines Kalendermonats schriftlich gekündigt werden.
 
 Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere vor, wenn eine Vertragspartei trotz schriftlicher Abmahnung wiederholt gegen wesentliche Vertragspflichten verstößt oder über deren Vermögen ein Konkursverfahren gemäß der Ley Concursal eröffnet oder die Eröffnung mangels Masse abgelehnt wird.
 
@@ -187,7 +187,15 @@ Es gilt das Recht des Königreichs Spanien. Gerichtsstand ist, soweit gesetzlich
 
 ---
 
-## § 14 Unterschriften
+## § 14 Technischer Zugang und Dienstkontinuität
+
+Der Auftraggeber hat jederzeit vollständigen und uneingeschränkten Zugang zu sämtlichen Diensten, Infrastrukturen und technischen Ressourcen im Zusammenhang mit der Webseite und der Applikation, insbesondere zu Domains, Hosting-Konten, Code-Repositories, Datenbanken, Datensicherungen und SSL-Zertifikaten.
+
+Im Falle der Beendigung des Vertrages verpflichtet sich der Auftragnehmer, dem Auftraggeber unverzüglich sämtliche technischen Informationen, Zugangsdaten, Dokumentationen und Dateien zu übergeben, die zur Gewährleistung der technischen und betrieblichen Kontinuität der Dienste erforderlich sind.
+
+---
+
+## § 15 Unterschriften
 
 Dieser Vertrag wird in zwei gleichlautenden Ausfertigungen erstellt, von denen jede Vertragspartei eine erhält.
 

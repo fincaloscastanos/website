@@ -96,11 +96,11 @@ Los servicios que excedan el alcance definido en el § 3 se facturarán por sepa
 ## § 6 Duración del contrato y rescisión
 
 - **Inicio del contrato:** 01.03.2026
-- **Duración mínima:** 3 años (hasta el 28.02.2029)
+- **Duración mínima:** 12 meses (hasta el 28.02.2027)
 
-El contrato comienza el 01.03.2026 y tiene una duración mínima fija de 3 (tres) años. Durante la duración mínima queda excluida la rescisión ordinaria.
+El contrato comienza el 01.03.2026 y tiene una duración mínima fija de 12 (doce) meses. Durante la duración mínima queda excluida la rescisión ordinaria.
 
-Tras la finalización de la duración mínima el 28.02.2029, el contrato se prorroga por tiempo indefinido y puede ser rescindido por cualquiera de las partes con un preaviso de un mes antes del final de un mes natural, por escrito.
+Tras la finalización de la duración mínima el 28.02.2027, el contrato se prorroga por tiempo indefinido y puede ser rescindido por cualquiera de las partes con un preaviso de un mes antes del final de un mes natural, por escrito.
 
 El derecho a la rescisión extraordinaria por causa justificada queda inalterado. Se considera causa justificada, en particular, cuando una parte contratante incumple reiteradamente obligaciones contractuales esenciales a pesar de un requerimiento por escrito, o cuando se inicie un procedimiento concursal conforme a la Ley Concursal sobre su patrimonio, o se deniegue su apertura por insuficiencia de masa.
 
@@ -187,7 +187,15 @@ Se aplica el Derecho del Reino de España. El fuero competente es, en la medida 
 
 ---
 
-## § 14 Firmas
+## § 14 Acceso técnico y continuidad del servicio
+
+El Cliente tendrá en todo momento acceso completo y sin restricciones a todos los servicios, infraestructuras y recursos técnicos relacionados con la página web y la aplicación, incluyendo en particular dominios, cuentas de hosting, repositorios de código, bases de datos, copias de seguridad y certificados SSL.
+
+En caso de finalización del contrato, el Prestador se compromete a entregar al Cliente, sin demora indebida, toda la información técnica, credenciales de acceso, documentación y archivos necesarios para garantizar la continuidad técnica y operativa de los servicios.
+
+---
+
+## § 15 Firmas
 
 Este contrato se redacta en dos ejemplares idénticos, de los cuales cada parte contratante recibe uno.
 
