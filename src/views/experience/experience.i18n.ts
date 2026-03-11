@@ -65,24 +65,39 @@ export const translations = {
 
   intro: {
     p1: {
-      de: "Erleben Sie die Welt des Kaffees! Unser Tourguide zeigt Ihnen in etwa 45 Minuten unsere Plantage und H\u00e4nge mit den angebauten Pflanzen und gibt auf Spanisch, Franz\u00f6sisch oder Englisch ihr spannendes Wissen rund um Anbau und Kaffeegenuss weiter.",
-      en: "Step into the world of coffee! In around 45 minutes, our guide will take you through the plantation and its slopes, sharing her fascinating knowledge about cultivation and coffee enjoyment \u2013 in Spanish, French or English.",
-      es: "\u00a1Vengan a conocer el mundo del caf\u00e9! Nuestra gu\u00eda les lleva por la plantaci\u00f3n y las laderas durante unos 45 minutos, cont\u00e1ndoles todo lo que sabe sobre el cultivo y el buen caf\u00e9 \u2013 en espa\u00f1ol, franc\u00e9s o ingl\u00e9s.",
+      de: "Kommen Sie und entdecken Sie die Welt des Kaffees auf der Finca Los Casta\u00f1os!",
+      en: "Come and discover the world of coffee at Finca Los Casta\u00f1os!",
+      es: "\u00a1Vengan a descubrir el mundo del caf\u00e9 en Finca Los Casta\u00f1os!",
     },
     p2: {
-      de: "Die Kaffeeleidenschaft \u00fcbertr\u00e4gt sich auf Sie, wenn unsere Expertin stolz von der Geschichte des Kaffeeanbaus erz\u00e4hlt, Basiswissen zu Gattungen und Variet\u00e4ten, Wachstum, Ernteertr\u00e4gen sowie die wichtigsten Prozesse rund um das Thema Kaffeeanbau vermittelt.",
-      en: "You'll catch the coffee passion as our expert proudly shares the history of coffee cultivation, teaches you about species and varieties, growth cycles, harvest yields and the key processes behind growing great coffee.",
-      es: "La pasi\u00f3n por el caf\u00e9 se pega, ya ver\u00e1n. Nuestra experta les cuenta con orgullo la historia del cultivo aqu\u00ed en el valle, les explica las variedades, c\u00f3mo crecen, cu\u00e1nto se cosecha y todo el proceso que hay detr\u00e1s de cada grano.",
+      de: "Bei dieser gef\u00fchrten Tour von etwa 40\u201345 Minuten spazieren Sie \u00fcber unsere Kaffeeplantage im wundersch\u00f6nen Valle de Agaete \u2013 einem der wenigen Orte in Europa, an dem Kaffee noch auf traditionelle Weise angebaut wird.",
+      en: "During this guided experience of approximately 40\u201345 minutes, you'll walk through our coffee plantation in the beautiful Valle de Agaete \u2013 one of the few places in Europe where coffee is still grown in the traditional way.",
+      es: "Durante esta experiencia guiada de aproximadamente 40\u201345 minutos, recorrer\u00e1n nuestra plantaci\u00f3n de caf\u00e9 en el hermoso Valle de Agaete, uno de los pocos lugares de Europa donde el caf\u00e9 se cultiva de forma tradicional.",
     },
     p3: {
-      de: "Einen Teil der F\u00fchrung k\u00f6nnen Sie selbst die Plantage erkunden. Stolz zeigt unser Guide auch die \u201EKaffeeschule\u201C \u2013 in unseren Schulungsr\u00e4umen f\u00fchrt sie Ihnen beispielhaft die Zubereitung vor und es gibt eine Verkostung.",
-      en: "Part of the tour is yours to explore the plantation on your own. Our guide will also proudly show you the \"coffee school\" \u2013 in our training rooms she demonstrates the preparation and you get to taste the result.",
-      es: "Durante un ratito pueden pasear por la plantaci\u00f3n a su aire. Nuestra gu\u00eda tambi\u00e9n les ense\u00f1a la \"escuela del caf\u00e9\" \u2013 all\u00ed les prepara el caf\u00e9 delante de ustedes y, claro, hay que probarlo.",
+      de: "Unterwegs erkl\u00e4rt Ihnen unser Guide mit Leidenschaft den gesamten Prozess des Kaffees \u2013 vom Anbau der Pflanzen \u00fcber die Ernte und Trocknung bis hin zur R\u00f6stung der Bohnen. Sie erfahren, wie das vulkanische Mikroklima des Tals den Geschmack des Kaffees beeinflusst und was den Anbau an diesem einzigartigen Ort so besonders macht.",
+      en: "Along the way, our guide will passionately explain the entire coffee process \u2013 from growing the plants to harvesting, drying and roasting the beans. You'll discover how the valley's volcanic microclimate influences the coffee's flavour and what makes cultivation in this unique place so special.",
+      es: "A lo largo del recorrido, nuestra gu\u00eda les explicar\u00e1 con pasi\u00f3n todo el proceso del caf\u00e9, desde el cultivo de las plantas hasta la recolecci\u00f3n, el secado y el tostado de los granos. Descubrir\u00e1n c\u00f3mo el microclima volc\u00e1nico del valle influye en el sabor del caf\u00e9 y qu\u00e9 hace tan especial su cultivo en este lugar \u00fanico.",
     },
     p4: {
-      de: "In unserem Angebot halten wir f\u00fcr Sie F\u00fchrungen \u00fcber die Plantage, Verk\u00f6stigungen und Barista-Abende ebenso bereit wie die M\u00f6glichkeit, unseren exklusiven Caf\u00e9 zu erstehen.",
-      en: "We offer plantation tours, tastings and barista evenings, as well as the chance to buy our exclusive coffee.",
-      es: "Tenemos visitas por la plantaci\u00f3n, degustaciones y noches de barista, y por supuesto pueden llevarse nuestro caf\u00e9 a casa.",
+      de: "Sie k\u00f6nnen zwischen den Kaffeepflanzen spazieren, die Pflanzen aus der N\u00e4he kennenlernen und erfahren, wie jede Bohne einen sorgf\u00e4ltigen handwerklichen Prozess durchl\u00e4uft, bevor sie in die Tasse gelangt.",
+      en: "You'll stroll among the coffee trees, get to know the plants up close and learn how each bean goes through a careful artisanal process before it reaches your cup.",
+      es: "Podr\u00e1n pasear entre los cafetos, conocer de cerca las plantas y aprender c\u00f3mo cada grano pasa por un cuidadoso proceso artesanal antes de llegar a la taza.",
+    },
+    p5: {
+      de: "Die Tour endet mit einer Verkostung unseres frisch ger\u00f6steten Kaffees, der direkt vor Ihren Augen zubereitet wird, w\u00e4hrend wir Ihnen seine Aromen und Besonderheiten erkl\u00e4ren.",
+      en: "The visit ends with a tasting of our freshly roasted coffee, prepared right in front of you while we explain its aromas and characteristics.",
+      es: "La visita termina con una degustaci\u00f3n de nuestro caf\u00e9 reci\u00e9n tostado, preparado delante de ustedes mientras les explicamos sus aromas y caracter\u00edsticas.",
+    },
+    p6: {
+      de: "Nach der Tour k\u00f6nnen Sie auch unseren kleinen Laden besuchen und frisch ger\u00f6steten Kaffee sowie andere lokale Produkte mit nach Hause nehmen.",
+      en: "After the tour, you can also visit our little shop and take home our freshly roasted coffee and other local products.",
+      es: "Despu\u00e9s del tour, tambi\u00e9n podr\u00e1n visitar nuestra peque\u00f1a tienda y llevarse a casa nuestro caf\u00e9 reci\u00e9n tostado y otros productos locales.",
+    },
+    p7: {
+      de: "Ein ideales Erlebnis f\u00fcr Kaffeeliebhaber, neugierige Reisende und alle, die eines der bestgeh\u00fcteten Geheimnisse Gran Canarias entdecken m\u00f6chten.",
+      en: "An ideal experience for coffee lovers, curious travellers and anyone who wants to discover one of Gran Canaria's best-kept secrets.",
+      es: "Una experiencia ideal para amantes del caf\u00e9, viajeros curiosos y todos aquellos que quieran descubrir uno de los secretos mejor guardados de Gran Canaria.",
     },
   },
 
