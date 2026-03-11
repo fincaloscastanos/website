@@ -2,9 +2,12 @@
 
 - google sitelinks
 - google search console account und indizierung prüfen
-
-- Bilder tauschen
+- fotos
+- fotos groß machen
+- text
 - Finca Lageplan.pdf englisch fehlt
+
+
 ✅ das dunkle grün etwas schwächer
 ✅ english als default
 ✅ grau schmaler
