@@ -1,13 +1,12 @@
 # Änderungswünsche
-
 - google sitelinks
 - google search console account und indizierung prüfen
-- fotos
-- fotos groß machen
-- text
 - Finca Lageplan.pdf englisch fehlt
 
 
+✅ fotos autauschen
+✅ fotos groß machen
+✅ texte
 ✅ das dunkle grün etwas schwächer
 ✅ english als default
 ✅ grau schmaler
