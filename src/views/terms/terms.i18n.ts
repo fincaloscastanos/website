@@ -1,4 +1,7 @@
 import type { FlattenTranslation } from "@/lib/i18n";
+import { siteData } from "@/data/site";
+
+const { company, nif, street, zip, city, province } = siteData.legal;
 
 export const translations = {
   navigationLabel: {
@@ -37,9 +40,9 @@ export const translations = {
       es: "1. Ámbito de aplicación y parte contratante",
     },
     text: {
-      de: "Diese AGB gelten für alle Verträge über die Durchführung von Kaffeetouren, Verkostungen sowie die Vermietung von Unterkünften auf der Finca Los Castaños, Agaete. Vertragspartner ist AGAMOG INVERSIONES SLU, Camino de Los Romeros, s/n, 35489 Agaete, Las Palmas de Gran Canaria (CIF: B21690888), im Folgenden 'Veranstalter' genannt.",
-      en: "These Terms and Conditions apply to all contracts for the provision of coffee tours, tastings and the rental of accommodation at Finca Los Castaños, Agaete. The contracting party is AGAMOG INVERSIONES SLU, Camino de Los Romeros, s/n, 35489 Agaete, Las Palmas de Gran Canaria (CIF: B21690888), hereinafter referred to as the 'Organiser'.",
-      es: "Estas condiciones generales se aplican a todos los contratos relativos a la realización de tours de café, degustaciones y el alquiler de alojamientos en la Finca Los Castaños, Agaete. La parte contratante es AGAMOG INVERSIONES SLU, Camino de Los Romeros, s/n, 35489 Agaete, Las Palmas de Gran Canaria (CIF: B21690888), en adelante denominada 'Organizador'.",
+      de: `Diese AGB gelten für alle Verträge über die Durchführung von Kaffeetouren, Verkostungen sowie die Vermietung von Unterkünften auf der Finca Los Castaños, ${city}. Vertragspartner ist ${company}, ${street}, ${zip} ${city}, ${province} (CIF: ${nif}), im Folgenden 'Veranstalter' genannt.`,
+      en: `These Terms and Conditions apply to all contracts for the provision of coffee tours, tastings and the rental of accommodation at Finca Los Castaños, ${city}. The contracting party is ${company}, ${street}, ${zip} ${city}, ${province} (CIF: ${nif}), hereinafter referred to as the 'Organiser'.`,
+      es: `Estas condiciones generales se aplican a todos los contratos relativos a la realización de tours de café, degustaciones y el alquiler de alojamientos en la Finca Los Castaños, ${city}. La parte contratante es ${company}, ${street}, ${zip} ${city}, ${province} (CIF: ${nif}), en adelante denominada 'Organizador'.`,
     },
   },
 
@@ -233,9 +236,9 @@ export const translations = {
   },
 
   source: {
-    de: "Stand: Februar 2026 | AGAMOG INVERSIONES SLU | Finca Los Castaños, Agaete, Gran Canaria",
-    en: "As of: February 2026 | AGAMOG INVERSIONES SLU | Finca Los Castaños, Agaete, Gran Canaria",
-    es: "Fecha: febrero de 2026 | AGAMOG INVERSIONES SLU | Finca Los Castaños, Agaete, Gran Canaria",
+    de: `Stand: Februar 2026 | ${company} | Finca Los Castaños, ${city}, Gran Canaria`,
+    en: `As of: February 2026 | ${company} | Finca Los Castaños, ${city}, Gran Canaria`,
+    es: `Fecha: febrero de 2026 | ${company} | Finca Los Castaños, ${city}, Gran Canaria`,
   },
 };
 

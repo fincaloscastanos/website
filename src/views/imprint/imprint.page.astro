@@ -3,6 +3,8 @@ import type { ImprintTranslations } from "./imprint.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
 import PageHero from "@/components/ui/PageHero.astro";
+import { Icon } from "astro-icon/components";
+import { siteData } from "@/data/site";
 
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern07 from "@/assets/patterns/pattern-07.svg";
@@ -13,6 +15,7 @@ interface Props {
 }
 
 const { lang, t } = Astro.props;
+const { company, nif, street, zip, city, province, country, phone, email } = siteData.legal;
 ---
 
 <PageHero title={t.title} subtitle={t.subtitle} />
@@ -28,24 +31,14 @@ const { lang, t } = Astro.props;
       <p>{t.general.intro}</p>
       <p>{t.general.ownerIntro}</p>
       <p>
-        <strong>AGAMOG INVERSIONES SLU</strong><br />
-        CIF: B21690888<br />
-        Camino de Los Romeros, s/n<br />
-        35489 Agaete – Las Palmas de Gran Canaria ({
-          lang === "de" ? "Spanien" : lang === "en" ? "Spain" : "España"
-        })
+        <strong>{company}</strong><br />
+        CIF: {nif}<br />
+        {street}<br />
+        {zip} {city} – {province} ({country})
       </p>
       <p>
-        {
-          lang === "de" ? "Telefonnummer" : lang === "en" ? "Phone" : "Teléfono"
-        }: +34 600 08 07 31<br />
-        {
-          lang === "de"
-            ? "E-Mail-Kontakt"
-            : lang === "en"
-              ? "Email"
-              : "Correo electrónico"
-        }: info@fincaloscastanos.com
+        <Icon name="lucide:phone" class="inline w-4 h-4" /> {phone}<br />
+        <Icon name="lucide:mail" class="inline w-4 h-4" /> {email}
       </p>
 
       <!-- II. Terms -->

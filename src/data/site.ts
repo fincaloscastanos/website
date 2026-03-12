@@ -4,6 +4,17 @@ export const siteData = {
     name: "Finca los Castaños",
     twitterHandle: "",
   },
+  legal: {
+    nif: "B21690888",
+    company: "AGAMOG INVERSIONES SLU",
+    street: "Camino de Los Romeros, s/n",
+    zip: "35489",
+    city: "Agaete",
+    province: "Las Palmas",
+    country: "España",
+    phone: "+34682644541",
+    email: "info@fincaloscastanos.com",
+  },
   contact: {
     email: "info@fincaloscastanos.com",
     phone: "+34 648 22 99 95",
@@ -17,7 +28,6 @@ export const siteData = {
   accommodation: {
     casa: {
       name: "Casa los Castaños",
-      pricePerNight: 180,
       smoobuId: 13443271,
       calendarWidgetId: 3161916,
       calendarVerification:
@@ -25,7 +35,6 @@ export const siteData = {
     },
     cabana: {
       name: "Cabaña en Finca",
-      pricePerNight: 160,
       smoobuId: 13442685,
       calendarWidgetId: 3174012,
       calendarVerification:

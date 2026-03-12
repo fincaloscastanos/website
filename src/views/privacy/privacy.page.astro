@@ -4,6 +4,8 @@ import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
 import PageHero from "@/components/ui/PageHero.astro";
 import ConsentRevoke from "@/components/ui/ConsentRevoke.astro";
+import { Icon } from "astro-icon/components";
+import { siteData } from "@/data/site";
 
 interface Props {
   lang: Language;
@@ -11,6 +13,7 @@ interface Props {
 }
 
 const { lang, t } = Astro.props;
+const { company, nif, street, zip, city, province, country, phone, email } = siteData.legal;
 ---
 
 <PageHero title={t.title} subtitle={t.subtitle} />
@@ -60,21 +63,14 @@ const { lang, t } = Astro.props;
       <h3>{t.general.responsibleTitle}</h3>
       <p>{t.general.responsibleText}</p>
       <p>
-        AGAMOG INVERSIONES SLU<br />
-        CIF: B21690888<br />
-        Camino de Los Romeros, s/n<br />
-        35489 Agaete, Las Palmas (España)
+        {company}<br />
+        CIF: {nif}<br />
+        {street}<br />
+        {zip} {city}, {province} ({country})
       </p>
       <p>
-        {lang === "de" ? "Telefon" : lang === "en" ? "Phone" : "Teléfono"}: +34
-        600 08 07 31<br />
-        {
-          lang === "de"
-            ? "E-Mail"
-            : lang === "en"
-              ? "Email"
-              : "Correo electrónico"
-        }: info@fincaloscastanos.com
+        <Icon name="lucide:phone" class="inline w-4 h-4" /> {phone}<br />
+        <Icon name="lucide:mail" class="inline w-4 h-4" /> {email}
       </p>
       <p>{t.general.responsibleEntity}</p>
 
