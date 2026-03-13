@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 
 export default defineConfig({
-  site: 'https://finca.pulpo.cloud',
+  site: 'https://fincaloscastanos.com',
   vite: {
     plugins: [tailwindcss()],
   },
