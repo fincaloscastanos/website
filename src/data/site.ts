@@ -46,6 +46,7 @@ export const siteData = {
     adults: 18,
     adultsOnline: 16,
     children: 7.5,
+    childrenOnline: 6,
     infantsMaxAge: 4,
     durationMinutes: 45,
     bokun: {

@@ -1,4 +1,11 @@
 import type { FlattenTranslation } from "@/lib/i18n";
+import { siteData } from "@/data/site";
+
+const { coffeeTour } = siteData;
+const fp = (price: number) =>
+  price % 1 === 0
+    ? `${price},00 €`
+    : `${price.toFixed(2).replace(".", ",")} €`;
 
 export const translations = {
   navigationLabel: {
@@ -82,9 +89,9 @@ export const translations = {
       es: "Niños",
     },
     infants: {
-      de: "Kleinkinder bis {age} Jahre",
-      en: "Infants up to {age} years",
-      es: "Peques hasta {age} años",
+      de: `Kleinkinder bis ${coffeeTour.infantsMaxAge} Jahre`,
+      en: `Infants up to ${coffeeTour.infantsMaxAge} years`,
+      es: `Peques hasta ${coffeeTour.infantsMaxAge} años`,
     },
     infantsFree: {
       de: "kostenlos",
@@ -96,15 +103,30 @@ export const translations = {
       en: "Book your tour",
       es: "Reservar tour",
     },
-    onlineDiscount: {
-      de: "Online im Voraus buchen und nur {price} zahlen!",
-      en: "Book online in advance and pay only {price}!",
-      es: "¡Reserva online con antelación y paga solo {price}!",
+    adultsOnlinePrice: {
+      de: fp(coffeeTour.adultsOnline),
+      en: fp(coffeeTour.adultsOnline),
+      es: fp(coffeeTour.adultsOnline),
+    },
+    childrenOnlinePrice: {
+      de: fp(coffeeTour.childrenOnline),
+      en: fp(coffeeTour.childrenOnline),
+      es: fp(coffeeTour.childrenOnline),
+    },
+    onlinePrice: {
+      de: "Online-Preis",
+      en: "Online price",
+      es: "Precio online",
+    },
+    onsiteNote: {
+      de: `* Bei Bezahlung vor Ort: Erwachsene ${fp(coffeeTour.adults)}, Kinder ${fp(coffeeTour.children)}`,
+      en: `* On-site payment: Adults ${fp(coffeeTour.adults)}, Children ${fp(coffeeTour.children)}`,
+      es: `* Pago en el lugar: Adultos ${fp(coffeeTour.adults)}, Niños ${fp(coffeeTour.children)}`,
     },
     duration: {
-      de: "Die Dauer der Führung beläuft sich auf etwa {minutes} Minuten inkl. Kaffeeverkostung.",
-      en: "The tour lasts around {minutes} minutes and includes a coffee tasting.",
-      es: "El recorrido dura unos {minutes} minutos e incluye una degustación de café.",
+      de: `Die Dauer der Führung beläuft sich auf etwa ${coffeeTour.durationMinutes} Minuten inkl. Kaffeeverkostung.`,
+      en: `The tour lasts around ${coffeeTour.durationMinutes} minutes and includes a coffee tasting.`,
+      es: `El recorrido dura unos ${coffeeTour.durationMinutes} minutos e incluye una degustación de café.`,
     },
   },
 

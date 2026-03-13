@@ -5,7 +5,6 @@ import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
 import PageHero from "@/components/ui/PageHero.astro";
 import { Icon } from "astro-icon/components";
-import { siteData } from "@/data/site";
 import { getTranslatedPath } from "@/lib/registry";
 
 import guideImg from "@/assets/coffee-tour/guide.jpg";
@@ -24,12 +23,7 @@ interface Props {
 
 const { lang, t } = Astro.props;
 
-const { coffeeTour } = siteData;
 const bookTourHref = getTranslatedPath("book-tour", lang);
-const formatPrice = (price: number) =>
-  price % 1 === 0
-    ? `${price},00 EUR`
-    : `${price.toFixed(2).replace(".", ",")} EUR`;
 ---
 
 <PageHero title={t.hero.title} subtitle={t.hero.subtitle} ctaLabel={t.hero.cta} ctaHref={bookTourHref} />
@@ -114,8 +108,9 @@ const formatPrice = (price: number) =>
           {t.pricing.subtitle}
         </p>
 
-        <!-- Preise -->
-        <div class="space-y-3 mb-10">
+        <!-- Preise (Online) -->
+        <p class="text-xs uppercase tracking-wider text-white/70 mb-2">{t.pricing.onlinePrice}</p>
+        <div class="space-y-3 mb-4">
           <div
             class="flex items-center justify-between bg-white/50 backdrop-blur-sm rounded-none p-4 border border-border/60"
           >
@@ -124,7 +119,7 @@ const formatPrice = (price: number) =>
               <span class="text-text">{t.pricing.adults}</span>
             </div>
             <span class="text-xl font-serif font-bold text-text-heading"
-              >{formatPrice(coffeeTour.adults)}</span
+              >{t.pricing.adultsOnlinePrice}*</span
             >
           </div>
           <div
@@ -135,7 +130,7 @@ const formatPrice = (price: number) =>
               <span class="text-text">{t.pricing.children}</span>
             </div>
             <span class="text-xl font-serif font-bold text-text-heading"
-              >{formatPrice(coffeeTour.children)}</span
+              >{t.pricing.childrenOnlinePrice}*</span
             >
           </div>
           <div
@@ -144,12 +139,7 @@ const formatPrice = (price: number) =>
             <div class="flex items-center gap-3">
               <Icon name="lucide:heart" class="w-5 h-5 text-text-heading" />
               <span class="text-text"
-                >{
-                  t.pricing.infants.replace(
-                    "{age}",
-                    String(coffeeTour.infantsMaxAge),
-                  )
-                }</span
+                >{t.pricing.infants}</span
               >
             </div>
             <span class="text-xl font-serif font-bold text-text-heading"
@@ -158,28 +148,17 @@ const formatPrice = (price: number) =>
           </div>
         </div>
 
+        <!-- Kleingedrucktes: Vor-Ort-Preise -->
+        <p class="text-xs text-white/70 mb-10">
+          {t.pricing.onsiteNote}
+        </p>
+
         <!-- Infos -->
         <div class="space-y-3 mb-10">
           <div class="flex items-center gap-3 bg-white/50 backdrop-blur-sm rounded-none p-4 border border-border/60">
-            <Icon name="lucide:ticket-percent" class="w-5 h-5 text-text-heading shrink-0" />
-            <p class="text-sm text-text-heading leading-relaxed font-medium">
-              {
-                t.pricing.onlineDiscount.replace(
-                  "{price}",
-                  formatPrice(coffeeTour.adultsOnline),
-                )
-              }
-            </p>
-          </div>
-          <div class="flex items-center gap-3 bg-white/50 backdrop-blur-sm rounded-none p-4 border border-border/60">
             <Icon name="lucide:clock" class="w-5 h-5 text-text-heading shrink-0" />
             <p class="text-sm text-text leading-relaxed">
-              {
-                t.pricing.duration.replace(
-                  "{minutes}",
-                  String(coffeeTour.durationMinutes),
-                )
-              }
+              {t.pricing.duration}
             </p>
           </div>
         </div>
