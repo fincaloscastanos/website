@@ -1,0 +1,114 @@
+---
+import type { Language } from "@/lib/i18n";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+
+const labels = {
+  es: {
+    text: "Utilizamos cookies de marketing (Google Ads) para medir el rendimiento de nuestras campañas publicitarias. Las cookies analíticas y esenciales no requieren consentimiento.",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    privacy: "Protección de datos",
+  },
+  en: {
+    text: "We use marketing cookies (Google Ads) to measure the performance of our advertising campaigns. Analytics and essential cookies do not require consent.",
+    accept: "Accept",
+    reject: "Decline",
+    privacy: "Privacy Policy",
+  },
+  de: {
+    text: "Wir verwenden Marketing-Cookies (Google Ads), um die Leistung unserer Werbekampagnen zu messen. Analyse- und essenzielle Cookies erfordern keine Einwilligung.",
+    accept: "Akzeptieren",
+    reject: "Ablehnen",
+    privacy: "Datenschutz",
+  },
+};
+
+const t = labels[lang];
+
+const privacySlug = {
+  es: "/proteccion-de-datos",
+  en: "/en/privacy-policy",
+  de: "/de/datenschutz",
+};
+---
+
+<div
+  id="cookie-consent-banner"
+  class="fixed bottom-0 left-0 right-0 z-50 hidden"
+  role="dialog"
+  aria-label="Cookie consent"
+>
+  <div class="bg-text-heading/95 backdrop-blur-sm text-white px-4 py-4 md:py-5">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <p class="text-sm leading-relaxed flex-1">
+        {t.text}{" "}
+        <a href={privacySlug[lang]} class="underline text-secondary-light hover:text-secondary">
+          {t.privacy}
+        </a>
+      </p>
+      <div class="flex gap-3 shrink-0">
+        <button
+          id="cookie-reject"
+          class="text-sm font-medium py-2 px-5 border border-white/30 text-white hover:bg-white/10 transition-colors"
+        >
+          {t.reject}
+        </button>
+        <button
+          id="cookie-accept"
+          class="text-sm font-bold py-2 px-5 bg-secondary text-text-heading hover:bg-secondary-dark transition-colors"
+        >
+          {t.accept}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var CONSENT_KEY = "cookie-consent-marketing";
+
+    function loadGtag() {
+      if (document.querySelector('script[src*="googletagmanager"]')) return;
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=AW-17876386878";
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "AW-17876386878");
+    }
+
+    function init() {
+      var consent = localStorage.getItem(CONSENT_KEY);
+      var banner = document.getElementById("cookie-consent-banner");
+      if (!banner) return;
+
+      if (consent === null) {
+        banner.classList.remove("hidden");
+      } else if (consent === "true") {
+        loadGtag();
+      }
+
+      document.getElementById("cookie-accept")?.addEventListener("click", function () {
+        localStorage.setItem(CONSENT_KEY, "true");
+        banner.classList.add("hidden");
+        loadGtag();
+      });
+
+      document.getElementById("cookie-reject")?.addEventListener("click", function () {
+        localStorage.setItem(CONSENT_KEY, "false");
+        banner.classList.add("hidden");
+      });
+    }
+
+    init();
+    document.addEventListener("astro:page-load", init);
+  })();
+</script>
