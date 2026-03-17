@@ -50,6 +50,7 @@ const eventsHref = getTranslatedPath("events", lang);
 const experienceHref = getTranslatedPath("experience", lang);
 const relaxHref = getTranslatedPath("relax", lang);
 const coffeeTourHref = getTranslatedPath("coffee-tour", lang);
+const bookTourHref = getTranslatedPath("book-tour", lang);
 
 const galleryImages = [
   gallery01,
@@ -75,7 +76,7 @@ const galleryImages = [
     <div class="grid md:grid-cols-3 gap-4 md:gap-6">
       <!-- Card: Tours (primary) — mobile 1st, desktop 2nd -->
       <a
-        href={experienceHref}
+        href={bookTourHref}
         class="group bg-secondary shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:order-2"
       >
         <div class="relative overflow-hidden">
