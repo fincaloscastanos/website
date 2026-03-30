@@ -3,6 +3,7 @@ import type { ExperienceTranslations } from "./experience.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import Faq from "@/components/ui/Faq.astro";
 import PageHero from "@/components/ui/PageHero.astro";
 import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
@@ -64,7 +65,7 @@ const subNavLinks = [
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
-      <div class="space-y-5" data-animate>
+      <div class="space-y-5" data-animate data-speakable>
         <p class="text-text-muted leading-relaxed">{t.intro.p1}</p>
         <p class="text-text-muted leading-relaxed">{t.intro.p2}</p>
         <p class="text-text-muted leading-relaxed">{t.intro.p3}</p>
@@ -324,3 +325,6 @@ const subNavLinks = [
     </div>
   </Container>
 </section>
+
+<!-- FAQ -->
+<Faq title={t.faq.title} subtitle={t.faq.subtitle} items={t.faq.items} />

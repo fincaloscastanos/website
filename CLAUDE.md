@@ -37,7 +37,7 @@ src/
 
 ## i18n
 
-Three languages: **es** (default), **en**, **de**.
+Three languages: **en** (default), **es**, **de**.
 
 Adding a new page:
 1. Create `src/views/{name}/{name}.page.astro`
@@ -92,5 +92,5 @@ Deployment runs via GitHub Actions on push to `main` (build → Docker image →
 - **Views** follow the `{name}.page.astro` / `.route.ts` / `.i18n.ts` pattern
 - **Components** use PascalCase: `Header.astro`, `LanguageSwitcher.astro`
 - **Types** use `import type` for type-only imports
-- Spanish is the default language — routes without lang prefix are Spanish
+- English is the default language — routes without lang prefix are English
 - SEO is handled by `SeoHead.astro` (hreflang, OG tags, canonical)

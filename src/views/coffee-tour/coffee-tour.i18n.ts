@@ -67,6 +67,45 @@ export const translations = {
     },
   },
 
+  faq: {
+    title: {
+      de: "Häufige Fragen",
+      en: "Frequently asked questions",
+      es: "Preguntas frecuentes",
+    },
+    subtitle: {
+      de: "Alles rund um die Kaffeetour",
+      en: "Everything about the coffee tour",
+      es: "Todo sobre el tour de café",
+    },
+    items: {
+      de: [
+        { question: "Wie lange dauert die Kaffeetour?", answer: `Die geführte Tour dauert etwa ${coffeeTour.durationMinutes} Minuten inklusive einer Kaffeeverkostung am Ende.` },
+        { question: "In welchen Sprachen wird die Tour angeboten?", answer: "Die Tour wird auf Spanisch, Englisch und Französisch angeboten." },
+        { question: "Muss ich die Tour im Voraus buchen?", answer: "Eine Online-Buchung wird empfohlen, da die Plätze begrenzt sind. Online erhalten Sie zudem einen vergünstigten Preis." },
+        { question: "Ist die Tour für Kinder geeignet?", answer: `Ja, Kinder sind willkommen. Kinder zahlen einen ermäßigten Preis und Kleinkinder bis ${coffeeTour.infantsMaxAge} Jahre sind kostenlos.` },
+        { question: "Was ist im Tourpreis enthalten?", answer: "Der Preis beinhaltet die geführte Besichtigung der Kaffeeplantage, Erklärungen zum Kaffeeanbau und eine Kaffeeverkostung." },
+        { question: "Gibt es Parkmöglichkeiten?", answer: "Ja, kostenlose Parkplätze stehen direkt an der Finca zur Verfügung." },
+      ],
+      en: [
+        { question: "How long does the coffee tour last?", answer: `The guided tour takes approximately ${coffeeTour.durationMinutes} minutes, including a coffee tasting at the end.` },
+        { question: "What languages are the tours offered in?", answer: "Tours are offered in Spanish, English, and French." },
+        { question: "Do I need to book in advance?", answer: "Advance online booking is recommended as places are limited. You also get a discounted price when booking online." },
+        { question: "Is the tour suitable for children?", answer: `Yes, children are welcome. Children pay a reduced price, and infants up to ${coffeeTour.infantsMaxAge} years old are free.` },
+        { question: "What is included in the tour price?", answer: "The price includes a guided visit of the coffee plantation, explanations about coffee cultivation, and a coffee tasting session." },
+        { question: "Is there parking available?", answer: "Yes, free parking is available directly at the finca." },
+      ],
+      es: [
+        { question: "\u00bfCu\u00e1nto dura el tour de caf\u00e9?", answer: `La visita guiada dura aproximadamente ${coffeeTour.durationMinutes} minutos, incluyendo una degustaci\u00f3n de caf\u00e9 al final.` },
+        { question: "\u00bfEn qu\u00e9 idiomas se ofrece el tour?", answer: "Los tours se ofrecen en espa\u00f1ol, ingl\u00e9s y franc\u00e9s." },
+        { question: "\u00bfEs necesario reservar con antelaci\u00f3n?", answer: "Se recomienda reservar online ya que las plazas son limitadas. Adem\u00e1s, obtendr\u00e1n un precio reducido al reservar online." },
+        { question: "\u00bfEl tour es apto para ni\u00f1os?", answer: `S\u00ed, los ni\u00f1os son bienvenidos. Los ni\u00f1os pagan un precio reducido y los peques hasta ${coffeeTour.infantsMaxAge} a\u00f1os entran gratis.` },
+        { question: "\u00bfQu\u00e9 incluye el precio del tour?", answer: "El precio incluye una visita guiada por la plantaci\u00f3n de caf\u00e9, explicaciones sobre el cultivo del caf\u00e9 y una degustaci\u00f3n." },
+        { question: "\u00bfHay aparcamiento disponible?", answer: "S\u00ed, hay aparcamiento gratuito en la propia finca." },
+      ],
+    },
+  },
+
   pricing: {
     title: {
       de: "Preise & Angebote",

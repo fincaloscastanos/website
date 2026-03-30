@@ -3,6 +3,7 @@ import type { RelaxTranslations } from "./relax.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import Faq from "@/components/ui/Faq.astro";
 import PageHero from "@/components/ui/PageHero.astro";
 import SubNav from "@/components/ui/SubNav.astro";
 import { Icon } from "astro-icon/components";
@@ -528,6 +529,9 @@ const cabanaRemaining = [cabanaLiving, cabanaKitchen, cabanaBathroom, cabanaLand
     </div>
   </Container>
 </section>
+
+<!-- FAQ -->
+<Faq title={t.faq.title} subtitle={t.faq.subtitle} items={t.faq.items} />
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">

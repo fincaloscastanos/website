@@ -20,8 +20,9 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   fullBleed?: boolean;
+  additionalSchemas?: Record<string, unknown>[];
 }
-const { title, description, lang, routeKey, ogImage, noindex, fullBleed } = Astro.props;
+const { title, description, lang, routeKey, ogImage, noindex, fullBleed, additionalSchemas } = Astro.props;
 ---
 
 <!doctype html>
@@ -37,6 +38,7 @@ const { title, description, lang, routeKey, ogImage, noindex, fullBleed } = Astr
       routeKey={routeKey}
       ogImage={ogImage}
       noindex={noindex}
+      additionalSchemas={additionalSchemas}
     />
     {import.meta.env.PROD && (
       <script

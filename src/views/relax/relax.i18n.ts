@@ -386,6 +386,44 @@ export const translations = {
     en: "Check availability",
     es: "Consultar disponibilidad",
   },
+  faq: {
+    title: {
+      de: "H\u00e4ufige Fragen",
+      en: "Frequently asked questions",
+      es: "Preguntas frecuentes",
+    },
+    subtitle: {
+      de: "Rund um Ihre Unterkunft",
+      en: "About your stay",
+      es: "Sobre su estancia",
+    },
+    items: {
+      de: [
+        { question: "Wie viele G\u00e4ste k\u00f6nnen in den Apartments \u00fcbernachten?", answer: "Die Casa los Casta\u00f1os bietet Platz f\u00fcr bis zu 4 Personen, die Caba\u00f1a en Finca f\u00fcr bis zu 2 Personen." },
+        { question: "Gibt es WLAN in den Unterk\u00fcnften?", answer: "Ja, kostenloses WLAN ist in beiden Unterk\u00fcnften verf\u00fcgbar." },
+        { question: "Ist die Finca f\u00fcr Familien mit Kindern geeignet?", answer: "Ja, die Finca ist familienfreundlich. Bitte beachten Sie, dass die Plantage in einer l\u00e4ndlichen Umgebung liegt." },
+        { question: "Wie komme ich zur Finca?", answer: "Die Finca liegt im Valle de Agaete auf Gran Canaria. Ein Mietwagen wird empfohlen. Kostenlose Parkpl\u00e4tze sind vorhanden." },
+        { question: "Kann ich w\u00e4hrend meines Aufenthalts an einer Kaffeetour teilnehmen?", answer: "Selbstverst\u00e4ndlich! Als Gast der Finca k\u00f6nnen Sie jederzeit an einer unserer gef\u00fchrten Kaffeetouren teilnehmen." },
+        { question: "Was befindet sich in der N\u00e4he der Finca?", answer: "Das Fischerdorf Puerto de las Nieves ist nur wenige Minuten entfernt. Der Naturpark Tamadaba, die Dedo de Dios-Felsformation und der Strand von Agaete sind ebenfalls in der N\u00e4he." },
+      ],
+      en: [
+        { question: "How many guests can the apartments accommodate?", answer: "Casa los Casta\u00f1os sleeps up to 4 guests, while Caba\u00f1a en Finca accommodates up to 2 guests." },
+        { question: "Is WiFi available?", answer: "Yes, free WiFi is available in both accommodations." },
+        { question: "Is the finca suitable for families with children?", answer: "Yes, the finca is family-friendly. Please note that the plantation is in a rural setting." },
+        { question: "How do I get to the finca?", answer: "The finca is located in the Valle de Agaete on Gran Canaria. A rental car is recommended. Free parking is available on site." },
+        { question: "Can I join a coffee tour during my stay?", answer: "Of course! As a guest of the finca you are welcome to join any of our guided coffee tours." },
+        { question: "What is there to do near the finca?", answer: "The fishing village of Puerto de las Nieves is just a few minutes away. Tamadaba Natural Park, the Dedo de Dios rock formation, and Agaete beach are also nearby." },
+      ],
+      es: [
+        { question: "\u00bfCu\u00e1ntas personas caben en los apartamentos?", answer: "La Casa los Casta\u00f1os aloja hasta 4 personas y la Caba\u00f1a en Finca hasta 2 personas." },
+        { question: "\u00bfHay WiFi disponible?", answer: "S\u00ed, ambos alojamientos cuentan con WiFi gratuito." },
+        { question: "\u00bfLa finca es adecuada para familias con ni\u00f1os?", answer: "S\u00ed, la finca es apta para familias. Tengan en cuenta que la plantaci\u00f3n est\u00e1 en un entorno rural." },
+        { question: "\u00bfC\u00f3mo llego a la finca?", answer: "La finca se encuentra en el Valle de Agaete en Gran Canaria. Se recomienda alquilar un coche. Hay aparcamiento gratuito." },
+        { question: "\u00bfPuedo hacer un tour de caf\u00e9 durante mi estancia?", answer: "\u00a1Por supuesto! Como hu\u00e9sped de la finca pueden unirse a cualquiera de nuestros tours guiados." },
+        { question: "\u00bfQu\u00e9 hay para hacer cerca de la finca?", answer: "El pueblo pesquero de Puerto de las Nieves est\u00e1 a pocos minutos. El Parque Natural de Tamadaba, el Dedo de Dios y la playa de Agaete tambi\u00e9n est\u00e1n cerca." },
+      ],
+    },
+  },
 
 };
 

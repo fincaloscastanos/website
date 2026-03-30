@@ -19,6 +19,7 @@ interface Props {
   routeKey: string;
   ogImage?: string | ImageMetadata;
   noindex?: boolean;
+  additionalSchemas?: Record<string, unknown>[];
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   routeKey,
   ogImage,
   noindex = false,
+  additionalSchemas = [],
 } = Astro.props;
 
 const siteUrl =
@@ -64,13 +66,24 @@ const alternates = languages.map((l) => ({
 const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
 
 const navItems = await getNavbarItems(lang, Astro.url.pathname);
+
+const homeLabel = lang === "de" ? "Startseite" : lang === "en" ? "Home" : "Inicio";
+const homeUrl = new URL(getTranslatedPath("home", lang), siteUrl).toString();
+const breadcrumbItems: { name: string; url: string }[] = [{ name: homeLabel, url: homeUrl }];
+if (routeKey !== "home") {
+  const currentNavItem = navItems.find((item) => item.isActive);
+  breadcrumbItems.push({
+    name: currentNavItem?.label || title,
+    url: canonicalURL,
+  });
+}
 ---
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<meta name="robots" content={robotsContent} />
+<meta name="robots" content={`${robotsContent}, max-snippet:-1, max-image-preview:large, max-video-preview:-1`} />
 
 <!-- Canonical -->
 <link rel="canonical" href={canonicalURL} />
@@ -134,12 +147,17 @@ const navItems = await getNavbarItems(lang, Astro.url.pathname);
           contactType: "customer service",
           availableLanguage: ["Spanish", "English", "German"],
         },
-        sameAs: [siteData.social.instagram, siteData.social.facebook],
+        sameAs: [siteData.social.instagram, siteData.social.facebook, "https://maps.app.goo.gl/oZts3DjDY23nveaQ9"],
       },
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "TouristAttraction"],
         "@id": `${siteUrl}/#localbusiness`,
         name: siteData.meta.name,
+        description: lang === "de"
+          ? "Historische Kaffeeplantage im Valle de Agaete, Gran Canaria – Kaffeetouren, Ferienwohnungen und Events in Europas einziger Kaffeeanbauregion."
+          : lang === "en"
+          ? "Historic coffee plantation in the Valle de Agaete, Gran Canaria – coffee tours, holiday apartments and events in Europe's only coffee-growing region."
+          : "Finca de café histórica en el Valle de Agaete, Gran Canaria – tours de café, apartamentos vacacionales y eventos en la única región cafetera de Europa.",
         url: siteUrl,
         image: image,
         telephone: siteData.contact.phone,
@@ -154,8 +172,14 @@ const navItems = await getNavbarItems(lang, Astro.url.pathname);
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: 28.081,
-          longitude: -15.7,
+          latitude: 28.0810937,
+          longitude: -15.6731384,
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.7",
+          bestRating: "5",
+          ratingCount: "384",
         },
         openingHoursSpecification: [
           {
@@ -171,6 +195,94 @@ const navItems = await getNavbarItems(lang, Astro.url.pathname);
             closes: siteData.hours.weekends.end,
           },
         ],
+        priceRange: "€€",
+        currenciesAccepted: "EUR",
+        paymentAccepted: "Cash, Credit Card",
+        isAccessibleForFree: false,
+        publicAccess: true,
+        touristType: ["Coffee Lovers", "Nature Enthusiasts", "Cultural Tourists"],
+        availableLanguage: ["Spanish", "English", "German"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: lang === "de" ? "Angebote" : lang === "en" ? "Services" : "Servicios",
+          itemListElement: [
+            {
+              "@type": "OfferCatalog",
+              name: lang === "de" ? "Kaffeetour" : lang === "en" ? "Coffee Tour" : "Tour de café",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "TouristTrip",
+                    name: lang === "de" ? "Geführte Kaffeetour" : lang === "en" ? "Guided Coffee Tour" : "Tour de café guiado",
+                    description: lang === "de"
+                      ? "45-minütige Führung durch die Kaffeeplantage mit Verkostung"
+                      : lang === "en"
+                      ? "45-minute guided tour of the coffee plantation with tasting"
+                      : "Visita guiada de 45 minutos por la plantación de café con degustación",
+                    touristType: ["Coffee Lovers", "Cultural Tourists"],
+                    itinerary: {
+                      "@type": "ItemList",
+                      itemListElement: [
+                        { "@type": "ListItem", position: 1, name: lang === "de" ? "Plantagenrundgang" : lang === "en" ? "Plantation walk" : "Recorrido por la plantación" },
+                        { "@type": "ListItem", position: 2, name: lang === "de" ? "Kaffeeverkostung" : lang === "en" ? "Coffee tasting" : "Degustación de café" },
+                      ],
+                    },
+                  },
+                  price: siteData.coffeeTour.adultsOnline,
+                  priceCurrency: "EUR",
+                  availability: "https://schema.org/InStock",
+                  validFrom: "2025-01-01",
+                },
+              ],
+            },
+            {
+              "@type": "OfferCatalog",
+              name: lang === "de" ? "Ferienwohnungen" : lang === "en" ? "Holiday Apartments" : "Apartamentos vacacionales",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "LodgingBusiness",
+                    name: siteData.accommodation.casa.name,
+                    description: lang === "de"
+                      ? "Moderne Ferienwohnung für bis zu 4 Personen auf der Kaffeeplantage"
+                      : lang === "en"
+                      ? "Modern holiday apartment for up to 4 guests on the coffee plantation"
+                      : "Apartamento vacacional moderno para hasta 4 personas en la plantación de café",
+                    numberOfRooms: 2,
+                    occupancy: { "@type": "QuantitativeValue", maxValue: 4 },
+                    amenityFeature: [
+                      { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
+                      { "@type": "LocationFeatureSpecification", name: "Kitchen", value: true },
+                      { "@type": "LocationFeatureSpecification", name: "Terrace", value: true },
+                      { "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
+                    ],
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "LodgingBusiness",
+                    name: siteData.accommodation.cabana.name,
+                    description: lang === "de"
+                      ? "Gemütliche Hütte für bis zu 2 Personen auf der Kaffeeplantage"
+                      : lang === "en"
+                      ? "Cosy cabin for up to 2 guests on the coffee plantation"
+                      : "Cabaña acogedora para hasta 2 personas en la plantación de café",
+                    numberOfRooms: 1,
+                    occupancy: { "@type": "QuantitativeValue", maxValue: 2 },
+                    amenityFeature: [
+                      { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
+                      { "@type": "LocationFeatureSpecification", name: "Kitchen", value: true },
+                      { "@type": "LocationFeatureSpecification", name: "Terrace", value: true },
+                    ],
+                  },
+                },
+              ],
+            },
+          ],
+        },
       },
       {
         "@type": "WebSite",
@@ -189,6 +301,23 @@ const navItems = await getNavbarItems(lang, Astro.url.pathname);
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#localbusiness` },
         inLanguage: lang,
+        datePublished: "2025-01-01",
+        dateModified: new Date().toISOString().split("T")[0],
+        breadcrumb: { "@id": `${canonicalURL}#breadcrumb` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "[data-speakable]", "meta[name='description']"],
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalURL}#breadcrumb`,
+        itemListElement: breadcrumbItems.map((item, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: item.name,
+          item: item.url,
+        })),
       },
       {
         "@type": "ItemList",
@@ -200,6 +329,7 @@ const navItems = await getNavbarItems(lang, Astro.url.pathname);
           url: new URL(item.href, siteUrl).toString(),
         })),
       },
+      ...additionalSchemas,
     ],
   })}
 />

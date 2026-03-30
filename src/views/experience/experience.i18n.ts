@@ -231,6 +231,45 @@ export const translations = {
     },
   },
 
+  faq: {
+    title: {
+      de: "H\u00e4ufige Fragen",
+      en: "Frequently asked questions",
+      es: "Preguntas frecuentes",
+    },
+    subtitle: {
+      de: "Rund um die Finca & den Kaffee",
+      en: "About the finca & the coffee",
+      es: "Sobre la finca y el caf\u00e9",
+    },
+    items: {
+      de: [
+        { question: "Wo genau liegt die Finca Los Casta\u00f1os?", answer: "Die Finca liegt im Valle de Agaete auf Gran Canaria, Kanarische Inseln. Das Tal ist Europas einziges Kaffeeanbaugebiet und liegt nur wenige Minuten vom Fischerdorf Puerto de las Nieves entfernt." },
+        { question: "Warum kann hier in Europa Kaffee angebaut werden?", answer: "Gran Canaria geh\u00f6rt geografisch zu Afrika und hat ein einzigartiges, mild-feuchtes Mikroklima. Im Valle de Agaete herrschen ganzj\u00e4hrig 15\u201328 \u00b0C \u2013 ideale Bedingungen f\u00fcr Arabica-Kaffee." },
+        { question: "Welche Kaffeesorten werden angebaut?", answer: "Wir bauen haupts\u00e4chlich Arabica Typica an. Zus\u00e4tzlich testen wir auf einer neuen Fl\u00e4che Arabica Geisha \u2013 den wertvollsten Kaffee der Welt." },
+        { question: "Wie viel Kaffee produziert die Finca pro Jahr?", answer: "Auf unseren etwa 1.200 Kaffeepflanzen auf zwei Hektar produzieren wir j\u00e4hrlich 400 bis 500 Kilogramm Kaffee." },
+        { question: "Kann ich den Kaffee auch kaufen?", answer: "Ja, nach der Tour k\u00f6nnen Sie in unserem kleinen Laden frisch ger\u00f6steten Kaffee und andere lokale Produkte erwerben." },
+        { question: "Wann wird der Kaffee geerntet?", answer: "Die Ernte findet von April bis Juni statt. Die Kaffeekirschen werden von Hand gepfl\u00fcckt und anschlie\u00dfend in der Sonne getrocknet." },
+      ],
+      en: [
+        { question: "Where exactly is Finca Los Casta\u00f1os?", answer: "The finca is in the Valle de Agaete on Gran Canaria, Canary Islands. The valley is Europe\u2019s only coffee-growing region and just a few minutes from the fishing village of Puerto de las Nieves." },
+        { question: "Why can coffee be grown here in Europe?", answer: "Gran Canaria geographically belongs to Africa and has a unique mild, humid microclimate. The Valle de Agaete enjoys year-round temperatures of 15\u201328 \u00b0C \u2013 ideal conditions for Arabica coffee." },
+        { question: "What coffee varieties are grown?", answer: "We mainly grow Arabica Typica. We\u2019re also testing Arabica Geisha on a new plot \u2013 the world\u2019s most valuable coffee." },
+        { question: "How much coffee does the finca produce each year?", answer: "Our roughly 1,200 coffee plants across two hectares produce 400 to 500 kilograms of coffee per year." },
+        { question: "Can I buy the coffee?", answer: "Yes, after the tour you can visit our little shop and purchase freshly roasted coffee and other local products." },
+        { question: "When is the coffee harvested?", answer: "Harvest takes place from April to June. The coffee cherries are hand-picked and then dried in the sun." },
+      ],
+      es: [
+        { question: "\u00bfD\u00f3nde est\u00e1 exactamente la Finca Los Casta\u00f1os?", answer: "La finca est\u00e1 en el Valle de Agaete, Gran Canaria, Islas Canarias. El valle es la \u00fanica zona cafetera de Europa y est\u00e1 a pocos minutos del pueblo pesquero de Puerto de las Nieves." },
+        { question: "\u00bfPor qu\u00e9 se puede cultivar caf\u00e9 aqu\u00ed en Europa?", answer: "Gran Canaria pertenece geogr\u00e1ficamente a \u00c1frica y tiene un microclima suave y h\u00famedo \u00fanico. En el Valle de Agaete las temperaturas oscilan entre 15 y 28 \u00b0C todo el a\u00f1o, condiciones ideales para el caf\u00e9 ar\u00e1bica." },
+        { question: "\u00bfQu\u00e9 variedades de caf\u00e9 se cultivan?", answer: "Cultivamos principalmente Ar\u00e1bica Typica. Tambi\u00e9n estamos probando con Ar\u00e1bica Geisha en una parcela nueva, el caf\u00e9 m\u00e1s valioso del mundo." },
+        { question: "\u00bfCu\u00e1nto caf\u00e9 produce la finca al a\u00f1o?", answer: "Nuestras aproximadamente 1.200 plantas de caf\u00e9 en dos hect\u00e1reas producen entre 400 y 500 kilogramos de caf\u00e9 al a\u00f1o." },
+        { question: "\u00bfPuedo comprar el caf\u00e9?", answer: "S\u00ed, despu\u00e9s del tour pueden visitar nuestra tiendita y llevarse caf\u00e9 reci\u00e9n tostado y otros productos locales." },
+        { question: "\u00bfCu\u00e1ndo se cosecha el caf\u00e9?", answer: "La cosecha es de abril a junio. Las cerezas de caf\u00e9 se recogen a mano y se secan al sol." },
+      ],
+    },
+  },
+
   roasting: {
     title: {
       de: "Exotisch & schonend ger\u00f6stet",

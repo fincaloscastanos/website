@@ -209,6 +209,15 @@ const galleryImages = [
     <source src="/hero.mp4" type="video/mp4" />
   </video>
 </section>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  name: lang === "de" ? "Finca Los Castaños – Kaffeeplantage im Valle de Agaete" : lang === "en" ? "Finca Los Castaños – Coffee Plantation in Valle de Agaete" : "Finca Los Castaños – Plantación de café en el Valle de Agaete",
+  description: lang === "de" ? "Eindrücke unserer Kaffeeplantage im Valle de Agaete, Gran Canaria – Europas einzige Kaffeeanbauregion." : lang === "en" ? "Impressions of our coffee plantation in the Valle de Agaete, Gran Canaria – Europe's only coffee-growing region." : "Imágenes de nuestra plantación de café en el Valle de Agaete, Gran Canaria – la única región cafetera de Europa.",
+  contentUrl: "https://fincaloscastanos.com/hero.mp4",
+  thumbnailUrl: "https://fincaloscastanos.com/og-default.png",
+  uploadDate: "2025-01-01",
+})} />
 
 <!-- About Section -->
 <section class="py-16 md:py-24 bg-surface relative overflow-hidden">

@@ -3,6 +3,7 @@ import type { EventsTranslations } from "./events.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
+import Faq from "@/components/ui/Faq.astro";
 import PageHero from "@/components/ui/PageHero.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslatedPath } from "@/lib/registry";
@@ -63,7 +64,7 @@ const galleryImages = [
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Text -->
-      <div class="space-y-5" data-animate>
+      <div class="space-y-5" data-animate data-speakable>
         <p class="text-text-muted leading-relaxed">{t.intro.p1}</p>
         <p class="text-text-muted leading-relaxed">{t.intro.p2}</p>
       </div>
@@ -177,6 +178,44 @@ const galleryImages = [
     </div>
   </Container>
 </section>
+
+<!-- FAQ -->
+<Faq title={t.faq.title} subtitle={t.faq.subtitle} items={t.faq.items} />
+
+<!-- EventVenue Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "EventVenue",
+  name: lang === "de" ? "Eventzelt Finca Los Castaños" : lang === "en" ? "Event Tent Finca Los Castaños" : "Carpa de Eventos Finca Los Castaños",
+  description: lang === "de"
+    ? "Eventzelt für bis zu 75 Personen auf der Kaffeeplantage im Valle de Agaete, Gran Canaria."
+    : lang === "en"
+    ? "Event tent for up to 75 guests on the coffee plantation in the Valle de Agaete, Gran Canaria."
+    : "Carpa para hasta 75 personas en la plantación de café del Valle de Agaete, Gran Canaria.",
+  maximumAttendeeCapacity: 75,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Camino de Los Romeros S/N",
+    addressLocality: "Agaete",
+    postalCode: "35489",
+    addressRegion: "Las Palmas",
+    addressCountry: "ES",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 28.0810937,
+    longitude: -15.6731384,
+  },
+  telephone: "+34 682 64 45 41",
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Barrier-free access", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Parking", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Air conditioning", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Heating", value: true },
+    { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Sanitary facilities", value: true },
+  ],
+})} />
 
 <!-- CTA -->
 <section class="py-16 md:py-24 bg-accent relative overflow-hidden">
