@@ -45,7 +45,7 @@ export const siteData = {
   coffeeTour: {
     adults: 18,
     adultsOnline: 16,
-    children: 7.5,
+    children: 7,
     childrenOnline: 6,
     infantsMaxAge: 4,
     durationMinutes: 45,
