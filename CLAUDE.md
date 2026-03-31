@@ -22,6 +22,7 @@ src/
 ├── components/      # Reusable Astro components
 │   ├── ui/          # UI primitives (Container, PrivacyGate, PrivacyMap, SubNav, …)
 │   ├── Header.astro, Footer.astro, LanguageSwitcher.astro
+│   ├── CookieConsent.astro
 │   └── SeoHead.astro
 ├── layouts/         # Layout.astro (fonts, SEO, analytics)
 ├── lib/             # Core logic
@@ -86,6 +87,18 @@ pnpm preview    # Preview production build
 ```
 
 Deployment runs via GitHub Actions on push to `main` (build → Docker image → `ghcr.io`).
+
+## Cookie Consent & Tracking
+
+- **Umami Analytics** — loads unconditionally in production (privacy-friendly, no consent needed)
+- **Google Ads (gtag.js)** — `AW-17876386878`, loaded only after user consent
+- **Cookie Banner** — `CookieConsent.astro` in Layout, multilingual (DE/EN/ES)
+  - localStorage key: `accept_google_ads` → `YES` (accepted) / `NO` (declined)
+  - Banner only shows when key doesn't exist (first visit); once decided, it stays hidden
+- **Consent Management** on privacy page via `ConsentRevoke.astro`
+  - Toggle component: users can revoke and re-enable consent
+  - Supports configurable `activeValue`/`inactiveValue` per consent key
+  - Currently manages: `maps-consent` (Google Maps) and `accept_google_ads` (Marketing Cookies)
 
 ## Conventions
 
