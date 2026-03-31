@@ -10,6 +10,7 @@ import SeoHead from "@/components/SeoHead.astro";
 import type { Language } from "@/lib/i18n";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import CookieConsent from "@/components/CookieConsent.astro";
 import { siteData } from "@/data/site";
 
 interface Props {
@@ -55,6 +56,7 @@ const { title, description, lang, routeKey, ogImage, noindex, fullBleed, additio
       <slot />
     </main>
     <Footer lang={lang} />
+    <CookieConsent lang={lang} />
     <script>
       const observer = new IntersectionObserver(
         (entries) => {

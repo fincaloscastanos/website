@@ -71,7 +71,7 @@ const privacySlug = {
 
 <script is:inline>
   (function () {
-    var CONSENT_KEY = "cookie-consent-marketing";
+    var CONSENT_KEY = "accept_google_ads";
 
     function loadGtag() {
       if (document.querySelector('script[src*="googletagmanager"]')) return;
@@ -92,18 +92,18 @@ const privacySlug = {
 
       if (consent === null) {
         banner.classList.remove("hidden");
-      } else if (consent === "true") {
+      } else if (consent === "YES") {
         loadGtag();
       }
 
       document.getElementById("cookie-accept")?.addEventListener("click", function () {
-        localStorage.setItem(CONSENT_KEY, "true");
+        localStorage.setItem(CONSENT_KEY, "YES");
         banner.classList.add("hidden");
         loadGtag();
       });
 
       document.getElementById("cookie-reject")?.addEventListener("click", function () {
-        localStorage.setItem(CONSENT_KEY, "false");
+        localStorage.setItem(CONSENT_KEY, "NO");
         banner.classList.add("hidden");
       });
     }

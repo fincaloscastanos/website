@@ -1,25 +1,32 @@
 ---
 interface Props {
   consentKey: string;
-  label: string;
-  revokedLabel: string;
-  description: string;
+  activeValue?: string;
+  inactiveValue?: string;
+  revokeLabel: string;
+  activateLabel: string;
+  descriptionActive: string;
+  descriptionInactive: string;
 }
 
-const { consentKey, label, revokedLabel, description } = Astro.props;
+const { consentKey, activeValue = "true", inactiveValue, revokeLabel, activateLabel, descriptionActive, descriptionInactive } = Astro.props;
 ---
 
 <div
   class="consent-revoke not-prose rounded-none border border-border bg-surface p-5 my-6"
   data-consent-key={consentKey}
+  data-active-value={activeValue}
+  data-inactive-value={inactiveValue}
 >
-  <p class="text-sm text-text-muted mb-3">{description}</p>
+  <p class="consent-revoke-desc text-sm text-text-muted mb-3"
+    data-desc-active={descriptionActive}
+    data-desc-inactive={descriptionInactive}
+  ></p>
   <button
-    class="consent-revoke-btn bg-primary text-white text-sm font-medium py-2 px-5 rounded-none hover:bg-primary-dark transition-colors"
-    data-label={label}
-    data-revoked-label={revokedLabel}
+    class="consent-revoke-btn text-sm font-medium py-2 px-5 rounded-none transition-colors"
+    data-revoke-label={revokeLabel}
+    data-activate-label={activateLabel}
   >
-    {label}
   </button>
 </div>
 
@@ -29,24 +36,47 @@ const { consentKey, label, revokedLabel, description } = Astro.props;
       const btn = wrapper.querySelector(
         ".consent-revoke-btn",
       ) as HTMLButtonElement | null;
-      if (!btn) return;
+      const desc = wrapper.querySelector(
+        ".consent-revoke-desc",
+      ) as HTMLParagraphElement | null;
+      if (!btn || !desc) return;
 
       const key = wrapper.getAttribute("data-consent-key");
       if (!key) return;
 
-      const label = btn.dataset.label!;
-      const revokedLabel = btn.dataset.revokedLabel!;
+      const activeValue = wrapper.getAttribute("data-active-value") || "true";
+      const inactiveValue = wrapper.getAttribute("data-inactive-value");
+
+      const revokeLabel = btn.dataset.revokeLabel!;
+      const activateLabel = btn.dataset.activateLabel!;
+      const descActive = desc.dataset.descActive!;
+      const descInactive = desc.dataset.descInactive!;
+
+      const isActive = () => localStorage.getItem(key) === activeValue;
 
       const update = () => {
-        const hasConsent = localStorage.getItem(key) === "true";
-        btn.disabled = !hasConsent;
-        btn.textContent = hasConsent ? label : revokedLabel;
-        btn.classList.toggle("opacity-50", !hasConsent);
-        btn.classList.toggle("cursor-not-allowed", !hasConsent);
+        const active = isActive();
+        btn.textContent = active ? revokeLabel : activateLabel;
+        desc.textContent = active ? descActive : descInactive;
+        btn.classList.toggle("bg-primary", active);
+        btn.classList.toggle("text-white", active);
+        btn.classList.toggle("hover:bg-primary-dark", active);
+        btn.classList.toggle("border", !active);
+        btn.classList.toggle("border-primary", !active);
+        btn.classList.toggle("text-primary", !active);
+        btn.classList.toggle("hover:bg-primary/10", !active);
       };
 
       btn.addEventListener("click", () => {
-        localStorage.removeItem(key);
+        if (isActive()) {
+          if (inactiveValue) {
+            localStorage.setItem(key, inactiveValue);
+          } else {
+            localStorage.removeItem(key);
+          }
+        } else {
+          localStorage.setItem(key, activeValue);
+        }
         update();
       });
 

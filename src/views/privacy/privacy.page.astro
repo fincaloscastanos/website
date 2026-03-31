@@ -129,12 +129,20 @@ const { company, nif, street, zip, city, province, country, phone, email } = sit
       <h2>{t.consent.heading}</h2>
       <ConsentRevoke
         consentKey="maps-consent"
-        description={t.consent.googleMaps.description}
-        label={t.consent.googleMaps.revokeLabel}
-        revokedLabel={t.consent.googleMaps.revokedLabel}
+        descriptionActive={t.consent.googleMaps.descriptionActive}
+        descriptionInactive={t.consent.googleMaps.descriptionInactive}
+        revokeLabel={t.consent.googleMaps.revokeLabel}
+        activateLabel={t.consent.googleMaps.activateLabel}
       />
-      <!-- Source -->
-      <p class="text-sm text-text-muted mt-12">{t.source}</p>
+      <ConsentRevoke
+        consentKey="accept_google_ads"
+        activeValue="YES"
+        inactiveValue="NO"
+        descriptionActive={t.consent.marketingCookies.descriptionActive}
+        descriptionInactive={t.consent.marketingCookies.descriptionInactive}
+        revokeLabel={t.consent.marketingCookies.revokeLabel}
+        activateLabel={t.consent.marketingCookies.activateLabel}
+      />
     </div>
   </Container>
 </section>

@@ -322,20 +322,47 @@ export const translations = {
       es: "Gestionar consentimientos",
     },
     googleMaps: {
-      description: {
+      descriptionActive: {
         de: "Sie haben der Datenübertragung an Google Maps zugestimmt. Hier können Sie diese Einwilligung widerrufen.",
         en: "You have consented to the data transfer to Google Maps. You can revoke this consent here.",
         es: "Ha dado su consentimiento para la transferencia de datos a Google Maps. Aquí puede revocar este consentimiento.",
+      },
+      descriptionInactive: {
+        de: "Die Datenübertragung an Google Maps ist derzeit deaktiviert. Hier können Sie diese aktivieren.",
+        en: "Data transfer to Google Maps is currently disabled. You can enable it here.",
+        es: "La transferencia de datos a Google Maps está desactivada. Puede activarla aquí.",
       },
       revokeLabel: {
         de: "Google Maps Einwilligung widerrufen",
         en: "Revoke Google Maps consent",
         es: "Revocar consentimiento de Google Maps",
       },
-      revokedLabel: {
-        de: "Einwilligung bereits widerrufen",
-        en: "Consent already revoked",
-        es: "Consentimiento ya revocado",
+      activateLabel: {
+        de: "Google Maps aktivieren",
+        en: "Enable Google Maps",
+        es: "Activar Google Maps",
+      },
+    },
+    marketingCookies: {
+      descriptionActive: {
+        de: "Sie haben Marketing-Cookies (Google Ads) akzeptiert. Hier können Sie diese Einwilligung widerrufen.",
+        en: "You have accepted marketing cookies (Google Ads). You can revoke this consent here.",
+        es: "Ha aceptado las cookies de marketing (Google Ads). Aquí puede revocar este consentimiento.",
+      },
+      descriptionInactive: {
+        de: "Marketing-Cookies (Google Ads) sind derzeit deaktiviert. Hier können Sie diese aktivieren.",
+        en: "Marketing cookies (Google Ads) are currently disabled. You can enable them here.",
+        es: "Las cookies de marketing (Google Ads) están desactivadas. Puede activarlas aquí.",
+      },
+      revokeLabel: {
+        de: "Marketing-Cookies Einwilligung widerrufen",
+        en: "Revoke marketing cookies consent",
+        es: "Revocar consentimiento de cookies de marketing",
+      },
+      activateLabel: {
+        de: "Marketing-Cookies aktivieren",
+        en: "Enable marketing cookies",
+        es: "Activar cookies de marketing",
       },
     },
   },
