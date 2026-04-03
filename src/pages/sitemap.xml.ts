@@ -53,6 +53,22 @@ export const GET: APIRoute = async ({ site }) => {
     privacy: "yearly",
   };
 
+  // Video data for homepage
+  const videoByLang: Record<string, { title: string; description: string }> = {
+    en: {
+      title: "Finca Los Castaños - Coffee Plantation in Valle de Agaete",
+      description: "Impressions of our coffee plantation in the Valle de Agaete, Gran Canaria – Europe's only coffee-growing region.",
+    },
+    de: {
+      title: "Finca Los Castaños - Kaffeeplantage im Valle de Agaete",
+      description: "Eindrücke unserer Kaffeeplantage im Valle de Agaete, Gran Canaria – Europas einzige Kaffeeanbauregion.",
+    },
+    es: {
+      title: "Finca Los Castaños - Plantación de café en el Valle de Agaete",
+      description: "Imágenes de nuestra plantación de café en el Valle de Agaete, Gran Canaria – la única región cafetera de Europa.",
+    },
+  };
+
   // Static pages
   const pageUrls = allRouteKeys
     .flatMap((key) =>
@@ -74,6 +90,18 @@ export const GET: APIRoute = async ({ site }) => {
         const xDefaultPath = getTranslatedPath(key, defaultLang);
         const xDefaultLink = `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(`${baseUrl}${xDefaultPath}`)}"/>`;
 
+        // Add video sitemap entry for homepage
+        const videoEntry = key === "home" && videoByLang[currentLang]
+          ? `
+    <video:video>
+      <video:thumbnail_loc>${escapeXml(`${baseUrl}/og-default.png`)}</video:thumbnail_loc>
+      <video:title>${escapeXml(videoByLang[currentLang].title)}</video:title>
+      <video:description>${escapeXml(videoByLang[currentLang].description)}</video:description>
+      <video:content_loc>${escapeXml(`${baseUrl}/hero.mp4`)}</video:content_loc>
+      <video:publication_date>2025-01-01T00:00:00+00:00</video:publication_date>
+    </video:video>`
+          : "";
+
         return `
   <url>
     <loc>${currentUrl}</loc>
@@ -81,14 +109,14 @@ export const GET: APIRoute = async ({ site }) => {
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
 ${alternates}
-${xDefaultLink}
+${xDefaultLink}${videoEntry}
   </url>`;
       }),
     )
     .join("");
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${pageUrls}
 </urlset>`;
 
