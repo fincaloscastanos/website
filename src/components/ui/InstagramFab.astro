@@ -1,0 +1,15 @@
+---
+import { siteData } from "@/data/site";
+import { Icon } from "astro-icon/components";
+---
+
+<a
+  href={siteData.social.instagram}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+  class="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#dc2743] md:h-14 md:w-14"
+  style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);"
+>
+  <Icon name="simple-icons:instagram" class="h-6 w-6 md:h-7 md:w-7" />
+</a>
