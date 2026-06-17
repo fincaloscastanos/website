@@ -51,6 +51,7 @@ html {
     line-height: 1.65;
     color: var(--color-text);
     background-color: var(--color-background);
+    padding-top: var(--announce-h, 0px);
   }
 
   h1,

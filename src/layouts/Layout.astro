@@ -11,6 +11,7 @@ import type { Language } from "@/lib/i18n";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import CookieConsent from "@/components/CookieConsent.astro";
+import AnnouncementBar from "@/components/AnnouncementBar.astro";
 import InstagramFab from "@/components/ui/InstagramFab.astro";
 import { siteData } from "@/data/site";
 
@@ -53,6 +54,7 @@ const { title, description, lang, routeKey, ogImage, noindex, fullBleed, additio
   <body
     class="min-h-screen flex flex-col bg-background text-text"
   >
+    <AnnouncementBar lang={lang} />
     <Header lang={lang} routeKey={routeKey} fullBleed={fullBleed} />
     <main class:list={["flex-1", !fullBleed && "pt-16 md:pt-20"]}>
       <slot />

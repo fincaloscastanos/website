@@ -1,0 +1,97 @@
+---
+import type { Language } from "@/lib/i18n";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+
+const labels: Record<Language, string> = {
+  es: "Aviso: Los días 28 y 29 de junio, Finca Los Castaños permanecerá cerrada por las fiestas locales. Las carreteras estarán cortadas.",
+  en: "Please note: On 28 & 29 June, Finca Los Castaños will be closed for the local festive days. Roads will be closed.",
+  de: "Bitte beachten: Am 28. und 29. Juni bleibt die Finca Los Castaños wegen der lokalen Festtage geschlossen. Die Straßen sind gesperrt.",
+};
+
+const text = labels[lang];
+---
+
+<div
+  id="announcement-bar"
+  class="fixed top-0 inset-x-0 z-60 bg-secondary text-text-heading"
+  role="region"
+  aria-label="Announcement"
+>
+  <!-- Mobile: single-line scrolling marquee (saves vertical space) -->
+  <div class="md:hidden overflow-hidden py-2">
+    <div class="marquee-track">
+      <span class="marquee-item">{text}</span>
+      <span class="marquee-item" aria-hidden="true">{text}</span>
+    </div>
+  </div>
+
+  <!-- Desktop: static centered text -->
+  <div class="hidden md:block max-w-5xl mx-auto px-4 py-2 text-center text-sm font-medium leading-snug">
+    {text}
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    will-change: transform;
+    animation: announce-marquee 22s linear infinite;
+  }
+
+  .marquee-item {
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  @keyframes announce-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      white-space: normal;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    // Bar hides on/after this date (no rebuild required).
+    var CUTOFF = new Date(2026, 5, 30, 0, 0, 0); // 30 June 2026, local time
+
+    var bar = document.getElementById("announcement-bar");
+    if (!bar) return;
+
+    if (new Date() >= CUTOFF) {
+      bar.remove();
+      document.documentElement.style.setProperty("--announce-h", "0px");
+      return;
+    }
+
+    function applyOffset() {
+      document.documentElement.style.setProperty(
+        "--announce-h",
+        bar.offsetHeight + "px"
+      );
+    }
+
+    // Run as early as possible (the var is read by the header + body offsets).
+    applyOffset();
+    window.addEventListener("resize", applyOffset, { passive: true });
+    window.addEventListener("load", applyOffset);
+    document.addEventListener("astro:page-load", applyOffset);
+  })();
+</script>
