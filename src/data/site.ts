@@ -43,9 +43,9 @@ export const siteData = {
     bookingChannelId: 1634876,
   },
   coffeeTour: {
-    adults: 20,
-    adultsOnline: 18,
-    children: 7,
+    adults: 16,
+    adultsOnline: 16,
+    children: 6,
     childrenOnline: 6,
     infantsMaxAge: 4,
     durationMinutes: 45,
