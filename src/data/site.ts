@@ -32,9 +32,10 @@ export const siteData = {
     childrenOnline: 6,
     infantsMaxAge: 4,
     durationMinutes: 45,
-    bokun: {
-      channelId: "f68d8593-6b6b-4912-b00b-295a4477552b",
-      experienceId: "1150509",
+    fareharbor: {
+      shortname: "fincaloscastanos",
+      itemId: "744276",
+      flow: "1669396",
     },
   },
   hours: {
