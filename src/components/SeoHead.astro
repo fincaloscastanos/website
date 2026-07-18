@@ -236,51 +236,6 @@ if (routeKey !== "home") {
                 },
               ],
             },
-            {
-              "@type": "OfferCatalog",
-              name: lang === "de" ? "Ferienwohnungen" : lang === "en" ? "Holiday Apartments" : "Apartamentos vacacionales",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "LodgingBusiness",
-                    name: siteData.accommodation.casa.name,
-                    description: lang === "de"
-                      ? "Moderne Ferienwohnung für bis zu 4 Personen auf der Kaffeeplantage"
-                      : lang === "en"
-                      ? "Modern holiday apartment for up to 4 guests on the coffee plantation"
-                      : "Apartamento vacacional moderno para hasta 4 personas en la plantación de café",
-                    numberOfRooms: 2,
-                    occupancy: { "@type": "QuantitativeValue", maxValue: 4 },
-                    amenityFeature: [
-                      { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
-                      { "@type": "LocationFeatureSpecification", name: "Kitchen", value: true },
-                      { "@type": "LocationFeatureSpecification", name: "Terrace", value: true },
-                      { "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
-                    ],
-                  },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "LodgingBusiness",
-                    name: siteData.accommodation.cabana.name,
-                    description: lang === "de"
-                      ? "Gemütliche Hütte für bis zu 2 Personen auf der Kaffeeplantage"
-                      : lang === "en"
-                      ? "Cosy cabin for up to 2 guests on the coffee plantation"
-                      : "Cabaña acogedora para hasta 2 personas en la plantación de café",
-                    numberOfRooms: 1,
-                    occupancy: { "@type": "QuantitativeValue", maxValue: 2 },
-                    amenityFeature: [
-                      { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
-                      { "@type": "LocationFeatureSpecification", name: "Kitchen", value: true },
-                      { "@type": "LocationFeatureSpecification", name: "Terrace", value: true },
-                    ],
-                  },
-                },
-              ],
-            },
           ],
         },
       },

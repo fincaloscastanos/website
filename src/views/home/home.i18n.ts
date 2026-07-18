@@ -76,38 +76,6 @@ export const translations = {
         es: "Encontrar fecha",
       },
     },
-    accommodation: {
-      title: {
-        de: "Ihr Urlaub auf unserer Plantage",
-        en: "Stay with us",
-        es: "Quédense en nuestra finca",
-      },
-      subtitle: {
-        de: "Übernachten auf der Finca",
-        en: "Holiday stays on the Finca",
-        es: "Alojamiento en la Finca",
-      },
-      description: {
-        de: "Genießen Sie Ihren Urlaub in unseren modern ausgestatteten Ferienwohnungen: in der Cabaña en Finca für bis zu 2 Personen und in der Casa los Castaños für bis zu 4 Personen.",
-        en: "Relax in one of our comfortable holiday apartments – the Cabaña en Finca for couples and the Casa los Castaños for up to four guests.",
-        es: "Disfruten de unas vacaciones tranquilas en nuestros alojamientos: la Cabaña en Finca para 2 personas y la Casa los Castaños para hasta 4 personas.",
-      },
-      cabana: {
-        de: "Cabaña en Finca ab {price} EUR/Nacht",
-        en: "Cabaña en Finca from {price} EUR/night",
-        es: "Cabaña en Finca desde {price} EUR/noche",
-      },
-      casa: {
-        de: "Casa los Castaños ab {price} EUR/Nacht",
-        en: "Casa los Castaños from {price} EUR/night",
-        es: "Casa los Castaños desde {price} EUR/noche",
-      },
-      cta: {
-        de: "Verfügbarkeit prüfen",
-        en: "Check availability",
-        es: "Consultar disponibilidad",
-      },
-    },
   },
 
   about: {
