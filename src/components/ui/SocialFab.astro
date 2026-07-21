@@ -1,0 +1,198 @@
+---
+import { siteData } from "@/data/site";
+import { getTranslatedPath } from "@/lib/registry";
+import type { Language } from "@/lib/i18n";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  lang: Language;
+}
+
+const { lang } = Astro.props;
+
+const bookTourHref = getTranslatedPath("book-tour", lang);
+const whatsappHref = `https://wa.me/${siteData.contact.whatsapp
+  .replaceAll(" ", "")
+  .replace("+", "")}`;
+const emailHref = `mailto:${siteData.contact.email}`;
+
+const labels = {
+  de: { toggle: "Kontakt", book: "Tour buchen", whatsapp: "WhatsApp", instagram: "Instagram", facebook: "Facebook", email: "E-Mail" },
+  en: { toggle: "Contact", book: "Book tour", whatsapp: "WhatsApp", instagram: "Instagram", facebook: "Facebook", email: "Email" },
+  es: { toggle: "Contacto", book: "Reservar tour", whatsapp: "WhatsApp", instagram: "Instagram", facebook: "Facebook", email: "Correo" },
+}[lang];
+
+// Ordered from top (revealed last) to bottom (revealed first, closest to toggle)
+const actions = [
+  {
+    href: bookTourHref,
+    label: labels.book,
+    icon: "lucide:coffee",
+    class: "bg-secondary text-text-heading",
+    style: "",
+    external: false,
+  },
+  {
+    href: whatsappHref,
+    label: labels.whatsapp,
+    icon: "simple-icons:whatsapp",
+    class: "text-white",
+    style: "background:#25D366;",
+    external: true,
+  },
+  {
+    href: siteData.social.instagram,
+    label: labels.instagram,
+    icon: "simple-icons:instagram",
+    class: "text-white",
+    style:
+      "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);",
+    external: true,
+  },
+  {
+    href: siteData.social.facebook,
+    label: labels.facebook,
+    icon: "simple-icons:facebook",
+    class: "text-white",
+    style: "background:#1877F2;",
+    external: true,
+  },
+  {
+    href: emailHref,
+    label: labels.email,
+    icon: "lucide:mail",
+    class: "bg-primary text-white",
+    style: "",
+    external: false,
+  },
+];
+---
+
+<div class="social-fab fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+  <ul class="social-fab-actions flex flex-col items-end gap-3">
+    {
+      actions.map((action, i) => (
+        <li
+          class="social-fab-item"
+          style={`--i:${actions.length - 1 - i}`}
+        >
+          <a
+            href={action.href}
+            target={action.external ? "_blank" : undefined}
+            rel={action.external ? "noopener noreferrer" : undefined}
+            class="group/item flex items-center gap-3"
+            tabindex="-1"
+          >
+            <span class="pointer-events-none whitespace-nowrap rounded-full bg-background/95 px-3 py-1.5 text-sm font-medium text-text-heading shadow-md">
+              {action.label}
+            </span>
+            <span
+              class:list={[
+                "flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform duration-200 group-hover/item:scale-110",
+                action.class,
+              ]}
+              style={action.style}
+            >
+              <Icon name={action.icon} class="h-6 w-6" />
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <button
+    type="button"
+    class="social-fab-toggle flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-lg transition-transform duration-200 hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+    aria-label={labels.toggle}
+    aria-expanded="false"
+  >
+    <Icon name="lucide:messages-square" class="social-fab-icon-open h-7 w-7 transition-all duration-200" />
+    <Icon name="lucide:x" class="social-fab-icon-close absolute h-7 w-7 transition-all duration-200" />
+  </button>
+</div>
+
+<style>
+  .social-fab-item {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.8);
+    pointer-events: none;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    transition-delay: calc(var(--i) * 40ms);
+  }
+
+  .social-fab.is-open .social-fab-item {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Labels: hidden until the menu is open; only expand on hover (desktop) */
+  .social-fab-item a > span:first-child {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .social-fab.is-open .social-fab-item a:hover > span:first-child,
+  .social-fab.is-open .social-fab-item a:focus-visible > span:first-child {
+    opacity: 1;
+  }
+
+  .social-fab-icon-close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+  }
+  .social-fab.is-open .social-fab-icon-open {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+  }
+  .social-fab.is-open .social-fab-icon-close {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-fab-item,
+    .social-fab-icon-open,
+    .social-fab-icon-close {
+      transition: opacity 0.2s ease;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  function initSocialFab() {
+    const fab = document.querySelector<HTMLElement>(".social-fab");
+    if (!fab) return;
+    const toggle = fab.querySelector<HTMLButtonElement>(".social-fab-toggle");
+    const links = fab.querySelectorAll<HTMLAnchorElement>(".social-fab-actions a");
+    if (!toggle) return;
+
+    const setOpen = (open: boolean) => {
+      fab.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      // Keep links out of the tab order while collapsed
+      links.forEach((link) => link.setAttribute("tabindex", open ? "0" : "-1"));
+    };
+
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(!fab.classList.contains("is-open"));
+    });
+
+    // Close when clicking outside or pressing Escape
+    document.addEventListener("click", (e) => {
+      if (!fab.contains(e.target as Node)) setOpen(false);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+    // Close after following a same-page action
+    links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  }
+
+  initSocialFab();
+  document.addEventListener("astro:page-load", initSocialFab);
+</script>
