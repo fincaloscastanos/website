@@ -3,7 +3,6 @@ import type { DiscoverTranslations } from "./discover.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
-import PageHero from "@/components/ui/PageHero.astro";
 
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
@@ -30,8 +29,6 @@ const galleryImages = Object.entries(imageModules)
   }))
   .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
 ---
-
-<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
 
 <!-- Gallery -->
 <section class="gallery-section py-16 md:py-24 bg-background relative overflow-hidden">

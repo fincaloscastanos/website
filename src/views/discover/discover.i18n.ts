@@ -2,9 +2,9 @@ import type { FlattenTranslation } from "@/lib/i18n";
 
 export const translations = {
   navigationLabel: {
-    de: "Entdecken",
-    en: "Discover",
-    es: "Descubrir",
+    de: "Bildergalerie",
+    en: "Photo Gallery",
+    es: "Galería de fotos",
   },
   seo: {
     title: {
