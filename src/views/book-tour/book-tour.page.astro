@@ -11,8 +11,8 @@ interface Props {
 }
 
 const { lang, t } = Astro.props;
-const { shortname, itemId, flow } = siteData.coffeeTour.fareharbor;
-const calendarSrc = `https://fareharbor.com/embeds/script/calendar/${shortname}/items/${itemId}/?fallback=simple&full-items=yes&flow=${flow}`;
+const { shortname, flow } = siteData.coffeeTour.fareharbor;
+const calendarSrc = `https://fareharbor.com/embeds/script/items/${shortname}/?fallback=simple&full-items=yes&flow=${flow}`;
 ---
 
 <PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
@@ -20,13 +20,9 @@ const calendarSrc = `https://fareharbor.com/embeds/script/calendar/${shortname}/
 <!-- FareHarbor Calendar Widget -->
 <section class="py-16 md:py-24 bg-background">
   <Container>
-    <div class="max-w-7xl mx-auto">
-      <div
-        class="bg-surface rounded-none border border-border/50 p-4 min-h-[600px]"
-      >
-        <!-- FareHarbor calendar of item #{itemId} -->
-        <script is:inline src={calendarSrc}></script>
-      </div>
+    <div class="max-w-md mx-auto">
+      <!-- FareHarbor full booking widget (all items, flow #{flow}) -->
+      <script is:inline src={calendarSrc}></script>
     </div>
   </Container>
 </section>

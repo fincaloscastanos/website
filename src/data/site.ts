@@ -34,7 +34,6 @@ export const siteData = {
     durationMinutes: 45,
     fareharbor: {
       shortname: "fincaloscastanos",
-      itemId: "744276",
       flow: "1669396",
     },
   },
