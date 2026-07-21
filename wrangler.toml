@@ -1,0 +1,4 @@
+name = "fincaloscastanos"
+account_id = "f29a6d610875085499ddfe5232fb4c01"
+compatibility_date = "2026-07-21"
+pages_build_output_dir = "dist"
