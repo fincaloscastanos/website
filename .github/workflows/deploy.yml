@@ -2,11 +2,11 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
   workflow_dispatch:
 
 concurrency:
-  group: deploy
+  group: deploy-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -34,4 +34,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: f29a6d610875085499ddfe5232fb4c01
-          command: pages deploy dist --project-name=fincaloscastanos
+          command: pages deploy dist --project-name=fincaloscastanos --branch=${{ github.ref_name }}

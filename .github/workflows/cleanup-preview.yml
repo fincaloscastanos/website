@@ -1,0 +1,44 @@
+name: Cleanup Previews
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # weekly, Sunday 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CF_ACCOUNT_ID: f29a6d610875085499ddfe5232fb4c01
+      CF_PROJECT: fincaloscastanos
+    steps:
+      - name: Delete preview deployments older than 30 days
+        run: |
+          set -euo pipefail
+          api="https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/$CF_PROJECT/deployments"
+          cutoff=$(date -u -d '30 days ago' +%Y-%m-%dT%H:%M:%SZ)
+          echo "Deleting preview deployments created before $cutoff"
+          page=1
+          ids=""
+          while :; do
+            resp=$(curl -sf -H "Authorization: Bearer $CF_API_TOKEN" "$api?page=$page&per_page=25")
+            count=$(echo "$resp" | jq '.result | length')
+            batch=$(echo "$resp" | jq -r --arg c "$cutoff" \
+              '.result[] | select(.environment == "preview" and .created_on < $c) | .id')
+            [ -n "$batch" ] && ids="$ids $batch"
+            [ "$count" -lt 25 ] && break
+            page=$((page + 1))
+          done
+          if [ -z "$ids" ]; then
+            echo "No preview deployments older than 30 days."
+            exit 0
+          fi
+          for id in $ids; do
+            echo "Deleting deployment $id"
+            curl -sf -X DELETE -H "Authorization: Bearer $CF_API_TOKEN" "$api/$id?force=true" > /dev/null
+          done
+          echo "Cleanup complete."
