@@ -33,4 +33,5 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy
+          accountId: f29a6d610875085499ddfe5232fb4c01
+          command: pages deploy dist --project-name=fincaloscastanos
