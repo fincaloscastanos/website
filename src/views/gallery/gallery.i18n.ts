@@ -8,9 +8,9 @@ export const translations = {
   },
   seo: {
     title: {
-      de: "Entdecken | Finca Los Castaños",
-      en: "Discover | Finca Los Castaños",
-      es: "Descubrir | Finca Los Castaños",
+      de: "Galerie | Finca Los Castaños",
+      en: "Gallery | Finca Los Castaños",
+      es: "Galería | Finca Los Castaños",
     },
     description: {
       de: "Bildergalerie der Finca Los Castaños im Valle de Agaete – Einblicke in unsere Plantage, unser Team und die Kaffeewelt",
@@ -34,4 +34,4 @@ export const translations = {
 
 };
 
-export type DiscoverTranslations = FlattenTranslation<typeof translations>;
+export type GalleryTranslations = FlattenTranslation<typeof translations>;

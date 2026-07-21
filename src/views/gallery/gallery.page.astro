@@ -1,5 +1,5 @@
 ---
-import type { DiscoverTranslations } from "./discover.i18n";
+import type { GalleryTranslations } from "./gallery.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
@@ -11,14 +11,14 @@ import pattern07 from "@/assets/patterns/pattern-07.svg";
 
 interface Props {
   lang: Language;
-  t: DiscoverTranslations;
+  t: GalleryTranslations;
 }
 
 const { lang, t } = Astro.props;
 
 /* ── Dynamic image imports ── */
 const imageModules = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/discover/*.{jpg,jpeg,png,webp}",
+  "/src/assets/gallery/*.{jpg,jpeg,png,webp}",
   { eager: true }
 );
 
