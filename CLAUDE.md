@@ -91,14 +91,11 @@ Deployment runs via GitHub Actions on push to `main` (build → Docker image →
 ## Cookie Consent & Tracking
 
 - **Umami Analytics** — loads unconditionally in production (privacy-friendly, no consent needed)
-- **Google Ads (gtag.js)** — `AW-17876386878`, loaded only after user consent
-- **Cookie Banner** — `CookieConsent.astro` in Layout, multilingual (DE/EN/ES)
-  - localStorage key: `accept_google_ads` → `YES` (accepted) / `NO` (declined)
-  - Banner only shows when key doesn't exist (first visit); once decided, it stays hidden
+- No marketing/ad tracking — Google Ads (gtag.js) and the cookie banner were removed
 - **Consent Management** on privacy page via `ConsentRevoke.astro`
   - Toggle component: users can revoke and re-enable consent
   - Supports configurable `activeValue`/`inactiveValue` per consent key
-  - Currently manages: `maps-consent` (Google Maps) and `accept_google_ads` (Marketing Cookies)
+  - Currently manages: `maps-consent` (Google Maps)
 
 ## Conventions
 
