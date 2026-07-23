@@ -3,6 +3,8 @@ import { siteData } from "@/data/site";
 import { getTranslatedPath } from "@/lib/registry";
 import type { Language } from "@/lib/i18n";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import beanIcon from "@/assets/bean-cutout.png";
 
 interface Props {
   lang: Language;
@@ -17,9 +19,30 @@ const whatsappHref = `https://wa.me/${siteData.contact.whatsapp
 const emailHref = `mailto:${siteData.contact.email}`;
 
 const labels = {
-  de: { toggle: "Kontakt", book: "Tour buchen", whatsapp: "WhatsApp", instagram: "Instagram", facebook: "Facebook", email: "E-Mail" },
-  en: { toggle: "Contact", book: "Book tour", whatsapp: "WhatsApp", instagram: "Instagram", facebook: "Facebook", email: "Email" },
-  es: { toggle: "Contacto", book: "Reservar tour", whatsapp: "WhatsApp", instagram: "Instagram", facebook: "Facebook", email: "Correo" },
+  de: {
+    toggle: "Kontakt",
+    book: "Tour buchen",
+    whatsapp: "WhatsApp",
+    instagram: "Instagram",
+    facebook: "Facebook",
+    email: "E-Mail",
+  },
+  en: {
+    toggle: "Contact",
+    book: "Book tour",
+    whatsapp: "WhatsApp",
+    instagram: "Instagram",
+    facebook: "Facebook",
+    email: "Email",
+  },
+  es: {
+    toggle: "Contacto",
+    book: "Reservar tour",
+    whatsapp: "WhatsApp",
+    instagram: "Instagram",
+    facebook: "Facebook",
+    email: "Correo",
+  },
 }[lang];
 
 // Ordered from top (revealed last) to bottom (revealed first, closest to toggle)
@@ -68,14 +91,13 @@ const actions = [
 ];
 ---
 
-<div class="social-fab fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+<div
+  class="social-fab fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3"
+>
   <ul class="social-fab-actions flex flex-col items-end gap-3">
     {
       actions.map((action, i) => (
-        <li
-          class="social-fab-item"
-          style={`--i:${actions.length - 1 - i}`}
-        >
+        <li class="social-fab-item" style={`--i:${actions.length - 1 - i}`}>
           <a
             href={action.href}
             target={action.external ? "_blank" : undefined}
@@ -107,8 +129,18 @@ const actions = [
     aria-label={labels.toggle}
     aria-expanded="false"
   >
-    <Icon name="lucide:messages-square" class="social-fab-icon-open h-7 w-7 transition-all duration-200" />
-    <Icon name="lucide:x" class="social-fab-icon-close absolute h-7 w-7 transition-all duration-200" />
+    <Image
+      src={beanIcon}
+      alt=""
+      widths={[64, 128]}
+      sizes="32px"
+      loading="eager"
+      class="social-fab-icon-open h-7 w-7 object-contain transition-all duration-200"
+    />
+    <Icon
+      name="lucide:x"
+      class="social-fab-icon-close absolute h-7 w-7 transition-all duration-200"
+    />
   </button>
 </div>
 
@@ -167,7 +199,9 @@ const actions = [
     const fab = document.querySelector<HTMLElement>(".social-fab");
     if (!fab) return;
     const toggle = fab.querySelector<HTMLButtonElement>(".social-fab-toggle");
-    const links = fab.querySelectorAll<HTMLAnchorElement>(".social-fab-actions a");
+    const links = fab.querySelectorAll<HTMLAnchorElement>(
+      ".social-fab-actions a",
+    );
     if (!toggle) return;
 
     const setOpen = (open: boolean) => {
@@ -190,7 +224,9 @@ const actions = [
       if (e.key === "Escape") setOpen(false);
     });
     // Close after following a same-page action
-    links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+    links.forEach((link) =>
+      link.addEventListener("click", () => setOpen(false)),
+    );
   }
 
   initSocialFab();
