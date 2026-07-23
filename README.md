@@ -104,6 +104,10 @@ import Layout from "@/layouts/Layout.astro";
 
 The page is automatically registered and routed.
 
+## Credits
+
+Third-party photos, icons and fonts are attributed in [`CREDITS.md`](./CREDITS.md).
+
 ## License
 
 All rights reserved.

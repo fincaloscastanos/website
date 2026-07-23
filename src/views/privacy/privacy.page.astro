@@ -12,7 +12,7 @@ interface Props {
   t: PrivacyTranslations;
 }
 
-const { lang, t } = Astro.props;
+const { t } = Astro.props;
 const { company, nif, street, zip, city, province, country, phone, email } = siteData.legal;
 ---
 
@@ -133,15 +133,6 @@ const { company, nif, street, zip, city, province, country, phone, email } = sit
         descriptionInactive={t.consent.googleMaps.descriptionInactive}
         revokeLabel={t.consent.googleMaps.revokeLabel}
         activateLabel={t.consent.googleMaps.activateLabel}
-      />
-      <ConsentRevoke
-        consentKey="accept_google_ads"
-        activeValue="YES"
-        inactiveValue="NO"
-        descriptionActive={t.consent.marketingCookies.descriptionActive}
-        descriptionInactive={t.consent.marketingCookies.descriptionInactive}
-        revokeLabel={t.consent.marketingCookies.revokeLabel}
-        activateLabel={t.consent.marketingCookies.activateLabel}
       />
     </div>
   </Container>
