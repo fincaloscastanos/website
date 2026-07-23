@@ -343,28 +343,6 @@ export const translations = {
         es: "Activar Google Maps",
       },
     },
-    marketingCookies: {
-      descriptionActive: {
-        de: "Sie haben Marketing-Cookies (Google Ads) akzeptiert. Hier können Sie diese Einwilligung widerrufen.",
-        en: "You have accepted marketing cookies (Google Ads). You can revoke this consent here.",
-        es: "Ha aceptado las cookies de marketing (Google Ads). Aquí puede revocar este consentimiento.",
-      },
-      descriptionInactive: {
-        de: "Marketing-Cookies (Google Ads) sind derzeit deaktiviert. Hier können Sie diese aktivieren.",
-        en: "Marketing cookies (Google Ads) are currently disabled. You can enable them here.",
-        es: "Las cookies de marketing (Google Ads) están desactivadas. Puede activarlas aquí.",
-      },
-      revokeLabel: {
-        de: "Marketing-Cookies Einwilligung widerrufen",
-        en: "Revoke marketing cookies consent",
-        es: "Revocar consentimiento de cookies de marketing",
-      },
-      activateLabel: {
-        de: "Marketing-Cookies aktivieren",
-        en: "Enable marketing cookies",
-        es: "Activar cookies de marketing",
-      },
-    },
   },
 
   plugins: {

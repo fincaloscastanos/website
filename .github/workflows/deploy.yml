@@ -1,8 +1,8 @@
-name: Build & Deploy
+name: Preview Deploy (Cloudflare)
 
 on:
   push:
-    branches: ['**']
+    branches-ignore: ['main']
   workflow_dispatch:
 
 concurrency:
@@ -11,6 +11,7 @@ concurrency:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   deploy:
@@ -30,8 +31,49 @@ jobs:
       - run: pnpm build
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: f29a6d610875085499ddfe5232fb4c01
           command: pages deploy dist --project-name=fincaloscastanos --branch=${{ github.ref_name }}
+
+      - name: Post preview URL on PR
+        if: github.ref_name != 'main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+          ALIAS_URL: ${{ steps.deploy.outputs.pages-deployment-alias-url }}
+        run: |
+          set -euo pipefail
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -z "$pr" ]; then
+            echo "No open PR for branch $BRANCH — skipping comment."
+            exit 0
+          fi
+
+          marker="<!-- cf-preview -->"
+          body="$marker
+          ### ⚡ Cloudflare Pages Preview
+
+          | | |
+          |---|---|
+          | 🔗 **Branch preview** | ${ALIAS_URL:-_n/a_} |
+          | 📦 **This deployment** | ${DEPLOY_URL:-_n/a_} |
+          | 🔖 **Commit** | \`${SHA:0:7}\` |
+
+          <sub>Automatisch aktualisiert bei jedem Push auf diesen Branch.</sub>"
+
+          cid=$(gh api "repos/$REPO/issues/$pr/comments" --paginate \
+            --jq "map(select(.body | startswith(\"$marker\"))) | .[0].id // empty")
+
+          if [ -n "$cid" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$cid" -f body="$body" >/dev/null
+            echo "Updated existing preview comment ($cid) on PR #$pr."
+          else
+            gh pr comment "$pr" --body "$body"
+            echo "Posted new preview comment on PR #$pr."
+          fi
