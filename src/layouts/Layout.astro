@@ -11,7 +11,7 @@ import type { Language } from "@/lib/i18n";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import AnnouncementBar from "@/components/AnnouncementBar.astro";
-import InstagramFab from "@/components/ui/InstagramFab.astro";
+import SocialFab from "@/components/ui/SocialFab.astro";
 import { siteData } from "@/data/site";
 
 interface Props {
@@ -59,7 +59,7 @@ const { title, description, lang, routeKey, ogImage, noindex, fullBleed, additio
       <slot />
     </main>
     <Footer lang={lang} />
-    <InstagramFab />
+    <SocialFab lang={lang} />
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
