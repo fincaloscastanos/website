@@ -109,20 +109,25 @@ export const translations = {
       en: "We host the content of our website with the following provider:",
       es: "Alojamos el contenido de nuestro sitio web con el siguiente proveedor:",
     },
-    ionosTitle: {
-      de: "IONOS",
-      en: "IONOS",
-      es: "IONOS",
+    githubTitle: {
+      de: "GitHub Pages",
+      en: "GitHub Pages",
+      es: "GitHub Pages",
     },
-    ionosText: {
-      de: "Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (nachfolgend IONOS). Wenn Sie unsere Website besuchen, erfasst IONOS verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen Sie der Datenschutzerklärung von IONOS: https://www.ionos.de/terms-gtc/terms-privacy.",
-      en: "The provider is IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (hereinafter IONOS). When you visit our website, IONOS collects various log files including your IP addresses. For details, please refer to the IONOS privacy policy: https://www.ionos.de/terms-gtc/terms-privacy.",
-      es: "El proveedor es IONOS SE, Elgendorfer Str. 57, 56410 Montabaur (en adelante, IONOS). Cuando visita nuestro sitio web, IONOS recopila varios archivos de registro, incluidas sus direcciones IP. Puede encontrar más detalles en la política de privacidad de IONOS: https://www.ionos.de/terms-gtc/terms-privacy.",
+    githubText: {
+      de: "Anbieter ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (nachfolgend GitHub). Wenn Sie unsere Website besuchen, kann GitHub verschiedene Logfiles inklusive Ihrer IP-Adressen erfassen. Details entnehmen Sie der Datenschutzerklärung von GitHub: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement.",
+      en: "The provider is GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (hereinafter GitHub). When you visit our website, GitHub may collect various log files including your IP addresses. For details, please refer to the GitHub privacy statement: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement.",
+      es: "El proveedor es GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, EE. UU. (en adelante, GitHub). Cuando visita nuestro sitio web, GitHub puede recopilar varios archivos de registro, incluidas sus direcciones IP. Puede encontrar más detalles en la política de privacidad de GitHub: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement.",
     },
-    ionosLegal: {
-      de: "Die Nutzung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar.",
-      en: "The use of IONOS is based on Art. 6(1)(f) GDPR. We have a legitimate interest in a reliable presentation of our website. If consent has been requested, processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and § 25(1) TDDDG. Consent can be revoked at any time.",
-      es: "El uso de IONOS se basa en el Art. 6, apartado 1, letra f del RGPD. Tenemos un interés legítimo en una presentación fiable de nuestro sitio web. Si se ha solicitado su consentimiento, el procesamiento se lleva a cabo exclusivamente en base al Art. 6, apartado 1, letra a del RGPD y § 25, apartado 1 de la TDDDG. El consentimiento puede revocarse en cualquier momento.",
+    githubTransfer: {
+      de: "Die Datenverarbeitung findet auch in den USA statt. GitHub ist unter dem EU-US Data Privacy Framework (DPF) zertifiziert, das ein angemessenes Datenschutzniveau gewährleistet. Ergänzend werden Standardvertragsklauseln der EU-Kommission zugrunde gelegt.",
+      en: "Data processing also takes place in the USA. GitHub is certified under the EU-US Data Privacy Framework (DPF), which ensures an adequate level of data protection. Additionally, the standard contractual clauses of the EU Commission are used.",
+      es: "El tratamiento de datos también se realiza en EE. UU. GitHub está certificado conforme al Marco de Privacidad de Datos UE-EE. UU. (DPF), que garantiza un nivel adecuado de protección de datos. De forma complementaria se aplican las cláusulas contractuales tipo de la Comisión Europea.",
+    },
+    githubLegal: {
+      de: "Die Nutzung von GitHub Pages erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer möglichst zuverlässigen Darstellung unserer Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar.",
+      en: "The use of GitHub Pages is based on Art. 6(1)(f) GDPR. We have a legitimate interest in a reliable presentation of our website. If consent has been requested, processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and § 25(1) TDDDG. Consent can be revoked at any time.",
+      es: "El uso de GitHub Pages se basa en el Art. 6, apartado 1, letra f del RGPD. Tenemos un interés legítimo en una presentación fiable de nuestro sitio web. Si se ha solicitado su consentimiento, el procesamiento se lleva a cabo exclusivamente en base al Art. 6, apartado 1, letra a del RGPD y § 25, apartado 1 de la TDDDG. El consentimiento puede revocarse en cualquier momento.",
     },
     processingTitle: {
       de: "Auftragsverarbeitung",
@@ -130,9 +135,9 @@ export const translations = {
       es: "Procesamiento por encargo",
     },
     processingText: {
-      de: "Wir haben einen Vertrag über Auftragsverarbeitung (AVV) mit dem oben genannten Anbieter geschlossen. Hierbei handelt es sich um einen datenschutzrechtlich vorgeschriebenen Vertrag, der gewährleistet, dass dieser die personenbezogenen Daten unserer Websitebesucher nur nach unseren Weisungen und unter Einhaltung der DSGVO verarbeitet.",
-      en: "We have concluded a data processing agreement with the above-mentioned provider. This is a contract required by data protection law, which ensures that IONOS processes the personal data of our website visitors only in accordance with our instructions and in compliance with the GDPR.",
-      es: "Hemos firmado un contrato de procesamiento de datos con el proveedor mencionado anteriormente. Este es un contrato obligatorio según la legislación de protección de datos, que garantiza que IONOS procesará los datos personales de nuestros visitantes solo de acuerdo con nuestras instrucciones y cumpliendo con el RGPD.",
+      de: "Die Verarbeitung durch GitHub erfolgt auf Grundlage der Datenschutzbestimmungen von GitHub. Soweit personenbezogene Daten unserer Websitebesucher im Rahmen des Hostings verarbeitet werden, geschieht dies unter Einhaltung der Vorgaben der DSGVO. GitHub stellt hierfür einen Vertrag zur Auftragsverarbeitung (GitHub Data Protection Agreement) bereit.",
+      en: "Processing by GitHub is carried out on the basis of GitHub's data protection provisions. Insofar as personal data of our website visitors is processed as part of the hosting, this is done in compliance with the requirements of the GDPR. GitHub provides a data processing agreement (GitHub Data Protection Agreement) for this purpose.",
+      es: "El tratamiento por parte de GitHub se realiza sobre la base de las disposiciones de protección de datos de GitHub. En la medida en que se traten datos personales de los visitantes de nuestro sitio web en el marco del alojamiento, esto se lleva a cabo de conformidad con los requisitos del RGPD. GitHub pone a disposición un contrato de encargo de tratamiento (GitHub Data Protection Agreement) para tal fin.",
     },
   },
 
@@ -360,6 +365,26 @@ export const translations = {
       de: "Diese Seite nutzt Google Maps. Weitere Informationen zum Umgang mit Ihren Daten durch Google finden Sie unter: https://policies.google.com/privacy?hl=de.",
       en: "This site uses Google Maps. For more information on how Google handles your data, please visit: https://policies.google.com/privacy?hl=en.",
       es: "Este sitio utiliza Google Maps. Más información sobre el tratamiento de sus datos por parte de Google en: https://policies.google.com/privacy?hl=es.",
+    },
+    umamiTitle: {
+      de: "Umami (Webanalyse)",
+      en: "Umami (Web Analytics)",
+      es: "Umami (analítica web)",
+    },
+    umamiText: {
+      de: "Diese Website nutzt Umami, ein datenschutzfreundliches Webanalyse-Tool, das auf einer von uns beauftragten, eigenen Serverinstanz betrieben wird. Umami setzt keine Cookies und erfasst keine personenbezogenen Daten. Es werden ausschließlich anonymisierte Nutzungsstatistiken erhoben (z. B. aufgerufene Seiten, verweisende Website, ungefähre Herkunft auf Länderebene, verwendeter Browser und Gerätetyp), die keine Rückschlüsse auf einzelne Personen zulassen. IP-Adressen werden nicht dauerhaft gespeichert, und die Daten werden nicht an Dritte weitergegeben. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO; wir haben ein berechtigtes Interesse an der anonymisierten statistischen Auswertung des Nutzerverhaltens zur Optimierung unseres Angebots.",
+      en: "This website uses Umami, a privacy-friendly web analytics tool operated on a dedicated server instance commissioned by us. Umami does not set cookies and does not collect personal data. It only records anonymised usage statistics (e.g. pages visited, referring website, approximate origin at country level, browser and device type used) that do not allow any conclusions to be drawn about individual persons. IP addresses are not stored permanently and the data is not shared with third parties. Use is based on Art. 6(1)(f) GDPR; we have a legitimate interest in the anonymised statistical analysis of user behaviour to optimise our services.",
+      es: "Este sitio web utiliza Umami, una herramienta de analítica web respetuosa con la privacidad que se ejecuta en una instancia de servidor propia contratada por nosotros. Umami no utiliza cookies ni recopila datos personales. Solo se registran estadísticas de uso anonimizadas (por ejemplo, páginas visitadas, sitio de referencia, origen aproximado a nivel de país, navegador y tipo de dispositivo utilizado) que no permiten sacar conclusiones sobre personas concretas. Las direcciones IP no se almacenan de forma permanente y los datos no se comparten con terceros. El uso se basa en el Art. 6, apartado 1, letra f del RGPD; tenemos un interés legítimo en el análisis estadístico anonimizado del comportamiento de los usuarios para optimizar nuestros servicios.",
+    },
+    fareharborTitle: {
+      de: "FareHarbor (Buchungssystem)",
+      en: "FareHarbor (Booking System)",
+      es: "FareHarbor (sistema de reservas)",
+    },
+    fareharborText: {
+      de: "Für die Buchung unserer Kaffee-Tour nutzen wir das Buchungssystem FareHarbor. Anbieter ist die FareHarbor Holdings, Inc., 2255 Kalākaua Ave, Suite 200, Honolulu, HI 96815, USA. Wenn Sie unsere Buchungsseite aufrufen, wird ein Widget von FareHarbor geladen; dabei werden Daten (u. a. IP-Adresse und Browserinformationen sowie die von Ihnen im Rahmen einer Buchung eingegebenen Angaben) an FareHarbor übermittelt und in den USA verarbeitet. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Anbahnung und Erfüllung des Buchungsvertrags) sowie Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen finden Sie in der Datenschutzerklärung von FareHarbor: https://fareharbor.com/privacy/.",
+      en: "We use the FareHarbor booking system to book our coffee tour. The provider is FareHarbor Holdings, Inc., 2255 Kalākaua Ave, Suite 200, Honolulu, HI 96815, USA. When you access our booking page, a FareHarbor widget is loaded; in the process, data (including your IP address and browser information as well as the details you enter when making a booking) is transmitted to FareHarbor and processed in the USA. Processing is based on Art. 6(1)(b) GDPR (initiation and performance of the booking contract) and Art. 6(1)(f) GDPR. For more information, please refer to the FareHarbor privacy policy: https://fareharbor.com/privacy/.",
+      es: "Para reservar nuestro tour del café utilizamos el sistema de reservas FareHarbor. El proveedor es FareHarbor Holdings, Inc., 2255 Kalākaua Ave, Suite 200, Honolulu, HI 96815, EE. UU. Cuando accede a nuestra página de reservas, se carga un widget de FareHarbor; en el proceso se transmiten datos (incluida su dirección IP e información del navegador, así como los datos que introduzca al realizar una reserva) a FareHarbor y se procesan en EE. UU. El tratamiento se basa en el Art. 6, apartado 1, letra b del RGPD (inicio y ejecución del contrato de reserva) y en el Art. 6, apartado 1, letra f del RGPD. Puede encontrar más información en la política de privacidad de FareHarbor: https://fareharbor.com/privacy/.",
     },
   },
 
