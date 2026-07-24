@@ -1,0 +1,346 @@
+---
+import type { GalleryTranslations } from "./gallery.i18n";
+import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
+import Container from "@/components/ui/Container.astro";
+
+import pattern02 from "@/assets/patterns/pattern-02.svg";
+import pattern04 from "@/assets/patterns/pattern-04.svg";
+import pattern06 from "@/assets/patterns/pattern-06.svg";
+import pattern07 from "@/assets/patterns/pattern-07.svg";
+
+interface Props {
+  lang: Language;
+  t: GalleryTranslations;
+}
+
+const { lang, t } = Astro.props;
+
+/* ── Dynamic image imports ── */
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/gallery/*.{jpg,jpeg,png,webp}",
+  { eager: true }
+);
+
+const galleryImages = Object.entries(imageModules)
+  .map(([path, mod]) => ({
+    src: mod.default,
+    name: path.split("/").pop()!.replace(/\.[^.]+$/, ""),
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+---
+
+<!-- Gallery -->
+<section class="gallery-section py-16 md:py-24 bg-background relative overflow-hidden">
+  <img src={pattern04.src} alt="" class="absolute top-4 md:-top-4 right-0 md:-right-8 w-40 md:w-56 opacity-[0.12] rotate-12 pointer-events-none select-none" />
+  <img src={pattern02.src} alt="" class="absolute bottom-4 md:-bottom-6 right-0 md:right-auto md:-left-6 w-24 md:w-36 opacity-[0.10] -rotate-12 pointer-events-none select-none" />
+  <img src={pattern07.src} alt="" class="absolute top-1/3 right-0 md:-right-4 w-20 md:w-32 opacity-[0.09] rotate-45 pointer-events-none select-none" />
+  <img src={pattern06.src} alt="" class="absolute bottom-1/3 right-0 md:right-auto md:-left-8 w-36 md:w-48 opacity-[0.08] rotate-[-20deg] pointer-events-none select-none" />
+
+  <Container class="relative z-10">
+    <div class="gallery-grid grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
+      {galleryImages.map((img, i) => {
+        return (
+          <button
+            type="button"
+            class="gallery-item overflow-hidden group block w-full border-0 p-0 bg-transparent cursor-pointer relative rounded-sm aspect-[4/3]"
+            data-index={i}
+            data-animate="fade"
+          >
+            <Image
+              src={img.src}
+              alt={`Finca Los Castaños – ${img.name}`}
+              class="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.03] group-hover:brightness-[1.05]"
+              widths={[400, 700, 1200]}
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div class="absolute bottom-0 left-0 right-0 p-3 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <svg class="w-5 h-5 text-white drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+              </svg>
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  </Container>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+  <div class="lightbox-backdrop"></div>
+
+  <button type="button" class="lightbox-close" aria-label="Close">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  </button>
+
+  <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous image">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+  </button>
+
+  <button type="button" class="lightbox-nav lightbox-next" aria-label="Next image">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 6 15 12 9 18" />
+    </svg>
+  </button>
+
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="" class="lightbox-image" />
+  </div>
+
+  <div class="lightbox-counter">
+    <span id="lightbox-current">1</span> / <span id="lightbox-total">{galleryImages.length}</span>
+  </div>
+</div>
+
+<style>
+  /* ── Lightbox overlay ── */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+
+  .lightbox[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  /* ── Close button ── */
+  .lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.7);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .lightbox-close:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  /* ── Navigation arrows ── */
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lightbox-nav:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+  .lightbox-prev { left: 1rem; }
+  .lightbox-next { right: 1rem; }
+
+  @media (min-width: 768px) {
+    .lightbox-prev { left: 2rem; }
+    .lightbox-next { right: 2rem; }
+    .lightbox-nav {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
+  /* ── Image container ── */
+  .lightbox-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 4rem 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .lightbox-content {
+      padding: 3rem 6rem;
+    }
+  }
+
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 2px;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  }
+
+  .lightbox[aria-hidden="false"] .lightbox-image {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ── Counter ── */
+  .lightbox-counter {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    font-weight: 300;
+  }
+</style>
+
+<script>
+  (function () {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
+    const lightboxCurrent = document.getElementById("lightbox-current");
+    const closeBtn = lightbox?.querySelector(".lightbox-close");
+    const prevBtn = lightbox?.querySelector(".lightbox-prev");
+    const nextBtn = lightbox?.querySelector(".lightbox-next");
+    const backdrop = lightbox?.querySelector(".lightbox-backdrop");
+    const items = document.querySelectorAll<HTMLElement>(".gallery-item");
+
+    if (!lightbox || !lightboxImg || !lightboxCurrent || items.length === 0) return;
+
+    /* Collect full-res src from each gallery <img> */
+    const sources: string[] = [];
+    const alts: string[] = [];
+    items.forEach((item) => {
+      const img = item.querySelector("img");
+      if (!img) return;
+      /* Use the largest srcset entry, or fall back to src */
+      const srcset = img.getAttribute("srcset");
+      let fullSrc = img.src;
+      if (srcset) {
+        const parts = srcset.split(",").map((s) => s.trim());
+        const last = parts[parts.length - 1];
+        fullSrc = last.split(/\s+/)[0];
+      }
+      sources.push(fullSrc);
+      alts.push(img.alt);
+    });
+
+    let current = 0;
+    let isOpen = false;
+
+    function open(index: number) {
+      current = index;
+      show();
+      lightbox!.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      isOpen = true;
+    }
+
+    function close() {
+      lightbox!.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      isOpen = false;
+    }
+
+    function show() {
+      /* Fade transition between images */
+      lightboxImg!.style.opacity = "0";
+      lightboxImg!.style.transform = "scale(0.96)";
+      setTimeout(() => {
+        lightboxImg!.src = sources[current];
+        lightboxImg!.alt = alts[current];
+        lightboxCurrent!.textContent = String(current + 1);
+        /* Wait for image load before revealing */
+        lightboxImg!.onload = () => {
+          lightboxImg!.style.opacity = "1";
+          lightboxImg!.style.transform = "scale(1)";
+        };
+        /* Fallback in case the image is already cached */
+        if (lightboxImg!.complete) {
+          lightboxImg!.style.opacity = "1";
+          lightboxImg!.style.transform = "scale(1)";
+        }
+      }, 150);
+    }
+
+    function prev() {
+      current = (current - 1 + sources.length) % sources.length;
+      show();
+    }
+
+    function next() {
+      current = (current + 1) % sources.length;
+      show();
+    }
+
+    /* Click handlers */
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        const idx = Number(item.dataset.index);
+        open(idx);
+      });
+    });
+
+    closeBtn?.addEventListener("click", close);
+    backdrop?.addEventListener("click", close);
+    prevBtn?.addEventListener("click", prev);
+    nextBtn?.addEventListener("click", next);
+
+    /* Keyboard navigation */
+    document.addEventListener("keydown", (e) => {
+      if (!isOpen) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    });
+
+    /* Swipe support for mobile */
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) next();
+        else prev();
+      }
+    }, { passive: true });
+  })();
+</script>
