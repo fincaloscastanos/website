@@ -58,9 +58,9 @@ const { consentKey, activeValue = "true", inactiveValue, revokeLabel, activateLa
         const active = isActive();
         btn.textContent = active ? revokeLabel : activateLabel;
         desc.textContent = active ? descActive : descInactive;
-        btn.classList.toggle("bg-primary", active);
-        btn.classList.toggle("text-white", active);
-        btn.classList.toggle("hover:bg-primary-dark", active);
+        btn.classList.toggle("bg-secondary", active);
+        btn.classList.toggle("text-secondary-foreground", active);
+        btn.classList.toggle("hover:bg-secondary-dark", active);
         btn.classList.toggle("border", !active);
         btn.classList.toggle("border-primary", !active);
         btn.classList.toggle("text-primary", !active);

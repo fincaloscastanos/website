@@ -52,7 +52,7 @@ const { links = [], cta } = Astro.props;
           href={cta.href}
           target={cta.external ? "_blank" : undefined}
           rel={cta.external ? "noopener noreferrer" : undefined}
-          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold text-sm py-2.5 px-6 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-sm"
+          class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-bold text-sm py-2.5 px-6 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-sm"
         >
           {cta.label}
           <Icon name={cta.external ? "lucide:external-link" : "lucide:arrow-right"} class="w-3.5 h-3.5" />
