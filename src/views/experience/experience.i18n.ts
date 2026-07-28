@@ -101,34 +101,6 @@ export const translations = {
     },
   },
 
-  dreams: {
-    title: {
-      de: "Kaffeetr\u00e4ume im Herzen der Insel",
-      en: "Coffee dreams in the heart of the island",
-      es: "Caf\u00e9 con alma de isla",
-    },
-    subtitle: {
-      de: "Der Anbau steht bei uns im Mittelpunkt.",
-      en: "Cultivation is at the heart of what we do.",
-      es: "Aqu\u00ed todo gira alrededor del cultivo.",
-    },
-    p1: {
-      de: "Unsere Plantage besteht seit mehr als einem halben Jahrhundert und ver\u00e4nderte sich entsprechend \u00fcber die Jahrzehnte immer auf der Grundlage der vorherrschenden Kulturen in diesem Tal: Die Kaffeeb\u00e4ume wachsen hier zwischen verschiedensten Arten tropischer Fr\u00fcchte wie Zitronen, Mangos, Mandarinen, Avocados, Bananen, Oliven und Weintrauben.",
-      en: "Our plantation has been here for over half a century, evolving with the crops that have shaped this valley over the decades. The coffee trees grow among all kinds of tropical fruit \u2013 lemons, mangoes, tangerines, avocados, bananas, olives and grapes.",
-      es: "Esta plantaci\u00f3n lleva aqu\u00ed m\u00e1s de medio siglo, cambiando con lo que siempre se ha cultivado en este valle. Los cafetos crecen entre frutales de todo tipo: limoneros, mangos, mandarinas, aguacates, plataneras, olivos y vi\u00f1as.",
-    },
-    p2: {
-      de: "Wir, zwei Freunde aus Deutschland, haben die Plantage 2022 gekauft und entwickeln die Finca seitdem stetig weiter. Aktuell macht der Anbau von Kaffee auf unserer Plantage den Gro\u00dfteil aus. Hier wachsen etwa 1200 Kaffeepflanzen auf zwei Hektar. Pro Jahr produzieren wir 400 bis 500 Kilogramm Kaffee.",
-      en: "We're two friends from Germany who bought the plantation in 2022 and have been developing it ever since. Today, coffee is our main crop \u2013 around 1,200 plants spread over two hectares, producing 400 to 500 kilograms of coffee each year.",
-      es: "Somos dos amigos de Alemania que compramos la plantaci\u00f3n en 2022 y desde entonces le hemos metido muchas ganas. Hoy el caf\u00e9 es lo principal \u2013 unas 1.200 plantas en dos hect\u00e1reas, y cada a\u00f1o sacamos entre 400 y 500 kilos de caf\u00e9.",
-    },
-    p3: {
-      de: "Haupts\u00e4chlich bauen wir die Sorte Ar\u00e1bica Typica an, testen aber auf einer neuen Fl\u00e4che auch die Sorte Ar\u00e1bica Geisha, den wertvollsten Kaffee der Welt \u2013 und leisten damit sozusagen Pionierarbeit in Europa.",
-      en: "We mainly grow Ar\u00e1bica Typica, but we're also testing Ar\u00e1bica Geisha on a new plot \u2013 the world's most valuable coffee \u2013 making us pioneers of a sort in Europe.",
-      es: "Cultivamos sobre todo Ar\u00e1bica Typica, pero tambi\u00e9n estamos probando con Ar\u00e1bica Geisha en una parcela nueva \u2013 el caf\u00e9 m\u00e1s valioso del mundo \u2013 as\u00ed que, en cierto modo, estamos abriendo camino aqu\u00ed en Europa.",
-    },
-  },
-
   climate: {
     title: {
       de: "Hier f\u00fchlt sich Kaffee wohl!",
