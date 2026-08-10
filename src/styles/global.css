@@ -6,31 +6,39 @@ html {
 }
 
 @theme {
-  /* ── Colors ── */
-  --color-primary: #8BA888;
-  --color-primary-light: #a3bca0;
-  --color-primary-dark: #7a9977;
+  /* ── Colors ──
+     Dunkles Theme: Smaragdgrün als Grundfläche, Warmgold als Akzent,
+     Salbei-Graugrün für Linien/Icons. Kontrastwerte gegen --color-background. */
 
-  --color-accent: #8BA888;
-  --color-accent-dark: #7a9977;
+  /* Salbei-Graugrün – Icons, Linien, Deko (2,8:1 → kein Fließtext) */
+  --color-primary: #ACBE9D;
+  --color-primary-light: #C3D4B5;
+  --color-primary-dark: #8FA680;
 
+  /* Warmgold hell – Links, kursive Subtitles (3,3:1 → große Schrift) */
+  --color-accent: #E8C46A;
+  --color-accent-dark: #F2D793;
+
+  /* Warmgold – Button-Flächen mit dunkelgrünem Text (6,6:1) */
   --color-secondary: #D4A84B;
-  --color-secondary-light: #F5E6CA;
-  --color-secondary-dark: #c09538;
-  --color-secondary-foreground: #2C2C2C;
+  --color-secondary-light: #E8C46A;
+  --color-secondary-dark: #C09538;
+  --color-secondary-foreground: #0F3527;
 
-  --color-brown: #7B3F1A;
-  --color-brown-dark: #3D1E0E;
+  /* Kaffee-Töne, aufgehellt damit sie auf dunklem Grund tragen */
+  --color-brown: #C89A6B;
+  --color-brown-dark: #E3C9A8;
 
-  --color-background: #ffffff;
-  --color-surface: #F0EFED;
-  --color-surface-warm: #F5E6CA;
+  --color-background: #207657;
+  --color-surface: #1A6249;
+  --color-surface-warm: #16523D;
+  --color-surface-deep: #123D2D;
 
-  --color-text: #444444;
-  --color-text-muted: #666666;
-  --color-text-heading: #2C2C2C;
+  --color-text: #FFFFFF;
+  --color-text-muted: #D5E3D9;
+  --color-text-heading: #FFFFFF;
 
-  --color-border: #e1e1e1;
+  --color-border: #3D8E6E;
 
   /* ── Fonts ── */
   --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif;
@@ -76,6 +84,33 @@ html {
   }
 }
 
+/* ── Prose (Rechtstexte) auf dunklem Grund ── */
+.prose {
+  --tw-prose-body: var(--color-text-muted);
+  --tw-prose-headings: var(--color-text-heading);
+  --tw-prose-lead: var(--color-text-muted);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-text);
+  --tw-prose-counters: var(--color-primary);
+  --tw-prose-bullets: var(--color-primary);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-quotes: var(--color-text);
+  --tw-prose-quote-borders: var(--color-secondary);
+  --tw-prose-captions: var(--color-text-muted);
+  --tw-prose-code: var(--color-text);
+  --tw-prose-pre-code: var(--color-text);
+  --tw-prose-pre-bg: var(--color-surface-deep);
+  --tw-prose-th-borders: var(--color-border);
+  --tw-prose-td-borders: var(--color-border);
+}
+
+/* Strichzeichnung war für weißen Grund gemalt (dunkelrote Linien).
+   Auf Smaragdgrün zu kontrastarm → auf Creme umfärben. */
+.illustration-cream {
+  filter: brightness(0) invert(1) sepia(0.35) saturate(1.6) brightness(1.02);
+  opacity: 0.92;
+}
+
 /* ── Header ── */
 
 /* Default: solid background, normal colors */
@@ -104,19 +139,20 @@ html {
   transition: filter 0.3s;
 }
 
+/* Dunkles Theme: das weiße Logo trägt in beiden Header-Zuständen */
 .header-logo-white {
-  opacity: 0;
+  opacity: 1;
 }
 
 .header-logo-gray {
-  opacity: 1;
+  opacity: 0;
 }
 
 /* Solid state (scrolled OR non-fullbleed) */
 #site-header[data-scrolled] {
-  background-color: rgb(255 255 255 / 0.9);
+  background-color: rgb(18 61 45 / 0.9);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgb(225 225 225 / 0.5);
+  border-bottom: 1px solid rgb(61 142 110 / 0.5);
 }
 
 /* Fullbleed transparent state (not scrolled) */
@@ -131,14 +167,6 @@ html {
 
 #site-header[data-fullbleed]:not([data-scrolled]) .header-nav-link.active {
   color: var(--color-secondary);
-}
-
-#site-header[data-fullbleed]:not([data-scrolled]) .header-logo-white {
-  opacity: 1;
-}
-
-#site-header[data-fullbleed]:not([data-scrolled]) .header-logo-gray {
-  opacity: 0;
 }
 
 #site-header[data-fullbleed]:not([data-scrolled]) .header-burger-line {

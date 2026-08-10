@@ -175,8 +175,8 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
         <div>
           {/* Group Header */}
           <div class="flex items-center gap-4 mb-8" data-animate>
-            <div class="w-10 h-10 bg-primary/10 flex items-center justify-center shrink-0">
-              <Icon name={group.icon} class="w-5 h-5 text-primary" />
+            <div class="w-10 h-10 bg-white/10 flex items-center justify-center shrink-0">
+              <Icon name={group.icon} class="w-5 h-5 text-accent" />
             </div>
             <h2 class="text-lg md:text-xl font-sans uppercase tracking-wider font-light">
               {group.label[lang]}
@@ -202,7 +202,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+                <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-surface-deep/85 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text px-3 py-1">
                   <Icon name={featuredCard.icon} class="w-3.5 h-3.5" style={featuredCard.color ? `color: ${featuredCard.color}` : undefined} />
                   {typeof featuredCard.badge === "string" ? featuredCard.badge : featuredCard.badge[lang]}
                 </span>
@@ -241,7 +241,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+                  <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-surface-deep/85 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text px-3 py-1">
                     <Icon name={card.icon} class="w-3.5 h-3.5" style={card.color ? `color: ${card.color}` : undefined} />
                     {typeof card.badge === "string" ? card.badge : card.badge[lang]}
                   </span>
@@ -273,8 +273,8 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
         <div>
           {/* Group Header */}
           <div class="flex items-center gap-4 mb-8" data-animate>
-            <div class="w-10 h-10 bg-primary/10 flex items-center justify-center shrink-0">
-              <Icon name={group.icon} class="w-5 h-5 text-primary" />
+            <div class="w-10 h-10 bg-white/10 flex items-center justify-center shrink-0">
+              <Icon name={group.icon} class="w-5 h-5 text-accent" />
             </div>
             <h2 class="text-lg md:text-xl font-sans uppercase tracking-wider font-light">
               {group.label[lang]}
@@ -300,7 +300,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+                <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-surface-deep/85 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text px-3 py-1">
                   <Icon name={featuredCard.icon} class="w-3.5 h-3.5" style={featuredCard.color ? `color: ${featuredCard.color}` : undefined} />
                   {typeof featuredCard.badge === "string" ? featuredCard.badge : featuredCard.badge[lang]}
                 </span>
@@ -339,7 +339,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text-heading px-3 py-1">
+                  <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-surface-deep/85 backdrop-blur-sm text-xs font-medium uppercase tracking-wider text-text px-3 py-1">
                     <Icon name={card.icon} class="w-3.5 h-3.5" style={card.color ? `color: ${card.color}` : undefined} />
                     {typeof card.badge === "string" ? card.badge : card.badge[lang]}
                   </span>

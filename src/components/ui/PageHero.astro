@@ -31,7 +31,7 @@ const { title, subtitle, ctaLabel, ctaHref } = Astro.props;
         ctaLabel && ctaHref && (
           <a
             href={ctaHref}
-            class="inline-flex items-center gap-2 bg-secondary text-text-heading text-sm font-bold py-2 px-6 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-lg mt-4"
+            class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground text-sm font-bold py-2 px-6 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-lg mt-4"
           >
             {ctaLabel}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />

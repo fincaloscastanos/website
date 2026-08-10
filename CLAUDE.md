@@ -52,31 +52,40 @@ Tailwind v4 with custom theme in `src/styles/global.css`. Full CI/CD specs in `d
 
 ### Color Tokens
 
+Dark theme — emerald green surfaces, warm gold accents. Contrast ratios are against `background`.
+
 | Token | HEX | Name | Usage |
 |-------|-----|------|-------|
-| `primary` | `#8BA888` | Salbeigrün | Buttons, highlights, icon tints |
-| `accent` | `#8BA888` | Salbeigrün | Cursive subtitles, accent sections (`bg-accent`), links |
-| `secondary` | `#D4A84B` | Warmgold | CTA buttons on dark bg, warm accents |
-| `secondary-light` | `#F5E6CA` | Hellbeige | Warm background sections |
-| `brown` | `#7B3F1A` | Mittelbraun | Coffee illustrations |
-| `brown-dark` | `#3D1E0E` | Dunkelbraun | Quote text, decorative accents |
-| `surface` | `#F0EFED` | Hellgrau | Section backgrounds |
-| `text` | `#444444` | Dunkelgrau | Body text |
-| `text-heading` | `#2C2C2C` | Fast Schwarz | Main headings |
+| `background` | `#207657` | Smaragdgrün | Page background |
+| `surface` | `#1A6249` | Smaragd dunkel | Alternating sections, cards |
+| `surface-warm` | `#16523D` | Smaragd tief | Highlighted sections (formerly `bg-accent`) |
+| `surface-deep` | `#123D2D` | Tannengrün | Header (solid), footer |
+| `text` | `#FFFFFF` | Weiß | Body text, headings — 5.5:1 ✓ AA |
+| `text-muted` | `#D5E3D9` | Grünweiß | Secondary text — 4.6:1 ✓ AA |
+| `accent` | `#E8C46A` | Warmgold hell | Links, cursive subtitles — 3.3:1 (large text only) |
+| `secondary` | `#D4A84B` | Warmgold | Button fills — pair with `text-secondary-foreground` |
+| `secondary-foreground` | `#0F3527` | Dunkelgrün | Text on gold fills — 6.6:1 ✓ AA |
+| `primary` | `#ACBE9D` | Salbei-Graugrün | Lines, icon tints, decoration — 2.8:1, **no body text** |
+| `brown-dark` | `#E3C9A8` | Creme | Quote text, decorative accents |
+| `border` | `#3D8E6E` | Smaragd hell | Borders, dividers |
+
+Anything sitting on `secondary` (gold) needs `text-secondary-foreground` — white on gold is 2:1 and unreadable.
 
 ### Typography
 
 - **Fonts:** Raleway (sans, body/headings) → `font-sans`, Oooh Baby (cursive, subtitles) → `font-serif`
 - **Weights:** 300 (Light — uppercase headings), 400 (Regular — body), 600 (Semi-bold), 700 (Bold — buttons)
 - **Section headings:** Raleway UPPERCASE, Light weight → `font-sans uppercase tracking-wider font-light`
-- **Cursive subtitles:** Oooh Baby in Dunkelgrün → `font-serif text-accent`
-- **Quote text:** Raleway UPPERCASE, wide tracking, Dunkelbraun → `font-sans uppercase tracking-[0.15em] text-brown-dark font-light`
+- **Cursive subtitles:** Oooh Baby in Warmgold → `font-serif text-accent`
+- **Quote text:** Raleway UPPERCASE, wide tracking, Creme → `font-sans uppercase tracking-[0.15em] text-brown-dark font-light`
 
 ### Section Pattern
 
-Sections alternate backgrounds: `bg-background` (white), `bg-surface` (light gray), `bg-surface-warm` (beige).
-Dark accent sections use `bg-accent text-white` (Dunkelgrün) with gold subtitles (`text-secondary`).
-Buttons: `bg-primary text-white` (sage green) or `bg-secondary text-text-heading` (gold on dark bg).
+Sections alternate backgrounds: `bg-background` → `bg-surface` → `bg-surface-warm`, each a step deeper into the green.
+Buttons: `bg-secondary text-secondary-foreground` (gold with dark green text), hover `hover:bg-secondary-dark`.
+Cards on dark sections: `bg-white/10 backdrop-blur-sm border border-border/60`.
+Icon tiles: `bg-white/10` with `text-accent` icons.
+Line-art assets drawn for white backgrounds need `.illustration-cream` (defined in `global.css`).
 
 ## Commands
 

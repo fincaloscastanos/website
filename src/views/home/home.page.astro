@@ -91,12 +91,12 @@ const galleryImages = [
             {t.cards.tours.subtitle}
           </p>
         </div>
-        <div class="p-5 flex flex-col flex-1 text-white">
-          <p class="text-white/90 text-sm leading-relaxed mb-5 flex-1">
+        <div class="p-5 flex flex-col flex-1 text-secondary-foreground">
+          <p class="text-secondary-foreground/85 text-sm leading-relaxed mb-5 flex-1">
             {t.cards.tours.description}
           </p>
           <span
-            class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/20 text-white text-sm font-bold uppercase tracking-wider group-hover:bg-white/30 transition-colors duration-300"
+            class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-secondary-foreground text-secondary text-sm font-bold uppercase tracking-wider group-hover:bg-secondary-foreground/85 transition-colors duration-300"
           >
             {t.cards.tours.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -128,7 +128,7 @@ const galleryImages = [
             {t.cards.events.description}
           </p>
           <span
-            class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white text-sm font-bold uppercase tracking-wider group-hover:bg-primary-dark transition-colors duration-300"
+            class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-secondary text-secondary-foreground text-sm font-bold uppercase tracking-wider group-hover:bg-secondary-dark transition-colors duration-300"
           >
             {t.cards.events.cta}
             <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -146,7 +146,7 @@ const galleryImages = [
       <Image
         src={heroIllustration}
         alt="Finca Los Castaños Illustration"
-        class="w-full max-w-md h-auto"
+        class="w-full max-w-md h-auto illustration-cream"
         widths={[400, 600, 800]}
         sizes="(max-width: 768px) 100vw, 600px"
       />
@@ -238,7 +238,7 @@ const galleryImages = [
         </p>
         <a
           href={experienceHref}
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-medium py-3 px-8 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
         >
           {t.about.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -300,7 +300,7 @@ const galleryImages = [
 
         <a
           href={experienceHref}
-          class="inline-flex items-center gap-2 bg-primary text-white font-medium py-3 px-8 rounded-none hover:bg-primary-dark transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-medium py-3 px-8 rounded-none hover:bg-secondary-dark transition-colors duration-300 shadow-lg"
         >
           {t.products.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -335,7 +335,7 @@ const galleryImages = [
 </section>
 
 <!-- Tour Booking Section -->
-<section class="py-16 md:py-24 bg-accent relative overflow-hidden">
+<section class="py-16 md:py-24 bg-surface-warm relative overflow-hidden">
   <div
     class="absolute inset-0 bg-repeat opacity-10"
     style={`background-image: url(${pattern06.src})`}
@@ -367,7 +367,7 @@ const galleryImages = [
         <p class="text-text leading-relaxed mb-8">{t.tour.description}</p>
 
         <div
-          class="bg-white/50 backdrop-blur-sm rounded-none p-6 mb-8 border border-border/60"
+          class="bg-white/10 backdrop-blur-sm rounded-none p-6 mb-8 border border-border/60"
         >
           <h3 class="text-lg font-serif text-text-heading mb-3">
             {t.tour.hoursTitle}
@@ -390,7 +390,7 @@ const galleryImages = [
 
         <a
           href={coffeeTourHref}
-          class="inline-flex items-center gap-2 bg-secondary text-text-heading font-bold py-3 px-8 rounded-none hover:bg-secondary/80 transition-colors duration-300 shadow-lg"
+          class="inline-flex items-center gap-2 bg-secondary text-secondary-foreground font-bold py-3 px-8 rounded-none hover:bg-secondary/80 transition-colors duration-300 shadow-lg"
         >
           {t.tour.cta}
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
@@ -538,9 +538,9 @@ const galleryImages = [
           class="group flex items-start gap-4 p-5 bg-background rounded-none border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
           <div
-            class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0"
+            class="w-10 h-10 rounded-none bg-white/10 flex items-center justify-center shrink-0"
           >
-            <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
+            <Icon name="lucide:map-pin" class="w-5 h-5 text-accent" />
           </div>
           <div>
             <span
@@ -560,9 +560,9 @@ const galleryImages = [
           class="group flex items-start gap-4 p-5 bg-background rounded-none border border-border/50 hover:border-primary/30 hover:shadow-md transition-all"
         >
           <div
-            class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0"
+            class="w-10 h-10 rounded-none bg-white/10 flex items-center justify-center shrink-0"
           >
-            <Icon name="lucide:mail" class="w-5 h-5 text-primary" />
+            <Icon name="lucide:mail" class="w-5 h-5 text-accent" />
           </div>
           <div>
             <span
@@ -580,9 +580,9 @@ const galleryImages = [
         <div class="p-5 bg-background rounded-none border border-border/50">
           <div class="flex items-center gap-4 mb-3">
             <div
-              class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0"
+              class="w-10 h-10 rounded-none bg-white/10 flex items-center justify-center shrink-0"
             >
-              <Icon name="lucide:phone" class="w-5 h-5 text-primary" />
+              <Icon name="lucide:phone" class="w-5 h-5 text-accent" />
             </div>
             <span
               class="text-xs uppercase tracking-widest text-accent font-medium"
@@ -615,9 +615,9 @@ const galleryImages = [
         <div class="p-5 bg-background rounded-none border border-border/50">
           <div class="flex items-center gap-4 mb-3">
             <div
-              class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0"
+              class="w-10 h-10 rounded-none bg-white/10 flex items-center justify-center shrink-0"
             >
-              <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
+              <Icon name="lucide:clock" class="w-5 h-5 text-accent" />
             </div>
             <span
               class="text-xs uppercase tracking-widest text-accent font-medium"
@@ -647,7 +647,7 @@ const galleryImages = [
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 bg-primary text-white font-medium py-3.5 px-8 rounded-none hover:bg-primary-dark transition-colors text-base shadow-lg"
+          class="flex items-center justify-center gap-2 bg-secondary text-secondary-foreground font-medium py-3.5 px-8 rounded-none hover:bg-secondary-dark transition-colors text-base shadow-lg"
         >
           <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
           WhatsApp
