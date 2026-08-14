@@ -8,14 +8,13 @@ import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
 import { getTranslatedPath } from "@/lib/registry";
 
-import aboutImg from "@/assets/home/about.jpg";
 import heroIllustration from "@/assets/home/hero-illustration.webp";
 import heroBg from "@/assets/home/hero.webp";
 import heroEnd from "@/assets/home/hero-end.webp";
 import productsImg from "@/assets/home/products.jpg";
 import productsDetailImg from "@/assets/home/coffee-plant.png";
 import tourImg from "@/assets/home/tour.jpg";
-import aboutDetailImg from "@/assets/home/events-banner.png";
+import aboutDetailImg from "@/assets/coffee-tour/book/team.jpg";
 import sustainabilityPanorama from "@/assets/home/card-events.jpeg";
 import sustainabilityDetail from "@/assets/home/card-accommodation.jpeg";
 
@@ -216,26 +215,15 @@ const galleryImages = [
   />
   <Container class="relative z-10">
     <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Images -->
-      <div class="relative" data-animate>
+      <!-- Image -->
+      <div class="relative mx-auto w-full max-w-md" data-animate>
         <div class="overflow-hidden shadow-xl border border-border">
-          <Image
-            src={aboutImg}
-            alt="Finca Los Castaños Plantage"
-            class="w-full h-auto object-cover"
-            widths={[500, 800, 1200]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-        <div
-          class="overflow-hidden shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border border-border"
-        >
           <Image
             src={aboutDetailImg}
             alt="Finca Los Castaños Team"
-            class="w-full h-auto object-cover"
-            widths={[300, 500]}
-            sizes="(max-width: 768px) 66vw, 33vw"
+            class="w-full aspect-[4/5] object-cover"
+            widths={[400, 700, 1000]}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
       </div>
