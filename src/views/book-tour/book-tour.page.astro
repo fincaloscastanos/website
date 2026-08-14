@@ -1,28 +1,173 @@
 ---
 import type { BookTourTranslations } from "./book-tour.i18n";
 import type { Language } from "@/lib/i18n";
+import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
-import PageHero from "@/components/ui/PageHero.astro";
+import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
+
+import heroImg from "@/assets/coffee-tour/book/drying-hero.jpg";
+import nurseryImg from "@/assets/coffee-tour/book/nursery.jpg";
+import ripeningImg from "@/assets/coffee-tour/book/ripening.jpg";
+import butterflyImg from "@/assets/coffee-tour/book/butterfly.jpg";
+import teamImg from "@/assets/coffee-tour/book/team.jpg";
 
 interface Props {
   lang: Language;
   t: BookTourTranslations;
 }
 
-const { lang, t } = Astro.props;
+const { t } = Astro.props;
 const { shortname, flow } = siteData.coffeeTour.fareharbor;
 const calendarSrc = `https://fareharbor.com/embeds/script/items/${shortname}/?fallback=simple&full-items=yes&flow=${flow}`;
+
+const telHref = `tel:${siteData.contact.phone.replaceAll(" ", "")}`;
+const whatsappHref = `https://wa.me/${siteData.contact.whatsapp
+  .replaceAll(" ", "")
+  .replace("+", "")}`;
+const mailHref = `mailto:${siteData.contact.email}`;
+
+const facts = [
+  { icon: "lucide:clock", label: t.facts.duration },
+  { icon: "lucide:coffee", label: t.facts.tasting },
+  { icon: "lucide:languages", label: t.facts.languages },
+];
+
+const strip = [
+  { src: nurseryImg, alt: "Junge Kaffeepflanzen in der Baumschule" },
+  { src: ripeningImg, alt: "Reifestadien der Kaffeekirsche" },
+  { src: butterflyImg, alt: "Schmetterling auf der Finca" },
+  { src: teamImg, alt: "Team der Finca Los Castaños" },
+];
 ---
 
-<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
+<!-- Hero mit Buchung – alles ohne Scrollen erreichbar -->
+<section
+  class="relative flex min-h-svh items-center overflow-hidden pt-20 pb-10 md:pt-24 md:pb-14"
+>
+  <div class="absolute inset-0 bg-brown-dark">
+    <Image
+      src={heroImg}
+      alt="Kaffeekirschen beim Trocknen auf der Finca Los Castaños"
+      class="absolute inset-0 h-full w-full object-cover"
+      widths={[800, 1200, 1600]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/75 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/60 lg:to-transparent"
+    >
+    </div>
+  </div>
 
-<!-- FareHarbor Calendar Widget -->
-<section class="py-16 md:py-24 bg-background">
+  <Container class="relative z-10">
+    <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+      <!-- Text -->
+      <div class="text-center lg:text-left">
+        <h1
+          class="font-sans text-2xl font-light tracking-wider uppercase text-white hyphens-none md:text-3xl [text-shadow:0_2px_10px_rgba(0,0,0,0.9)]"
+        >
+          {t.hero.title}
+        </h1>
+        <p
+          class="mt-2 font-serif text-2xl text-secondary md:text-3xl [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]"
+        >
+          {t.hero.subtitle}
+        </p>
+
+        <ul
+          class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white lg:mt-8 lg:justify-start lg:gap-x-6 lg:text-base"
+        >
+          {
+            facts.map((fact) => (
+              <li class="inline-flex items-center gap-2 [text-shadow:0_1px_6px_rgba(0,0,0,0.95)]">
+                <Icon name={fact.icon} class="h-4 w-4 shrink-0 text-secondary" />
+                <span>{fact.label}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Buchung -->
+      <div class="mx-auto w-full max-w-xl lg:mx-0">
+        <div class="bg-background p-4 shadow-2xl sm:p-6">
+          <p
+            class="mb-4 font-sans text-sm font-semibold tracking-wider uppercase text-text-heading"
+          >
+            {t.widget.label}
+          </p>
+
+          <noscript>
+            <p class="text-sm text-text-muted">{t.widget.placeholder}</p>
+          </noscript>
+          <!-- FareHarbor full booking widget (all items, flow #{flow}) -->
+          <script is:inline src={calendarSrc}></script>
+
+          <p class="mt-4 flex items-center gap-2 text-sm text-text-muted">
+            <Icon
+              name="lucide:shield-check"
+              class="h-4 w-4 shrink-0 text-primary"
+            />
+            {t.widget.note}
+          </p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<!-- Image strip -->
+<section class="grid grid-cols-2 md:grid-cols-4" data-animate="fade">
+  {
+    strip.map((image) => (
+      <div class="overflow-hidden">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          class="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+          widths={[300, 500, 800]}
+          sizes="(max-width: 768px) 50vw, 25vw"
+        />
+      </div>
+    ))
+  }
+</section>
+
+<!-- Help -->
+<section class="bg-surface py-10 md:py-12">
   <Container>
-    <div class="max-w-md mx-auto">
-      <!-- FareHarbor full booking widget (all items, flow #{flow}) -->
-      <script is:inline src={calendarSrc}></script>
+    <div
+      class="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6"
+    >
+      <p class="text-text-muted">{t.help.text}</p>
+      <div class="flex items-center gap-3">
+        <a
+          href={telHref}
+          aria-label={siteData.contact.phone}
+          class="inline-flex h-11 w-11 items-center justify-center border border-border bg-background text-text-heading transition-colors hover:border-primary hover:text-primary"
+        >
+          <Icon name="lucide:phone" class="h-5 w-5" />
+        </a>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          class="inline-flex h-11 w-11 items-center justify-center border border-border bg-background text-text-heading transition-colors hover:border-primary hover:text-primary"
+        >
+          <Icon name="simple-icons:whatsapp" class="h-5 w-5" />
+        </a>
+        <a
+          href={mailHref}
+          aria-label={siteData.contact.email}
+          class="inline-flex h-11 w-11 items-center justify-center border border-border bg-background text-text-heading transition-colors hover:border-primary hover:text-primary"
+        >
+          <Icon name="lucide:mail" class="h-5 w-5" />
+        </a>
+      </div>
     </div>
   </Container>
 </section>
