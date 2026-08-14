@@ -46,9 +46,9 @@ export const translations = {
 
   intro: {
     p1: {
-      de: "Erleben Sie die Welt des Kaffees! Unser Tourguide zeigt Ihnen in etwa einer Stunde unsere Plantage und Hänge mit den angebauten Pflanzen und gibt auf Spanisch, Französisch oder Englisch ihr spannendes Wissen rund um Anbau und Kaffeegenuss weiter.",
-      en: "Experience the world of coffee! Our tour guide will show you our plantation and slopes with the cultivated plants in about an hour and pass on her exciting knowledge about cultivation and coffee enjoyment in Spanish, French or English.",
-      es: "¡Vengan a conocer el mundo del café! Nuestra guía les enseña la plantación y las laderas con los cultivos durante una horita, contándoles todo lo que sabe sobre el cultivo y el buen café – en español, francés o inglés.",
+      de: "Erleben Sie die Welt des Kaffees! Unser Tourguide zeigt Ihnen in etwa einer Stunde unsere Plantage und Hänge mit den angebauten Pflanzen und gibt auf Spanisch, Französisch, Englisch oder Deutsch ihr spannendes Wissen rund um Anbau und Kaffeegenuss weiter.",
+      en: "Experience the world of coffee! Our tour guide will show you our plantation and slopes with the cultivated plants in about an hour and pass on her exciting knowledge about cultivation and coffee enjoyment in Spanish, French, English or German.",
+      es: "¡Vengan a conocer el mundo del café! Nuestra guía les enseña la plantación y las laderas con los cultivos durante una horita, contándoles todo lo que sabe sobre el cultivo y el buen café – en español, francés, inglés o alemán.",
     },
     p2: {
       de: "Die Kaffeeleidenschaft überträgt sich auf Sie, wenn unsere Expertin stolz von der Geschichte des Kaffeeanbaus erzählt, Basiswissen zu Gattungen und Varietäten, Wachstum, Ernteerträgen sowie die wichtigsten Prozesse rund um das Thema Kaffeeanbau vermittelt.",
@@ -81,27 +81,27 @@ export const translations = {
     items: {
       de: [
         { question: "Wie lange dauert die Kaffeetour?", answer: `Die geführte Tour dauert etwa ${coffeeTour.durationMinutes} Minuten inklusive einer Kaffeeverkostung am Ende.` },
-        { question: "In welchen Sprachen wird die Tour angeboten?", answer: "Die Tour wird auf Spanisch, Englisch und Französisch angeboten." },
+        { question: "In welchen Sprachen wird die Tour angeboten?", answer: "Die Tour wird auf Spanisch, Englisch, Französisch und Deutsch angeboten." },
         { question: "Muss ich die Tour im Voraus buchen?", answer: "Eine Online-Buchung wird empfohlen, da die Plätze begrenzt sind." },
-        { question: "Ist die Tour für Kinder geeignet?", answer: `Ja, Kinder sind willkommen. Kinder von ${coffeeTour.childrenMinAge} bis ${coffeeTour.childrenMaxAge} Jahren zahlen einen ermäßigten Preis von ${fp(coffeeTour.children)} und Kleinkinder von ${coffeeTour.infantsMinAge} bis ${coffeeTour.infantsMaxAge} Jahren sind kostenlos.` },
+        { question: "Ist die Tour für Kinder geeignet?", answer: "Ja, Kinder sind willkommen." },
         { question: "Was ist im Tourpreis enthalten?", answer: "Der Preis beinhaltet die geführte Besichtigung der Kaffeeplantage, Erklärungen zum Kaffeeanbau und eine Kaffeeverkostung." },
-        { question: "Gibt es Parkmöglichkeiten?", answer: "Ja, kostenlose Parkplätze stehen direkt an der Finca zur Verfügung." },
+        { question: "Gibt es Parkmöglichkeiten?", answer: "Ja, Parkplätze stehen direkt an der Finca zur Verfügung." },
       ],
       en: [
         { question: "How long does the coffee tour last?", answer: `The guided tour takes approximately ${coffeeTour.durationMinutes} minutes, including a coffee tasting at the end.` },
-        { question: "What languages are the tours offered in?", answer: "Tours are offered in Spanish, English, and French." },
+        { question: "What languages are the tours offered in?", answer: "Tours are offered in Spanish, English, French, and German." },
         { question: "Do I need to book in advance?", answer: "Advance online booking is recommended as places are limited." },
-        { question: "Is the tour suitable for children?", answer: `Yes, children are welcome. Children aged ${coffeeTour.childrenMinAge} to ${coffeeTour.childrenMaxAge} pay a reduced price of ${fp(coffeeTour.children)}, and infants aged ${coffeeTour.infantsMinAge} to ${coffeeTour.infantsMaxAge} are free.` },
+        { question: "Is the tour suitable for children?", answer: "Yes, children are welcome." },
         { question: "What is included in the tour price?", answer: "The price includes a guided visit of the coffee plantation, explanations about coffee cultivation, and a coffee tasting session." },
-        { question: "Is there parking available?", answer: "Yes, free parking is available directly at the finca." },
+        { question: "Is there parking available?", answer: "Yes, parking is available directly at the finca." },
       ],
       es: [
         { question: "\u00bfCu\u00e1nto dura el tour de caf\u00e9?", answer: `La visita guiada dura aproximadamente ${coffeeTour.durationMinutes} minutos, incluyendo una degustaci\u00f3n de caf\u00e9 al final.` },
-        { question: "\u00bfEn qu\u00e9 idiomas se ofrece el tour?", answer: "Los tours se ofrecen en espa\u00f1ol, ingl\u00e9s y franc\u00e9s." },
+        { question: "\u00bfEn qu\u00e9 idiomas se ofrece el tour?", answer: "Los tours se ofrecen en espa\u00f1ol, ingl\u00e9s, franc\u00e9s y alem\u00e1n." },
         { question: "\u00bfEs necesario reservar con antelaci\u00f3n?", answer: "Se recomienda reservar online ya que las plazas son limitadas." },
-        { question: "\u00bfEl tour es apto para ni\u00f1os?", answer: `S\u00ed, los ni\u00f1os son bienvenidos. Los ni\u00f1os de ${coffeeTour.childrenMinAge} a ${coffeeTour.childrenMaxAge} a\u00f1os pagan un precio reducido de ${fp(coffeeTour.children)} y los peques de ${coffeeTour.infantsMinAge} a ${coffeeTour.infantsMaxAge} a\u00f1os entran gratis.` },
+        { question: "\u00bfEl tour es apto para ni\u00f1os?", answer: "S\u00ed, los ni\u00f1os son bienvenidos." },
         { question: "\u00bfQu\u00e9 incluye el precio del tour?", answer: "El precio incluye una visita guiada por la plantaci\u00f3n de caf\u00e9, explicaciones sobre el cultivo del caf\u00e9 y una degustaci\u00f3n." },
-        { question: "\u00bfHay aparcamiento disponible?", answer: "S\u00ed, hay aparcamiento gratuito en la propia finca." },
+        { question: "\u00bfHay aparcamiento disponible?", answer: "S\u00ed, hay aparcamiento en la propia finca." },
       ],
     },
   },
