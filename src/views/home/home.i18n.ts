@@ -8,9 +8,9 @@ export const translations = {
   },
   hero: {
     title: {
-      de: "Kaffee aus dem Valle de Agaete",
-      en: "Coffee from the Valle de Agaete",
-      es: "Café del Valle de Agaete",
+      de: "Europäischer Kaffee, geboren zwischen Vulkanen",
+      en: "European coffee born among volcanoes",
+      es: "Café europeo nacido entre volcanes",
     },
     subtitle: {
       de: "Willkommen auf unserer Finca",
