@@ -47,9 +47,9 @@ export const translations = {
       es: "Degustación incluida",
     },
     languages: {
-      de: "ES · EN · FR · DE",
-      en: "ES · EN · FR · DE",
-      es: "ES · EN · FR · DE",
+      de: "ES · EN · FR · DE · RU",
+      en: "ES · EN · FR · DE · RU",
+      es: "ES · EN · FR · DE · RU",
     },
   },
 
