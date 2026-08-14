@@ -319,34 +319,6 @@ export const translations = {
       ],
     },
   },
-
-  roasting: {
-    title: {
-      de: "Exotisch & schonend ger\u00f6stet",
-      en: "Exotic & gently roasted",
-      es: "Ex\u00f3tico y tostado con calma",
-    },
-    subtitle: {
-      de: "Und wie schmeckt nun der einzige Kaffee aus Europa?",
-      en: "So what does Europe's only coffee actually taste like?",
-      es: "\u00bfY c\u00f3mo sabe el \u00fanico caf\u00e9 de Europa?",
-    },
-    p1: {
-      de: "Die au\u00dfergew\u00f6hnlichen Rahmenbedingungen ergeben den besonderen Kaffeegenuss mit exotischem Touch: bei mildem Mittelmeerklima gem\u00e4chlich gewachsen, von Hand gepfl\u00fcckt und langsam schonend ger\u00f6stet.",
-      en: "The extraordinary conditions produce a truly special cup with an exotic touch: slowly grown in a mild Mediterranean climate, hand-picked and gently roasted.",
-      es: "Las condiciones de aqu\u00ed le dan al caf\u00e9 un car\u00e1cter muy especial: crece tranquilito con nuestro clima suave, se recoge a mano y se tuesta despacito, sin prisas.",
-    },
-    p2: {
-      de: "Als sehr aromatisch, dabei sanft und mild-fruchtig im Geschmack, mit exotischem Einschlag und karamelligem Abgang, ausgesprochen wenig S\u00e4ure und Bitterkeit beschreiben Experten den Caf\u00e9 de Agaete.",
-      en: "Experts describe the Caf\u00e9 de Agaete as wonderfully aromatic, soft and mildly fruity, with an exotic note and a caramel finish \u2013 remarkably low in acidity and bitterness.",
-      es: "Los que entienden dicen que el Caf\u00e9 de Agaete es muy arom\u00e1tico, suave y afrutado, con un toquecito ex\u00f3tico y un final a caramelo \u2013 con poquita acidez y nada de amargor.",
-    },
-    cta: {
-      de: "Also: Probieren Sie ihn!",
-      en: "Go on \u2013 give it a try!",
-      es: "\u00a1Vengan a probarlo ustedes mismos!",
-    },
-  },
 };
 
 export type ExperienceTranslations = FlattenTranslation<typeof translations>;
