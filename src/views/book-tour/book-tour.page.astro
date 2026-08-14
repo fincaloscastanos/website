@@ -3,6 +3,7 @@ import type { BookTourTranslations } from "./book-tour.i18n";
 import type { Language } from "@/lib/i18n";
 import Container from "@/components/ui/Container.astro";
 import PageHero from "@/components/ui/PageHero.astro";
+import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
 
 interface Props {
@@ -23,6 +24,11 @@ const calendarSrc = `https://fareharbor.com/embeds/script/items/${shortname}/?fa
     <div class="max-w-md mx-auto">
       <!-- FareHarbor full booking widget (all items, flow #{flow}) -->
       <script is:inline src={calendarSrc}></script>
+
+      <p class="mt-6 flex items-start justify-center gap-2 text-sm text-text-muted">
+        <Icon name="lucide:languages" class="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+        <span>{t.widget.languages}</span>
+      </p>
     </div>
   </Container>
 </section>

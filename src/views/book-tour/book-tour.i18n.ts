@@ -38,6 +38,11 @@ export const translations = {
       en: "The booking system is loading\u2026",
       es: "El sistema de reservas se está cargando\u2026",
     },
+    languages: {
+      de: "Die Tour wird auf Spanisch, Englisch, Franz\u00f6sisch, Deutsch und Russisch angeboten.",
+      en: "Tours are offered in Spanish, English, French, German and Russian.",
+      es: "Los tours se ofrecen en espa\u00f1ol, ingl\u00e9s, franc\u00e9s, alem\u00e1n y ruso.",
+    },
   },
 
 };
