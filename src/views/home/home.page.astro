@@ -14,7 +14,7 @@ import heroEnd from "@/assets/home/hero-end.webp";
 import productsImg from "@/assets/home/products.jpg";
 import productsDetailImg from "@/assets/home/coffee-plant.png";
 import tourImg from "@/assets/home/tour.jpg";
-import aboutDetailImg from "@/assets/coffee-tour/book/team.jpg";
+import aboutDetailImg from "@/assets/home/team.jpg";
 import sustainabilityPanorama from "@/assets/home/card-events.jpeg";
 import sustainabilityDetail from "@/assets/home/card-accommodation.jpeg";
 
@@ -46,6 +46,16 @@ const { lang, t } = Astro.props;
 const experienceHref = getTranslatedPath("experience", lang);
 const galleryHref = getTranslatedPath("gallery", lang);
 const coffeeTourHref = getTranslatedPath("coffee-tour", lang);
+
+// Der Stern wird gefüllt gerendert (lucide liefert nur die Outline-Variante)
+const starPath =
+  "M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z";
+
+const heroStats = [
+  { icon: "star", label: t.hero.statRating },
+  { icon: "lucide:sprout", label: t.hero.statPlantation },
+  { icon: "lucide:sun", label: t.hero.statSolar },
+];
 
 const galleryImages = [
   gallery01,
@@ -129,6 +139,31 @@ const galleryImages = [
           <Icon name="lucide:arrow-right" class="w-4 h-4" />
         </a>
       </div>
+
+      <!-- Kennzahlen -->
+      <ul
+        class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-white md:mt-10 md:gap-x-6 md:gap-y-3 md:text-base"
+      >
+        {
+          heroStats.map((stat) => (
+            <li class="inline-flex items-center gap-2 [text-shadow:0_1px_10px_rgba(0,0,0,0.9),0_1px_2px_rgba(0,0,0,0.7)]">
+              {stat.icon === "star" ? (
+                <svg
+                  class="w-4 h-4 shrink-0 text-secondary"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d={starPath} />
+                </svg>
+              ) : (
+                <Icon name={stat.icon} class="w-4 h-4 shrink-0 text-secondary" />
+              )}
+              <span>{stat.label}</span>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </Container>
 

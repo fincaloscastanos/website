@@ -7,6 +7,8 @@ import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import logoGray from "@/assets/logo-text-gray.png";
 import logoWhite from "@/assets/logo-text-white.png";
+import logoMark from "@/assets/logo-background-white.png";
+import logoMarkWhite from "@/assets/logo-inverse.png";
 
 interface Props {
   lang: Language;
@@ -29,20 +31,40 @@ const homeHref = getTranslatedPath("home", lang);
       <!-- Logo -->
       <a
         href={homeHref}
-        class="relative z-50"
+        aria-label="Finca Los Castaños"
+        class="relative z-50 flex items-center gap-2 md:gap-3"
       >
-        <Image
-          src={logoWhite}
-          alt="Finca Los Castaños"
-          class="h-9 md:h-11 w-auto transition-opacity duration-300 header-logo-white"
-          quality="max"
-        />
-        <Image
-          src={logoGray}
-          alt="Finca Los Castaños"
-          class="h-9 md:h-11 w-auto absolute inset-0 transition-opacity duration-300 opacity-0 header-logo-gray"
-          quality="max"
-        />
+        <!-- Signet -->
+        <span class="relative block h-9 md:h-11 aspect-[300/245] shrink-0">
+          <Image
+            src={logoMarkWhite}
+            alt=""
+            class="absolute inset-0 h-full w-full object-contain transition-opacity duration-300 header-logo-white"
+            quality="max"
+          />
+          <Image
+            src={logoMark}
+            alt=""
+            class="absolute inset-0 h-full w-full object-contain transition-opacity duration-300 opacity-0 header-logo-gray"
+            quality="max"
+          />
+        </span>
+
+        <!-- Schriftzug -->
+        <span class="relative block h-9 md:h-11">
+          <Image
+            src={logoWhite}
+            alt="Finca Los Castaños"
+            class="h-full w-auto transition-opacity duration-300 header-logo-white"
+            quality="max"
+          />
+          <Image
+            src={logoGray}
+            alt=""
+            class="h-full w-auto absolute inset-0 transition-opacity duration-300 opacity-0 header-logo-gray"
+            quality="max"
+          />
+        </span>
       </a>
 
       <!-- Desktop Nav -->
