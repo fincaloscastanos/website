@@ -32,6 +32,21 @@ export const translations = {
       en: "Discover the Finca",
       es: "Descubrir la Finca",
     },
+    statRating: {
+      de: "4,7 · 384 Bewertungen",
+      en: "4.7 · 384 reviews",
+      es: "4,7 · 384 reseñas",
+    },
+    statPlantation: {
+      de: "4 Hektar Kaffeeplantage",
+      en: "4 hectares of coffee plantation",
+      es: "4 hectáreas de plantación de café",
+    },
+    statSolar: {
+      de: "100 % Solarenergie",
+      en: "100% solar energy",
+      es: "100% energía solar",
+    },
   },
   seo: {
     title: {
