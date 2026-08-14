@@ -101,31 +101,81 @@ export const translations = {
     },
   },
 
-  dreams: {
+  history: {
     title: {
-      de: "Kaffeetr\u00e4ume im Herzen der Insel",
-      en: "Coffee dreams in the heart of the island",
-      es: "Caf\u00e9 con alma de isla",
+      de: "Zwei Jahrhunderte Kaffeegeschichte",
+      en: "Two centuries of coffee history",
+      es: "Dos siglos de historia cafetera",
     },
     subtitle: {
-      de: "Der Anbau steht bei uns im Mittelpunkt.",
-      en: "Cultivation is at the heart of what we do.",
-      es: "Aqu\u00ed todo gira alrededor del cultivo.",
+      de: "Eine Tradition, die im Tal Wurzeln schlug",
+      en: "A tradition that took root in the valley",
+      es: "Una tradici\u00f3n que ech\u00f3 ra\u00edces en el valle",
     },
     p1: {
-      de: "Unsere Plantage besteht seit mehr als einem halben Jahrhundert und ver\u00e4nderte sich entsprechend \u00fcber die Jahrzehnte immer auf der Grundlage der vorherrschenden Kulturen in diesem Tal: Die Kaffeeb\u00e4ume wachsen hier zwischen verschiedensten Arten tropischer Fr\u00fcchte wie Zitronen, Mangos, Mandarinen, Avocados, Bananen, Oliven und Weintrauben.",
-      en: "Our plantation has been here for over half a century, evolving with the crops that have shaped this valley over the decades. The coffee trees grow among all kinds of tropical fruit \u2013 lemons, mangoes, tangerines, avocados, bananas, olives and grapes.",
-      es: "Esta plantaci\u00f3n lleva aqu\u00ed m\u00e1s de medio siglo, cambiando con lo que siempre se ha cultivado en este valle. Los cafetos crecen entre frutales de todo tipo: limoneros, mangos, mandarinas, aguacates, plataneras, olivos y vi\u00f1as.",
+      de: "Das Valle de Agaete bewahrt eine der au\u00dfergew\u00f6hnlichsten Agrargeschichten Europas: den Kaffeeanbau seit mehr als zwei Jahrhunderten. Diese Tradition lebt bis heute fort und gedeiht dank des Einsatzes von rund f\u00fcnfzig Familien aus der Region.",
+      en: "The Valle de Agaete preserves one of Europe's most singular agricultural histories: coffee has been grown here for more than two centuries. The tradition is still alive and thriving thanks to the efforts of some fifty local families.",
+      es: "El Valle de Agaete conserva una de las historias agr\u00edcolas m\u00e1s singulares de Europa: el cultivo del caf\u00e9 desde hace m\u00e1s de dos siglos. Esta tradici\u00f3n sigue viva y prospera gracias al esfuerzo de unas cincuenta familias de la zona.",
     },
     p2: {
-      de: "Wir, zwei Freunde aus Deutschland, haben die Plantage 2022 gekauft und entwickeln die Finca seitdem stetig weiter. Aktuell macht der Anbau von Kaffee auf unserer Plantage den Gro\u00dfteil aus. Hier wachsen etwa 1200 Kaffeepflanzen auf zwei Hektar. Pro Jahr produzieren wir 400 bis 500 Kilogramm Kaffee.",
-      en: "We're two friends from Germany who bought the plantation in 2022 and have been developing it ever since. Today, coffee is our main crop \u2013 around 1,200 plants spread over two hectares, producing 400 to 500 kilograms of coffee each year.",
-      es: "Somos dos amigos de Alemania que compramos la plantaci\u00f3n en 2022 y desde entonces le hemos metido muchas ganas. Hoy el caf\u00e9 es lo principal \u2013 unas 1.200 plantas en dos hect\u00e1reas, y cada a\u00f1o sacamos entre 400 y 500 kilos de caf\u00e9.",
+      de: "Im 19. Jahrhundert kam der Kaffee auf die Insel. Historischen Aufzeichnungen zufolge war es K\u00f6nig Karl III., der die Einf\u00fchrung exotischer Arten auf den Kanarischen Inseln vorantrieb. Dank dieser Initiative wurden Kulturpflanzen aus Amerika und Asien im Jard\u00edn de Aclimataci\u00f3n de La Orotava auf Teneriffa akklimatisiert und von dort aus auf verschiedene Inseln des Archipels verbreitet.",
+      en: "Coffee reached the island in the 19th century. According to historical records, it was King Carlos III who promoted the introduction of exotic species to the Canary Islands. Thanks to this initiative, crops from the Americas and Asia were acclimatised at the Jard\u00edn de Aclimataci\u00f3n de La Orotava in Tenerife, from where they spread to different parts of the archipelago.",
+      es: "En el siglo XIX el caf\u00e9 lleg\u00f3 a la isla. Seg\u00fan los registros hist\u00f3ricos, fue el rey Carlos III quien impuls\u00f3 la introducci\u00f3n de especies ex\u00f3ticas en las Islas Canarias. Gracias a esta iniciativa, cultivos procedentes de Am\u00e9rica y Asia fueron aclimatados en el Jard\u00edn de Aclimataci\u00f3n de La Orotava, en Tenerife, desde donde se difundieron a distintos puntos del archipi\u00e9lago.",
     },
     p3: {
-      de: "Haupts\u00e4chlich bauen wir die Sorte Ar\u00e1bica Typica an, testen aber auf einer neuen Fl\u00e4che auch die Sorte Ar\u00e1bica Geisha, den wertvollsten Kaffee der Welt \u2013 und leisten damit sozusagen Pionierarbeit in Europa.",
-      en: "We mainly grow Ar\u00e1bica Typica, but we're also testing Ar\u00e1bica Geisha on a new plot \u2013 the world's most valuable coffee \u2013 making us pioneers of a sort in Europe.",
-      es: "Cultivamos sobre todo Ar\u00e1bica Typica, pero tambi\u00e9n estamos probando con Ar\u00e1bica Geisha en una parcela nueva \u2013 el caf\u00e9 m\u00e1s valioso del mundo \u2013 as\u00ed que, en cierto modo, estamos abriendo camino aqu\u00ed en Europa.",
+      de: "W\u00e4hrend in anderen Teilen der Insel \u2013 trotz ihrer vierzehn Klimazonen \u2013 die Anbauversuche scheiterten, lie\u00dfen im vor den Meereswinden gesch\u00fctzten Valle de Agaete die nat\u00fcrlichen Bedingungen und die Arbeit der Bauern den Kaffee Wurzeln schlagen und erfolgreich gedeihen.",
+      en: "While elsewhere on the island \u2013 despite its fourteen climate zones \u2013 attempts at cultivation never took hold, in the Valle de Agaete, sheltered from the ocean winds, the natural conditions and the work of the farmers allowed coffee to take root and thrive.",
+      es: "Mientras que en otras zonas de la isla, a pesar de sus catorce zonas clim\u00e1ticas, los intentos de cultivo no prosperaron, en el Valle de Agaete, protegido de los vientos oce\u00e1nicos, las condiciones naturales y el trabajo de los agricultores permitieron que el caf\u00e9 echara ra\u00edces y se desarrollara con \u00e9xito.",
+    },
+    p4: {
+      de: "Im 20. Jahrhundert erlebte die kanarische Landwirtschaft tiefgreifende Ver\u00e4nderungen. Die meisten Kaffeeplantagen wurden je nach Region durch rentablere Kulturen wie Bananen oder Tomaten ersetzt. Fr\u00fcher war die Kaffeeproduktion sehr viel gr\u00f6\u00dfer und erreichte mehrere Tonnen. Ende des 19. Jahrhunderts erregte der Kaffee aus Agaete internationale Aufmerksamkeit und wurde sogar auf der Weltausstellung 1889 in Paris pr\u00e4sentiert, wo er eine Bronzemedaille gewann.",
+      en: "During the 20th century, Canarian agriculture underwent profound changes. Most coffee farms were replaced by more profitable crops such as bananas or tomatoes, depending on the district. Coffee production used to be far greater, reaching several tonnes. In the late 19th century, Agaete's coffee began to attract international attention and was even presented at the 1889 Paris World's Fair, where it won a bronze medal.",
+      es: "Durante el siglo XX, la agricultura canaria experiment\u00f3 profundas transformaciones. La mayor\u00eda de las explotaciones cafeteras fueron sustituidas por cultivos m\u00e1s rentables, como el pl\u00e1tano o el tomate, seg\u00fan la comarca. Antiguamente la producci\u00f3n de caf\u00e9 era mucho mayor y llegaba a alcanzar varias toneladas. A finales del siglo XIX, el caf\u00e9 de Agaete comenz\u00f3 a llamar la atenci\u00f3n internacional e incluso fue presentado en la Exposici\u00f3n Universal de Par\u00eds de 1889, donde obtuvo una medalla de bronce.",
+    },
+    p5: {
+      de: "Heute beschr\u00e4nkt sich der Anbau auf kleine, von Generation zu Generation vererbte Parzellen, die \u00fcberwiegend dem Eigenbedarf der Familien dienen. Gerade diese Produktion im kleinen Ma\u00dfstab hat es erm\u00f6glicht, eine einzigartige landwirtschaftliche Tradition bis in unsere Tage zu bewahren.",
+      en: "Today, cultivation is limited to small plots passed down from generation to generation, mainly for family consumption. It is precisely this small-scale production that has preserved a unique agricultural tradition to this day.",
+      es: "Hoy en d\u00eda, el cultivo se limita a peque\u00f1as parcelas heredadas de generaci\u00f3n en generaci\u00f3n, destinadas principalmente al consumo familiar. Precisamente esta producci\u00f3n a peque\u00f1a escala ha permitido conservar hasta nuestros d\u00edas una tradici\u00f3n agr\u00edcola \u00fanica.",
+    },
+    p6: {
+      de: "Der in Agaete angebaute Kaffee geh\u00f6rt \u00fcberwiegend zur Art Coffea arabica, Variet\u00e4t Typica \u2013 eine der \u00e4ltesten der Welt und in den gro\u00dfen kommerziellen Plantagen heute nur noch selten anzutreffen. In Agaete w\u00e4chst er in au\u00dfergew\u00f6hnlich geringer H\u00f6he zwischen 150 und 400 Metern \u00fcber dem Meeresspiegel, w\u00e4hrend Kaffee in den meisten Erzeugerl\u00e4ndern \u00fcblicherweise zwischen 600 und 1.300 Metern oder noch h\u00f6her kultiviert wird.",
+      en: "The coffee grown in Agaete belongs mainly to the species Coffea arabica, variety Typica \u2013 one of the oldest in the world and now rarely found on large commercial plantations. In Agaete it grows at an exceptionally low altitude, between 150 and 400 metres above sea level, whereas in most producing countries coffee is usually cultivated between 600 and 1,300 metres or even higher.",
+      es: "El caf\u00e9 cultivado en Agaete pertenece principalmente a la especie Coffea arabica, variedad Typica, una de las m\u00e1s antiguas del mundo y actualmente poco frecuente en las grandes plantaciones comerciales. En Agaete crece a una altitud excepcionalmente baja, entre los 150 y los 400 metros sobre el nivel del mar, mientras que en la mayor\u00eda de los pa\u00edses productores el caf\u00e9 se cultiva normalmente entre los 600 y los 1.300 metros o incluso a mayor altura.",
+    },
+    p7: {
+      de: "Die Anbaubedingungen verleihen diesem Kaffee ein einzigartiges sensorisches Profil. Der katalanische Experte Albert Sol\u00e0 i Trilla beschrieb ihn als Kaffee von gro\u00dfer Qualit\u00e4t, von gr\u00fcngelber Farbe, mit Aromen gr\u00fcner Fr\u00fcchte und einem fruchtig-s\u00fc\u00dfen Geschmack, der an Schokolade und Lakritz erinnert. Andere Verkoster erkennen zudem Noten von Mandarine, Zimt und verschiedene fruchtige Nuancen.",
+      en: "The growing conditions give this coffee a unique sensory profile. The Catalan expert Albert Sol\u00e0 i Trilla described it as a coffee of great quality, greenish-yellow in colour, with aromas of green fruit and a fruity, sweet flavour reminiscent of chocolate and liquorice. Other tasters also identify notes of mandarin, cinnamon and various fruity nuances.",
+      es: "Las condiciones de cultivo confieren a este caf\u00e9 un perfil sensorial \u00fanico. El experto catal\u00e1n Albert Sol\u00e0 i Trilla lo describi\u00f3 como un caf\u00e9 de gran calidad, de color amarillo verdoso, con aromas de fruta verde y un sabor afrutado y dulce que recuerda al chocolate y al regaliz. Otros catadores tambi\u00e9n identifican notas de mandarina, canela y diversos matices frutales.",
+    },
+    p8: {
+      de: "Fachleute erkennen dar\u00fcber hinaus Noten von Schokolade, roten Fr\u00fcchten, Zitrusfr\u00fcchten, N\u00fcssen und sogar Tabak, mitunter begleitet von einem feinen mineralischen Anklang.",
+      en: "Experts can also detect notes of chocolate, red berries, citrus, nuts and even tobacco, at times accompanied by a delicate mineral nuance.",
+      es: "Los expertos pueden reconocer adem\u00e1s notas de chocolate, frutos rojos, c\u00edtricos, frutos secos e incluso tabaco, en ocasiones acompa\u00f1adas de un delicado matiz mineral.",
+    },
+    p9: {
+      de: "Der traditionelle Anbau im Schatten und in Mischkultur \u2013 zwischen Bananenstauden, Orangen-, Mango- und Avocadob\u00e4umen \u2013 sch\u00fctzt die empfindlichen Kaffeestr\u00e4ucher, Unterholzpflanzen mit einer Pfahlwurzel, die zu starke Sonneneinstrahlung nicht vertragen. Zugleich tragen die leicht sauren, mineral- und spurenelementreichen Vulkanb\u00f6den entscheidend zur Qualit\u00e4t des Kaffees bei. Diese Elemente f\u00f6rdern die Bildung komplexer Aroma- und Geschmacksverbindungen in der Bohne und verleihen dem Getr\u00e4nk mehr Tiefe, Intensit\u00e4t und F\u00fclle.",
+      en: "The traditional system of shade-grown polyculture \u2013 alongside banana plants, orange, mango and avocado trees \u2013 protects the delicate coffee shrubs, understorey plants with a taproot that cannot tolerate excessive sun exposure. At the same time, the slightly acidic volcanic soils, rich in minerals and trace elements, make a decisive contribution to the quality of the coffee. These elements encourage the formation of complex aromatic and flavour compounds in the bean, giving the drink greater depth, intensity and richness.",
+      es: "El sistema tradicional de cultivo bajo sombra y en policultivo, junto a plataneras, naranjos, mangos y aguacateros, protege los delicados cafetos, plantas de sotobosque con un sistema radicular pivotante que no toleran la exposici\u00f3n excesiva al sol. Al mismo tiempo, los suelos volc\u00e1nicos, ligeramente \u00e1cidos y ricos en minerales y oligoelementos, contribuyen de forma decisiva a la calidad del caf\u00e9. Estos elementos favorecen la formaci\u00f3n de complejos compuestos arom\u00e1ticos y gustativos en el grano, aportando mayor profundidad, intensidad y riqueza al sabor de la bebida.",
+    },
+    p10: {
+      de: "Kaffee setzt mehr als 800 Aromastoffe frei \u2013 mehr als Wein, was die au\u00dfergew\u00f6hnliche Komplexit\u00e4t seiner Aromen erkl\u00e4rt.",
+      en: "Coffee releases more than 800 aromatic compounds \u2013 more than wine \u2013 which explains the extraordinary complexity of its aromas.",
+      es: "El caf\u00e9 libera m\u00e1s de 800 compuestos arom\u00e1ticos, una cifra superior a la del vino, lo que explica la extraordinaria complejidad de sus aromas.",
+    },
+    p11: {
+      de: "Die ausgezeichnete Drainage des Bodens und ein moderater Wasserstress bewirken, dass die Pflanze Zucker und Aromastoffe in den Fr\u00fcchten konzentriert \u2013 das ergibt einen s\u00fc\u00dferen, intensiveren und ausdrucksst\u00e4rkeren Kaffee. Deshalb werden Kaffees aus vulkanischen Regionen wie Guatemala, Costa Rica, Kona (Hawaii), \u00c4thiopien und nat\u00fcrlich den Kanarischen Inseln weltweit besonders gesch\u00e4tzt.",
+      en: "The soil's excellent drainage and a moderate water stress encourage the plant to concentrate sugars and aromatic substances in its fruit, resulting in a sweeter, more intense and more expressive coffee. That is why coffees from volcanic regions such as Guatemala, Costa Rica, Kona (Hawaii), Ethiopia and, of course, the Canary Islands are especially prized around the world.",
+      es: "El excelente drenaje del suelo y un moderado estr\u00e9s h\u00eddrico favorecen que la planta concentre az\u00facares y sustancias arom\u00e1ticas en los frutos, dando lugar a un caf\u00e9 m\u00e1s dulce, intenso y expresivo. Por ello, los caf\u00e9s procedentes de regiones volc\u00e1nicas como Guatemala, Costa Rica, Kona (Haw\u00e1i), Etiop\u00eda y, por supuesto, las Islas Canarias, son especialmente apreciados en todo el mundo.",
+    },
+    p12: {
+      de: "\u00dcber Generationen hinweg wurden die Kaffeekirschen sorgf\u00e4ltig von Hand geerntet und auf traditionellen Trockenpl\u00e4tzen unter freiem Himmel in der Sonne getrocknet. Au\u00dferhalb des Valle de Agaete war der Kaffee kaum erh\u00e4ltlich \u2013 kaufen konnte man ihn nur direkt bei den Erzeugern oder in kleinen \u00f6rtlichen L\u00e4den.",
+      en: "For generations, the coffee cherries were carefully picked by hand and dried in the sun on traditional open-air drying beds. The coffee was barely available outside the Valle de Agaete and could only be bought directly from the growers or in small local shops.",
+      es: "Durante generaciones, las cerezas de caf\u00e9 se recolectaban cuidadosamente a mano y se secaban al sol en secaderos tradicionales al aire libre. El caf\u00e9 apenas pod\u00eda consumirse fuera del Valle de Agaete y solo era posible adquirirlo directamente a los productores o en peque\u00f1as tiendas locales.",
+    },
+    p13: {
+      de: "Bis heute ist er wegen seiner \u00e4u\u00dferst geringen Produktion und seiner au\u00dfergew\u00f6hnlichen Qualit\u00e4t ein hoch gesch\u00e4tztes Produkt. Nennenswert exportiert wurde er nie: Wer den echten Kaffee aus Agaete probieren wollte, musste ins Tal reisen und ihn direkt bei den Bauern oder in den Gesch\u00e4ften der Umgebung kaufen.",
+      en: "It remains a highly prized product today thanks to its extremely small production and extraordinary quality. It has never been exported in any significant quantity: anyone wanting to taste genuine Agaete coffee had to travel to the valley and buy it directly from the farmers or in local shops.",
+      es: "Hoy sigue siendo un producto muy apreciado por su escas\u00edsima producci\u00f3n y su extraordinaria calidad. Nunca se export\u00f3 de forma significativa: quien deseaba probar el aut\u00e9ntico caf\u00e9 de Agaete deb\u00eda viajar hasta el valle para comprarlo directamente a los agricultores o en los comercios de la zona.",
     },
   },
 
@@ -146,9 +196,9 @@ export const translations = {
       es: "El clima de Gran Canaria es \u00fanico en Europa \u2013 hace que la isla sea incre\u00edblemente f\u00e9rtil, perfecta para cultivar caf\u00e9 y frutas. Geogr\u00e1ficamente la isla est\u00e1 en \u00c1frica, pero pol\u00edticamente somos parte de la UE. Por eso no solo somos la \u00fanica canaria donde se cultiva caf\u00e9, sino el \u00fanico sitio de toda Europa donde se hace.",
     },
     p2: {
-      de: "In Agaete hat der Kaffeeanbau eine lange Tradition: Im Valle de Agaete wird bereits seit Beginn des 19. Jahrhunderts traditionell Kaffee kultiviert. Inzwischen ist das Dorf der letzte Ort in Europa, an dem noch Kaffee angebaut wird. Das einzigartige mild-feuchte Mikroklima hier im Tal bietet daf\u00fcr die ideale Mischung aus Sonne, W\u00e4rme, Windschutz und Schatten durch die gro\u00dfen Palmenb\u00e4ume rund um die Plantage. Im Tal sind stets 15 bis 28 Grad Celsius und mittlere Luftfeuchtigkeit.",
-      en: "Coffee has a long tradition in Agaete: the Valle de Agaete has been growing coffee since the early 19th century. Today, the village is the last place in Europe where coffee is still cultivated. The unique mild, humid microclimate in the valley offers the perfect mix of sun, warmth, wind protection and shade from the tall palm trees. Temperatures stay between 15 and 28 degrees Celsius year-round.",
-      es: "Aqu\u00ed en Agaete el caf\u00e9 viene de lejos: en el Valle de Agaete se cultiva desde principios del siglo XIX. Hoy nuestro pueblo es el \u00faltimo rinc\u00f3n de Europa donde todav\u00eda se sigue cultivando caf\u00e9. El microclima suave y h\u00famedo del valle nos da la mezcla perfecta de sol, calorcito, protecci\u00f3n del viento y la sombra de las palmeras grandes que rodean la plantaci\u00f3n. Aqu\u00ed estamos siempre entre 15 y 28 grados, ni m\u00e1s ni menos.",
+      de: "In Agaete hat der Kaffeeanbau eine lange Tradition: Im Valle de Agaete wird bereits seit Beginn des 19. Jahrhunderts traditionell Kaffee kultiviert. Das einzigartige mild-feuchte Mikroklima hier im Tal bietet daf\u00fcr die ideale Mischung aus Sonne, W\u00e4rme, Windschutz und Schatten durch die gro\u00dfen Palmenb\u00e4ume rund um die Plantage. Im Tal sind stets 15 bis 28 Grad Celsius und mittlere Luftfeuchtigkeit.",
+      en: "Coffee has a long tradition in Agaete: the Valle de Agaete has been growing coffee since the early 19th century. The unique mild, humid microclimate in the valley offers the perfect mix of sun, warmth, wind protection and shade from the tall palm trees. Temperatures stay between 15 and 28 degrees Celsius year-round.",
+      es: "Aqu\u00ed en Agaete el caf\u00e9 viene de lejos: en el Valle de Agaete se cultiva desde principios del siglo XIX. El microclima suave y h\u00famedo del valle nos da la mezcla perfecta de sol, calorcito, protecci\u00f3n del viento y la sombra de las palmeras grandes que rodean la plantaci\u00f3n. Aqu\u00ed estamos siempre entre 15 y 28 grados, ni m\u00e1s ni menos.",
     },
   },
 
