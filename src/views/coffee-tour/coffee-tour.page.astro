@@ -109,9 +109,8 @@ const bookTourHref = getTranslatedPath("book-tour", lang);
           {t.pricing.subtitle}
         </p>
 
-        <!-- Preise (Online) -->
-        <p class="text-xs uppercase tracking-wider text-white/70 mb-2">{t.pricing.onlinePrice}</p>
-        <div class="space-y-3 mb-4">
+        <!-- Preise -->
+        <div class="space-y-3 mb-10">
           <div
             class="flex items-center justify-between bg-white/50 backdrop-blur-sm rounded-none p-4 border border-border/60"
           >
@@ -120,7 +119,18 @@ const bookTourHref = getTranslatedPath("book-tour", lang);
               <span class="text-text">{t.pricing.adults}</span>
             </div>
             <span class="text-xl font-serif font-bold text-text-heading"
-              >{t.pricing.adultsOnlinePrice}*</span
+              >{t.pricing.adultsPrice}</span
+            >
+          </div>
+          <div
+            class="flex items-center justify-between bg-white/50 backdrop-blur-sm rounded-none p-4 border border-border/60"
+          >
+            <div class="flex items-center gap-3">
+              <Icon name="lucide:smile" class="w-5 h-5 text-text-heading" />
+              <span class="text-text">{t.pricing.children}</span>
+            </div>
+            <span class="text-xl font-serif font-bold text-text-heading"
+              >{t.pricing.childrenPrice}</span
             >
           </div>
           <div
@@ -128,17 +138,6 @@ const bookTourHref = getTranslatedPath("book-tour", lang);
           >
             <div class="flex items-center gap-3">
               <Icon name="lucide:baby" class="w-5 h-5 text-text-heading" />
-              <span class="text-text">{t.pricing.children}</span>
-            </div>
-            <span class="text-xl font-serif font-bold text-text-heading"
-              >{t.pricing.childrenOnlinePrice}*</span
-            >
-          </div>
-          <div
-            class="flex items-center justify-between bg-white/50 backdrop-blur-sm rounded-none p-4 border border-border/60"
-          >
-            <div class="flex items-center gap-3">
-              <Icon name="lucide:heart" class="w-5 h-5 text-text-heading" />
               <span class="text-text"
                 >{t.pricing.infants}</span
               >
@@ -148,11 +147,6 @@ const bookTourHref = getTranslatedPath("book-tour", lang);
             >
           </div>
         </div>
-
-        <!-- Kleingedrucktes: Vor-Ort-Preise -->
-        <p class="text-xs text-white/70 mb-10">
-          {t.pricing.onsiteNote}
-        </p>
 
         <!-- Infos -->
         <div class="space-y-3 mb-10">

@@ -26,11 +26,12 @@ export const siteData = {
     googleMaps: "https://maps.app.goo.gl/ydfGLsmB8QgGFvtD8",
   },
   coffeeTour: {
-    adults: 16,
-    adultsOnline: 16,
-    children: 6,
-    childrenOnline: 6,
-    infantsMaxAge: 4,
+    adults: 16.99,
+    children: 14,
+    childrenMinAge: 5,
+    childrenMaxAge: 12,
+    infantsMinAge: 0,
+    infantsMaxAge: 5,
     durationMinutes: 45,
     fareharbor: {
       shortname: "fincaloscastanos",
