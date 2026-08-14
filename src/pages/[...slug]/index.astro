@@ -46,8 +46,11 @@ const { Component, t } = view;
 // SEO Daten vorbereiten
 let title = t.seo?.title || siteData.meta.name;
 let description = t.seo?.description || "";
+
+// Startseite: transparenter Header über dem Fullscreen-Hero
+const fullBleed = routeKey === "home";
 ---
 
-<Layout title={title} description={description} lang={lang} routeKey={routeKey} fullBleed={false}>
+<Layout title={title} description={description} lang={lang} routeKey={routeKey} fullBleed={fullBleed}>
   <Component lang={lang} t={t} />
 </Layout>

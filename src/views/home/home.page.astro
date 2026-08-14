@@ -3,16 +3,15 @@ import type { HomeTranslations } from "./home.i18n";
 import type { Language } from "@/lib/i18n";
 import { Image } from "astro:assets";
 import Container from "@/components/ui/Container.astro";
-import PageHero from "@/components/ui/PageHero.astro";
 import PrivacyMap from "@/components/ui/PrivacyMap.astro";
 import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
 import { getTranslatedPath } from "@/lib/registry";
 
-import cardEvents from "@/assets/events/tent-interior.jpg";
-import cardTours from "./cafe-tour.jpg";
 import aboutImg from "@/assets/home/about.jpg";
 import heroIllustration from "@/assets/home/hero-illustration.webp";
+import heroBg from "@/assets/home/hero.webp";
+import heroEnd from "@/assets/home/hero-end.webp";
 import productsImg from "@/assets/home/products.jpg";
 import productsDetailImg from "@/assets/home/coffee-plant.png";
 import tourImg from "@/assets/home/tour.jpg";
@@ -45,10 +44,9 @@ interface Props {
 
 const { lang, t } = Astro.props;
 
-const eventsHref = getTranslatedPath("events", lang);
 const experienceHref = getTranslatedPath("experience", lang);
+const galleryHref = getTranslatedPath("gallery", lang);
 const coffeeTourHref = getTranslatedPath("coffee-tour", lang);
-const bookTourHref = getTranslatedPath("book-tour", lang);
 
 const galleryImages = [
   gallery01,
@@ -66,77 +64,96 @@ const galleryImages = [
 ];
 ---
 
-<PageHero title={t.hero.title} subtitle={t.hero.subtitle} />
+<!-- Fullscreen Hero -->
+<section
+  class="relative z-10 flex h-svh min-h-[34rem] flex-col justify-center overflow-hidden"
+>
+  <!-- Background -->
+  <div class="absolute inset-0 bg-brown-dark">
+    <Image
+      src={heroBg}
+      alt="Valle de Agaete, Gran Canaria"
+      class="absolute inset-0 h-full w-full object-cover"
+      widths={[800, 1200, 1500]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
 
-<!-- Quick-Jump Cards -->
-<section class="pb-16 md:pb-24 bg-surface">
-  <Container>
-    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
-      <!-- Card: Tours (primary) — mobile 1st, desktop 2nd -->
-      <a
-        href={bookTourHref}
-        class="group bg-secondary shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:order-2"
-      >
-        <div class="relative overflow-hidden">
-          <Image
-            src={cardTours}
-            alt={t.cards.tours.title}
-            class="w-full h-40 md:h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          <p
-            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 pt-8 pb-3 font-serif text-white text-xl md:text-2xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]"
-          >
-            {t.cards.tours.subtitle}
-          </p>
-        </div>
-        <div class="p-5 flex flex-col flex-1 text-white">
-          <p class="text-white/90 text-sm leading-relaxed mb-5 flex-1">
-            {t.cards.tours.description}
-          </p>
-          <span
-            class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white/20 text-white text-sm font-bold uppercase tracking-wider group-hover:bg-white/30 transition-colors duration-300"
-          >
-            {t.cards.tours.cta}
-            <Icon name="lucide:arrow-right" class="w-4 h-4" />
-          </span>
-        </div>
-      </a>
+    <!-- Scrim for legibility -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/60"
+    >
+    </div>
+    <div class="absolute inset-0 hero-spotlight"></div>
+    <!-- Ausfaden nach unten in die Kaffee-Sektion -->
+    <div
+      class="absolute inset-x-0 bottom-0 h-[8%] bg-gradient-to-b from-transparent to-black"
+    >
+    </div>
+  </div>
 
-      <!-- Card: Events — mobile 2nd, desktop 1st -->
-      <a
-        href={eventsHref}
-        class="group bg-background shadow-xl overflow-hidden border border-border/50 flex flex-col hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 md:order-1"
+  <!-- Content -->
+  <Container class="relative z-10 pt-20 pb-16">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1
+        class="text-3xl md:text-5xl lg:text-6xl font-sans uppercase tracking-wider font-light text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)]"
       >
-        <div class="relative overflow-hidden">
-          <Image
-            src={cardEvents}
-            alt={t.cards.events.title}
-            class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-          <p
-            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-5 pt-8 pb-3 font-serif text-white text-xl md:text-2xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]"
-          >
-            {t.cards.events.subtitle}
-          </p>
-        </div>
-        <div class="p-5 flex flex-col flex-1">
-          <p class="text-text-muted text-sm leading-relaxed mb-5 flex-1">
-            {t.cards.events.description}
-          </p>
-          <span
-            class="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white text-sm font-bold uppercase tracking-wider group-hover:bg-primary-dark transition-colors duration-300"
-          >
-            {t.cards.events.cta}
-            <Icon name="lucide:arrow-right" class="w-4 h-4" />
-          </span>
-        </div>
-      </a>
+        {t.hero.title}
+      </h1>
+      <p
+        class="mt-3 font-serif text-secondary text-2xl sm:text-3xl md:text-4xl [text-shadow:0_2px_14px_rgba(0,0,0,0.9),0_1px_3px_rgba(0,0,0,0.7)]"
+      >
+        {t.hero.subtitle}
+      </p>
+      <p
+        class="mx-auto mt-6 max-w-xl text-base md:text-lg leading-relaxed text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.9),0_1px_2px_rgba(0,0,0,0.7)]"
+      >
+        {t.hero.description}
+      </p>
+
+      <div
+        class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
+        <a
+          href={coffeeTourHref}
+          class="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-secondary text-text-heading text-sm font-bold uppercase tracking-wider py-3.5 px-8 shadow-lg transition-colors duration-300 hover:bg-secondary/85"
+        >
+          {t.hero.ctaTour}
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+        </a>
+        <a
+          href={galleryHref}
+          class="inline-flex w-full sm:w-auto items-center justify-center gap-2 border border-white/70 bg-white/10 backdrop-blur-sm text-white text-sm font-bold uppercase tracking-wider py-3.5 px-8 shadow-lg transition-colors duration-300 hover:bg-white/25"
+        >
+          {t.hero.ctaDiscover}
+          <Icon name="lucide:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
     </div>
   </Container>
+
+</section>
+
+<!-- Kaffee-Band: der Hero blendet hier hinein -->
+<section
+  class="relative h-[45svh] min-h-[18rem] w-full overflow-hidden bg-black"
+  aria-hidden="true"
+>
+  <!-- Kaffeebild blendet von oben ein, unten bis zum Bildrand sichtbar -->
+  <Image
+    src={heroEnd}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover object-bottom coffee-fade-in"
+    widths={[800, 1200, 1600]}
+    sizes="100vw"
+    loading="eager"
+  />
+  <!-- Schatten läuft in die obere Hälfte der Bohnen aus -->
+  <div
+    class="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black via-black/45 to-transparent"
+  >
+  </div>
 </section>
 
 <!-- Illustration & Quote -->
@@ -656,3 +673,32 @@ const galleryImages = [
     </div>
   </Container>
 </section>
+
+<style>
+  /* Dunkler Spot hinter der Hero-Typo für ausreichenden Kontrast */
+  .hero-spotlight {
+    background-image: radial-gradient(
+      ellipse 75% 60% at 50% 48%,
+      rgb(0 0 0 / 0.6) 0%,
+      rgb(0 0 0 / 0.4) 45%,
+      rgb(0 0 0 / 0) 100%
+    );
+  }
+
+  /* Kaffeebild blendet weich aus dem dunklen Hero-Fuß ein */
+  .coffee-fade-in {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgb(0 0 0 / 0.6) 6%,
+      #000 14%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgb(0 0 0 / 0.6) 6%,
+      #000 14%
+    );
+  }
+
+</style>

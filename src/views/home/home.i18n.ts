@@ -8,14 +8,29 @@ export const translations = {
   },
   hero: {
     title: {
-      de: "Willkommen auf der Finca Los Castaños",
-      en: "Welcome to Finca Los Castaños",
-      es: "Bienvenidos a la Finca Los Castaños",
+      de: "Kaffee aus dem Valle de Agaete",
+      en: "Coffee from the Valle de Agaete",
+      es: "Café del Valle de Agaete",
     },
     subtitle: {
-      de: "Valle de Agaete · Gran Canaria",
-      en: "Valle de Agaete · Gran Canaria",
-      es: "Valle de Agaete · Gran Canaria",
+      de: "Willkommen auf unserer Finca",
+      en: "Welcome to our Finca",
+      es: "Bienvenidos a nuestra Finca",
+    },
+    description: {
+      de: "Mitten im Valle de Agaete auf Gran Canaria wachsen unsere Kaffeebäume zwischen Mangos, Avocados und Palmen. Kommen Sie vorbei – wir zeigen Ihnen, wie unser Kaffee entsteht.",
+      en: "In the heart of the Valle de Agaete on Gran Canaria, our coffee trees grow among mangoes, avocados and palms. Come and see for yourself how our coffee is made.",
+      es: "En pleno Valle de Agaete, en Gran Canaria, nuestros cafetos crecen entre mangos, aguacates y palmeras. Vengan a ver cómo nace nuestro café.",
+    },
+    ctaTour: {
+      de: "Kaffeetour",
+      en: "Coffee tour",
+      es: "Ruta del café",
+    },
+    ctaDiscover: {
+      de: "Finca entdecken",
+      en: "Discover the Finca",
+      es: "Descubrir la Finca",
     },
   },
   seo: {
@@ -28,53 +43,6 @@ export const translations = {
       de: "Willkommen auf der Finca Los Castaños: Erleben Sie die Welt des Kaffees und mehr - wir bieten Kaffeetouren, Ferienapartments und mehr",
       en: "Welcome to Finca Los Castaños in the Valle de Agaete, Gran Canaria – coffee tours, tropical gardens, cosy holiday stays and a whole lot of island charm",
       es: "Bienvenidos a la Finca Los Castaños en el Valle de Agaete: café cultivado en nuestra tierra, visitas guiadas, alojamiento y mucho más",
-    },
-  },
-
-  cards: {
-    events: {
-      title: {
-        de: "Ihre Veranstaltung auf unserer Plantage",
-        en: "Host your celebration here",
-        es: "Celebren su evento en nuestra finca",
-      },
-      subtitle: {
-        de: "Veranstaltungszelt für private Events und Feiern",
-        en: "Private events and celebrations",
-        es: "Carpa para eventos privados y celebraciones",
-      },
-      description: {
-        de: "Feiern Sie auf unserer Plantage im Veranstaltungszelt für bis zu 75 Personen. Organisieren Sie Essen und Musik selbst oder lassen Sie uns dies übernehmen – ganz nach Ihren Wünschen!",
-        en: "Our plantation tent seats up to 75 guests – perfect for birthdays, weddings or any special occasion. Bring your own catering and music, or let us arrange everything for you.",
-        es: "Aquí en la finca tenemos una carpa con capacidad para 75 personas. Ustedes se encargan de la comida y la música, o si lo prefieren, nosotros nos ocupamos de todo. ¡Como ustedes quieran!",
-      },
-      cta: {
-        de: "Mehr Informationen",
-        en: "Find out more",
-        es: "Más información",
-      },
-    },
-    tours: {
-      title: {
-        de: "Führung über unsere Plantage",
-        en: "Walk through our plantation",
-        es: "Conozcan nuestra plantación",
-      },
-      subtitle: {
-        de: "Geführte Touren über die Finca",
-        en: "Guided tours of the Finca",
-        es: "Visitas guiadas por la Finca",
-      },
-      description: {
-        de: "Unsere Kaffee-Expertin zeigt Ihnen unsere Plantage und gibt ihr Wissen rund um Anbau und Kaffeegenuss weiter. Erleben Sie exklusive Einblicke!",
-        en: "Our coffee expert will take you through the plantation and share everything she knows about growing and enjoying great coffee. Come and see for yourself!",
-        es: "Nuestra experta en café les enseña la plantación y les cuenta todo sobre el cultivo y el buen café. ¡Vengan a verlo con sus propios ojos!",
-      },
-      cta: {
-        de: "Wunschtermin finden",
-        en: "Find your date",
-        es: "Encontrar fecha",
-      },
     },
   },
 
