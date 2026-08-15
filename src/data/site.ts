@@ -17,6 +17,7 @@ export const siteData = {
   },
   contact: {
     email: "info@fincaloscastanos.com",
+    jobsEmail: "kaffee-agaete@hotmail.com",
     phone: "+34 648 22 99 95",
     phoneEvents: "+34 682 64 45 41",
     whatsapp: "+34 648 22 99 95",
