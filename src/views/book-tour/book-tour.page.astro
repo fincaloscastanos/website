@@ -6,11 +6,11 @@ import Container from "@/components/ui/Container.astro";
 import { Icon } from "astro-icon/components";
 import { siteData } from "@/data/site";
 
-import heroImg from "@/assets/coffee-tour/book/drying-hero.jpg";
-import nurseryImg from "@/assets/coffee-tour/book/nursery.jpg";
-import ripeningImg from "@/assets/coffee-tour/book/ripening.jpg";
-import butterflyImg from "@/assets/coffee-tour/book/butterfly.jpg";
-import teamImg from "@/assets/coffee-tour/book/team.jpg";
+import heroImg from "@/assets/coffee-tour/book/background.webp";
+import nurseryImg from "@/assets/coffee-tour/book/nursery.webp";
+import ripeningImg from "@/assets/coffee-tour/book/ripening.webp";
+import dryingImg from "@/assets/coffee-tour/book/drying.webp";
+import butterflyImg from "@/assets/coffee-tour/book/butterfly.webp";
 
 interface Props {
   lang: Language;
@@ -36,8 +36,8 @@ const facts = [
 const strip = [
   { src: nurseryImg, alt: "Junge Kaffeepflanzen in der Baumschule" },
   { src: ripeningImg, alt: "Reifestadien der Kaffeekirsche" },
+  { src: dryingImg, alt: "Kaffeekirschen beim Trocknen auf der Finca" },
   { src: butterflyImg, alt: "Schmetterling auf der Finca" },
-  { src: teamImg, alt: "Team der Finca Los Castaños" },
 ];
 ---
 
@@ -48,16 +48,16 @@ const strip = [
   <div class="absolute inset-0 bg-brown-dark">
     <Image
       src={heroImg}
-      alt="Kaffeekirschen beim Trocknen auf der Finca Los Castaños"
+      alt="Blick über die Plantage der Finca Los Castaños auf Agaete"
       class="absolute inset-0 h-full w-full object-cover"
-      widths={[800, 1200, 1600]}
+      widths={[800, 1200, 1500]}
       sizes="100vw"
       loading="eager"
       fetchpriority="high"
     />
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
     <div
-      class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/50 to-black/75 lg:bg-gradient-to-r lg:from-black/85 lg:via-black/60 lg:to-transparent"
+      class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/20 to-black/45 lg:bg-gradient-to-r lg:from-black/65 lg:via-black/25 lg:to-transparent"
     >
     </div>
   </div>
@@ -72,7 +72,7 @@ const strip = [
           {t.hero.title}
         </h1>
         <p
-          class="mt-2 font-serif text-2xl text-secondary md:text-3xl [text-shadow:0_2px_10px_rgba(0,0,0,0.95)]"
+          class="mt-3 font-serif text-3xl font-semibold text-secondary md:text-4xl lg:text-5xl lg:leading-tight [text-shadow:0_2px_12px_rgba(0,0,0,0.95),0_0_28px_rgba(0,0,0,0.75)]"
         >
           {t.hero.subtitle}
         </p>
