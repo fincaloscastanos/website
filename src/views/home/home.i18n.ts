@@ -130,7 +130,7 @@ export const translations = {
     },
     subtitle: {
       de: "jetzt direkt buchen!",
-      en: "book your spot today!",
+      en: "join us for an unforgettable coffee experience!",
       es: "¡reserven su visita!",
     },
     description: {
