@@ -1,4 +1,7 @@
 import type { FlattenTranslation } from "@/lib/i18n";
+import { siteData } from "@/data/site";
+
+const { coffeeTour } = siteData;
 
 export const translations = {
   navigationLabel: {
@@ -8,9 +11,9 @@ export const translations = {
   },
   seo: {
     title: {
-      de: "Kaffeetour buchen | Finca Los Castaños",
-      en: "Book coffee tour | Finca Los Castaños",
-      es: "Reservar tour de café | Finca Los Castaños",
+      de: "Kaffeetour buchen | Europäischer Kaffee zwischen Vulkanen",
+      en: "Book coffee tour | European coffee born among volcanoes",
+      es: "Reservar tour de café | Café europeo nacido entre volcanes",
     },
     description: {
       de: "Buchen Sie jetzt Ihre geführte Kaffeetour auf der Finca Los Castaños im Valle de Agaete",
@@ -21,9 +24,9 @@ export const translations = {
 
   hero: {
     title: {
-      de: "Kaffeetour buchen",
-      en: "Book your coffee tour",
-      es: "Reservar tour de café",
+      de: "Europäischer Kaffee, geboren zwischen Vulkanen",
+      en: "European coffee born among volcanoes",
+      es: "Café europeo nacido entre volcanes",
     },
     subtitle: {
       de: "Wählen Sie Ihren Wunschtermin und buchen Sie direkt",
@@ -32,19 +35,49 @@ export const translations = {
     },
   },
 
-  widget: {
-    placeholder: {
-      de: "Das Buchungssystem wird geladen\u2026",
-      en: "The booking system is loading\u2026",
-      es: "El sistema de reservas se está cargando\u2026",
+  facts: {
+    duration: {
+      de: `${coffeeTour.durationMinutes} Min.`,
+      en: `${coffeeTour.durationMinutes} min`,
+      es: `${coffeeTour.durationMinutes} min`,
+    },
+    tasting: {
+      de: "Verkostung inklusive",
+      en: "Tasting included",
+      es: "Degustación incluida",
     },
     languages: {
-      de: "Die Tour wird auf Spanisch, Englisch, Franz\u00f6sisch, Deutsch und Russisch angeboten.",
-      en: "Tours are offered in Spanish, English, French, German and Russian.",
-      es: "Los tours se ofrecen en espa\u00f1ol, ingl\u00e9s, franc\u00e9s, alem\u00e1n y ruso.",
+      de: "ES · EN · FR · DE · RU",
+      en: "ES · EN · FR · DE · RU",
+      es: "ES · EN · FR · DE · RU",
     },
   },
 
+  widget: {
+    label: {
+      de: "Termin wählen & buchen",
+      en: "Pick a date & book",
+      es: "Elegir fecha y reservar",
+    },
+    placeholder: {
+      de: "Das Buchungssystem wird geladen…",
+      en: "The booking system is loading…",
+      es: "El sistema de reservas se está cargando…",
+    },
+    note: {
+      de: "Sofortige Bestätigung per E-Mail",
+      en: "Instant confirmation by email",
+      es: "Confirmación inmediata por correo",
+    },
+  },
+
+  help: {
+    text: {
+      de: "Fragen oder Gruppenbuchung?",
+      en: "Questions or group booking?",
+      es: "¿Dudas o reserva de grupo?",
+    },
+  },
 };
 
 export type BookTourTranslations = FlattenTranslation<typeof translations>;

@@ -47,8 +47,8 @@ const { Component, t } = view;
 let title = t.seo?.title || siteData.meta.name;
 let description = t.seo?.description || "";
 
-// Startseite: transparenter Header über dem Fullscreen-Hero
-const fullBleed = routeKey === "home";
+// Seiten mit Bild-Hero: transparenter Header über dem Hero
+const fullBleed = routeKey === "home" || routeKey === "book-tour";
 ---
 
 <Layout title={title} description={description} lang={lang} routeKey={routeKey} fullBleed={fullBleed}>
