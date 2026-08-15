@@ -279,6 +279,11 @@ export const translations = {
       en: "Download PDF",
       es: "Descargar PDF",
     },
+    hikeCta: {
+      de: "Wanderweg San Pedro – Pinar de Tamadaba",
+      en: "San Pedro – Pinar de Tamadaba hiking trail",
+      es: "Sendero San Pedro – Pinar de Tamadaba",
+    },
   },
 
   faq: {
