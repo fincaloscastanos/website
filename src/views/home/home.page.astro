@@ -12,7 +12,7 @@ import heroIllustration from "@/assets/home/hero-illustration.webp";
 import heroBg from "@/assets/home/hero.webp";
 import heroEnd from "@/assets/home/hero-end.webp";
 import nurseryImg from "@/assets/home/nursery.webp";
-import tourImg from "@/assets/home/tour.jpg";
+import tourImg from "@/assets/home/tour.webp";
 import aboutDetailImg from "@/assets/home/team.jpg";
 import sustainabilityPanorama from "@/assets/home/card-events.jpeg";
 import sustainabilityDetail from "@/assets/home/card-accommodation.jpeg";
@@ -393,28 +393,6 @@ const galleryImages = [
           {t.tour.subtitle}
         </p>
         <p class="text-text leading-relaxed mb-8">{t.tour.description}</p>
-
-        <div
-          class="bg-white/50 backdrop-blur-sm rounded-none p-6 mb-8 border border-border/60"
-        >
-          <h3 class="text-lg font-serif text-text-heading mb-3">
-            {t.tour.hoursTitle}
-          </h3>
-          <p class="text-text text-base">
-            {
-              t.tour.weekdays
-                .replace("{start}", siteData.hours.weekdays.start)
-                .replace("{end}", siteData.hours.weekdays.end)
-            }
-          </p>
-          <p class="text-text text-base">
-            {
-              t.tour.weekends
-                .replace("{start}", siteData.hours.weekends.start)
-                .replace("{end}", siteData.hours.weekends.end)
-            }
-          </p>
-        </div>
 
         <a
           href={coffeeTourHref}
