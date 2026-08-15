@@ -11,8 +11,7 @@ import { getTranslatedPath } from "@/lib/registry";
 import heroIllustration from "@/assets/home/hero-illustration.webp";
 import heroBg from "@/assets/home/hero.webp";
 import heroEnd from "@/assets/home/hero-end.webp";
-import productsImg from "@/assets/home/products.jpg";
-import productsDetailImg from "@/assets/home/coffee-plant.png";
+import nurseryImg from "@/assets/home/nursery.webp";
 import tourImg from "@/assets/home/tour.jpg";
 import aboutDetailImg from "@/assets/home/team.jpg";
 import sustainabilityPanorama from "@/assets/home/card-events.jpeg";
@@ -171,7 +170,7 @@ const galleryImages = [
 
 <!-- Kaffee-Band: der Hero blendet hier hinein -->
 <section
-  class="relative h-[45svh] min-h-[18rem] w-full overflow-hidden bg-black"
+  class="relative h-[45svh] min-h-[18rem] w-full overflow-hidden bg-background"
   aria-hidden="true"
 >
   <!-- Kaffeebild blendet von oben ein, unten bis zum Bildrand sichtbar -->
@@ -256,7 +255,7 @@ const galleryImages = [
           <Image
             src={aboutDetailImg}
             alt="Finca Los Castaños Team"
-            class="w-full aspect-[4/5] object-cover"
+            class="w-full aspect-[3/2] object-cover"
             widths={[400, 700, 1000]}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
@@ -347,26 +346,15 @@ const galleryImages = [
         </a>
       </div>
 
-      <!-- Images -->
+      <!-- Image -->
       <div class="relative" data-animate data-animate-delay="2">
         <div class="overflow-hidden shadow-xl border border-border">
           <Image
-            src={productsImg}
+            src={nurseryImg}
             alt={t.products.title}
             class="w-full h-auto object-cover"
-            widths={[500, 800]}
+            widths={[500, 800, 1000]}
             sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-        <div
-          class="overflow-hidden shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border border-border"
-        >
-          <Image
-            src={productsDetailImg}
-            alt={t.products.title}
-            class="w-full h-auto object-cover"
-            widths={[300, 500]}
-            sizes="(max-width: 768px) 66vw, 33vw"
           />
         </div>
       </div>
