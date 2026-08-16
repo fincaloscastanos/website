@@ -12,6 +12,7 @@ interface Props {
 const { lang } = Astro.props;
 const currentYear = new Date().getFullYear();
 
+const jobsLabel = { de: "Stellenangebote", en: "Jobs", es: "Empleo" };
 const imprintLabel = { de: "Impressum", en: "Legal Notice", es: "Aviso legal" };
 const termsLabel = { de: "AGB", en: "Terms & Conditions", es: "Condiciones generales" };
 const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección de datos" };
@@ -61,6 +62,12 @@ const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección
 
       <!-- Links -->
       <nav class="flex gap-6">
+        <a
+          href={getTranslatedPath("jobs", lang)}
+          class="text-sm text-text-muted hover:text-primary transition-colors"
+        >
+          {jobsLabel[lang]}
+        </a>
         <a
           href={getTranslatedPath("imprint", lang)}
           class="text-sm text-text-muted hover:text-primary transition-colors"
