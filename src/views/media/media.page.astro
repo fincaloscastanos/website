@@ -13,6 +13,7 @@ import previewBrodie from "./images/previews/youtube-brodie.jpg";
 import previewGino from "./images/previews/youtube-gino.jpg";
 import previewSanJorge from "./images/previews/youtube-sanjorge.jpg";
 import previewRadio from "./images/previews/radio-espejo.jpg";
+import previewLaVidaCanaria from "./images/previews/blog-lavidacanaria.jpg";
 import pattern02 from "@/assets/patterns/pattern-02.svg";
 import pattern04 from "@/assets/patterns/pattern-04.svg";
 import pattern06 from "@/assets/patterns/pattern-06.svg";
@@ -35,6 +36,7 @@ type Card = {
   description: Record<Language, string>;
   href: string;
   featured?: boolean;
+  objectPosition?: string;
 };
 
 const groups: { label: Record<Language, string>; icon: string; color?: string; cards: Card[] }[] = [
@@ -90,6 +92,19 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
           es: "Canarias – el único lugar de Europa donde se produce café. Un reportaje de radio.",
         },
         href: "https://www.elespejocanario.es/secciones/canarias-unico-lugar-europeo-donde-se-produce-cafe/",
+      },
+      {
+        image: previewLaVidaCanaria,
+        icon: "lucide:newspaper" as const,
+        badge: { de: "Blog", en: "Blog", es: "Blog" },
+        title: { de: "La Vida Canaria", en: "La Vida Canaria", es: "La Vida Canaria" },
+        description: {
+          de: "Ein Ausflug ins Valle de Agaete: Wie auf der Finca Los Castaños der einzige Kaffee Europas entsteht.",
+          en: "A trip to the Valle de Agaete: how Europe's only coffee is produced at Finca Los Castaños.",
+          es: "Una excursión al Valle de Agaete: cómo se produce el único café de Europa en la Finca Los Castaños.",
+        },
+        href: "https://lavidacanaria.de/unterwegs/ausflug-zur-kaffeeplantage-los-castanos-im-valle-de-agaete/",
+        objectPosition: "75% center",
       },
     ],
   },
@@ -198,6 +213,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                   src={featuredCard.image}
                   alt={featuredCard.title[lang]}
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={featuredCard.objectPosition ? `object-position: ${featuredCard.objectPosition}` : undefined}
                   widths={[500, 800, 1200]}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
@@ -237,6 +253,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                     src={card.image}
                     alt={card.title[lang]}
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={card.objectPosition ? `object-position: ${card.objectPosition}` : undefined}
                     widths={[300, 500]}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
@@ -296,6 +313,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                   src={featuredCard.image}
                   alt={featuredCard.title[lang]}
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={featuredCard.objectPosition ? `object-position: ${featuredCard.objectPosition}` : undefined}
                   widths={[500, 800, 1200]}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
@@ -335,6 +353,7 @@ const groups: { label: Record<Language, string>; icon: string; color?: string; c
                     src={card.image}
                     alt={card.title[lang]}
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={card.objectPosition ? `object-position: ${card.objectPosition}` : undefined}
                     widths={[300, 500]}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
