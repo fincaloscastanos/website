@@ -8,10 +8,8 @@ import PageHero from "@/components/ui/PageHero.astro";
 import { Icon } from "astro-icon/components";
 import { getTranslatedPath } from "@/lib/registry";
 
-import tentInteriorImg from "@/assets/events/tent-interior.jpg";
 import tentExteriorImg from "@/assets/events/tent-exterior.jpg";
 import celebrationImg from "@/assets/events/celebration.jpg";
-import setupImg from "@/assets/events/setup.jpg";
 
 import gallery01 from "@/assets/events/gallery-01.jpg";
 import gallery02 from "@/assets/events/gallery-02.jpg";
@@ -80,15 +78,6 @@ const galleryImages = [
             sizes="(max-width: 768px) 80vw, 28vw"
           />
         </div>
-        <div class="overflow-hidden shadow-2xl w-2/3 mr-auto -mt-16 relative z-10 border border-border">
-          <Image
-            src={tentInteriorImg}
-            alt="Inneneinrichtung"
-            class="w-full h-auto object-cover"
-            widths={[200, 300]}
-            sizes="(max-width: 768px) 50vw, 18vw"
-          />
-        </div>
       </div>
     </div>
   </Container>
@@ -125,15 +114,6 @@ const galleryImages = [
             class="w-full h-auto object-cover"
             widths={[500, 800, 1200]}
             sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-        <div class="overflow-hidden shadow-2xl w-2/3 ml-auto -mt-16 relative z-10 border border-border">
-          <Image
-            src={setupImg}
-            alt="Event Vorbereitung"
-            class="w-full h-auto object-cover"
-            widths={[300, 500]}
-            sizes="(max-width: 768px) 66vw, 33vw"
           />
         </div>
       </div>
