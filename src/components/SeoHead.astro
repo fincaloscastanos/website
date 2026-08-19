@@ -181,20 +181,6 @@ if (routeKey !== "home") {
           bestRating: "5",
           ratingCount: "384",
         },
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: siteData.hours.weekdays.start,
-            closes: siteData.hours.weekdays.end,
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday", "Sunday"],
-            opens: siteData.hours.weekends.start,
-            closes: siteData.hours.weekends.end,
-          },
-        ],
         priceRange: "€€",
         currenciesAccepted: "EUR",
         paymentAccepted: "Cash, Credit Card",

@@ -60,24 +60,6 @@ export const translations = {
     },
   },
 
-  hours: {
-    title: {
-      de: "Öffnungszeiten",
-      en: "Opening hours",
-      es: "Horario",
-    },
-    weekdays: {
-      de: "Montag bis Freitag: {start} – {end} Uhr",
-      en: "Monday to Friday: {start} – {end}",
-      es: "Lunes a viernes: {start} – {end}",
-    },
-    weekends: {
-      de: "Samstag & Sonntag: {start} – {end} Uhr",
-      en: "Saturday & Sunday: {start} – {end}",
-      es: "Sábados y domingos: {start} – {end}",
-    },
-  },
-
   social: {
     title: {
       de: "Folgen Sie uns",

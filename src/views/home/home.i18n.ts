@@ -138,21 +138,6 @@ export const translations = {
       en: "Our coffee trees grow side by side with lemon, mango, tangerine, avocado, banana, olive and grape – a truly tropical landscape you won't forget.",
       es: "Nuestros cafetos crecen rodeados de frutales tropicales: limoneros, mangos, mandarinas, aguacates, plataneras, olivos y viñas.",
     },
-    hoursTitle: {
-      de: "Öffnungszeiten",
-      en: "Visiting hours",
-      es: "Horario de visitas",
-    },
-    weekdays: {
-      de: "Montag bis Freitag: {start} – {end} Uhr",
-      en: "Monday to Friday: {start} – {end}",
-      es: "Lunes a viernes: {start} – {end}",
-    },
-    weekends: {
-      de: "Samstag & Sonntag: {start} – {end} Uhr",
-      en: "Saturday & Sunday: {start} – {end}",
-      es: "Sábados y domingos: {start} – {end}",
-    },
     cta: {
       de: "Jetzt buchen",
       en: "Book now",
@@ -217,21 +202,6 @@ export const translations = {
         de: "Events",
         en: "Events",
         es: "Eventos",
-      },
-      hoursLabel: {
-        de: "Öffnungszeiten",
-        en: "Opening hours",
-        es: "Horario",
-      },
-      hoursWeekdays: {
-        de: "Mo – Fr: {start} – {end} Uhr",
-        en: "Mon – Fri: {start} – {end}",
-        es: "Lun – Vie: {start} – {end}",
-      },
-      hoursWeekends: {
-        de: "Sa & So: {start} – {end} Uhr",
-        en: "Sat & Sun: {start} – {end}",
-        es: "Sáb & Dom: {start} – {end}",
       },
     },
     map: {

@@ -39,10 +39,6 @@ export const siteData = {
       flow: "1669396",
     },
   },
-  hours: {
-    weekdays: { start: "09:00", end: "15:00" },
-    weekends: { start: "10:00", end: "14:00" },
-  },
   social: {
     instagram: "https://www.instagram.com/fincaloscastanos2025",
     facebook: "https://www.facebook.com/FincaLosCastanosValleDeAgaete",

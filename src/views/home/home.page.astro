@@ -605,37 +605,6 @@ const galleryImages = [
           </div>
         </div>
 
-        <!-- Opening Hours -->
-        <div class="p-5 bg-background rounded-none border border-border/50">
-          <div class="flex items-center gap-4 mb-3">
-            <div
-              class="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center shrink-0"
-            >
-              <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
-            </div>
-            <span
-              class="text-xs uppercase tracking-widest text-accent font-medium"
-              >{t.contact.info.hoursLabel}</span
-            >
-          </div>
-          <div class="space-y-2 pl-14">
-            <p class="text-base text-text-muted">
-              {
-                t.contact.info.hoursWeekdays
-                  .replace("{start}", siteData.hours.weekdays.start)
-                  .replace("{end}", siteData.hours.weekdays.end)
-              }
-            </p>
-            <p class="text-base text-text-muted">
-              {
-                t.contact.info.hoursWeekends
-                  .replace("{start}", siteData.hours.weekends.start)
-                  .replace("{end}", siteData.hours.weekends.end)
-              }
-            </p>
-          </div>
-        </div>
-
         <!-- WhatsApp CTA -->
         <a
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
