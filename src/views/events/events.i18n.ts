@@ -32,6 +32,19 @@ export const translations = {
     },
   },
 
+  notice: {
+    title: {
+      de: "Renovierungsarbeiten",
+      en: "Renovation works",
+      es: "Obras de renovaci\u00f3n",
+    },
+    text: {
+      de: "Bei uns finden derzeit Renovierungsarbeiten statt. Sobald diese abgeschlossen sind, zeigen wir Ihnen hier wieder aktuelle Bilder unseres Eventbereichs. F\u00fcr Anfragen und Termine sind wir selbstverst\u00e4ndlich weiterhin f\u00fcr Sie da.",
+      en: "Renovation works are currently underway. As soon as they are finished, we will show current photos of our event area here again. For enquiries and bookings we are of course still available for you.",
+      es: "Actualmente estamos realizando obras de renovaci\u00f3n. En cuanto terminen, volveremos a mostrar aqu\u00ed fotos actuales de nuestra zona de eventos. Para consultas y reservas seguimos, por supuesto, a su disposici\u00f3n.",
+    },
+  },
+
   intro: {
     p1: {
       de: "Erleben Sie unvergessliche Momente inmitten der malerischen Kaffeeplantage der Finca Los Castaños. Unser gro\u00dfz\u00fcgiges Eventzelt mit Au\u00dfenbereich bietet Platz f\u00fcr bis zu 75 Personen und ist perfekt f\u00fcr Hochzeiten, Geburtstage oder Firmenfeiern geeignet.",
