@@ -93,11 +93,6 @@ const galleryImages = [
     >
     </div>
     <div class="absolute inset-0 hero-spotlight"></div>
-    <!-- Ausfaden nach unten in die Kaffee-Sektion -->
-    <div
-      class="absolute inset-x-0 bottom-0 h-[8%] bg-gradient-to-b from-transparent to-black"
-    >
-    </div>
   </div>
 
   <!-- Content -->
@@ -167,12 +162,12 @@ const galleryImages = [
 
 </section>
 
-<!-- Kaffee-Band: der Hero blendet hier hinein -->
+<!-- Kaffee-Band: überlappt den Hero, das Bild blendet direkt ins Hero-Foto -->
 <section
-  class="relative h-[45svh] min-h-[18rem] w-full overflow-hidden bg-background"
+  class="relative z-20 -mt-[9svh] h-[45svh] min-h-[18rem] w-full overflow-hidden"
   aria-hidden="true"
 >
-  <!-- Kaffeebild blendet von oben ein, unten bis zum Bildrand sichtbar -->
+  <!-- Kaffeebild blendet weich aus dem Hero-Foto ein -->
   <Image
     src={heroEnd}
     alt=""
@@ -181,11 +176,6 @@ const galleryImages = [
     sizes="100vw"
     loading="eager"
   />
-  <!-- Schatten läuft in die obere Hälfte der Bohnen aus -->
-  <div
-    class="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black via-black/45 to-transparent"
-  >
-  </div>
 </section>
 
 <!-- Illustration & Quote -->
@@ -631,19 +621,23 @@ const galleryImages = [
     );
   }
 
-  /* Kaffeebild blendet weich aus dem dunklen Hero-Fuß ein */
+  /* Kaffeebild blendet über die Hero-Überlappung weich ins Foto ein */
   .coffee-fade-in {
     -webkit-mask-image: linear-gradient(
       to bottom,
       transparent 0%,
-      rgb(0 0 0 / 0.6) 6%,
-      #000 14%
+      transparent 4%,
+      rgb(0 0 0 / 0.35) 11%,
+      rgb(0 0 0 / 0.8) 16%,
+      #000 19%
     );
     mask-image: linear-gradient(
       to bottom,
       transparent 0%,
-      rgb(0 0 0 / 0.6) 6%,
-      #000 14%
+      transparent 4%,
+      rgb(0 0 0 / 0.35) 11%,
+      rgb(0 0 0 / 0.8) 16%,
+      #000 19%
     );
   }
 

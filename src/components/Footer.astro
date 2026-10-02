@@ -19,23 +19,23 @@ const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección
 ---
 
 <footer class="border-t border-border/50 bg-surface mt-auto">
-  <Container class="py-8">
+  <Container class="pt-8 pb-24 xl:pb-8 xl:pr-24">
     <div
-      class="flex flex-col-reverse md:flex-row justify-between items-center gap-6"
+      class="flex flex-col-reverse xl:flex-row justify-between items-center gap-6"
     >
       <!-- Copyright -->
-      <p class="text-sm text-text-muted text-center md:text-left">
+      <p class="text-sm text-text-muted text-center xl:text-left">
         &copy; {currentYear}
         {siteData.meta.name}. All rights reserved.
       </p>
 
       <!-- Social -->
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
         <a
           href={`https://wa.me/${siteData.contact.whatsapp.replaceAll(" ", "").replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-text-muted hover:text-primary transition-colors"
+          class="p-2.5 text-text-muted hover:text-primary transition-colors"
           aria-label="WhatsApp"
         >
           <Icon name="simple-icons:whatsapp" class="w-5 h-5" />
@@ -44,7 +44,7 @@ const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección
           href={siteData.social.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-text-muted hover:text-primary transition-colors"
+          class="p-2.5 text-text-muted hover:text-primary transition-colors"
           aria-label="Instagram"
         >
           <Icon name="simple-icons:instagram" class="w-5 h-5" />
@@ -53,7 +53,7 @@ const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección
           href={siteData.social.facebook}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-text-muted hover:text-primary transition-colors"
+          class="p-2.5 text-text-muted hover:text-primary transition-colors"
           aria-label="Facebook"
         >
           <Icon name="simple-icons:facebook" class="w-5 h-5" />
@@ -61,28 +61,28 @@ const privacyLabel = { de: "Datenschutz", en: "Privacy Policy", es: "Protección
       </div>
 
       <!-- Links -->
-      <nav class="flex gap-6">
+      <nav class="flex flex-wrap justify-center gap-x-2 gap-y-1 xl:justify-end">
         <a
           href={getTranslatedPath("jobs", lang)}
-          class="text-sm text-text-muted hover:text-primary transition-colors"
+          class="whitespace-nowrap px-2 py-2.5 text-sm text-text-muted hover:text-primary transition-colors"
         >
           {jobsLabel[lang]}
         </a>
         <a
           href={getTranslatedPath("imprint", lang)}
-          class="text-sm text-text-muted hover:text-primary transition-colors"
+          class="whitespace-nowrap px-2 py-2.5 text-sm text-text-muted hover:text-primary transition-colors"
         >
           {imprintLabel[lang]}
         </a>
         <a
           href={getTranslatedPath("terms", lang)}
-          class="text-sm text-text-muted hover:text-primary transition-colors"
+          class="whitespace-nowrap px-2 py-2.5 text-sm text-text-muted hover:text-primary transition-colors"
         >
           {termsLabel[lang]}
         </a>
         <a
           href={getTranslatedPath("privacy", lang)}
-          class="text-sm text-text-muted hover:text-primary transition-colors"
+          class="whitespace-nowrap px-2 py-2.5 text-sm text-text-muted hover:text-primary transition-colors"
         >
           {privacyLabel[lang]}
         </a>
